@@ -55,7 +55,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
-    // implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
+    implementation "dev.chrisbanes.snapper:snapper:$snapper_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

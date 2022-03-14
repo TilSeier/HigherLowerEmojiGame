@@ -2,9 +2,7 @@ buildscript {
     ext {
         compose_version = '1.1.1'
         nav_version = '2.4.1'
-        // Accompanist is a group of libraries that aim to supplement Jetpack Compose
-        // with features that are commonly required by developers but not yet available.
-        accompanist_version = 'v0.23.1'
+        snapper_version = '0.2.0'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
