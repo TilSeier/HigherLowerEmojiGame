@@ -4,21 +4,27 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
+import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import tilseier.tiktaktoktoe.extantions.formatNumberToString
 
 @OptIn(ExperimentalSnapperApi::class)
 @Composable
@@ -129,23 +135,26 @@ fun GameContent() {
         ) {
             itemsIndexed(currentItems) { index, item ->
                 // TODO first item always opened
-                if (item.sign == null) {
+                val previousItem = currentItems.getOrNull(index - 1)
+//                if (item.sign == null) {
                     ItemWithEmojiImage(
                         modifier = Modifier
                             .fillMaxWidth()
                             .fillParentMaxHeight(fraction = 0.5f)
                             .background(color = item.backgroundColor),
-                        item = item
+                        item = item,
+                        compareItem = previousItem
                     )
-                } else {
-                    ItemWithEmojiSign(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .fillParentMaxHeight(fraction = 0.5f)
-                            .background(color = item.backgroundColor),
-                        item = item
-                    )
-                }
+                // TODO finish ItemWithEmojiSign
+//                } else {
+//                    ItemWithEmojiSign(
+//                        modifier = Modifier
+//                            .fillMaxWidth()
+//                            .fillParentMaxHeight(fraction = 0.5f)
+//                            .background(color = item.backgroundColor),
+//                        item = item
+//                    )
+//                }
             }
         }
     }
@@ -154,10 +163,13 @@ fun GameContent() {
 @Composable
 private fun ItemWithEmojiImage(
     modifier: Modifier = Modifier,
-    item: Item
+    item: Item,
+    compareItem: Item?
 ) {
+    // TODO background from blur image
     Box(modifier = modifier) {
         val emojiImage = rememberImagePainter(item.imageUrl)
+        val shownAnswer by remember { mutableStateOf(false) }
         Image(
             painter = emojiImage,
             contentDescription = null,
@@ -165,6 +177,29 @@ private fun ItemWithEmojiImage(
                 .fillMaxSize()
                 .padding(30.dp)
         )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = DarkHover),
+            contentAlignment = Alignment.TopCenter
+        ) {
+            Column(modifier = Modifier.padding(top = 20.dp)) {
+                Text(text = stringResource(id = R.string.item_name, item.name))
+                Text(text = stringResource(id = R.string.text_is_used))
+                if (compareItem == null || shownAnswer) {
+                    Text(text = stringResource(id = R.string.formatted_number, item.number.formatNumberToString()))
+                    Text(text = stringResource(id = R.string.text_on_average_monthly))
+                } else {
+                    OutlinedButton(onClick = { /*TODO*/ }) {
+                        Text(text = stringResource(id = R.string.button_more))
+                    }
+                    OutlinedButton(onClick = { /*TODO*/ }) {
+                        Text(text = stringResource(id = R.string.button_less))
+                    }
+                    Text(text = stringResource(id = R.string.text_than_this_item, compareItem.name))
+                }
+            }
+        }
     }
 }
 

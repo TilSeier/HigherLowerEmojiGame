@@ -8,6 +8,8 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
+val DarkHover = Color(0x8F000000)
+
 val Colors.AppThemeColor
     get() = if (isLight) Color.White else Color.Black
 
