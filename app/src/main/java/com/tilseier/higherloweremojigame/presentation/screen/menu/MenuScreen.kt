@@ -7,14 +7,16 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
+import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.util.Constant
 
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: MenuViewModel = viewModel()) {
+fun HomeScreen(navController: NavHostController, viewModel: GameViewModel = viewModel()) {
 
     Text(
         text = "HomeScreen",
         modifier = Modifier.clickable {
+            viewModel.newGame()
             navController.navigate(route = Screen.Game.passCategory(Constant.CATEGORY_EMOJI))
         }
     )

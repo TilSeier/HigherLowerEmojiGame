@@ -9,11 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.model.Item
@@ -22,107 +24,34 @@ import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import tilseier.tiktaktoktoe.extantions.formatNumberToString
 
 @OptIn(ExperimentalSnapperApi::class)
 @Composable
-fun GameContent() {
+fun GameContent(
+    navController: NavHostController,
+    viewModel: GameViewModel
+) {
+    val state by viewModel.state.collectAsState()
+    val currentItems: List<Item> = state.currentItems
+    val currentItemIndex: Int = state.currentItemIndex
 
-    val faceWithTearsOfJoy = Item(
-        id = 1,
-        name = "Face with Tears of Joy",
-        imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-with-tears-of-joy_1f602.png",
-        sign = "\uD83D\uDE02", // 😂
-        backgroundColor = Color.White,
-        number = 200
-    )
-    val redHeart = Item(
-        id = 2,
-        name = "Red Heart",
-        imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/red-heart_2764-fe0f.png",
-        sign = "❤️️",
-        backgroundColor = Color.LightGray,
-        number = 300
-    )
-    val faceBlowingKiss = Item(
-        id = 3,
-        name = "Face Blowing a Kiss",
-        imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-blowing-a-kiss_1f618.png",
-        sign = "\uD83D\uDE18", // 😘
-        backgroundColor = Color.Green,
-        number = 400
-    )
-    val smilingFaceWithHeartEyes = Item(
-        id = 4,
-        name = "Smiling Face with Heart-Eyes",
-        imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/smiling-face-with-heart-eyes_1f60d.png",
-        sign = "\uD83D\uDE0D", // 😍
-        backgroundColor = Color.Cyan,
-        number = 500
-    )
-    val rollingOnTheFloorLaughingFace = Item(
-        id = 5,
-        name = "Rolling on the Floor Laughing Face",
-        imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/rolling-on-the-floor-laughing_1f923.png",
-        sign = "\uD83E\uDD23", // 🤣
-        backgroundColor = Color.Blue,
-        number = 600
-    )
-
-//    var currentItems by remember {
-//        mutableStateOf(
-//            listOf(
-//                faceWithTearsOfJoy,
-//                redHeart,
-//                faceBlowingKiss
-//            )
-//        )
-//    }
-    val currentItems = remember {
-        mutableStateListOf(
-            faceWithTearsOfJoy,
-            redHeart,
-            faceBlowingKiss
-        )
-    }
+    // TODO can we use Flow here?
+    // val currentItems: List<Item> by viewModel.state
+    //    .map { it.currentItems }
+    //    .collectAsState(initial = listOf())
 
     Column {
 
         val lazyListState: LazyListState = rememberLazyListState()
-        val coroutineScope = rememberCoroutineScope()
 
         // TODO move logic to ViewModel
         // TODO design of game screen
         // TODO disable user scroll interaction
-        SideEffect {
-            coroutineScope.launch {
-                delay(2000)
-                currentItems.add(smilingFaceWithHeartEyes)
-                lazyListState.animateScrollToItem(1)
-//                lazyListState.scrollToItem(0)
-//                currentItems.remove(faceWithTearsOfJoy)
-//                currentItems.add(smilingFaceWithHeartEyes)
-//                currentItems = listOf(
-//                    redHeart,
-//                    faceBlowingKiss,
-//                    smilingFaceWithHeartEyes
-//                )
 
-                delay(2000)
-                currentItems.add(rollingOnTheFloorLaughingFace)
-                lazyListState.animateScrollToItem(2)
-//                lazyListState.scrollToItem(0)
-//                currentItems.remove(redHeart)
-//                currentItems.add(rollingOnTheFloorLaughingFace)
-
-//                currentItems = listOf(
-//                    faceBlowingKiss,
-//                    smilingFaceWithHeartEyes,
-//                    rollingOnTheFloorLaughingFace,
-//                )
-            }
+        // TODO use answer object
+        LaunchedEffect(key1 = currentItemIndex) {
+            lazyListState.animateScrollToItem(currentItemIndex)
         }
 
         LazyColumn(
@@ -134,8 +63,8 @@ fun GameContent() {
             ),
         ) {
             itemsIndexed(currentItems) { index, item ->
-                // TODO first item always opened
-                val previousItem = currentItems.getOrNull(index - 1)
+                val previousItemIndex = index - 1
+                val previousItem = currentItems.getOrNull(previousItemIndex)
 //                if (item.sign == null) {
                     ItemWithEmojiImage(
                         modifier = Modifier
@@ -143,7 +72,14 @@ fun GameContent() {
                             .fillParentMaxHeight(fraction = 0.5f)
                             .background(color = item.backgroundColor),
                         item = item,
-                        compareItem = previousItem
+                        compareItem = previousItem,
+                        shownAnswer = index <= currentItemIndex,
+                        onMoreClick = {
+                            viewModel.onMoreClick()
+                        },
+                        onLessClick = {
+                            viewModel.onLessClick()
+                        }
                     )
                 // TODO finish ItemWithEmojiSign
 //                } else {
@@ -164,12 +100,15 @@ fun GameContent() {
 private fun ItemWithEmojiImage(
     modifier: Modifier = Modifier,
     item: Item,
-    compareItem: Item?
+    compareItem: Item?,
+    shownAnswer: Boolean,
+    onMoreClick: () -> Unit,
+    onLessClick: () -> Unit,
 ) {
     // TODO background from blur image
     Box(modifier = modifier) {
         val emojiImage = rememberImagePainter(item.imageUrl)
-        val shownAnswer by remember { mutableStateOf(false) }
+        // TODO shown answer with animation
         Image(
             painter = emojiImage,
             contentDescription = null,
@@ -190,10 +129,10 @@ private fun ItemWithEmojiImage(
                     Text(text = stringResource(id = R.string.formatted_number, item.number.formatNumberToString()))
                     Text(text = stringResource(id = R.string.text_on_average_monthly))
                 } else {
-                    OutlinedButton(onClick = { /*TODO*/ }) {
+                    OutlinedButton(onClick = onMoreClick) {
                         Text(text = stringResource(id = R.string.button_more))
                     }
-                    OutlinedButton(onClick = { /*TODO*/ }) {
+                    OutlinedButton(onClick = onLessClick) {
                         Text(text = stringResource(id = R.string.button_less))
                     }
                     Text(text = stringResource(id = R.string.text_than_this_item, compareItem.name))
@@ -225,6 +164,9 @@ private fun ItemWithEmojiSign(
 @Composable
 private fun GameContentPreview() {
     HigherLowerEmojiGameTheme {
-        GameContent()
+        GameContent(
+            navController = rememberNavController(),
+            viewModel = viewModel()
+        )
     }
 }

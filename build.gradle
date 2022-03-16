@@ -4,6 +4,8 @@ buildscript {
         nav_version = '2.4.1'
         snapper_version = '0.2.0'
         coil_version = '1.4.0'
+        preference_version = '1.2.0'
+        coroutines_version = '1.6.0'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

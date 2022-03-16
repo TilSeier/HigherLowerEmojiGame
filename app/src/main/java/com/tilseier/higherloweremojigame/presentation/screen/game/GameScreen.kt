@@ -20,7 +20,10 @@ fun GameScreen(
         contentColor = MaterialTheme.colors.AppContentColor,
         backgroundColor = MaterialTheme.colors.AppThemeColor,
         content = {
-            GameContent()
+            GameContent(
+                navController = navController,
+                viewModel = viewModel
+            )
         }
     )
 }
