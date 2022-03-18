@@ -32,23 +32,30 @@ class GameViewModel : ViewModel() {
                 currentItems = _state.value.generateItems(),
                 currentItemIndex = 0,
                 score = 0,
+                isGameOver = false,
                 higherScore = AppPreferences.preferences()?.higherScore()
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,
             )
         }
     }
 
+    fun continueGame() {
+        _state.update { model -> model.copy(isGameOver = false) }
+        nextItem()
+    }
+
     fun onMoreClick() {
         // TODO check if this is right answer
-        val itemIndex = _state.value.currentItemIndex + 1
-        if (_state.value.currentItems.size <= itemIndex) {
-            return
-        }
-        _state.update { model -> model.copy(currentItemIndex = itemIndex) }
+        nextItem()
     }
 
     fun onLessClick() {
         // TODO check if this is right answer
+        // nextItem()
+        _state.update { model -> model.copy(isGameOver = true) }
+    }
+
+    private fun nextItem() {
         val itemIndex = _state.value.currentItemIndex + 1
         if (_state.value.currentItems.size <= itemIndex) {
             return

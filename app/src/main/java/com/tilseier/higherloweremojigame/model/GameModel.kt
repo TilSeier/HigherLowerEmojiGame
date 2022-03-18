@@ -7,6 +7,7 @@ data class GameModel(
     val currentItemIndex: Int = 0,
     val score: Int = 0,
     val higherScore: Int = 0,
+    val isGameOver: Boolean = false,
 
 //    val categories: Set<LifeGroupsCategory>? = null,
 //    val selectedCampusIndex: Int = 0,

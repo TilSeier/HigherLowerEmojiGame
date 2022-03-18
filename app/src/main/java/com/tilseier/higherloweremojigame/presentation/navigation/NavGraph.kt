@@ -20,7 +20,7 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel = viewMo
         startDestination = Screen.Menu.route
     ) {
         composable(route = Screen.Menu.route) {
-            HomeScreen(navController = navController, viewModel)
+            HomeScreen(navController = navController, viewModel = viewModel)
         }
         composable(
             route = Screen.Game.route,
@@ -30,17 +30,10 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel = viewMo
             })
         ) { backStackEntry ->
             backStackEntry.arguments?.getString(Constant.ARGUMENT_KEY_CATEGORY)
-                ?.let { GameScreen(it, navController, viewModel) }
+                ?.let { GameScreen(category = it, navController = navController, viewModel = viewModel) }
         }
-        composable(
-            route = Screen.GameOver.route,
-            arguments = listOf(navArgument(Constant.ARGUMENT_KEY_SCORE) {
-                type = NavType.IntType
-                defaultValue = 0
-            })
-        ) { backStackEntry ->
-            backStackEntry.arguments?.getInt(Constant.ARGUMENT_KEY_SCORE)
-                ?.let { GameOverScreen(it, navController, viewModel) }
+        composable(route = Screen.GameOver.route) {
+            GameOverScreen(navController = navController, viewModel = viewModel)
         }
     }
 }

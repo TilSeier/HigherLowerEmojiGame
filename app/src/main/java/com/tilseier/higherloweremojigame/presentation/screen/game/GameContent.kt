@@ -21,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
@@ -38,11 +39,21 @@ fun GameContent(
     val state by viewModel.state.collectAsState()
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
+    val isGameOver: Boolean = state.isGameOver
 
     // TODO can we use Flow here?
     // val currentItems: List<Item> by viewModel.state
     //    .map { it.currentItems }
     //    .collectAsState(initial = listOf())
+
+    LaunchedEffect(key1 = isGameOver) {
+        if (isGameOver) {
+            // TODO animate wrong answer
+            navController.navigate(route = Screen.GameOver.route) {
+                popUpTo(Screen.Menu.route)
+            }
+        }
+    }
 
     Column {
 
@@ -54,6 +65,7 @@ fun GameContent(
 
         // TODO use answer object
         LaunchedEffect(key1 = currentItemIndex) {
+            // TODO animate right answer
             lazyListState.animateScrollToItem(currentItemIndex)
         }
 
