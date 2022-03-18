@@ -1,5 +1,6 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -7,6 +8,7 @@ import androidx.compose.foundation.lazy.*
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -24,6 +26,7 @@ import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
+import kotlinx.coroutines.delay
 import tilseier.tiktaktoktoe.extantions.formatNumberToString
 
 @OptIn(ExperimentalSnapperApi::class)
@@ -66,21 +69,21 @@ fun GameContent(
                 val previousItemIndex = index - 1
                 val previousItem = currentItems.getOrNull(previousItemIndex)
 //                if (item.sign == null) {
-                    ItemWithEmojiImage(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .fillParentMaxHeight(fraction = 0.5f)
-                            .background(color = item.backgroundColor),
-                        item = item,
-                        compareItem = previousItem,
-                        shownAnswer = index <= currentItemIndex,
-                        onMoreClick = {
-                            viewModel.onMoreClick()
-                        },
-                        onLessClick = {
-                            viewModel.onLessClick()
-                        }
-                    )
+                ItemWithEmojiImage(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillParentMaxHeight(fraction = 0.5f)
+                        .background(color = item.backgroundColor),
+                    item = item,
+                    compareItem = previousItem,
+                    isAnswerVisible = index <= currentItemIndex,
+                    onMoreClick = {
+                        viewModel.onMoreClick()
+                    },
+                    onLessClick = {
+                        viewModel.onLessClick()
+                    }
+                )
                 // TODO finish ItemWithEmojiSign
 //                } else {
 //                    ItemWithEmojiSign(
@@ -101,7 +104,7 @@ private fun ItemWithEmojiImage(
     modifier: Modifier = Modifier,
     item: Item,
     compareItem: Item?,
-    shownAnswer: Boolean,
+    isAnswerVisible: Boolean,
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
 ) {
@@ -125,20 +128,61 @@ private fun ItemWithEmojiImage(
             Column(modifier = Modifier.padding(top = 20.dp)) {
                 Text(text = stringResource(id = R.string.item_name, item.name))
                 Text(text = stringResource(id = R.string.text_is_used))
-                if (compareItem == null || shownAnswer) {
-                    Text(text = stringResource(id = R.string.formatted_number, item.number.formatNumberToString()))
-                    Text(text = stringResource(id = R.string.text_on_average_monthly))
-                } else {
-                    OutlinedButton(onClick = onMoreClick) {
+
+                var moreClick by rememberSaveable { mutableStateOf(false) }
+                var lessClick by rememberSaveable { mutableStateOf(false) }
+                var showAnswer by rememberSaveable { mutableStateOf(false) }
+
+                LaunchedEffect(key1 = moreClick) {
+                    if (moreClick) {
+                        showAnswer = true
+                        delay(1000)
+                        moreClick = false
+                        onMoreClick()
+                    }
+                }
+                LaunchedEffect(key1 = lessClick) {
+                    if (lessClick) {
+                        showAnswer = true
+                        delay(1000)
+                        lessClick = false
+                        onLessClick()
+                    }
+                }
+
+                AnimatedVisibility(visible = isAnswerVisible || showAnswer) {
+                    AnswerNumber(number = item.number.formatNumberToString())
+                }
+
+                if (!isAnswerVisible && !showAnswer) {
+                    OutlinedButton(onClick = {
+                        if (!lessClick) {
+                            moreClick = true
+                        }
+                    }) {
                         Text(text = stringResource(id = R.string.button_more))
                     }
-                    OutlinedButton(onClick = onLessClick) {
+                    OutlinedButton(onClick = {
+                        if (!moreClick) {
+                            lessClick = true
+                        }
+                    }) {
                         Text(text = stringResource(id = R.string.button_less))
                     }
-                    Text(text = stringResource(id = R.string.text_than_this_item, compareItem.name))
+                    Text(
+                        text = stringResource(id = R.string.text_than_this_item, compareItem?.name ?: "")
+                    )
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun AnswerNumber(number: String) {
+    Column {
+        Text(text = stringResource(id = R.string.formatted_number, number))
+        Text(text = stringResource(id = R.string.text_on_average_monthly))
     }
 }
 

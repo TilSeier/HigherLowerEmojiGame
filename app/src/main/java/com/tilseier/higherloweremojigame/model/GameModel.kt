@@ -1,5 +1,6 @@
 package com.tilseier.higherloweremojigame.model
 
+// TODO remove this model if it doesn't wor properly
 data class GameModel(
     val allItems: List<Item>,
     val currentItems: List<Item> = listOf(),

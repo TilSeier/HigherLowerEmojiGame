@@ -12,6 +12,13 @@ import kotlinx.coroutines.flow.update
 class GameViewModel : ViewModel() {
     private val itemsRepository: ItemsRepository = ItemsRepository(ItemsLocalDataSource())
 
+    // val allItems: List<Item> = itemsRepository.emojiItems
+    // val currentItems: MutableState<List<Item>> = mutableStateOf(listOf())
+    // val currentItemIndex: MutableState<Int> = mutableStateOf(0)
+    // val score: MutableState<Int> = mutableStateOf(0)
+    // val higherScore: MutableState<Int> = mutableStateOf(0)
+
+    // TODO maybe remove one model
     val state: StateFlow<GameModel>
         get() = _state
 
