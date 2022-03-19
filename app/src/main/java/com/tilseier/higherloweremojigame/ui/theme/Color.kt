@@ -10,6 +10,8 @@ val Teal200 = Color(0xFF03DAC5)
 
 val DarkHover = Color(0x8F000000)
 
+val ItemBackgroundPurple = Color(0xFF69369C)
+
 val Colors.AppThemeColor
     get() = if (isLight) Color.White else Color.Black
 

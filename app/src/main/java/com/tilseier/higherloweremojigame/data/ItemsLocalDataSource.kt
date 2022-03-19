@@ -2,6 +2,7 @@ package com.tilseier.higherloweremojigame.data
 
 import androidx.compose.ui.graphics.Color
 import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
 
 class ItemsLocalDataSource {
     val emojiItems = listOf(
@@ -10,7 +11,7 @@ class ItemsLocalDataSource {
             name = "Face with Tears of Joy",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-with-tears-of-joy_1f602.png",
             sign = "\uD83D\uDE02", // 😂
-            backgroundColor = Color.White,
+            backgroundColor = ItemBackgroundPurple,
             number = 200
         ),
         Item(

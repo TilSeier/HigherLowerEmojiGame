@@ -55,6 +55,9 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constraintlayout_version"
+
     // Snapper
     implementation "dev.chrisbanes.snapper:snapper:$snapper_version"
 
