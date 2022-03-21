@@ -69,7 +69,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/smiling-face-with-smiling-eyes_1f60a.png",
             sign = "\uD83D\uDE0A", // 😊
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 500
         ),
         Item(
             id = 9,
@@ -77,7 +77,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/kiss-mark_1f48b.png",
             sign = "\uD83D\uDC8B", // 💋
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 400
         ),
         Item(
             id = 10,
@@ -85,7 +85,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/grinning-face-with-smiling-eyes_1f604.png",
             sign = "\uD83D\uDE04", // 😄
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 300
         ),
         Item(
             id = 11,
@@ -93,7 +93,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/folded-hands_1f64f.png",
             sign = "\uD83D\uDE4F", // 🙏
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 200
         ),
         Item(
             id = 12,
@@ -101,7 +101,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/grinning-face-with-sweat_1f605.png",
             sign = "\uD83D\uDE05", // 😅
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 100
         ),
         Item(
             id = 13,
@@ -109,7 +109,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/smiling-face_263a-fe0f.png",
             sign = "☺️",
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 200
         ),
         Item(
             id = 14,
@@ -117,7 +117,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/smiling-face-with-hearts_1f970.png",
             sign = "\uD83E\uDD70", // 🥰
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 300
         ),
         Item(
             id = 15,
@@ -125,7 +125,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/see-no-evil-monkey_1f648.png",
             sign = "\uD83D\uDE48", // 🙈
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 400
         ),
 
         Item(
@@ -134,7 +134,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/winking-face_1f609.png",
             sign = "\uD83D\uDE09", // 😉
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 500
         ),
         Item(
             id = 17,
@@ -150,7 +150,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/pensive-face_1f614.png",
             sign = "\uD83D\uDE14", // 😔
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 500
         ),
         Item(
             id = 19,
@@ -158,7 +158,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/winking-face-with-tongue_1f61c.png",
             sign = "\uD83D\uDE1C", // 😜
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 400
         ),
         Item(
             id = 20,
@@ -166,7 +166,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/clapping-hands_1f44f.png",
             sign = "\uD83D\uDC4F", // 👏
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 300
         ),
         Item(
             id = 21,
@@ -174,7 +174,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/smirking-face_1f60f.png",
             sign = "\uD83D\uDE0F", // 😏
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 200
         ),
         Item(
             id = 22,
@@ -182,7 +182,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/weary-face_1f629.png",
             sign = "\uD83D\uDE29", // 😩
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 100
         ),
         Item(
             id = 23,
@@ -190,7 +190,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/flushed-face_1f633.png",
             sign = "\uD83D\uDE33", // 😳
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 200
         ),
         Item(
             id = 24,
@@ -198,7 +198,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/pleading-face_1f97a.png",
             sign = "\uD83E\uDD7A", // 🥺
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 300
         ),
         Item(
             id = 25,
@@ -206,7 +206,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/two-hearts_1f495.png",
             sign = "\uD83D\uDC95", // 💕
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 400
         ),
         Item(
             id = 26,
@@ -214,7 +214,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/hugging-face_1f917.png",
             sign = "\uD83E\uDD17", // 🤗
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 500
         ),
         Item(
             id = 27,
@@ -230,7 +230,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/blue-heart_1f499.png",
             sign = "\uD83D\uDC99", // 💙
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 500
         ),
         Item(
             id = 29,
@@ -238,7 +238,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/sparkling-heart_1f496.png",
             sign = "\uD83D\uDC96", // 💖
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 400
         ),
         Item(
             id = 30,
@@ -246,7 +246,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/person-facepalming_1f926.png",
             sign = "\uD83E\uDD26", // 🤦
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 300
         ),
         Item(
             id = 31,
@@ -254,7 +254,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/thinking-face_1f914.png",
             sign = "\uD83E\uDD14", // 🤔
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 200
         ),
         Item(
             id = 32,
@@ -262,7 +262,7 @@ class ItemsLocalDataSource {
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/grinning-squinting-face_1f606.png",
             sign = "\uD83D\uDE06", // 😆
             backgroundColor = ItemBackgroundPurple,
-            number = 600
+            number = 100
         ),
 //        Item( // TODO remove
 //            id = 33,

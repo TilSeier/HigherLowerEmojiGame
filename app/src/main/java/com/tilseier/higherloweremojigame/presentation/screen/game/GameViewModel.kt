@@ -45,13 +45,22 @@ class GameViewModel : ViewModel() {
     }
 
     fun onMoreClick() {
-        // TODO check if this is right answer
-        nextItem()
+        if (_state.value.guessItem.number >= _state.value.compareItem.number) {
+            nextItem()
+        } else {
+            wrongAnswer()
+        }
     }
 
     fun onLessClick() {
-        // TODO check if this is right answer
-        // nextItem()
+        if (_state.value.guessItem.number <= _state.value.compareItem.number) {
+            nextItem()
+        } else {
+            wrongAnswer()
+        }
+    }
+
+    private fun wrongAnswer() {
         _state.update { model -> model.copy(isGameOver = true) }
     }
 

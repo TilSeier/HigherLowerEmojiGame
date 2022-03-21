@@ -18,11 +18,17 @@ data class GameModel(
 //    val campusMap: Map<String, String> = mapOf("" to ""),
 //    val countryMap: Map<String, String> = mapOf("" to ""),
 ) {
-    // TODO
 
+    // TODO generate items properly
     fun generateItems(): List<Item> {
         return allItems // allItems.shuffled()
     }
+
+    val compareItem: Item
+        get() = currentItems[currentItemIndex]
+
+    val guessItem: Item
+        get() = currentItems[currentItemIndex + 1]
 
 //    val searchUri: Uri
 //        get() = Uri.parse(

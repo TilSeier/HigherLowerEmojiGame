@@ -105,7 +105,7 @@ private fun ItemWithEmoji(
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
 ) {
-    // TODO background from blur image
+    // TODO background from blur image?
     Box(modifier = modifier) {
         // TODO shown answer with animation
         item.sign?.let { sign ->
