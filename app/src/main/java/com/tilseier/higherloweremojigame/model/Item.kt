@@ -8,5 +8,6 @@ data class Item(
     val imageUrl: String, // TODO maybe list of images
     val sign: String? = null,
     val backgroundColor: Color,
-    val number: Long
+    val number: Long,
+    val url: String? = null // TODO use this url to open info for emoji
 )
