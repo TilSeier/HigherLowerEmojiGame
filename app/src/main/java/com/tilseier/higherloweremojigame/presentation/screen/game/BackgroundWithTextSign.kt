@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
 
-// TODO finish BackgroundWithTextSign
 @Composable
 fun BackgroundWithTextSign(
     modifier: Modifier = Modifier,
@@ -43,10 +42,11 @@ fun BackgroundWithTextSign(
             bottom_right_alpha_emoji_1, bottom_right_alpha_emoji_2
         ) = createRefs()
 
+        val fontSizeScale = 0.85f
+        val alpha = 0.2f
+
         Box(
             modifier = Modifier
-                .size(126.dp)
-                .background(Color.Black)
                 .constrainAs(center_emoji) {
                     start.linkTo(parent.start)
                     top.linkTo(parent.top)
@@ -57,310 +57,310 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = 20.sp
+                fontSize = (126 * fontSizeScale).sp
             )
         }
 
         // top left visible emojis
         Box(
             modifier = Modifier
-                .size(19.dp)
                 .constrainAs(top_left_emoji_2) {
                     start.linkTo(anchor = top_left_emoji_1.start, margin = 24.dp)
                     bottom.linkTo(anchor = top_left_emoji_1.bottom, margin = 26.dp)
                 }
-                .rotate(-32f)
+                .rotate(-32f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (19 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(37.dp)
                 .constrainAs(top_left_emoji_1) {
                     end.linkTo(anchor = center_emoji.start, margin = 37.dp)
                     bottom.linkTo(anchor = center_emoji.top)
                 }
-                .rotate(-32f)
+                .rotate(-32f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (37 * fontSizeScale).sp
             )
         }
 
         // top left alpha emojis
         Box(
             modifier = Modifier
-                .size(27.dp)
                 .constrainAs(top_left_alpha_emoji_1) {
                     end.linkTo(anchor = top_left_emoji_1.end, margin = 34.dp)
                     bottom.linkTo(anchor = top_left_emoji_1.top, margin = 12.dp)
                 }
                 .rotate(17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (27 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(31.dp)
                 .constrainAs(top_left_alpha_emoji_2) {
                     start.linkTo(anchor = top_left_emoji_1.end, margin = 60.dp)
                     bottom.linkTo(anchor = top_left_emoji_1.bottom, margin = 28.dp)
                 }
                 .rotate(17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (31 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(20.dp)
                 .constrainAs(top_left_alpha_emoji_3) {
                     start.linkTo(anchor = top_left_emoji_1.end, margin = 14.dp)
                     top.linkTo(anchor = top_left_emoji_1.bottom, margin = 10.dp)
                 }
                 .rotate(-17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (20 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(33.dp)
                 .constrainAs(top_left_alpha_emoji_4) {
                     end.linkTo(anchor = top_left_emoji_1.start, margin = 12.dp)
                     top.linkTo(anchor = top_left_emoji_1.bottom, margin = 35.dp)
                 }
                 .rotate(-5f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (33 * fontSizeScale).sp
             )
         }
 
         // top right visible emojis
         Box(
             modifier = Modifier
-                .size(32.dp)
                 .constrainAs(top_right_emoji_2) {
                     start.linkTo(anchor = top_right_emoji_1.start, margin = 26.dp)
                     top.linkTo(anchor = top_right_emoji_1.top, margin = 28.dp)
-                }
+                },
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (32 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(44.dp)
                 .constrainAs(top_right_emoji_1) {
                     start.linkTo(anchor = center_emoji.end, margin = 20.dp)
                     bottom.linkTo(anchor = center_emoji.top)
                 }
-                .rotate(16f)
+                .rotate(16f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (44 * fontSizeScale).sp
             )
         }
 
         // top right alpha emojis
         Box(
             modifier = Modifier
-                .size(24.dp)
                 .constrainAs(top_right_alpha_emoji_1) {
                     end.linkTo(anchor = top_right_emoji_1.start, margin = 18.dp)
                     top.linkTo(anchor = top_right_emoji_1.top, margin = 28.dp)
                 }
                 .rotate(18f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (24 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(35.dp)
                 .constrainAs(top_right_alpha_emoji_2) {
                     start.linkTo(anchor = top_right_emoji_1.end, margin = 26.dp)
                     top.linkTo(anchor = top_right_emoji_1.top, margin = 20.dp)
                 }
                 .rotate(17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (35 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(20.dp)
                 .constrainAs(top_right_alpha_emoji_3) {
                     start.linkTo(anchor = top_right_emoji_1.start, margin = 18.dp)
                     top.linkTo(anchor = top_right_emoji_1.bottom, margin = 38.dp)
                 }
                 .rotate(-18f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (20 * fontSizeScale).sp
             )
         }
 
         // bottom right visible emojis
         Box(
             modifier = Modifier
-                .size(19.dp)
                 .constrainAs(bottom_right_emoji_2) {
                     start.linkTo(anchor = bottom_right_emoji_1.start, margin = 30.dp)
                     top.linkTo(anchor = bottom_right_emoji_1.top, margin = 0.dp)
                 }
-                .rotate(16f)
+                .rotate(16f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (19 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(37.dp)
                 .constrainAs(bottom_right_emoji_1) {
                     start.linkTo(anchor = center_emoji.end, margin = 20.dp)
                     top.linkTo(anchor = center_emoji.bottom, margin = 4.dp)
                 }
-                .rotate(16f)
+                .rotate(16f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (37 * fontSizeScale).sp
             )
         }
 
         // bottom right alpha emojis
         Box(
             modifier = Modifier
-                .size(31.dp)
                 .constrainAs(bottom_right_alpha_emoji_1) {
                     start.linkTo(anchor = bottom_right_emoji_1.end, margin = 20.dp)
                     bottom.linkTo(anchor = bottom_right_emoji_1.top, margin = 30.dp)
                 }
                 .rotate(16f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (31 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(24.dp)
                 .constrainAs(bottom_right_alpha_emoji_2) {
                     top.linkTo(anchor = bottom_right_emoji_1.top, margin = 15.dp)
                     end.linkTo(anchor = bottom_right_emoji_1.start, margin = 36.dp)
                 }
                 .rotate(-18f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (24 * fontSizeScale).sp
             )
         }
 
         // bottom left visible emojis
         Box(
             modifier = Modifier
-                .size(33.dp)
                 .constrainAs(bottom_left_emoji_2) {
                     start.linkTo(anchor = bottom_left_emoji_1.start, margin = 34.dp)
                     bottom.linkTo(anchor = bottom_left_emoji_1.bottom, margin = 8.dp)
                 }
-                .rotate(39f)
+                .rotate(39f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (33 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(44.dp)
                 .constrainAs(bottom_left_emoji_1) {
                     end.linkTo(anchor = center_emoji.start, margin = 38.dp)
                     top.linkTo(anchor = center_emoji.bottom)
                 }
-                .rotate(16f)
+                .rotate(16f),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (44 * fontSizeScale).sp
             )
         }
 
         // bottom left alpha emojis
         Box(
             modifier = Modifier
-                .size(19.dp)
                 .constrainAs(bottom_left_alpha_emoji_1) {
                     start.linkTo(anchor = bottom_left_emoji_1.end, margin = 1.dp)
                     bottom.linkTo(anchor = bottom_left_emoji_1.top, margin = 22.dp)
                 }
                 .rotate(-17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (19 * fontSizeScale).sp
             )
         }
 
         Box(
             modifier = Modifier
-                .size(33.dp)
                 .constrainAs(bottom_left_alpha_emoji_2) {
                     start.linkTo(anchor = bottom_left_emoji_1.end, margin = 63.dp)
                     top.linkTo(anchor = bottom_left_emoji_1.top, margin = 38.dp)
                 }
                 .rotate(17f)
-                .alpha(0.2f)
+                .alpha(alpha),
+            contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
-                fontSize = 100.sp
+                fontSize = (33 * fontSizeScale).sp
             )
         }
     }
