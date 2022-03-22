@@ -8,6 +8,21 @@ import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    h1 = TextStyle(
+        fontWeight = FontWeight.Black,
+        fontSize = 30.sp
+    ),
+
+    h2 = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 21.sp
+    ),
+
+    h3 = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp
+    ),
+
     body1 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,

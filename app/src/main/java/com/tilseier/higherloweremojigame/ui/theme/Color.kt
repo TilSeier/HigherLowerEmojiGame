@@ -10,6 +10,8 @@ val Teal200 = Color(0xFF03DAC5)
 
 val DarkHover = Color(0x8F000000)
 
+val ItemNumber = Color(0xFFFFFC4D)
+
 val ItemBackgroundPurple = Color(0xFF69369C)
 
 val Colors.AppThemeColor

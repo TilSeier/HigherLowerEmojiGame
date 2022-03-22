@@ -1,27 +1,36 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
+import com.tilseier.higherloweremojigame.common.AutoSizeText
 import com.tilseier.higherloweremojigame.model.Item
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
+import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 import kotlinx.coroutines.delay
@@ -127,9 +136,25 @@ private fun ItemWithEmoji(
                 .background(color = DarkHover),
             contentAlignment = Alignment.TopCenter
         ) {
-            Column(modifier = Modifier.padding(top = 20.dp)) {
-                Text(text = stringResource(id = R.string.item_name, item.name))
-                Text(text = stringResource(id = R.string.text_is_used))
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                AutoSizeText(
+                    text = stringResource(id = R.string.item_name, item.name),
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    color = Color.White,
+                    maxFontSize = 24.sp,
+                    fontWeight = FontWeight.Normal,
+                    textAlign = TextAlign.Center
+                )
+                Text(
+                    text = stringResource(id = R.string.text_is_used),
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    textAlign = TextAlign.Center
+                )
 
                 var moreClick by rememberSaveable { mutableStateOf(false) }
                 var lessClick by rememberSaveable { mutableStateOf(false) }
@@ -153,29 +178,50 @@ private fun ItemWithEmoji(
                 }
 
                 AnimatedVisibility(visible = isAnswerVisible || showAnswer) {
-                    AnswerNumber(number = item.number.formatNumberToString())
+                    AnswerNumber(
+                        modifier = Modifier.fillMaxWidth(),
+                        number = item.number.formatNumberToString()
+                    )
                 }
 
                 if (!isAnswerVisible && !showAnswer) {
-                    OutlinedButton(onClick = {
-                        if (!lessClick) {
-                            moreClick = true
-                        }
-                    }) {
-                        Text(text = stringResource(id = R.string.button_more))
+                    ItemButton(
+                        onClick = {
+                            if (!lessClick) {
+                                moreClick = true
+                            }
+                        },
+                        modifier = Modifier.padding()
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.button_more),
+                            fontSize = 18.sp
+                        )
                     }
-                    OutlinedButton(onClick = {
-                        if (!moreClick) {
-                            lessClick = true
-                        }
-                    }) {
-                        Text(text = stringResource(id = R.string.button_less))
+                    ItemButton(
+                        onClick = {
+                            if (!moreClick) {
+                                lessClick = true
+                            }
+                        },
+                        modifier = Modifier.padding()
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.button_less),
+                            fontSize = 18.sp
+                        )
                     }
-                    Text(
+
+                    AutoSizeText(
                         text = stringResource(
                             id = R.string.text_than_this_item,
                             compareItem?.name ?: ""
-                        )
+                        ),
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        color = Color.White,
+                        maxFontSize = 16.sp,
+                        fontWeight = FontWeight.Normal,
+                        textAlign = TextAlign.Center
                     )
                 }
             }
@@ -184,10 +230,46 @@ private fun ItemWithEmoji(
 }
 
 @Composable
-private fun AnswerNumber(number: String) {
-    Column {
-        Text(text = stringResource(id = R.string.formatted_number, number))
-        Text(text = stringResource(id = R.string.text_on_average_monthly))
+private fun AnswerNumber(
+    modifier: Modifier = Modifier,
+    number: String
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = stringResource(id = R.string.formatted_number, number),
+            color = ItemNumber,
+            fontSize = 35.sp
+        )
+        Text(
+            text = stringResource(id = R.string.text_on_average_monthly),
+            color = Color.White,
+            fontSize = 14.sp
+        )
+    }
+}
+
+@Composable
+private fun ItemButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable RowScope.() -> Unit
+) {
+    OutlinedButton(
+        onClick = onClick,
+        modifier = modifier,
+        shape = CircleShape,
+        border = BorderStroke((1.2).dp, Color.White),
+        elevation = ButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
+        contentPadding = PaddingValues(vertical = 6.dp, horizontal = 30.dp),
+        colors = ButtonDefaults.outlinedButtonColors(
+            backgroundColor = Color.Transparent,
+            contentColor = ItemNumber
+        )
+    ) {
+        content()
     }
 }
 
