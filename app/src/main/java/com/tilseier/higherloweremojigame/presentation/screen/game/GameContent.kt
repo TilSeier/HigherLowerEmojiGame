@@ -25,6 +25,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.AutoSizeText
+import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
+import com.tilseier.higherloweremojigame.extantions.formatNumberToString
 import com.tilseier.higherloweremojigame.model.Item
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
@@ -34,7 +36,6 @@ import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 import kotlinx.coroutines.delay
-import tilseier.tiktaktoktoe.extantions.formatNumberToString
 
 @OptIn(ExperimentalSnapperApi::class)
 @Composable
@@ -75,8 +76,11 @@ fun GameContent(
             lazyListState.animateScrollToItem(currentItemIndex)
         }
 
+        // TODO use userScrollEnabled when it's ready (instead of disabledVerticalPointerInputScroll)
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .disabledVerticalPointerInputScroll(), // TODO sometimes cause continue issue
             state = lazyListState,
             flingBehavior = rememberSnapperFlingBehavior(
                 lazyListState = lazyListState,

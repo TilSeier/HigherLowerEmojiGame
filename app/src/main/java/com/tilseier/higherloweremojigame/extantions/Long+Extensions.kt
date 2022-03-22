@@ -1,4 +1,4 @@
-package tilseier.tiktaktoktoe.extantions
+package com.tilseier.higherloweremojigame.extantions
 
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
