@@ -46,7 +46,7 @@ class GameViewModel : ViewModel() {
 
     fun onMoreClick() {
         if (_state.value.guessItem.number >= _state.value.compareItem.number) {
-            nextItem()
+            rightAnswer()
         } else {
             wrongAnswer()
         }
@@ -54,13 +54,25 @@ class GameViewModel : ViewModel() {
 
     fun onLessClick() {
         if (_state.value.guessItem.number <= _state.value.compareItem.number) {
-            nextItem()
+            rightAnswer()
         } else {
             wrongAnswer()
         }
     }
 
+    private fun rightAnswer() {
+        _state.update { model -> model.copy(score = _state.value.score + 1) }
+        nextItem()
+    }
+
     private fun wrongAnswer() {
+        val score = _state.value.score
+        val higherScore = _state.value.higherScore
+        val changeHigherScore = score > higherScore
+        if (changeHigherScore) {
+            AppPreferences.preferences()?.setHigherScore(score)
+            _state.update { model -> model.copy(higherScore = score) }
+        }
         _state.update { model -> model.copy(isGameOver = true) }
     }
 

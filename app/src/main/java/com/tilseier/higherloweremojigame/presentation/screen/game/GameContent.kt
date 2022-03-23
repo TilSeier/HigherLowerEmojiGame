@@ -96,7 +96,9 @@ fun GameContent(
             )
 
             StatusBar(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 3.dp, horizontal = 5.dp),
                 score = score,
                 higherScore = higherScore,
                 onMenuClick = {
@@ -114,23 +116,27 @@ fun StatusBar(
     higherScore: Int,
     onMenuClick: () -> Unit,
 ) {
-    Row(modifier = modifier) {
-        Row(
-            modifier = Modifier
-                .weight(1f)
-                .clickable { onMenuClick() },
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.face_with_tears_of_joy),
-                contentDescription = null,
-                modifier = Modifier.size(30.dp)
-            )
-            Text(
-                text = stringResource(id = R.string.button_main_menu),
-                fontSize = 16.sp,
-                color = Color.White
-            )
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(modifier = Modifier.weight(1f)) {
+            Row(
+                modifier = Modifier.clickable { onMenuClick() },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_home),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(24.dp)
+                )
+                Text(
+                    text = stringResource(id = R.string.button_main_menu),
+                    fontSize = 16.sp,
+                    color = Color.White
+                )
+            }
         }
         Text(
             text = stringResource(id = R.string.high_score, higherScore),
