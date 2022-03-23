@@ -2,7 +2,9 @@ package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.CircleShape
@@ -14,6 +16,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -47,6 +50,8 @@ fun GameContent(
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
     val isGameOver: Boolean = state.isGameOver
+    val higherScore: Int = state.higherScore
+    val score: Int = state.score
 
     // TODO can we use Flow here?
     // val currentItems: List<Item> by viewModel.state
@@ -76,35 +81,103 @@ fun GameContent(
             lazyListState.animateScrollToItem(currentItemIndex)
         }
 
-        // TODO use userScrollEnabled when it's ready (instead of disabledVerticalPointerInputScroll)
-        LazyColumn(
+        Box {
+            ItemsList(
+                items = currentItems,
+                currentItemIndex = currentItemIndex,
+                modifier = Modifier.fillMaxSize(),
+                state = lazyListState,
+                onMoreClick = {
+                    viewModel.onMoreClick()
+                },
+                onLessClick = {
+                    viewModel.onLessClick()
+                }
+            )
+
+            StatusBar(
+                modifier = Modifier.fillMaxWidth(),
+                score = score,
+                higherScore = higherScore,
+                onMenuClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
+    }
+}
+
+@Composable
+fun StatusBar(
+    modifier: Modifier = Modifier,
+    score: Int,
+    higherScore: Int,
+    onMenuClick: () -> Unit,
+) {
+    Row(modifier = modifier) {
+        Row(
             modifier = Modifier
-                .fillMaxSize()
-                .disabledVerticalPointerInputScroll(), // TODO sometimes cause continue issue
-            state = lazyListState,
-            flingBehavior = rememberSnapperFlingBehavior(
-                lazyListState = lazyListState,
-                snapOffsetForItem = SnapOffsets.Start
-            ),
+                .weight(1f)
+                .clickable { onMenuClick() },
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            itemsIndexed(currentItems) { index, item ->
-                val previousItemIndex = index - 1
-                val previousItem = currentItems.getOrNull(previousItemIndex)
-                ItemWithEmoji(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillParentMaxHeight(fraction = 0.5f),
-                    item = item,
-                    compareItem = previousItem,
-                    isAnswerVisible = index <= currentItemIndex,
-                    onMoreClick = {
-                        viewModel.onMoreClick()
-                    },
-                    onLessClick = {
-                        viewModel.onLessClick()
-                    }
-                )
-            }
+            Image(
+                painter = painterResource(id = R.drawable.face_with_tears_of_joy),
+                contentDescription = null,
+                modifier = Modifier.size(30.dp)
+            )
+            Text(
+                text = stringResource(id = R.string.button_main_menu),
+                fontSize = 16.sp,
+                color = Color.White
+            )
+        }
+        Text(
+            text = stringResource(id = R.string.high_score, higherScore),
+            fontSize = 16.sp,
+            color = Color.White
+        )
+        Spacer(modifier = Modifier.width(15.dp))
+        Text(
+            text = stringResource(id = R.string.score, score),
+            fontSize = 16.sp,
+            color = Color.White
+        )
+    }
+}
+
+@OptIn(ExperimentalSnapperApi::class)
+@Composable
+fun ItemsList(
+    items: List<Item>,
+    currentItemIndex: Int,
+    modifier: Modifier = Modifier,
+    state: LazyListState = rememberLazyListState(),
+    onMoreClick: () -> Unit,
+    onLessClick: () -> Unit,
+) {
+    // TODO use userScrollEnabled when it's ready (instead of disabledVerticalPointerInputScroll)
+    LazyColumn(
+        modifier = modifier.disabledVerticalPointerInputScroll(), // TODO sometimes cause continue issue
+        state = state,
+        flingBehavior = rememberSnapperFlingBehavior(
+            lazyListState = state,
+            snapOffsetForItem = SnapOffsets.Start
+        ),
+    ) {
+        itemsIndexed(items) { index, item ->
+            val previousItemIndex = index - 1
+            val previousItem = items.getOrNull(previousItemIndex)
+            ItemWithEmoji(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillParentMaxHeight(fraction = 0.5f),
+                item = item,
+                compareItem = previousItem,
+                isAnswerVisible = index <= currentItemIndex,
+                onMoreClick = onMoreClick,
+                onLessClick = onLessClick
+            )
         }
     }
 }
