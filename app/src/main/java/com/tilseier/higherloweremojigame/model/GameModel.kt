@@ -21,7 +21,7 @@ data class GameModel(
 
     // TODO generate items properly
     fun generateItems(): List<Item> {
-        return allItems // allItems.shuffled()
+        return allItems.shuffled()
     }
 
     val compareItem: Item
