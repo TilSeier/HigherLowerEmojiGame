@@ -7,46 +7,26 @@ import com.tilseier.higherloweremojigame.data.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.ItemsRepository
 import com.tilseier.higherloweremojigame.model.GameModel
 import com.tilseier.higherloweremojigame.util.AppPreferences
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 
 class GameViewModel : ViewModel() {
     private val itemsRepository: ItemsRepository = ItemsRepository(ItemsLocalDataSource())
 
-    // val allItems: List<Item> = itemsRepository.emojiItems
-    // val currentItems: MutableState<List<Item>> = mutableStateOf(listOf())
-    // val currentItemIndex: MutableState<Int> = mutableStateOf(0)
-    // val score: MutableState<Int> = mutableStateOf(0)
-    // val higherScore: MutableState<Int> = mutableStateOf(0)
-
-    // TODO maybe use this approach
-//    private val _state = mutableStateOf(GameModel(allItems = itemsRepository.emojiItems))
-//    val state: State<GameModel> = _state
-
-
-    val state: StateFlow<GameModel>
-        get() = _state
-
-    private val _state: MutableStateFlow<GameModel> by lazy {
-        MutableStateFlow(GameModel(allItems = itemsRepository.emojiItems))
-    }
+    private val _state = mutableStateOf(GameModel(allItems = itemsRepository.emojiItems))
+    val state: State<GameModel> = _state
 
     fun newGame() {
-        _state.update { model ->
-            model.copy(
-                currentItems = _state.value.generateItems(),
-                currentItemIndex = 0,
-                score = 0,
-                isGameOver = false,
-                higherScore = AppPreferences.preferences()?.higherScore()
-                    ?: AppPreferences.DEFAULT_HIGHER_SCORE,
-            )
-        }
+        _state.value = _state.value.copy(
+            currentItems = _state.value.generateItems(),
+            currentItemIndex = 0,
+            score = 0,
+            isGameOver = false,
+            higherScore = AppPreferences.preferences()?.higherScore()
+                ?: AppPreferences.DEFAULT_HIGHER_SCORE,
+        )
     }
 
     fun continueGame() {
-        _state.update { model -> model.copy(isGameOver = false) }
+        _state.value = _state.value.copy(isGameOver = false)
         nextItem()
     }
 
@@ -67,7 +47,7 @@ class GameViewModel : ViewModel() {
     }
 
     private fun rightAnswer() {
-        _state.update { model -> model.copy(score = _state.value.score + 1) }
+        _state.value = _state.value.copy(score = _state.value.score + 1)
         nextItem()
     }
 
@@ -77,9 +57,9 @@ class GameViewModel : ViewModel() {
         val changeHigherScore = score > higherScore
         if (changeHigherScore) {
             AppPreferences.preferences()?.setHigherScore(score)
-            _state.update { model -> model.copy(higherScore = score) }
+            _state.value = _state.value.copy(higherScore = score)
         }
-        _state.update { model -> model.copy(isGameOver = true) }
+        _state.value = _state.value.copy(isGameOver = true)
     }
 
     private fun nextItem() {
@@ -87,6 +67,6 @@ class GameViewModel : ViewModel() {
         if (_state.value.currentItems.size <= itemIndex) {
             return
         }
-        _state.update { model -> model.copy(currentItemIndex = itemIndex) }
+        _state.value = _state.value.copy(currentItemIndex = itemIndex)
     }
 }

@@ -46,7 +46,7 @@ fun GameContent(
     navController: NavHostController,
     viewModel: GameViewModel
 ) {
-    val state by viewModel.state.collectAsState()
+    val state = viewModel.state.value
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
     val isGameOver: Boolean = state.isGameOver
@@ -169,7 +169,7 @@ fun ItemsList(
         flingBehavior = rememberSnapperFlingBehavior(
             lazyListState = state,
             snapOffsetForItem = SnapOffsets.Start
-        ),
+        )
     ) {
         itemsIndexed(items) { index, item ->
             val previousItemIndex = index - 1
