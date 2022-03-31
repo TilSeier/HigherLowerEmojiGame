@@ -30,13 +30,11 @@ class AppPreferences private constructor(context: Context) {
 
         private var appPreferences: AppPreferences? = null
 
-        @JvmStatic
         fun initialize(application: Application) {
             if (appPreferences != null) return
             appPreferences = AppPreferences(application)
         }
 
-        @JvmStatic
         fun preferences(): AppPreferences? {
             return appPreferences
         }
