@@ -5,6 +5,7 @@
     <string name="formatted_number">"%1$s"</string>
     <string name="high_score">High Score: %1$d</string>
     <string name="score">Score: %1$d</string>
+    <string name="vs">vs</string>
 
     <string name="text.is_used">is used</string>
     <string name="text.on_average_monthly">average monthly</string>

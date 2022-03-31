@@ -16,7 +16,7 @@ data class GameState(
 
     // TODO generate items properly
     fun generateItems(): List<Item> {
-        return allItems.shuffled()
+        return allItems // .shuffled()
     }
 
     val compareItem: Item

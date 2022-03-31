@@ -12,12 +12,14 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Divider
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -40,6 +42,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.components.Bac
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
+import com.tilseier.higherloweremojigame.ui.theme.Typography
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
@@ -104,6 +107,44 @@ fun GameContent(
                 onMenuClick = {
                     navController.popBackStack()
                 }
+            )
+
+            VsDivider(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.Center)
+            )
+        }
+    }
+}
+
+@Composable
+fun VsDivider(
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.Center
+    ) {
+        Divider(
+            modifier = Modifier.align(Alignment.Center),
+            color = Color.White,
+            thickness = 3.dp
+        )
+        Box {
+            Box(
+                modifier = Modifier
+                    .size(30.dp)
+                    .rotate(45f)
+                    .background(color = Color.White)
+            )
+            Text(
+                text = stringResource(id = R.string.vs),
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(bottom = 2.dp),
+                style = Typography.h3.copy(fontSize = 18.sp),
+                textAlign = TextAlign.Center
             )
         }
     }

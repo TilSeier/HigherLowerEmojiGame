@@ -13,7 +13,6 @@ fun GameScreen(
     navController: NavHostController,
     viewModel: GameViewModel
 ) {
-    // TODO observe game items
     Scaffold(
         contentColor = MaterialTheme.colors.AppContentColor,
         backgroundColor = MaterialTheme.colors.AppThemeColor,
