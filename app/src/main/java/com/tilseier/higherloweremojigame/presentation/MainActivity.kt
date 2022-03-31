@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame
+package com.tilseier.higherloweremojigame.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
