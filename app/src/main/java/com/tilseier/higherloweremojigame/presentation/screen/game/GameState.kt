@@ -4,12 +4,14 @@ import com.tilseier.higherloweremojigame.domain.model.Item
 
 // TODO remove this model if it doesn't wor properly
 data class GameState(
-    val allItems: List<Item>,
+    val allItems: List<Item> = emptyList(),
     val currentItems: List<Item> = listOf(),
     val currentItemIndex: Int = 0,
     val score: Int = 0,
     val higherScore: Int = 0,
     val isGameOver: Boolean = false,
+    val isLoading: Boolean = false,
+    val error: String = ""
 ) {
 
     // TODO generate items properly

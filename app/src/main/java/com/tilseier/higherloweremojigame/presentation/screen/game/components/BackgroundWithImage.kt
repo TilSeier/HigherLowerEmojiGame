@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame.presentation.screen.game
+package com.tilseier.higherloweremojigame.presentation.screen.game.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

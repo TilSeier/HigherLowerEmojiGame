@@ -14,8 +14,8 @@ class GetItemsUseCase constructor(
     operator fun invoke(): Flow<Resource<List<Item>>> = flow {
         try {
             emit(Resource.Loading<List<Item>>())
-            val coins = repository.getItems()
-            emit(Resource.Success<List<Item>>(coins))
+            val items = repository.getItems()
+            emit(Resource.Success<List<Item>>(items))
         } catch(e: HttpException) {
             emit(Resource.Error<List<Item>>(e.localizedMessage ?: "An unexpected error occured"))
         } catch(e: IOException) {

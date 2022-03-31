@@ -1,7 +1,6 @@
 package com.tilseier.higherloweremojigame.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -14,7 +13,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
 import com.tilseier.higherloweremojigame.common.Constants
 
 @Composable
-fun NavGraph(navController: NavHostController, viewModel: GameViewModel = viewModel()) {
+fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
     NavHost(
         navController = navController,
         startDestination = Screen.Menu.route

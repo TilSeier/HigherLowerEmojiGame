@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame.data
+package com.tilseier.higherloweremojigame.data.local
 
 import androidx.compose.ui.graphics.Color
 import com.tilseier.higherloweremojigame.extantions.*

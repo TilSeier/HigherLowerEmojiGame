@@ -6,7 +6,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.OutlinedButton
@@ -23,18 +26,21 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
-import com.tilseier.higherloweremojigame.common.AutoSizeText
+import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
-import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
+import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
+import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
-import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
+import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 import kotlinx.coroutines.delay
@@ -356,7 +362,7 @@ private fun GameContentPreview() {
     HigherLowerEmojiGameTheme {
         GameContent(
             navController = rememberNavController(),
-            viewModel = GameViewModel()
+            viewModel = viewModel()
         )
     }
 }

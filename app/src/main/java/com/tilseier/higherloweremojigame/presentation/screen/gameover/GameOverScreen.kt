@@ -10,7 +10,7 @@ import com.tilseier.higherloweremojigame.ui.theme.AppContentColor
 import com.tilseier.higherloweremojigame.ui.theme.AppThemeColor
 
 @Composable
-fun GameOverScreen(navController: NavHostController, viewModel: GameViewModel = viewModel()) {
+fun GameOverScreen(navController: NavHostController, viewModel: GameViewModel) {
     Scaffold(
         contentColor = MaterialTheme.colors.AppContentColor,
         backgroundColor = MaterialTheme.colors.AppThemeColor,

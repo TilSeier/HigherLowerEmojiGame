@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame.common
+package com.tilseier.higherloweremojigame.presentation.components
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.*

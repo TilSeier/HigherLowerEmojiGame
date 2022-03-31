@@ -3,15 +3,46 @@ package com.tilseier.higherloweremojigame.presentation.screen.game
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.tilseier.higherloweremojigame.data.ItemsLocalDataSource
-import com.tilseier.higherloweremojigame.data.ItemsRepository
+import androidx.lifecycle.viewModelScope
+import com.plcoding.cryptocurrencyappyt.common.Resource
+import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
 import com.tilseier.higherloweremojigame.util.AppPreferences
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
-class GameViewModel : ViewModel() {
-    private val itemsRepository: ItemsRepository = ItemsRepository(ItemsLocalDataSource())
-
-    private val _state = mutableStateOf(GameState(allItems = itemsRepository.emojiItems))
+class GameViewModel constructor(
+    private val getItemsUseCase: GetItemsUseCase,
+) : ViewModel() {
+    private val _state = mutableStateOf(GameState())
     val state: State<GameState> = _state
+
+    init {
+        loadItems()
+    }
+
+    private fun loadItems() {
+        getItemsUseCase().onEach { result ->
+            when (result) {
+                is Resource.Success -> {
+                    _state.value = _state.value.copy(
+                        allItems = result.data ?: emptyList(),
+                        isLoading = false,
+                        error = ""
+                    )
+                }
+                // this part of code is not used so far
+                is Resource.Error -> {
+                    _state.value = _state.value.copy(
+                        error = result.message ?: "An unexpected error occured",
+                        isLoading = false
+                    )
+                }
+                is Resource.Loading -> {
+                    _state.value = _state.value.copy(isLoading = true)
+                }
+            }
+        }.launchIn(viewModelScope)
+    }
 
     fun newGame() {
         _state.value = _state.value.copy(
@@ -21,6 +52,8 @@ class GameViewModel : ViewModel() {
             isGameOver = false,
             higherScore = AppPreferences.preferences()?.higherScore()
                 ?: AppPreferences.DEFAULT_HIGHER_SCORE,
+            isLoading = false,
+            error = ""
         )
     }
 
