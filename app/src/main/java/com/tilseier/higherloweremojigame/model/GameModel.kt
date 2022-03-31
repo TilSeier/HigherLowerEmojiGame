@@ -8,15 +8,6 @@ data class GameModel(
     val score: Int = 0,
     val higherScore: Int = 0,
     val isGameOver: Boolean = false,
-
-//    val categories: Set<LifeGroupsCategory>? = null,
-//    val selectedCampusIndex: Int = 0,
-//    val kidsWelcome: Boolean? = null,
-//    val age: Int? = null,
-//    val selectedCountryCode: String? = null,
-//    val showCountries: Boolean = false,
-//    val campusMap: Map<String, String> = mapOf("" to ""),
-//    val countryMap: Map<String, String> = mapOf("" to ""),
 ) {
 
     // TODO generate items properly

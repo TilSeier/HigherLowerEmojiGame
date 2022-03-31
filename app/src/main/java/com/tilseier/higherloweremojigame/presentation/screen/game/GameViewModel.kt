@@ -1,5 +1,7 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.tilseier.higherloweremojigame.data.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.ItemsRepository
@@ -18,7 +20,11 @@ class GameViewModel : ViewModel() {
     // val score: MutableState<Int> = mutableStateOf(0)
     // val higherScore: MutableState<Int> = mutableStateOf(0)
 
-    // TODO maybe remove one model
+    // TODO maybe use this approach
+//    private val _state = mutableStateOf(GameModel(allItems = itemsRepository.emojiItems))
+//    val state: State<GameModel> = _state
+
+
     val state: StateFlow<GameModel>
         get() = _state
 

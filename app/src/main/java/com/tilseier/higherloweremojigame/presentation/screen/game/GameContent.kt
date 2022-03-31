@@ -362,7 +362,7 @@ private fun GameContentPreview() {
     HigherLowerEmojiGameTheme {
         GameContent(
             navController = rememberNavController(),
-            viewModel = viewModel()
+            viewModel = GameViewModel()
         )
     }
 }
