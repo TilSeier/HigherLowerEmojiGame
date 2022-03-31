@@ -1,7 +1,9 @@
-package com.tilseier.higherloweremojigame.model
+package com.tilseier.higherloweremojigame.presentation.screen.game
+
+import com.tilseier.higherloweremojigame.domain.model.Item
 
 // TODO remove this model if it doesn't wor properly
-data class GameModel(
+data class GameState(
     val allItems: List<Item>,
     val currentItems: List<Item> = listOf(),
     val currentItemIndex: Int = 0,

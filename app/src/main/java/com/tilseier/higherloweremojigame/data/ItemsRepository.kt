@@ -1,6 +1,6 @@
 package com.tilseier.higherloweremojigame.data
 
-import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.domain.model.Item
 
 class ItemsRepository(
     itemsLocalDataSource: ItemsLocalDataSource

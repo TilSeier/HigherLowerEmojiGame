@@ -1,6 +1,6 @@
-package com.tilseier.higherloweremojigame.util
+package com.tilseier.higherloweremojigame.common
 
-object Constant {
+object Constants {
     const val ARGUMENT_KEY_CATEGORY = "category"
 
     const val CATEGORY_EMOJI = "emoji"

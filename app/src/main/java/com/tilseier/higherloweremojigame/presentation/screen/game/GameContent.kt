@@ -23,14 +23,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.AutoSizeText
 import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
-import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
@@ -52,11 +51,6 @@ fun GameContent(
     val isGameOver: Boolean = state.isGameOver
     val higherScore: Int = state.higherScore
     val score: Int = state.score
-
-    // TODO can we use Flow here?
-    // val currentItems: List<Item> by viewModel.state
-    //    .map { it.currentItems }
-    //    .collectAsState(initial = listOf())
 
     LaunchedEffect(key1 = isGameOver) {
         if (isGameOver) {

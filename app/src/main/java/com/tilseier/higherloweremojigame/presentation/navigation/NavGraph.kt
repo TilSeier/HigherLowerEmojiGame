@@ -11,7 +11,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
-import com.tilseier.higherloweremojigame.util.Constant
+import com.tilseier.higherloweremojigame.common.Constants
 
 @Composable
 fun NavGraph(navController: NavHostController, viewModel: GameViewModel = viewModel()) {
@@ -24,12 +24,12 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel = viewMo
         }
         composable(
             route = Screen.Game.route,
-            arguments = listOf(navArgument(Constant.ARGUMENT_KEY_CATEGORY) {
+            arguments = listOf(navArgument(Constants.ARGUMENT_KEY_CATEGORY) {
                 type = NavType.StringType
-                defaultValue = Constant.CATEGORY_EMOJI
+                defaultValue = Constants.CATEGORY_EMOJI
             })
         ) { backStackEntry ->
-            backStackEntry.arguments?.getString(Constant.ARGUMENT_KEY_CATEGORY)
+            backStackEntry.arguments?.getString(Constants.ARGUMENT_KEY_CATEGORY)
                 ?.let { GameScreen(category = it, navController = navController, viewModel = viewModel) }
         }
         composable(route = Screen.GameOver.route) {

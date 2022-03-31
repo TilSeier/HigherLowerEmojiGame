@@ -2,7 +2,7 @@ package com.tilseier.higherloweremojigame.data
 
 import androidx.compose.ui.graphics.Color
 import com.tilseier.higherloweremojigame.extantions.*
-import com.tilseier.higherloweremojigame.model.Item
+import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
 
 /**

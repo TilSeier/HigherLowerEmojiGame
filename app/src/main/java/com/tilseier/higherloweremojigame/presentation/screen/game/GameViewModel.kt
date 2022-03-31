@@ -5,14 +5,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.tilseier.higherloweremojigame.data.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.ItemsRepository
-import com.tilseier.higherloweremojigame.model.GameModel
 import com.tilseier.higherloweremojigame.util.AppPreferences
 
 class GameViewModel : ViewModel() {
     private val itemsRepository: ItemsRepository = ItemsRepository(ItemsLocalDataSource())
 
-    private val _state = mutableStateOf(GameModel(allItems = itemsRepository.emojiItems))
-    val state: State<GameModel> = _state
+    private val _state = mutableStateOf(GameState(allItems = itemsRepository.emojiItems))
+    val state: State<GameState> = _state
 
     fun newGame() {
         _state.value = _state.value.copy(
