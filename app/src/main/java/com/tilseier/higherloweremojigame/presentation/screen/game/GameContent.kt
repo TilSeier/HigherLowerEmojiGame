@@ -43,6 +43,7 @@ import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
 import com.tilseier.higherloweremojigame.ui.theme.Typography
+import com.tilseier.higherloweremojigame.util.ColorUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
@@ -245,13 +246,13 @@ private fun ItemWithEmoji(
             BackgroundWithTextSign(
                 modifier = Modifier.fillMaxSize(),
                 sign = sign,
-                color = item.backgroundColor
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length)
             )
         } ?: run {
             BackgroundWithImageURL(
                 modifier = Modifier.fillMaxSize(),
                 imageURL = item.imageUrl,
-                color = item.backgroundColor
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length)
             )
         }
         Box(
