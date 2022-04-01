@@ -33,12 +33,15 @@ class GameViewModel constructor(
                 // this part of code is not used so far because we use only local data
                 is Resource.Error -> {
                     _state.value = _state.value.copy(
-                        error = result.message ?: "An unexpected error occured",
-                        isLoading = false
+                        isLoading = false,
+                        error = result.message ?: "An unexpected error occured"
                     )
                 }
                 is Resource.Loading -> {
-                    _state.value = _state.value.copy(isLoading = true)
+                    _state.value = _state.value.copy(
+                        isLoading = true,
+                        error = ""
+                    )
                 }
             }
         }.launchIn(viewModelScope)
