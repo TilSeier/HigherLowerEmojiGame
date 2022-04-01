@@ -30,7 +30,7 @@ class GameViewModel constructor(
                         error = ""
                     )
                 }
-                // this part of code is not used so far
+                // this part of code is not used so far because we use only local data
                 is Resource.Error -> {
                     _state.value = _state.value.copy(
                         error = result.message ?: "An unexpected error occured",
@@ -96,6 +96,11 @@ class GameViewModel constructor(
 
     private fun nextItem() {
         val itemIndex = _state.value.currentItemIndex + 1
+        if (_state.value.currentItems.size - 2 <= itemIndex) {
+            _state.value = _state.value.copy(
+                currentItems = _state.value.currentItems + _state.value.generateItems()
+            )
+        }
         if (_state.value.currentItems.size <= itemIndex) {
             return
         }
