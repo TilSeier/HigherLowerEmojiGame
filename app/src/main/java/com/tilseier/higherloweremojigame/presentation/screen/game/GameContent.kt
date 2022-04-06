@@ -6,10 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Divider
@@ -33,12 +30,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.extantions.disabledHorizontalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
+import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
 import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
+import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
 import com.tilseier.higherloweremojigame.ui.theme.DarkHover
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
@@ -110,17 +110,26 @@ fun GameContent(
                 }
             )
 
-            VsDivider(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.Center)
-            )
+            val windowInfo = rememberWindowInfo()
+            if (windowInfo.isCompactScreenWidth) {
+                HorizontalVsDivider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.Center)
+                )
+            } else {
+                VerticalVsDivider(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .align(Alignment.Center)
+                )
+            }
         }
     }
 }
 
 @Composable
-fun VsDivider(
+fun HorizontalVsDivider(
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -131,6 +140,40 @@ fun VsDivider(
             modifier = Modifier.align(Alignment.Center),
             color = Color.White,
             thickness = 3.dp
+        )
+        Box {
+            Box(
+                modifier = Modifier
+                    .size(30.dp)
+                    .rotate(45f)
+                    .background(color = Color.White)
+            )
+            Text(
+                text = stringResource(id = R.string.vs),
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .padding(bottom = 2.dp),
+                style = Typography.h3.copy(fontSize = 18.sp),
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
+
+@Composable
+fun VerticalVsDivider(
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier,
+        contentAlignment = Alignment.Center
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(3.dp)
+                .background(Color.White)
+                .align(Alignment.Center),
         )
         Box {
             Box(
@@ -204,9 +247,16 @@ fun ItemsList(
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
 ) {
+    val windowInfo = rememberWindowInfo()
     // TODO use userScrollEnabled when it's ready (instead of disabledVerticalPointerInputScroll)
-    LazyColumn(
-        modifier = modifier.disabledVerticalPointerInputScroll(), // TODO sometimes cause continue issue
+    val disablePointerInputScrollModifier = if (windowInfo.isCompactScreenWidth) {
+        modifier.disabledVerticalPointerInputScroll() // TODO sometimes cause continue issue
+    } else {
+        modifier.disabledHorizontalPointerInputScroll() // TODO sometimes cause continue issue
+    }
+    LazyColumnOrRow(
+        useLazyColumn = windowInfo.isCompactScreenWidth,
+        modifier = disablePointerInputScrollModifier,
         state = state,
         flingBehavior = rememberSnapperFlingBehavior(
             lazyListState = state,
@@ -216,10 +266,18 @@ fun ItemsList(
         itemsIndexed(items) { index, item ->
             val previousItemIndex = index - 1
             val previousItem = items.getOrNull(previousItemIndex)
-            ItemWithEmoji(
-                modifier = Modifier
+
+            val itemModifier = if (windowInfo.isCompactScreenWidth) {
+                Modifier
                     .fillMaxWidth()
-                    .fillParentMaxHeight(fraction = 0.5f),
+                    .fillParentMaxHeight(fraction = 0.5f)
+            } else {
+                Modifier
+                    .fillMaxHeight()
+                    .fillParentMaxWidth(fraction = 0.5f)
+            }
+            ItemWithEmoji(
+                modifier = itemModifier,
                 item = item,
                 compareItem = previousItem,
                 isAnswerVisible = index <= currentItemIndex,
