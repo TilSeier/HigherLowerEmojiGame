@@ -39,10 +39,7 @@ import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
-import com.tilseier.higherloweremojigame.ui.theme.DarkHover
-import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
-import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
-import com.tilseier.higherloweremojigame.ui.theme.Typography
+import com.tilseier.higherloweremojigame.ui.theme.*
 import com.tilseier.higherloweremojigame.util.ColorUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
@@ -304,7 +301,8 @@ private fun ItemWithEmoji(
             BackgroundWithTextSign(
                 modifier = Modifier.fillMaxSize(),
                 sign = sign,
-                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length)
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length),
+                fontFamily = iOS11EmojiFont
             )
         } ?: run {
             BackgroundWithImageURL(

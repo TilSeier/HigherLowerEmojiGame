@@ -11,17 +11,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
+import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
 
 @Composable
 fun BackgroundWithTextSign(
     modifier: Modifier = Modifier,
     sign: String,
     color: Color,
+    fontFamily: FontFamily? = null
 ) {
     ConstraintLayout(
         modifier = modifier
@@ -57,7 +60,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (126 * fontSizeScale).sp
+                fontSize = (126 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -73,7 +77,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (19 * fontSizeScale).sp
+                fontSize = (19 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -88,7 +93,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (37 * fontSizeScale).sp
+                fontSize = (37 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -105,7 +111,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (27 * fontSizeScale).sp
+                fontSize = (27 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -121,7 +128,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (31 * fontSizeScale).sp
+                fontSize = (31 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -137,7 +145,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (20 * fontSizeScale).sp
+                fontSize = (20 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -153,7 +162,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (33 * fontSizeScale).sp
+                fontSize = (33 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -168,7 +178,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (32 * fontSizeScale).sp
+                fontSize = (32 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -183,7 +194,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (44 * fontSizeScale).sp
+                fontSize = (44 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -200,7 +212,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (24 * fontSizeScale).sp
+                fontSize = (24 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -216,7 +229,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (35 * fontSizeScale).sp
+                fontSize = (35 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -232,7 +246,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (20 * fontSizeScale).sp
+                fontSize = (20 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -248,7 +263,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (19 * fontSizeScale).sp
+                fontSize = (19 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -263,7 +279,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (37 * fontSizeScale).sp
+                fontSize = (37 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -280,7 +297,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (31 * fontSizeScale).sp
+                fontSize = (31 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -296,7 +314,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (24 * fontSizeScale).sp
+                fontSize = (24 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -312,7 +331,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (33 * fontSizeScale).sp
+                fontSize = (33 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -327,7 +347,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (44 * fontSizeScale).sp
+                fontSize = (44 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -344,7 +365,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (19 * fontSizeScale).sp
+                fontSize = (19 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
 
@@ -360,7 +382,8 @@ fun BackgroundWithTextSign(
         ) {
             Text(
                 text = sign,
-                fontSize = (33 * fontSizeScale).sp
+                fontSize = (33 * fontSizeScale).sp,
+                fontFamily = fontFamily
             )
         }
     }
@@ -372,6 +395,7 @@ private fun BackgroundWithTextSignPreview() {
     BackgroundWithTextSign(
         modifier = Modifier.fillMaxSize(),
         sign = "\uD83D\uDE02",
-        color = ItemBackgroundPurple
+        color = ItemBackgroundPurple,
+        fontFamily = iOS11EmojiFont
     )
 }
