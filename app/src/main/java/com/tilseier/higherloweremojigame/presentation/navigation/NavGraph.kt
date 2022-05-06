@@ -11,6 +11,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
 import com.tilseier.higherloweremojigame.common.Constants
+import com.tilseier.higherloweremojigame.common.Difficulty
 
 @Composable
 fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
@@ -23,13 +24,27 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
         }
         composable(
             route = Screen.Game.route,
-            arguments = listOf(navArgument(Constants.ARGUMENT_KEY_CATEGORY) {
-                type = NavType.StringType
-                defaultValue = Constants.CATEGORY_EMOJI
-            })
+            arguments = listOf(
+                navArgument(Constants.ARGUMENT_KEY_CATEGORY) {
+                    type = NavType.StringType
+                    defaultValue = Constants.CATEGORY_EMOJI
+                },
+                navArgument(Constants.ARGUMENT_KEY_DIFFICULTY) {
+                    type = NavType.StringType
+                    defaultValue = Difficulty.EASY.name
+                },
+            )
         ) { backStackEntry ->
-            backStackEntry.arguments?.getString(Constants.ARGUMENT_KEY_CATEGORY)
-                ?.let { GameScreen(category = it, navController = navController, viewModel = viewModel) }
+            val arguments = backStackEntry.arguments ?: return@composable
+            val category = arguments.getString(Constants.ARGUMENT_KEY_CATEGORY) ?: return@composable
+            val difficulty = arguments.getString(Constants.ARGUMENT_KEY_DIFFICULTY) ?: return@composable
+
+            GameScreen(
+                category = category,
+                difficulty = difficulty,
+                navController = navController,
+                viewModel = viewModel
+            )
         }
         composable(route = Screen.GameOver.route) {
             GameOverScreen(navController = navController, viewModel = viewModel)

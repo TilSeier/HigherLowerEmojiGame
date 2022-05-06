@@ -9,6 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
@@ -20,8 +21,8 @@ fun GameOverContent(
 ) {
     Column {
         Text(text = "NEW GAME", modifier = Modifier.clickable {
-            viewModel.newGame()
-            navController.navigate(Screen.Game.route) {
+            viewModel.newGame(viewModel.state.value.difficulty)
+            navController.navigate(Screen.Game.pass(Constants.CATEGORY_EMOJI, viewModel.state.value.difficulty.name)) {
                 popUpTo(Screen.Menu.route)
             }
         })

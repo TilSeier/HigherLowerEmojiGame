@@ -10,6 +10,7 @@ import com.tilseier.higherloweremojigame.ui.theme.AppThemeColor
 @Composable
 fun GameScreen(
     category: String,
+    difficulty: String,
     navController: NavHostController,
     viewModel: GameViewModel
 ) {

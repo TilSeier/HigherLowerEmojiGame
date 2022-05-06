@@ -64,9 +64,8 @@ fun MenuContent(
             MenuDifficultyItem(
                 menuDifficulty = item,
                 onClick = {
-                    viewModel.newGame()
-                    // TODO use difficulties
-                    navController.navigate(route = Screen.Game.passCategory(Constants.CATEGORY_EMOJI))
+                    viewModel.newGame(it.difficulty)
+                    navController.navigate(route = Screen.Game.pass(Constants.CATEGORY_EMOJI, it.difficulty.name))
                 }
             )
             if (menuDifficulties.size > index + 1) {
@@ -108,7 +107,7 @@ fun MenuDifficultyItem(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = stringResource(id = R.string.button_play),
-                        fontSize = 10.sp,
+                        fontSize = 12.sp,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
                     )

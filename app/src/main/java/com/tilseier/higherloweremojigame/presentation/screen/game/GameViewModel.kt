@@ -5,6 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.plcoding.cryptocurrencyappyt.common.Resource
+import com.tilseier.higherloweremojigame.common.Difficulty
+import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
 import com.tilseier.higherloweremojigame.util.AppPreferences
 import kotlinx.coroutines.flow.launchIn
@@ -25,7 +27,7 @@ class GameViewModel constructor(
             when (result) {
                 is Resource.Success -> {
                     _state.value = _state.value.copy(
-                        allItems = result.data ?: emptyList(),
+                        allItems = result.data ?: EmojiItems(emptyList(), emptyList(), emptyList()),
                         isLoading = false,
                         error = ""
                     )
@@ -47,15 +49,16 @@ class GameViewModel constructor(
         }.launchIn(viewModelScope)
     }
 
-    fun newGame() {
+    fun newGame(difficulty: Difficulty) {
         _state.value = _state.value.copy(
-            currentItems = _state.value.generateItems(),
+            currentItems = _state.value.generateItems(difficulty),
             currentItemIndex = 0,
             score = 0,
             isGameOver = false,
-            higherScore = AppPreferences.preferences()?.higherScore()
+            higherScore = AppPreferences.preferences()?.higherScore(difficulty)
                 ?: AppPreferences.DEFAULT_HIGHER_SCORE,
             isLoading = false,
+            difficulty = difficulty,
             error = ""
         )
     }
@@ -91,7 +94,7 @@ class GameViewModel constructor(
         val higherScore = _state.value.higherScore
         val changeHigherScore = score > higherScore
         if (changeHigherScore) {
-            AppPreferences.preferences()?.setHigherScore(score)
+            AppPreferences.preferences()?.setHigherScore(score, _state.value.difficulty)
             _state.value = _state.value.copy(higherScore = score)
         }
         _state.value = _state.value.copy(isGameOver = true)
@@ -101,7 +104,7 @@ class GameViewModel constructor(
         val itemIndex = _state.value.currentItemIndex + 1
         if (_state.value.currentItems.size - 2 <= itemIndex) {
             _state.value = _state.value.copy(
-                currentItems = _state.value.currentItems + _state.value.generateItems()
+                currentItems = _state.value.currentItems + _state.value.generateItems(_state.value.difficulty)
             )
         }
         if (_state.value.currentItems.size <= itemIndex) {

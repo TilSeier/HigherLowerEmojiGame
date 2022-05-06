@@ -1,7 +1,7 @@
 package com.tilseier.higherloweremojigame.domain.repository
 
-import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 
 interface ItemRepository {
-    suspend fun getItems(): List<Item>
+    suspend fun getEmojiItems(): EmojiItems
 }

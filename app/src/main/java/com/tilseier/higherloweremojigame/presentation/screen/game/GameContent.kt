@@ -151,7 +151,8 @@ fun HorizontalVsDivider(
                     .align(Alignment.Center)
                     .padding(bottom = 2.dp),
                 style = Typography.h3.copy(fontSize = 18.sp),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = Color.Black
             )
         }
     }
@@ -185,7 +186,8 @@ fun VerticalVsDivider(
                     .align(Alignment.Center)
                     .padding(bottom = 2.dp),
                 style = Typography.h3.copy(fontSize = 18.sp),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = Color.Black
             )
         }
     }
