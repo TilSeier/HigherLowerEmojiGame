@@ -14,4 +14,9 @@
     <string name="button.more">More</string>
     <string name="button.less">Less</string>
     <string name="button.main_menu">Main Menu</string>
+    <string name="button.play">Play</string>
+
+    <string name="menu.difficulty.easy">Easy</string>
+    <string name="menu.difficulty.medium">Medium</string>
+    <string name="menu.difficulty.hard">Hard</string>
 </resources>

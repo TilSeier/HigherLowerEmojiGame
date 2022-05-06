@@ -12,6 +12,8 @@ val DarkHover = Color(0x66000000)
 
 val ItemNumber = Color(0xFFFFFC4D)
 
+val Background = Color(0xFF2F0655)
+
 val ItemBackgroundPurple = Color(0xFF69369C)
 val ItemBackgroundLightPurple = Color(0xFF8C47E3)
 val ItemBackgroundRed = Color(0xFFFF2052)
@@ -20,6 +22,16 @@ val ItemBackgroundLightGreen = Color(0xFF37D877)
 val ItemBackgroundDarkOrange = Color(0xFFE34747)
 val ItemBackgroundOrange = Color(0xFFFF9534)
 val ItemBackgroundTurquoise = Color(0xFF3AF6D4)
+
+val MenuDifficultyEasy = Color(0xFFF9D423)
+val MenuDifficultyEasyBorder = Color(0xFFBB9C09)
+val MenuDifficultyEasyButton = Color(0xFFE7C007)
+val MenuDifficultyMedium = Color(0xFFFC913A)
+val MenuDifficultyMediumBorder = Color(0xFFD77424)
+val MenuDifficultyMediumButton = Color(0xFFF48225)
+val MenuDifficultyHard = Color(0xFFFF4E50)
+val MenuDifficultyHardBorder = Color(0xFFD7393B)
+val MenuDifficultyHardButton = Color(0xFFFF3C3E)
 
 val Colors.AppThemeColor
     get() = if (isLight) Color.White else Color.Black

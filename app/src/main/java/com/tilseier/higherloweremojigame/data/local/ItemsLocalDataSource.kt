@@ -636,7 +636,7 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(126309067),
             url = "https://emojipedia.org/backhand-index-pointing-down/"
         ),
-        Item(
+        Item( // TODO check the number
             id = 82,
             name = "Tired Face",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/tired-face_1f62b.png",

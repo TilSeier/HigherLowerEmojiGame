@@ -21,7 +21,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled false // TODO true https://youtu.be/epkAPnF5qrk?t=186
+            // shrinkResources true // TODO true https://youtu.be/epkAPnF5qrk?t=186
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
