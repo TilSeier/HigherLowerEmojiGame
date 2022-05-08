@@ -20,6 +20,8 @@
     <string name="button.play">Play</string>
     <string name="button.ok">Ok</string>
     <string name="button.cancel">Cancel</string>
+    <string name="button.restart">RESTART</string>
+    <string name="button.continue">CONTINUE?</string>
 
     <string name="menu.difficulty.easy">Easy</string>
     <string name="menu.difficulty.medium">Medium</string>

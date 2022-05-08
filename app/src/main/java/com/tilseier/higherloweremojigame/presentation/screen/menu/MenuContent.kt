@@ -85,7 +85,6 @@ fun MenuDifficultyItem(
         modifier = modifier
             .fillMaxWidth()
             .height(100.dp)
-            .clickable { onClick(menuDifficulty) }
     ) {
         Box(
             modifier = Modifier
@@ -94,7 +93,8 @@ fun MenuDifficultyItem(
                 .background(menuDifficulty.borderColor)
                 .padding(bottom = 3.dp)
                 .clip(RoundedCornerShape(5.dp))
-                .background(menuDifficulty.color),
+                .background(menuDifficulty.color)
+                .clickable { onClick(menuDifficulty) },
         ) {
             // TODO emoji background
             RoundButton(
