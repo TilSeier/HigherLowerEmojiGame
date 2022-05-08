@@ -12,6 +12,7 @@ val DarkHover = Color(0x66000000)
 
 val ItemNumber = Color(0xFFFFFC4D)
 
+val StatusBar = Color(0xFF250544)
 val Background = Color(0xFF2F0655)
 
 val ItemBackgroundPurple = Color(0xFF69369C)
