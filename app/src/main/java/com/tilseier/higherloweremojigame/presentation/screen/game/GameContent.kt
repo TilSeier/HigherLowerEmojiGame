@@ -1,12 +1,15 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Divider
@@ -46,7 +49,6 @@ import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
 import kotlinx.coroutines.delay
 
-@OptIn(ExperimentalSnapperApi::class)
 @Composable
 fun GameContent(
     navController: NavHostController,
@@ -59,6 +61,11 @@ fun GameContent(
     val higherScore: Int = state.higherScore
     val score: Int = state.score
 
+    val onBackClick: () -> Unit = {
+        navController.navigate(route = Screen.ExitDialog.route)
+    }
+
+    BackHandler(onBack = onBackClick)
     LaunchedEffect(key1 = isGameOver) {
         if (isGameOver) {
             // TODO animate wrong answer
@@ -102,9 +109,7 @@ fun GameContent(
                     .padding(vertical = 3.dp, horizontal = 5.dp),
                 score = score,
                 higherScore = higherScore,
-                onMenuClick = {
-                    navController.popBackStack()
-                }
+                onMenuClick = onBackClick
             )
 
             val windowInfo = rememberWindowInfo()

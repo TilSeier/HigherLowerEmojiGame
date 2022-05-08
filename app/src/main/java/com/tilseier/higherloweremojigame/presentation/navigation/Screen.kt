@@ -9,4 +9,5 @@ sealed class Screen(val route: String) {
     object GameOver : Screen("game_over_screen/{score}") {
         fun passScore(score: Int) = "game_over_screen/$score"
     }
+    object ExitDialog : Screen("exit_dialog")
 }

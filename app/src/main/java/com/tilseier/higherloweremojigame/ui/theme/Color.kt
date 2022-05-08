@@ -33,6 +33,9 @@ val MenuDifficultyHard = Color(0xFFFF4E50)
 val MenuDifficultyHardBorder = Color(0xFFD7393B)
 val MenuDifficultyHardButton = Color(0xFFFF3C3E)
 
+val DialogBackground = Color(0xFFF9D423)
+val DialogBorder = Color(0xFFBB9C09)
+
 val Colors.AppThemeColor
     get() = if (isLight) Color.White else Color.Black
 
