@@ -14,8 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -27,6 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -260,6 +260,8 @@ fun EmojiFactsCarousel(
     LaunchedEffect(key1 = state.firstVisibleItemIndex) {
         gameOverViewModel.setCurrentFactIndex(state.firstVisibleItemIndex)
     }
+    var showFactDialog by remember { mutableStateOf(false) }
+    var factForDialog: EmojiFact? by remember { mutableStateOf(null) }
     Row {
         FactNavigationButton(onClick = { gameOverViewModel.previousFact() }) {
             Icon(
@@ -282,6 +284,10 @@ fun EmojiFactsCarousel(
                     modifier = Modifier
                         .fillParentMaxWidth()
                         .padding(horizontal = 6.dp),
+                    onClick = {
+                        factForDialog = it
+                        showFactDialog = true
+                    },
                     emojiFact = emojiFact,
                     backgroundColor = Color.White,
                     borderColor = Gray
@@ -296,12 +302,23 @@ fun EmojiFactsCarousel(
                 tint = Color.White
             )
         }
+        if (showFactDialog) {
+            factForDialog?.let {
+                FactDialog(
+                    emojiFact = it,
+                    onDismissRequest = {
+                        showFactDialog = false
+                    }
+                )
+            }
+        }
     }
 }
 
 @Composable
 fun FactCardView(
     modifier: Modifier = Modifier,
+    onClick: (EmojiFact) -> Unit,
     emojiFact: EmojiFact,
     borderColor: Color,
     backgroundColor: Color,
@@ -314,9 +331,7 @@ fun FactCardView(
             .padding(bottom = 4.dp)
             .clip(RoundedCornerShape(5.dp))
             .background(backgroundColor)
-            .clickable {
-                // TODO open dialog with emojiFact
-            }
+            .clickable(onClick = { onClick(emojiFact) })
             .padding(contentPadding),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -355,6 +370,52 @@ fun FactNavigationButton(
         contentAlignment = Alignment.Center
     ) {
         content()
+    }
+}
+
+@Composable
+fun FactDialog(
+    emojiFact: EmojiFact,
+    onDismissRequest: () -> Unit,
+) {
+    Dialog(onDismissRequest = onDismissRequest) {
+        Column(
+            modifier = Modifier
+                .clip(RoundedCornerShape(5.dp))
+                .background(Gray)
+                .padding(bottom = 4.dp)
+                .clip(RoundedCornerShape(5.dp))
+                .background(Color.White)
+                .clickable {
+                    // TODO open dialog with emojiFact
+                }
+                .padding(PaddingValues(16.dp)),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = emojiFact.title,
+                textAlign = TextAlign.Center,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = FactTitle
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = emojiFact.shortDescription,
+                textAlign = TextAlign.Center,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.Black
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = emojiFact.description,
+                textAlign = TextAlign.Center,
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.Black
+            )
+        }
     }
 }
 
