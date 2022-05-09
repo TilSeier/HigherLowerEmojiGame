@@ -8,6 +8,8 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
+val Gray = Color(0xFFBDBDBD)
+
 val DarkHover = Color(0x66000000)
 
 val ItemNumber = Color(0xFFFFFC4D)
@@ -44,6 +46,8 @@ val ButtonYellowBorder = Color(0xFFBB9C09)
 
 val ButtonRed = Color(0xFFFF4E50)
 val ButtonRedBorder = Color(0xFFD7393B)
+
+val FactTitle = Color(0xFFE3BF0F)
 
 val Colors.AppThemeColor
     get() = if (isLight) Color.White else Color.Black

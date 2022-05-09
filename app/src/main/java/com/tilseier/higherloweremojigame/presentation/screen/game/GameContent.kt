@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Divider
 import androidx.compose.material.OutlinedButton
@@ -19,6 +20,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -211,7 +213,9 @@ fun StatusBar(
     ) {
         Box(modifier = Modifier.weight(1f)) {
             Row(
-                modifier = Modifier.clickable { onMenuClick() },
+                modifier = Modifier
+                    .clip(RoundedCornerShape(8.dp))
+                    .clickable { onMenuClick() },
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
@@ -220,6 +224,7 @@ fun StatusBar(
                     modifier = Modifier
                         .size(24.dp)
                 )
+                Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = stringResource(id = R.string.button_main_menu),
                     fontSize = 16.sp,
