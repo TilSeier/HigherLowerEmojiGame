@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -52,32 +53,66 @@ fun MenuContent(
     }
 
     LazyColumn(
-        contentPadding = PaddingValues(horizontal = 40.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
         item {
-            Spacer(modifier = Modifier.height(50.dp))
-            Image(
-                painter = painterResource(id = R.drawable.logo_emoji_game),
-                contentDescription = "The Higher Lower Emoji Game Logo",
-                modifier = Modifier.width(300.dp),
-                contentScale = ContentScale.FillWidth
-            )
-            Spacer(modifier = Modifier.height(50.dp))
+            MenuHeader()
         }
         val menuDifficulties = menuViewModel.menuDifficulties.value
-        itemsIndexed(menuViewModel.menuDifficulties.value) { index, item ->
+        itemsIndexed(menuDifficulties) { index, item ->
             MenuDifficultyItem(
                 menuDifficulty = item,
                 onClick = {
                     viewModel.newGame(it.difficulty)
-                    navController.navigate(route = Screen.Game.pass(Constants.CATEGORY_EMOJI, it.difficulty.name))
+                    navController.navigate(
+                        route = Screen.Game.pass(
+                            Constants.CATEGORY_EMOJI,
+                            it.difficulty.name
+                        )
+                    )
                 }
             )
-            if (menuDifficulties.size > index + 1) {
-                Spacer(modifier = Modifier.height(16.dp))
+        }
+    }
+}
+
+@Composable
+fun MenuHeader() {
+    Column(
+        modifier = Modifier.fillMaxWidth()
+            .padding(horizontal = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_thumb_up),
+                    contentDescription = "Rate",
+                    tint = Color.White
+                )
+            }
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_share),
+                    contentDescription = "Share",
+                    tint = Color.White
+                )
             }
         }
+        Spacer(modifier = Modifier.height(6.dp))
+        Image(
+            painter = painterResource(id = R.drawable.logo_emoji_game),
+            contentDescription = "The Higher Lower Emoji Game Logo",
+            modifier = Modifier.width(300.dp),
+            contentScale = ContentScale.FillWidth
+        )
+        Spacer(modifier = Modifier.height(20.dp))
     }
 }
 
@@ -89,7 +124,7 @@ fun MenuDifficultyItem(
 ) {
     Box(
         modifier = modifier
-            .fillMaxWidth()
+            .width(310.dp)
             .height(100.dp)
     ) {
         Box(
@@ -162,7 +197,7 @@ fun EmojisAroundElement(
 
         val (
             top_right_emoji_1,
-            bottom_right_emoji_1,bottom_right_emoji_2,
+            bottom_right_emoji_1, bottom_right_emoji_2,
             bottom_left_emoji_1, bottom_left_emoji_2
         ) = createRefs()
 
