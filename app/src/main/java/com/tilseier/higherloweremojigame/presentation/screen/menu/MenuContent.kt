@@ -39,6 +39,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.menu.model.MenuDifficulty
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.Typography
+import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
 
 @Composable
 fun MenuContent(
@@ -103,7 +104,8 @@ fun MenuDifficultyItem(
         ) {
             EmojisAroundElement(
                 sign = menuDifficulty.sign,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
+                fontFamily = iOS11EmojiFont
             ) {
                 RoundButton(
                     onClick = { onClick(menuDifficulty) },
@@ -155,12 +157,16 @@ fun EmojisAroundElement(
             main_element,
             parent_top_left_emoji,
             top_left_emoji_1, top_left_emoji_2, top_left_emoji_3,
-            top_left_emoji_4, top_left_emoji_5, top_left_emoji_6,
-            top_right_emoji_1, bottom_right_emoji_1,
+            top_left_emoji_4, top_left_emoji_5, top_left_emoji_6
+        ) = createRefs()
+
+        val (
+            top_right_emoji_1,
+            bottom_right_emoji_1,bottom_right_emoji_2,
             bottom_left_emoji_1, bottom_left_emoji_2
         ) = createRefs()
 
-        val fontSizeScale = 0.85f
+        val fontSizeScale = 1.2f
         val alpha = 0.2f
 
         Box(
@@ -178,16 +184,17 @@ fun EmojisAroundElement(
         Box(
             modifier = Modifier
                 .constrainAs(parent_top_left_emoji) {
-                    start.linkTo(anchor = parent.start, margin = 0.dp)
-                    top.linkTo(anchor = parent.top, margin = 0.dp)
+                    start.linkTo(anchor = parent.start, margin = (-5).dp)
+                    top.linkTo(anchor = parent.top, margin = (-5).dp)
                 }
-                .rotate(49f),
+                .rotate(49f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
                 text = sign,
                 fontSize = (17 * fontSizeScale).sp,
-                fontFamily = fontFamily
+                fontFamily = fontFamily,
             )
         }
 
@@ -198,7 +205,8 @@ fun EmojisAroundElement(
                     end.linkTo(anchor = main_element.start, margin = 12.dp)
                     bottom.linkTo(anchor = main_element.bottom, margin = 18.dp)
                 }
-                .rotate(-39f),
+                .rotate(-39f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -211,10 +219,11 @@ fun EmojisAroundElement(
         Box(
             modifier = Modifier
                 .constrainAs(top_left_emoji_2) {
-                    start.linkTo(anchor = main_element.start, margin = 37.dp)
+                    start.linkTo(anchor = main_element.start, margin = 5.dp)
                     bottom.linkTo(anchor = main_element.top, margin = 15.dp)
                 }
-                .rotate(10f),
+                .rotate(10f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -230,7 +239,8 @@ fun EmojisAroundElement(
                     end.linkTo(anchor = top_left_emoji_1.start, margin = 24.dp)
                     top.linkTo(anchor = top_left_emoji_1.top, margin = 5.dp)
                 }
-                .rotate(16f),
+                .rotate(16f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -246,7 +256,8 @@ fun EmojisAroundElement(
                     end.linkTo(anchor = top_left_emoji_1.start, margin = 7.dp)
                     bottom.linkTo(anchor = top_left_emoji_1.top, margin = 19.dp)
                 }
-                .rotate(31f),
+                .rotate(31f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -262,7 +273,8 @@ fun EmojisAroundElement(
                     end.linkTo(anchor = top_left_emoji_3.start, margin = 32.dp)
                     bottom.linkTo(anchor = top_left_emoji_3.bottom, margin = 6.dp)
                 }
-                .rotate(7f),
+                .rotate(7f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -278,7 +290,8 @@ fun EmojisAroundElement(
                     end.linkTo(anchor = top_left_emoji_5.start, margin = 32.dp)
                     top.linkTo(anchor = top_left_emoji_5.top, margin = 4.dp)
                 }
-                .rotate(7f),
+                .rotate(7f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -293,9 +306,10 @@ fun EmojisAroundElement(
             modifier = Modifier
                 .constrainAs(top_right_emoji_1) {
                     start.linkTo(anchor = main_element.start, margin = 50.dp)
-                    bottom.linkTo(anchor = main_element.top, margin = 27.dp)
+                    bottom.linkTo(anchor = main_element.top, margin = 20.dp)
                 }
-                .rotate(-39f),
+                .rotate(-39f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -305,13 +319,15 @@ fun EmojisAroundElement(
             )
         }
 
+        // bottom right visible emojis
         Box(
             modifier = Modifier
-                .constrainAs(top_right_emoji_1) {
-                    start.linkTo(anchor = main_element.end, margin = 14.dp)
-                    top.linkTo(anchor = main_element.top, margin = 3.dp)
+                .constrainAs(bottom_right_emoji_2) {
+                    end.linkTo(anchor = parent.end, margin = 5.dp)
+                    bottom.linkTo(anchor = parent.bottom, margin = 25.dp)
                 }
-                .rotate(-22f),
+                .rotate(-22f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -321,14 +337,14 @@ fun EmojisAroundElement(
             )
         }
 
-        // bottom right visible emojis
         Box(
             modifier = Modifier
                 .constrainAs(bottom_right_emoji_1) {
-                    start.linkTo(anchor = main_element.start, margin = 40.dp)
-                    top.linkTo(anchor = main_element.top, margin = 3.dp)
+                    end.linkTo(anchor = parent.end, margin = 49.dp)
+                    bottom.linkTo(anchor = parent.bottom, margin = (-4).dp)
                 }
-                .rotate(10f),
+                .rotate(10f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -339,14 +355,14 @@ fun EmojisAroundElement(
         }
 
         // bottom left visible emojis
-        // TODO check
         Box(
             modifier = Modifier
                 .constrainAs(bottom_left_emoji_1) {
-                    end.linkTo(anchor = main_element.start, margin = 28.dp)
-                    top.linkTo(anchor = main_element.top, margin = 28.dp)
+                    start.linkTo(anchor = parent.start, margin = 160.dp)
+                    bottom.linkTo(anchor = parent.bottom, margin = (-8).dp)
                 }
-                .rotate(49f),
+                .rotate(49f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -360,9 +376,10 @@ fun EmojisAroundElement(
             modifier = Modifier
                 .constrainAs(bottom_left_emoji_2) {
                     end.linkTo(anchor = bottom_left_emoji_1.start, margin = 39.dp)
-                    top.linkTo(anchor = bottom_left_emoji_1.top, margin = 3.dp)
+                    top.linkTo(anchor = bottom_left_emoji_1.top, margin = 8.dp)
                 }
-                .rotate(49f),
+                .rotate(49f)
+                .alpha(alpha),
             contentAlignment = Alignment.Center
         ) {
             Text(
