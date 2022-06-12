@@ -30,6 +30,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
+import com.tilseier.higherloweremojigame.presentation.screen.splash.SplashScreen
 import com.tilseier.higherloweremojigame.ui.theme.DialogBackground
 import com.tilseier.higherloweremojigame.ui.theme.DialogBorder
 
@@ -37,8 +38,11 @@ import com.tilseier.higherloweremojigame.ui.theme.DialogBorder
 fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Menu.route
+        startDestination = Screen.Splash.route
     ) {
+        composable(route = Screen.Splash.route) {
+            SplashScreen(navController = navController)
+        }
         composable(route = Screen.Menu.route) {
             HomeScreen(navController = navController, viewModel = viewModel)
         }

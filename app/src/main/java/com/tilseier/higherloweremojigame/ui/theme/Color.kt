@@ -49,8 +49,4 @@ val ButtonRedBorder = Color(0xFFD7393B)
 
 val FactTitle = Color(0xFFE3BF0F)
 
-val Colors.AppThemeColor
-    get() = if (isLight) Color.White else Color.Black
-
-val Colors.AppContentColor
-    get() = if (isLight) Color.Black else Color.White
+val SplashScreenBackground = Color(0xFFF9D423)

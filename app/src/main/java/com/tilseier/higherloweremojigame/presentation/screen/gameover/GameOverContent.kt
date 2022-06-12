@@ -150,6 +150,7 @@ fun Scores(
                 fontWeight = FontWeight.Bold,
                 color = HigherScore
             )
+            // TODO add share
         }
     }
 }
