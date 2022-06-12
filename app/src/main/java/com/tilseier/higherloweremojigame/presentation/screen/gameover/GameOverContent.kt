@@ -181,12 +181,14 @@ fun NextStepsButtons(
             Icon(
                 painter = painterResource(id = R.drawable.ic_restart),
                 contentDescription = null,
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(30.dp),
+                tint = Color.White
             )
             Spacer(modifier = Modifier.width(5.dp))
             Text(
                 text = stringResource(id = R.string.button_restart),
                 modifier = Modifier.weight(1f),
+                color = Color.White,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
@@ -209,12 +211,14 @@ fun NextStepsButtons(
             Icon(
                 painter = painterResource(id = R.drawable.ic_continue_with_video),
                 contentDescription = null,
-                modifier = Modifier.size(47.dp)
+                modifier = Modifier.size(47.dp),
+                tint = Color.White
             )
             Spacer(modifier = Modifier.width(5.dp))
             Text(
                 text = stringResource(id = R.string.button_continue),
                 modifier = Modifier.weight(1f),
+                color = Color.White,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
