@@ -66,6 +66,7 @@ fun GameContent(
     val onBackClick: () -> Unit = {
         navController.navigate(route = Screen.ExitDialog.route)
     }
+    val lazyListState: LazyListState = rememberLazyListState()
 
     BackHandler(onBack = onBackClick)
     LaunchedEffect(key1 = isGameOver) {
@@ -77,20 +78,17 @@ fun GameContent(
         }
     }
 
+    // TODO move logic to ViewModel
+    // TODO design of game screen
+    // TODO disable user scroll interaction
+
+    // TODO use answer object
+    LaunchedEffect(key1 = currentItemIndex) {
+        // TODO animate right answer
+        lazyListState.animateScrollToItem(currentItemIndex)
+    }
+
     Column {
-
-        val lazyListState: LazyListState = rememberLazyListState()
-
-        // TODO move logic to ViewModel
-        // TODO design of game screen
-        // TODO disable user scroll interaction
-
-        // TODO use answer object
-        LaunchedEffect(key1 = currentItemIndex) {
-            // TODO animate right answer
-            lazyListState.animateScrollToItem(currentItemIndex)
-        }
-
         Box {
             ItemsList(
                 items = currentItems,
