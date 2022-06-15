@@ -65,6 +65,7 @@ fun GameContent(
     val state = viewModel.state.value
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
+    val moveToItemAnimation: MoveAnimation = state.moveToItemAnimation
     val isGameOver: Boolean = state.isGameOver
     val higherScore: Int = state.higherScore
     val score: Int = state.score
@@ -97,15 +98,30 @@ fun GameContent(
 
     // TODO make on right answer and on wrong answer
     LaunchedEffect(key1 = currentItemIndex) {
-        vsDividerState = VsDividerState.SqueezeVsBox
-        delay(VsDividerState.SqueezeVsBox.delayAfterAnimation)
-        vsDividerState = VsDividerState.ShowRightAnswer
-        delay(VsDividerState.ShowRightAnswer.delayAfterAnimation)
-        vsDividerState = VsDividerState.SqueezeRightAnswer
-        delay(VsDividerState.SqueezeRightAnswer.delayAfterAnimation)
-        lazyListState.animateScrollToItem(currentItemIndex)
-        delay(100)
-        vsDividerState = VsDividerState.ShowVsBox
+        if (lazyListState.firstVisibleItemIndex == currentItemIndex) return@LaunchedEffect
+        when (moveToItemAnimation) {
+            MoveAnimation.ShowRightAnswerAndMove -> {
+                vsDividerState = VsDividerState.SqueezeVsBox
+                delay(VsDividerState.SqueezeVsBox.delayAfterAnimation)
+                vsDividerState = VsDividerState.ShowRightAnswer
+                delay(VsDividerState.ShowRightAnswer.delayAfterAnimation)
+                vsDividerState = VsDividerState.SqueezeRightAnswer
+                delay(VsDividerState.SqueezeRightAnswer.delayAfterAnimation)
+                lazyListState.animateScrollToItem(currentItemIndex)
+                delay(100)
+                vsDividerState = VsDividerState.ShowVsBox
+            }
+            MoveAnimation.SqueezeVsAndMove -> {
+                vsDividerState = VsDividerState.SqueezeVsBoxWithLine
+                delay(VsDividerState.SqueezeVsBoxWithLine.delayAfterAnimation)
+                lazyListState.animateScrollToItem(currentItemIndex)
+                delay(100)
+                vsDividerState = VsDividerState.ShowVsBox
+            }
+            MoveAnimation.None -> {
+                lazyListState.animateScrollToItem(currentItemIndex)
+            }
+        }
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -156,6 +172,7 @@ fun GameContent(
 sealed class VsDividerState(val delayAfterAnimation: Long) {
     object ShowVsBox : VsDividerState(200)
     object SqueezeVsBox : VsDividerState(300)
+    object SqueezeVsBoxWithLine : VsDividerState(300)
     object ShowRightAnswer : VsDividerState(1000)
     object SqueezeRightAnswer : VsDividerState(200)
     object ShowWrongAnswer : VsDividerState(1000)

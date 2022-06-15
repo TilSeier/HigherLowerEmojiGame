@@ -6,11 +6,18 @@ import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.model.Item
 import kotlin.math.absoluteValue
 
+sealed class MoveAnimation {
+    object ShowRightAnswerAndMove: MoveAnimation()
+    object SqueezeVsAndMove: MoveAnimation()
+    object None: MoveAnimation()
+}
+
 // TODO remove this model if it doesn't work properly
 data class GameState(
     val allItems: EmojiItems = EmojiItems(emptyList(), emptyList(), emptyList()),
     val currentItems: List<Item> = listOf(),
     val currentItemIndex: Int = 0,
+    val moveToItemAnimation: MoveAnimation = MoveAnimation.None,
     val score: Int = 0,
     val higherScore: Int = 0,
     val isGameOver: Boolean = false,

@@ -53,6 +53,7 @@ class GameViewModel constructor(
         _state.value = _state.value.copy(
             currentItems = _state.value.generateItems(difficulty),
             currentItemIndex = 0,
+            moveToItemAnimation = MoveAnimation.None,
             score = 0,
             isGameOver = false,
             higherScore = AppPreferences.preferences()?.higherScore(difficulty)
@@ -64,7 +65,10 @@ class GameViewModel constructor(
     }
 
     fun continueGame() {
-        _state.value = _state.value.copy(isGameOver = false)
+        _state.value = _state.value.copy(
+            isGameOver = false,
+            moveToItemAnimation = MoveAnimation.SqueezeVsAndMove
+        )
         nextItem()
     }
 
@@ -85,7 +89,10 @@ class GameViewModel constructor(
     }
 
     private fun rightAnswer() {
-        _state.value = _state.value.copy(score = _state.value.score + 1)
+        _state.value = _state.value.copy(
+            score = _state.value.score + 1,
+            moveToItemAnimation = MoveAnimation.ShowRightAnswerAndMove
+        )
         nextItem()
     }
 
