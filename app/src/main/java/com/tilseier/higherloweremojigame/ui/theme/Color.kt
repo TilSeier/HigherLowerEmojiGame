@@ -50,3 +50,6 @@ val ButtonRedBorder = Color(0xFFD7393B)
 val FactTitle = Color(0xFFE3BF0F)
 
 val SplashScreenBackground = Color(0xFFF9D423)
+
+val WrongAnswer = Color(0xFFFF4E50)
+val RightAnswer = Color(0xFF37D877)

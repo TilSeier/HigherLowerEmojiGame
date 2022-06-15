@@ -1,7 +1,11 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.*
+import androidx.compose.animation.core.ExperimentalTransitionApi
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,16 +16,17 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Divider
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -38,6 +43,7 @@ import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.extantions.disabledHorizontalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
+import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
 import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
 import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
@@ -68,10 +74,15 @@ fun GameContent(
     }
     val lazyListState: LazyListState = rememberLazyListState()
 
+    var vsDividerState: VsDividerState by remember { mutableStateOf(VsDividerState.ShowVsBox) }
+
     BackHandler(onBack = onBackClick)
     LaunchedEffect(key1 = isGameOver) {
         if (isGameOver) {
-            // TODO animate wrong answer
+            vsDividerState = VsDividerState.SqueezeVsBox
+            delay(VsDividerState.SqueezeVsBox.delayAfterAnimation)
+            vsDividerState = VsDividerState.ShowWrongAnswer
+            delay(VsDividerState.ShowWrongAnswer.delayAfterAnimation)
             navController.navigate(route = Screen.GameOver.route) {
                 popUpTo(Screen.Menu.route)
             }
@@ -83,13 +94,22 @@ fun GameContent(
     // TODO disable user scroll interaction
 
     // TODO use answer object
+
+    // TODO make on right answer and on wrong answer
     LaunchedEffect(key1 = currentItemIndex) {
-        // TODO animate right answer
+        vsDividerState = VsDividerState.SqueezeVsBox
+        delay(VsDividerState.SqueezeVsBox.delayAfterAnimation)
+        vsDividerState = VsDividerState.ShowRightAnswer
+        delay(VsDividerState.ShowRightAnswer.delayAfterAnimation)
+        vsDividerState = VsDividerState.SqueezeRightAnswer
+        delay(VsDividerState.SqueezeRightAnswer.delayAfterAnimation)
         lazyListState.animateScrollToItem(currentItemIndex)
+        delay(100)
+        vsDividerState = VsDividerState.ShowVsBox
     }
 
-    Column {
-        Box {
+    Column(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier.fillMaxSize()) {
             ItemsList(
                 items = currentItems,
                 currentItemIndex = currentItemIndex,
@@ -112,60 +132,144 @@ fun GameContent(
                 onMenuClick = onBackClick
             )
 
-            val windowInfo = rememberWindowInfo()
-            if (windowInfo.isCompactScreenWidth) {
-                HorizontalVsDivider(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .align(Alignment.Center)
-                )
-            } else {
-                VerticalVsDivider(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .align(Alignment.Center)
-                )
-            }
+            VsDivider(state = vsDividerState)
         }
     }
 }
 
+/*
+* ANIMATION
+* When user clicks More or Less
+* Right Answer:
+* 1. Show answer with animation
+* 2. Squeeze VS Box together with line
+* 3. Show Right Answer Box together with Right line
+* 4. Squeeze Right Answer Box together with line
+* 5. Animate Scroll to next item
+* 6. Show VS Box (together with line)
+* Wrong Answer:
+* 1. Show answer with animation
+* 2. Squeeze VS Box together with line
+* 3. Show Wrong Answer Box together with Wrong line
+* 4. Move to game over screen
+* */
+sealed class VsDividerState(val delayAfterAnimation: Long) {
+    object ShowVsBox : VsDividerState(200)
+    object SqueezeVsBox : VsDividerState(300)
+    object ShowRightAnswer : VsDividerState(1000)
+    object SqueezeRightAnswer : VsDividerState(200)
+    object ShowWrongAnswer : VsDividerState(1000)
+    object SqueezeWrongAnswer : VsDividerState(200)
+}
+
+@OptIn(ExperimentalTransitionApi::class)
+@Composable
+fun VsDivider(
+    modifier: Modifier = Modifier,
+    windowInfo: WindowInfo = rememberWindowInfo(),
+    state: VsDividerState = VsDividerState.ShowVsBox,
+) {
+    val transition = updateTransition(targetState = state, label = "transition")
+
+    val vsScale by transition.animateFloat(label = "vs scale") {
+        when (it) {
+            VsDividerState.ShowVsBox -> 1f
+            else -> 0f
+        }
+    }
+    val rightAnswerScale by transition.animateFloat(label = "vs scale") {
+        when (it) {
+            VsDividerState.ShowRightAnswer -> 1f
+            else -> 0f
+        }
+    }
+    val wrongAnswerScale by transition.animateFloat(label = "vs scale") {
+        when (it) {
+            VsDividerState.ShowWrongAnswer -> 1f
+            else -> 0f
+        }
+    }
+    val lineScale by transition.animateFloat(label = "line scale") {
+        when (it) {
+            VsDividerState.ShowRightAnswer,
+            VsDividerState.ShowWrongAnswer,
+            VsDividerState.ShowVsBox,
+            VsDividerState.SqueezeVsBox -> 1f
+            else -> 0f
+        }
+    }
+    val lineColor by transition.animateColor(label = "line color") {
+        when (it) {
+            VsDividerState.ShowRightAnswer -> RightAnswer
+            VsDividerState.ShowWrongAnswer -> WrongAnswer
+            else -> Color.White
+        }
+    }
+
+    Box(modifier = modifier.fillMaxSize()) {
+        if (windowInfo.isCompactScreenWidth) {
+            HorizontalVsDivider(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.Center),
+                vsScale = vsScale,
+                rightAnswerScale = rightAnswerScale,
+                wrongAnswerScale = wrongAnswerScale,
+                lineScale = lineScale,
+                lineColor = lineColor
+            )
+        } else {
+            VerticalVsDivider(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .align(Alignment.Center),
+                vsScale = vsScale,
+                rightAnswerScale = rightAnswerScale,
+                wrongAnswerScale = wrongAnswerScale,
+                lineScale = lineScale,
+                lineColor = lineColor
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalTransitionApi::class)
 @Composable
 fun HorizontalVsDivider(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    vsScale: Float = 1f,
+    rightAnswerScale: Float = 0f,
+    wrongAnswerScale: Float = 0f,
+    lineScale: Float = 1f,
+    lineColor: Color = Color.White,
 ) {
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         Divider(
-            modifier = Modifier.align(Alignment.Center),
-            color = Color.White,
+            modifier = Modifier
+                .scale(scaleX = lineScale, scaleY = 1f)
+                .align(Alignment.Center),
+            color = lineColor,
             thickness = 3.dp
         )
-        Box {
-            Box(
-                modifier = Modifier
-                    .size(30.dp)
-                    .rotate(45f)
-                    .background(color = Color.White)
-            )
-            Text(
-                text = stringResource(id = R.string.vs),
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .padding(bottom = 2.dp),
-                style = Typography.h3.copy(fontSize = 18.sp),
-                textAlign = TextAlign.Center,
-                color = Color.Black
-            )
-        }
+        VsBox(
+            vsScale = vsScale,
+            rightAnswerScale = rightAnswerScale,
+            wrongAnswerScale = wrongAnswerScale
+        )
     }
 }
 
 @Composable
 fun VerticalVsDivider(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    vsScale: Float = 1f,
+    rightAnswerScale: Float = 0f,
+    wrongAnswerScale: Float = 0f,
+    lineScale: Float = 1f,
+    lineColor: Color = Color.White,
 ) {
     Box(
         modifier = modifier,
@@ -175,13 +279,31 @@ fun VerticalVsDivider(
             modifier = Modifier
                 .fillMaxHeight()
                 .width(3.dp)
-                .background(Color.White)
+                .background(lineColor)
+                .scale(scaleX = 1f, scaleY = lineScale)
                 .align(Alignment.Center),
         )
-        Box {
+        VsBox(
+            vsScale = vsScale,
+            rightAnswerScale = rightAnswerScale,
+            wrongAnswerScale = wrongAnswerScale
+        )
+    }
+}
+
+@Composable
+fun VsBox(
+    modifier: Modifier = Modifier,
+    vsScale: Float = 1f,
+    rightAnswerScale: Float = 0f,
+    wrongAnswerScale: Float = 0f,
+) {
+    val vsSize = 30.dp
+    Box(modifier = modifier) {
+        Box(modifier = Modifier.scale(vsScale)) {
             Box(
                 modifier = Modifier
-                    .size(30.dp)
+                    .size(vsSize)
                     .rotate(45f)
                     .background(color = Color.White)
             )
@@ -193,6 +315,40 @@ fun VerticalVsDivider(
                 style = Typography.h3.copy(fontSize = 18.sp),
                 textAlign = TextAlign.Center,
                 color = Color.Black
+            )
+        }
+        // right answer
+        Box(modifier = Modifier.scale(rightAnswerScale)) {
+            Box(
+                modifier = Modifier
+                    .size(vsSize)
+                    .rotate(45f)
+                    .background(color = RightAnswer)
+            )
+            Icon(
+                imageVector = Icons.Default.Done,
+                contentDescription = "Right",
+                modifier = Modifier
+                    .size(20.dp)
+                    .align(Alignment.Center),
+                tint = Color.White
+            )
+        }
+        // wrong answer
+        Box(modifier = Modifier.scale(wrongAnswerScale)) {
+            Box(
+                modifier = Modifier
+                    .size(vsSize)
+                    .rotate(45f)
+                    .background(color = WrongAnswer)
+            )
+            Icon(
+                imageVector = Icons.Default.Close,
+                contentDescription = "Wrong",
+                modifier = Modifier
+                    .size(20.dp)
+                    .align(Alignment.Center),
+                tint = Color.White
             )
         }
     }
@@ -295,6 +451,7 @@ fun ItemsList(
     }
 }
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun ItemWithEmoji(
     modifier: Modifier = Modifier,
@@ -351,10 +508,12 @@ private fun ItemWithEmoji(
                 var lessClick by rememberSaveable { mutableStateOf(false) }
                 var showAnswer by rememberSaveable { mutableStateOf(false) }
 
+                val showAnswerDuration: Long = 1500
+                val numberAnimationDuration: Int = (showAnswerDuration - 500).toInt()
                 LaunchedEffect(key1 = moreClick) {
                     if (moreClick) {
                         showAnswer = true
-                        delay(1000)
+                        delay(showAnswerDuration)
                         moreClick = false
                         onMoreClick()
                     }
@@ -362,16 +521,34 @@ private fun ItemWithEmoji(
                 LaunchedEffect(key1 = lessClick) {
                     if (lessClick) {
                         showAnswer = true
-                        delay(1000)
+                        delay(showAnswerDuration)
                         lessClick = false
                         onLessClick()
                     }
                 }
 
-                AnimatedVisibility(visible = isAnswerVisible || showAnswer) {
+                AnimatedVisibility(
+                    visible = isAnswerVisible || showAnswer,
+                    enter = if (showAnswer) {
+                        fadeIn() + expandVertically()
+                    } else {
+                        EnterTransition.None
+                    },
+                    exit = if (showAnswer) {
+                        fadeOut() + shrinkVertically()
+                    } else {
+                        ExitTransition.None
+                    },
+                ) {
+                    val animatedNumber = transition.animateFloat(
+                        transitionSpec = { tween(durationMillis = numberAnimationDuration) },
+                        label = "number animation"
+                    ) { state ->
+                        if (state == EnterExitState.Visible) item.number.toFloat() else 0f
+                    }.value.toLong()
                     AnswerNumber(
                         modifier = Modifier.fillMaxWidth(),
-                        number = item.number.formatNumberToString()
+                        number = animatedNumber.formatNumberToString()
                     )
                 }
 
@@ -429,6 +606,7 @@ private fun AnswerNumber(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(50.dp))
         Text(
             text = stringResource(id = R.string.formatted_number, number),
             color = ItemNumber,
