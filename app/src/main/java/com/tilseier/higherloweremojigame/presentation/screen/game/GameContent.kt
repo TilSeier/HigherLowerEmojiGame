@@ -2,10 +2,7 @@ package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
-import androidx.compose.animation.core.ExperimentalTransitionApi
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.core.updateTransition
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -542,11 +539,11 @@ private fun ItemWithEmoji(
                         ExitTransition.None
                     },
                 ) {
-                    val animatedNumber = transition.animateFloat(
+                    val animatedNumber = transition.animateInt(
                         transitionSpec = { tween(durationMillis = NUMBER_ANIMATION_DURATION) },
                         label = "number animation"
                     ) { state ->
-                        if (state == EnterExitState.Visible) item.number.toFloat() else 0f
+                        if (state == EnterExitState.Visible) item.number.toInt() else 0
                     }.value.toLong()
                     AnswerNumber(
                         modifier = Modifier.fillMaxWidth(),
