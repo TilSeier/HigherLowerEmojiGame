@@ -80,7 +80,8 @@ fun MenuContent(
 @Composable
 fun MenuHeader() {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -171,7 +172,7 @@ fun MenuDifficultyItem(
                     style = Typography.h3.copy(fontSize = 26.sp)
                 )
                 Text(
-                    text = menuDifficulty.score.toString(),
+                    text = stringResource(id = R.string.text_your_score, menuDifficulty.score.toString()),
                     color = Color.White,
                     style = Typography.body1.copy(fontSize = 14.sp)
                 )

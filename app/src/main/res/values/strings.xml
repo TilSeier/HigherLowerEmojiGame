@@ -11,6 +11,7 @@
     <string name="text.on_average_monthly">average monthly</string>
     <string name="text.than_this_item">than \"%1$s\"</string>
     <string name="text.loading">LOADING</string>
+    <string name="text.your_score">Your score: %1$s</string>
 
     <string name="text.dialog.exit.title">Are you sure?</string>
     <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>
