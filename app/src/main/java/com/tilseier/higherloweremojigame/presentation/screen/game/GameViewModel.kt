@@ -9,8 +9,10 @@ import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
 import com.tilseier.higherloweremojigame.util.AppPreferences
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 class GameViewModel constructor(
     private val getItemsUseCase: GetItemsUseCase,
@@ -53,6 +55,7 @@ class GameViewModel constructor(
         _state.value = _state.value.copy(
             currentItems = _state.value.generateItems(difficulty),
             currentItemIndex = 0,
+            showAnswerForItemIndex = 0,
             moveToItemAnimation = MoveAnimation.None,
             score = 0,
             isGameOver = false,
@@ -73,18 +76,32 @@ class GameViewModel constructor(
     }
 
     fun onMoreClick() {
-        if (_state.value.guessItem.number >= _state.value.compareItem.number) {
-            rightAnswer()
-        } else {
-            wrongAnswer()
+        viewModelScope.launch {
+            _state.value = _state.value.copy(
+                showAnswerForItemIndex = _state.value.currentItemIndex + 1
+            )
+            delay(SHOW_ANSWER_DURATION)
+
+            if (_state.value.guessItem.number >= _state.value.compareItem.number) {
+                rightAnswer()
+            } else {
+                wrongAnswer()
+            }
         }
     }
 
     fun onLessClick() {
-        if (_state.value.guessItem.number <= _state.value.compareItem.number) {
-            rightAnswer()
-        } else {
-            wrongAnswer()
+        viewModelScope.launch {
+            _state.value = _state.value.copy(
+                showAnswerForItemIndex = _state.value.currentItemIndex + 1
+            )
+            delay(SHOW_ANSWER_DURATION)
+
+            if (_state.value.guessItem.number <= _state.value.compareItem.number) {
+                rightAnswer()
+            } else {
+                wrongAnswer()
+            }
         }
     }
 

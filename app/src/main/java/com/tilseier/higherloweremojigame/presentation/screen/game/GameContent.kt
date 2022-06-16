@@ -65,6 +65,7 @@ fun GameContent(
     val state = viewModel.state.value
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
+    val showAnswerForItemIndex: Int = state.showAnswerForItemIndex
     val moveToItemAnimation: MoveAnimation = state.moveToItemAnimation
     val isGameOver: Boolean = state.isGameOver
     val higherScore: Int = state.higherScore
@@ -129,6 +130,7 @@ fun GameContent(
             ItemsList(
                 items = currentItems,
                 currentItemIndex = currentItemIndex,
+                showAnswerForItemIndex = showAnswerForItemIndex,
                 modifier = Modifier.fillMaxSize(),
                 state = lazyListState,
                 onMoreClick = {
@@ -422,6 +424,7 @@ fun StatusBar(
 fun ItemsList(
     items: List<Item>,
     currentItemIndex: Int,
+    showAnswerForItemIndex: Int,
     modifier: Modifier = Modifier,
     state: LazyListState = rememberLazyListState(),
     onMoreClick: () -> Unit,
@@ -461,6 +464,7 @@ fun ItemsList(
                 item = item,
                 compareItem = previousItem,
                 isAnswerVisible = index <= currentItemIndex,
+                showAnswerWithAnimation = index == showAnswerForItemIndex,
                 onMoreClick = onMoreClick,
                 onLessClick = onLessClick
             )
@@ -475,6 +479,7 @@ private fun ItemWithEmoji(
     item: Item,
     compareItem: Item?,
     isAnswerVisible: Boolean,
+    showAnswerWithAnimation: Boolean,
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
 ) {
@@ -523,42 +528,22 @@ private fun ItemWithEmoji(
 
                 var moreClick by rememberSaveable { mutableStateOf(false) }
                 var lessClick by rememberSaveable { mutableStateOf(false) }
-                var showAnswer by rememberSaveable { mutableStateOf(false) }
-
-                val showAnswerDuration: Long = 1500
-                val numberAnimationDuration: Int = (showAnswerDuration - 500).toInt()
-                LaunchedEffect(key1 = moreClick) {
-                    if (moreClick) {
-                        showAnswer = true
-                        delay(showAnswerDuration)
-                        moreClick = false
-                        onMoreClick()
-                    }
-                }
-                LaunchedEffect(key1 = lessClick) {
-                    if (lessClick) {
-                        showAnswer = true
-                        delay(showAnswerDuration)
-                        lessClick = false
-                        onLessClick()
-                    }
-                }
 
                 AnimatedVisibility(
-                    visible = isAnswerVisible || showAnswer,
-                    enter = if (showAnswer) {
+                    visible = isAnswerVisible || showAnswerWithAnimation,
+                    enter = if (showAnswerWithAnimation) {
                         fadeIn() + expandVertically()
                     } else {
                         EnterTransition.None
                     },
-                    exit = if (showAnswer) {
+                    exit = if (showAnswerWithAnimation) {
                         fadeOut() + shrinkVertically()
                     } else {
                         ExitTransition.None
                     },
                 ) {
                     val animatedNumber = transition.animateFloat(
-                        transitionSpec = { tween(durationMillis = numberAnimationDuration) },
+                        transitionSpec = { tween(durationMillis = NUMBER_ANIMATION_DURATION) },
                         label = "number animation"
                     ) { state ->
                         if (state == EnterExitState.Visible) item.number.toFloat() else 0f
@@ -569,11 +554,12 @@ private fun ItemWithEmoji(
                     )
                 }
 
-                if (!isAnswerVisible && !showAnswer) {
+                if (!isAnswerVisible && !showAnswerWithAnimation) {
                     ItemButton(
                         onClick = {
                             if (!lessClick) {
                                 moreClick = true
+                                onMoreClick()
                             }
                         },
                         modifier = Modifier.padding()
@@ -587,6 +573,7 @@ private fun ItemWithEmoji(
                         onClick = {
                             if (!moreClick) {
                                 lessClick = true
+                                onLessClick()
                             }
                         },
                         modifier = Modifier.padding()

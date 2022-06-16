@@ -12,11 +12,15 @@ sealed class MoveAnimation {
     object None: MoveAnimation()
 }
 
+const val SHOW_ANSWER_DURATION: Long = 1500
+const val NUMBER_ANIMATION_DURATION: Int = (SHOW_ANSWER_DURATION - 500).toInt()
+
 // TODO remove this model if it doesn't work properly
 data class GameState(
     val allItems: EmojiItems = EmojiItems(emptyList(), emptyList(), emptyList()),
     val currentItems: List<Item> = listOf(),
     val currentItemIndex: Int = 0,
+    val showAnswerForItemIndex: Int = 0,
     val moveToItemAnimation: MoveAnimation = MoveAnimation.None,
     val score: Int = 0,
     val higherScore: Int = 0,
