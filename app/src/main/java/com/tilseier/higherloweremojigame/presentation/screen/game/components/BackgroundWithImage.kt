@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
 import com.tilseier.higherloweremojigame.R
-import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundDarkPurple
 
 @Composable
 fun BackgroundWithImageURL(
@@ -378,6 +378,6 @@ private fun BackgroundWithImageResPreview() {
     BackgroundWithImageRes(
         modifier = Modifier.fillMaxSize(),
         imageRes = R.drawable.face_with_tears_of_joy,
-        color = ItemBackgroundPurple
+        color = ItemBackgroundDarkPurple
     )
 }

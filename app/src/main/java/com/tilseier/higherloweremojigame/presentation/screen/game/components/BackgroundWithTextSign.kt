@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundPurple
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundDarkPurple
 import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
 
 @Composable
@@ -395,7 +395,7 @@ private fun BackgroundWithTextSignPreview() {
     BackgroundWithTextSign(
         modifier = Modifier.fillMaxSize(),
         sign = "\uD83D\uDE02",
-        color = ItemBackgroundPurple,
+        color = ItemBackgroundDarkPurple,
         fontFamily = iOS11EmojiFont
     )
 }

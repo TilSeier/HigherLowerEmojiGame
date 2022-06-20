@@ -49,7 +49,7 @@ class ItemsLocalDataSource {
             name = "Face with Tears of Joy",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-with-tears-of-joy_1f602.png",
             sign = "\uD83D\uDE02", // 😂
-            backgroundColor = ItemBackgroundPurple,
+            backgroundColor = ItemBackgroundDarkPurple,
             number = calculateMonthAverage(3_545_593_820), // (calculateMonthAverage(3_545_593_820) / daysFromStartOfStatistic) * countOfAverageMonths // + 198_953
             url = "https://emojipedia.org/face-with-tears-of-joy/"
         ),
