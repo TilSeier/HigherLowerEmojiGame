@@ -293,10 +293,10 @@ fun VerticalVsDivider(
     ) {
         Box(
             modifier = Modifier
+                .scale(scaleX = 1f, scaleY = lineScale)
                 .fillMaxHeight()
                 .width(3.dp)
                 .background(lineColor)
-                .scale(scaleX = 1f, scaleY = lineScale)
                 .align(Alignment.Center),
         )
         VsBox(
