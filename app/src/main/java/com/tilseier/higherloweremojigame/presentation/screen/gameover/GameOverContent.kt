@@ -4,10 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -59,33 +56,35 @@ fun GameOverContent(
                 )
             }
         )
-        Spacer(modifier = Modifier.height(60.dp))
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Scores(
-                score = viewModel.state.value.score,
-                higherScore = viewModel.state.value.higherScore
-            )
-            Spacer(modifier = Modifier.height(60.dp))
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.SpaceBetween
-            ) {
-                NextStepsButtons(
-                    modifier = Modifier.padding(horizontal = 56.dp),
-                    navController = navController,
-                    viewModel = viewModel
-                )
-
-                Spacer(modifier = Modifier.height(30.dp))
-
-                if (gameOverViewModel.emojiFacts.value.isNotEmpty()) {
-                    val listState: LazyListState = rememberLazyListState()
-                    EmojiFactsCarousel(
-                        gameOverViewModel = gameOverViewModel,
-                        state = listState
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ) {
+            item {
+                Spacer(modifier = Modifier.height(60.dp))
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Scores(
+                        score = viewModel.state.value.score,
+                        higherScore = viewModel.state.value.higherScore
                     )
+                    Spacer(modifier = Modifier.height(60.dp))
+                    NextStepsButtons(
+                        modifier = Modifier.padding(horizontal = 56.dp),
+                        navController = navController,
+                        viewModel = viewModel
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
+        }
+        if (gameOverViewModel.emojiFacts.value.isNotEmpty()) {
+            val listState: LazyListState = rememberLazyListState()
+            Spacer(modifier = Modifier.height(8.dp))
+            EmojiFactsCarousel(
+                gameOverViewModel = gameOverViewModel,
+                state = listState
+            )
             Spacer(modifier = Modifier.height(50.dp))
         }
     }
@@ -350,7 +349,7 @@ fun FactCardView(
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = emojiFact.shortDescription,
-            modifier = Modifier.defaultMinSize(minHeight = 36.dp),
+            modifier = Modifier.heightIn(min = 36.dp),
             textAlign = TextAlign.Center,
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
