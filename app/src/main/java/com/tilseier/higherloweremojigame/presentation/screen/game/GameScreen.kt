@@ -1,7 +1,10 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
 @Composable
@@ -12,11 +15,13 @@ fun GameScreen(
     viewModel: GameViewModel
 ) {
     Scaffold(
-        content = {
-            GameContent(
-                navController = navController,
-                viewModel = viewModel
-            )
+        content = { paddingValues ->
+            Box(modifier = Modifier.padding(paddingValues)) {
+                GameContent(
+                    navController = navController,
+                    viewModel = viewModel
+                )
+            }
         }
     )
 }

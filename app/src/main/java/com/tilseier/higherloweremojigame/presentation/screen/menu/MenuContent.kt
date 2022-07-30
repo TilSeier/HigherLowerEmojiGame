@@ -60,7 +60,7 @@ fun MenuContent(
             MenuHeader()
         }
         val menuDifficulties = menuViewModel.menuDifficulties.value
-        itemsIndexed(menuDifficulties) { index, item ->
+        itemsIndexed(menuDifficulties) { _, item ->
             MenuDifficultyItem(
                 menuDifficulty = item,
                 onClick = {
