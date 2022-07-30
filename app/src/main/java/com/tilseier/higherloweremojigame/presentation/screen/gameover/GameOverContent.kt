@@ -189,7 +189,7 @@ fun NextStepsButtons(
                 text = stringResource(id = R.string.button_restart),
                 modifier = Modifier.weight(1f),
                 color = Color.White,
-                fontSize = 28.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 letterSpacing = 2.sp
@@ -198,6 +198,7 @@ fun NextStepsButtons(
         Spacer(modifier = Modifier.height(16.dp))
         ButtonWithBottomBorder(
             onClick = {
+                // TODO show advertisement and then continue
                 viewModel.continueGame()
                 navController.navigate(Screen.Game.route) {
                     popUpTo(Screen.Menu.route)
@@ -219,7 +220,7 @@ fun NextStepsButtons(
                 text = stringResource(id = R.string.button_continue),
                 modifier = Modifier.weight(1f),
                 color = Color.White,
-                fontSize = 28.sp,
+                fontSize = 26.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 letterSpacing = 2.sp
