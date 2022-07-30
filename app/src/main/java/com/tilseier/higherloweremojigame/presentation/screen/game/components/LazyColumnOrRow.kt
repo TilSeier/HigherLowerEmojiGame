@@ -12,6 +12,7 @@ fun LazyColumnOrRow(
     modifier: Modifier = Modifier,
     state: LazyListState = rememberLazyListState(),
     flingBehavior: FlingBehavior = ScrollableDefaults.flingBehavior(),
+    userScrollEnabled: Boolean = true,
     content: LazyListScope.() -> Unit
 ) {
     if (useLazyColumn) {
@@ -19,6 +20,7 @@ fun LazyColumnOrRow(
             modifier = modifier,
             state = state,
             flingBehavior = flingBehavior,
+            userScrollEnabled = userScrollEnabled,
             content = content
         )
     } else {
@@ -26,6 +28,7 @@ fun LazyColumnOrRow(
             modifier = modifier,
             state = state,
             flingBehavior = flingBehavior,
+            userScrollEnabled = userScrollEnabled,
             content = content
         )
     }

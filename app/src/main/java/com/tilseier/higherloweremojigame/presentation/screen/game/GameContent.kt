@@ -37,8 +37,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.domain.model.Item
-import com.tilseier.higherloweremojigame.extantions.disabledHorizontalPointerInputScroll
-import com.tilseier.higherloweremojigame.extantions.disabledVerticalPointerInputScroll
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
 import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
 import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
@@ -428,16 +426,11 @@ fun ItemsList(
     onLessClick: () -> Unit,
 ) {
     val windowInfo = rememberWindowInfo()
-    // TODO use userScrollEnabled when it's ready (instead of disabledVerticalPointerInputScroll)
-    val disablePointerInputScrollModifier = if (windowInfo.isCompactScreenWidth) {
-        modifier.disabledVerticalPointerInputScroll() // TODO sometimes cause continue issue
-    } else {
-        modifier.disabledHorizontalPointerInputScroll() // TODO sometimes cause continue issue
-    }
     LazyColumnOrRow(
+        modifier = modifier,
         useLazyColumn = windowInfo.isCompactScreenWidth,
-        modifier = disablePointerInputScrollModifier,
         state = state,
+        userScrollEnabled = false,
         flingBehavior = rememberSnapperFlingBehavior(
             lazyListState = state,
             snapOffsetForItem = SnapOffsets.Start
