@@ -287,7 +287,8 @@ fun EmojiFactsCarousel(
     LaunchedEffect(key1 = gameOverViewModel.moveToFactIndex.value) {
         state.animateScrollToItem(gameOverViewModel.moveToFactIndex.value)
     }
-    LaunchedEffect(key1 = state.firstVisibleItemIndex) {
+    val firstVisibleItemIndex by remember { derivedStateOf { state.firstVisibleItemIndex } }
+    LaunchedEffect(key1 = firstVisibleItemIndex) {
         gameOverViewModel.setCurrentFactIndex(state.firstVisibleItemIndex)
     }
     var showFactDialog by remember { mutableStateOf(false) }
