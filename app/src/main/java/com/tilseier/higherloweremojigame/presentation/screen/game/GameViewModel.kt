@@ -8,10 +8,10 @@ import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
+import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.util.AppPreferences
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class GameViewModel constructor(
@@ -23,6 +23,23 @@ class GameViewModel constructor(
     init {
         loadItems()
     }
+
+    sealed class RewardedVideoState {
+        object None: RewardedVideoState()
+        object Loaded: RewardedVideoState()
+        object FailedToLoad: RewardedVideoState()
+    }
+
+    sealed class UiEvent {
+        object LoadRewardedVideo : UiEvent()
+        object ShowRewardedVideo : UiEvent()
+        object OnReward : UiEvent()
+    }
+
+    private val _eventFlow = MutableSharedFlow<UiEvent>()
+    val eventFlow = _eventFlow.asSharedFlow()
+
+    val rewardedVideoState = MutableStateFlow<RewardedVideoState>(RewardedVideoState.None)
 
     private fun loadItems() {
         getItemsUseCase().onEach { result ->
@@ -58,6 +75,7 @@ class GameViewModel constructor(
             showAnswerForItemIndex = 0,
             moveToItemAnimation = MoveAnimation.None,
             score = 0,
+            continueCount = 0,
             isGameOver = false,
             higherScore = AppPreferences.preferences()?.higherScore(difficulty)
                 ?: AppPreferences.DEFAULT_HIGHER_SCORE,
@@ -70,6 +88,7 @@ class GameViewModel constructor(
     fun continueGame() {
         _state.value = _state.value.copy(
             isGameOver = false,
+            continueCount = _state.value.continueCount + 1,
             moveToItemAnimation = MoveAnimation.SqueezeVsAndMove
         )
         nextItem()
@@ -101,6 +120,35 @@ class GameViewModel constructor(
                 rightAnswer()
             } else {
                 wrongAnswer()
+            }
+        }
+    }
+
+    fun onEvent(event: GameEvent) {
+        when (event) {
+            is GameEvent.OnRewardedVideoLoaded -> {
+                rewardedVideoState.value = RewardedVideoState.Loaded
+            }
+            is GameEvent.OnRewardedVideoFailedToLoad -> {
+                rewardedVideoState.value = RewardedVideoState.FailedToLoad
+            }
+            is GameEvent.OnRewardedVideoDismissed -> {
+                rewardedVideoState.value = RewardedVideoState.None
+            }
+            is GameEvent.OnRewardedVideoReward -> {
+                viewModelScope.launch {
+                    _eventFlow.emit(UiEvent.OnReward)
+                }
+            }
+            is GameEvent.OnGameOverScreenOpen -> {
+                viewModelScope.launch {
+                    _eventFlow.emit(UiEvent.LoadRewardedVideo)
+                }
+            }
+            is GameEvent.OnContinueButtonClick -> {
+                viewModelScope.launch {
+                    _eventFlow.emit(UiEvent.ShowRewardedVideo)
+                }
             }
         }
     }

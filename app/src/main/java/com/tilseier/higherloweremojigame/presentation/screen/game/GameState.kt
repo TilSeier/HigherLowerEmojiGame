@@ -24,6 +24,7 @@ data class GameState(
     val moveToItemAnimation: MoveAnimation = MoveAnimation.None,
     val score: Int = 0,
     val higherScore: Int = 0,
+    val continueCount: Int = 0,
     val isGameOver: Boolean = false,
     val isLoading: Boolean = false,
     val difficulty: Difficulty = Difficulty.EASY,

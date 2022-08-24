@@ -16,6 +16,8 @@
     <string name="text.dialog.exit.title">Are you sure?</string>
     <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>
 
+    <string name="error.try_again_later">Please, try again later</string>
+
     <string name="button.more">More</string>
     <string name="button.less">Less</string>
     <string name="button.main_menu">Main Menu</string>

@@ -30,6 +30,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
+import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.ui.theme.*
@@ -43,6 +44,9 @@ fun GameOverContent(
     viewModel: GameViewModel,
     gameOverViewModel: GameOverViewModel,
 ) {
+    LaunchedEffect(key1 = true) {
+        viewModel.onEvent(GameEvent.OnGameOverScreenOpen)
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -160,72 +164,93 @@ fun NextStepsButtons(
     navController: NavHostController,
     viewModel: GameViewModel,
 ) {
-    Column(modifier = modifier) {
-        ButtonWithBottomBorder(
-            onClick = {
-                viewModel.newGame(viewModel.state.value.difficulty)
-                navController.navigate(
-                    Screen.Game.pass(
-                        Constants.CATEGORY_EMOJI,
-                        viewModel.state.value.difficulty.name
-                    )
-                ) {
-                    popUpTo(Screen.Menu.route)
-                }
-            },
-            modifier = Modifier.fillMaxWidth(),
-            backgroundColor = ButtonYellow,
-            borderColor = ButtonYellowBorder,
-            contentPadding = PaddingValues(horizontal = 28.dp, vertical = 24.dp)
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.ic_restart),
-                contentDescription = null,
-                modifier = Modifier.size(30.dp),
-                tint = Color.White
-            )
-            Spacer(modifier = Modifier.width(5.dp))
-            Text(
-                text = stringResource(id = R.string.button_restart),
-                modifier = Modifier.weight(1f),
-                color = Color.White,
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center,
-                letterSpacing = 2.sp
-            )
+    val rewardedVideoState = viewModel.rewardedVideoState.collectAsState()
+    val showContinueButton = rewardedVideoState.value == GameViewModel.RewardedVideoState.Loaded &&
+            viewModel.state.value.score > 0 &&
+            viewModel.state.value.continueCount <= 0
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        RestartButton(
+            viewModel = viewModel,
+            navController = navController
+        )
+
+        if (showContinueButton) {
+            ContinueButton(viewModel = viewModel)
         }
-        Spacer(modifier = Modifier.height(16.dp))
-        ButtonWithBottomBorder(
-            onClick = {
-                // TODO show advertisement and then continue
-                viewModel.continueGame()
-                navController.navigate(Screen.Game.route) {
-                    popUpTo(Screen.Menu.route)
-                }
-            },
-            modifier = Modifier.fillMaxWidth(),
-            backgroundColor = ButtonRed,
-            borderColor = ButtonRedBorder,
-            contentPadding = PaddingValues(horizontal = 20.dp, vertical = 24.dp)
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.ic_continue_with_video),
-                contentDescription = null,
-                modifier = Modifier.size(47.dp),
-                tint = Color.White
-            )
-            Spacer(modifier = Modifier.width(5.dp))
-            Text(
-                text = stringResource(id = R.string.button_continue),
-                modifier = Modifier.weight(1f),
-                color = Color.White,
-                fontSize = 26.sp,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center,
-                letterSpacing = 2.sp
-            )
-        }
+    }
+}
+
+@Composable
+fun RestartButton(
+    viewModel: GameViewModel,
+    navController: NavHostController,
+) {
+    ButtonWithBottomBorder(
+        onClick = {
+            viewModel.newGame(viewModel.state.value.difficulty)
+            navController.navigate(
+                Screen.Game.pass(
+                    Constants.CATEGORY_EMOJI,
+                    viewModel.state.value.difficulty.name
+                )
+            ) {
+                popUpTo(Screen.Menu.route)
+            }
+        },
+        modifier = Modifier.fillMaxWidth(),
+        backgroundColor = ButtonYellow,
+        borderColor = ButtonYellowBorder,
+        contentPadding = PaddingValues(horizontal = 28.dp, vertical = 24.dp)
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_restart),
+            contentDescription = null,
+            modifier = Modifier.size(30.dp),
+            tint = Color.White
+        )
+        Spacer(modifier = Modifier.width(5.dp))
+        Text(
+            text = stringResource(id = R.string.button_restart),
+            modifier = Modifier.weight(1f),
+            color = Color.White,
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            letterSpacing = 2.sp
+        )
+    }
+}
+
+@Composable
+fun ContinueButton(viewModel: GameViewModel) {
+    ButtonWithBottomBorder(
+        onClick = {
+            viewModel.onEvent(GameEvent.OnContinueButtonClick)
+        },
+        modifier = Modifier.fillMaxWidth(),
+        backgroundColor = ButtonRed,
+        borderColor = ButtonRedBorder,
+        contentPadding = PaddingValues(horizontal = 20.dp, vertical = 24.dp)
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_continue_with_video),
+            contentDescription = null,
+            modifier = Modifier.size(47.dp),
+            tint = Color.White
+        )
+        Spacer(modifier = Modifier.width(5.dp))
+        Text(
+            text = stringResource(id = R.string.button_continue),
+            modifier = Modifier.weight(1f),
+            color = Color.White,
+            fontSize = 26.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            letterSpacing = 2.sp
+        )
     }
 }
 
