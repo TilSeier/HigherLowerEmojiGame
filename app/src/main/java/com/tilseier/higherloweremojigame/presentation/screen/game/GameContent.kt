@@ -509,6 +509,7 @@ private fun ItemWithEmoji(
                     fontWeight = FontWeight.Normal,
                     textAlign = TextAlign.Center
                 )
+                Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = stringResource(id = R.string.text_is_used),
                     color = Color.White,
@@ -545,34 +546,59 @@ private fun ItemWithEmoji(
                 }
 
                 if (!isAnswerVisible && !showAnswerWithAnimation) {
+                    Spacer(modifier = Modifier.height(8.dp))
                     ItemButton(
                         onClick = {
                             if (!lessClick) {
                                 moreClick = true
                                 onMoreClick()
                             }
-                        },
-                        modifier = Modifier.padding()
+                        }
                     ) {
-                        Text(
-                            text = stringResource(id = R.string.button_more),
-                            fontSize = 18.sp
-                        )
+                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
+                            Text(
+                                text = stringResource(id = R.string.button_more),
+                                fontSize = 18.sp,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_arrow_drop_up),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(end = 8.dp)
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd),
+                                tint = Color.White
+                            )
+                        }
                     }
+                    Spacer(modifier = Modifier.height(4.dp))
                     ItemButton(
                         onClick = {
                             if (!moreClick) {
                                 lessClick = true
                                 onLessClick()
                             }
-                        },
-                        modifier = Modifier.padding()
+                        }
                     ) {
-                        Text(
-                            text = stringResource(id = R.string.button_less),
-                            fontSize = 18.sp
-                        )
+                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
+                            Text(
+                                text = stringResource(id = R.string.button_less),
+                                fontSize = 18.sp,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_arrow_drop_down),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(end = 8.dp)
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd),
+                                tint = Color.White
+                            )
+                        }
                     }
+                    Spacer(modifier = Modifier.height(8.dp))
 
                     AutoSizeText(
                         text = stringResource(
@@ -626,7 +652,7 @@ private fun ItemButton(
         shape = CircleShape,
         border = BorderStroke((1.2).dp, Color.White),
         elevation = ButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
-        contentPadding = PaddingValues(vertical = 6.dp, horizontal = 30.dp),
+        contentPadding = PaddingValues(vertical = 6.dp, horizontal = 8.dp),
         colors = ButtonDefaults.outlinedButtonColors(
             backgroundColor = Color.Transparent,
             contentColor = ItemNumber
