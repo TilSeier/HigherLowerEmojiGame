@@ -6,7 +6,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.ui.theme.Background
 
 @Composable

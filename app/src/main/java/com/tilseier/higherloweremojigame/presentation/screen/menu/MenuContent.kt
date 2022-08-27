@@ -36,7 +36,7 @@ import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.presentation.common.RoundButton
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.menu.model.MenuDifficulty
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.Typography

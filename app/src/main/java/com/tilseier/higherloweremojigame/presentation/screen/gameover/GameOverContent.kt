@@ -32,7 +32,7 @@ import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.ui.theme.*
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets

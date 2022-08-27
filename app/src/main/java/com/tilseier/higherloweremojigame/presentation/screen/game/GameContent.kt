@@ -42,6 +42,7 @@ import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
 import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
 import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow

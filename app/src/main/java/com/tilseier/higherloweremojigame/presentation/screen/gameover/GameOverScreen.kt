@@ -11,7 +11,7 @@ import com.tilseier.higherloweremojigame.data.local.FactsLocalDataSource
 import com.tilseier.higherloweremojigame.data.repository.FactsRepositoryImpl
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetFactsUseCase
 import com.tilseier.higherloweremojigame.extantions.viewModelFactory
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 
 @Composable
 fun GameOverScreen(navController: NavHostController, viewModel: GameViewModel) {

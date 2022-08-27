@@ -21,7 +21,6 @@ import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCa
 import com.tilseier.higherloweremojigame.extantions.viewModelFactory
 import com.tilseier.higherloweremojigame.presentation.navigation.NavGraph
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.StatusBar
 

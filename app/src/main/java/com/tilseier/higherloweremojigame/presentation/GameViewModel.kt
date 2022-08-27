@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame.presentation.screen.game
+package com.tilseier.higherloweremojigame.presentation
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -8,7 +8,9 @@ import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
-import com.tilseier.higherloweremojigame.presentation.GameEvent
+import com.tilseier.higherloweremojigame.presentation.screen.game.GameState
+import com.tilseier.higherloweremojigame.presentation.screen.game.MoveAnimation
+import com.tilseier.higherloweremojigame.presentation.screen.game.SHOW_ANSWER_DURATION
 import com.tilseier.higherloweremojigame.util.AppPreferences
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*

@@ -27,7 +27,7 @@ import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
 import com.tilseier.higherloweremojigame.presentation.screen.splash.SplashScreen
