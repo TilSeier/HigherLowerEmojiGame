@@ -26,6 +26,13 @@
     <string name="button.cancel">Cancel</string>
     <string name="button.restart">RESTART</string>
     <string name="button.continue">CONTINUE?</string>
+    <string name="button.rate">RATE</string>
+    <string name="button.maybe_later">MAYBE LATER</string>
+
+    <string name="share.game_message">I found this interesting #HigherLowerEmojiGame. It\'s easy! Just answer what emojis are used more and what emojis are used less.\n\nWhat is your score here? \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
+    <string name="share.score_message">I scored %1$d on #HigherLowerEmojiGame. Can you beat my score? \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
+
+    <string name="rate.message">This game is powered\n by 2 passionate developers. We are trying to improve this game and develop more better games. Please, help us by rating our app :)</string>
 
     <string name="menu.difficulty.easy">Easy</string>
     <string name="menu.difficulty.medium">Medium</string>

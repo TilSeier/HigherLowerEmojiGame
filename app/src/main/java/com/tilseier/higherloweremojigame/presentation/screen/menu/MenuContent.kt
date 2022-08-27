@@ -11,8 +11,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -21,6 +20,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -34,13 +34,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
-import com.tilseier.higherloweremojigame.presentation.common.RoundButton
-import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.common.RoundButton
+import com.tilseier.higherloweremojigame.presentation.components.dialog.RateDialog
+import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.model.MenuDifficulty
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.Typography
 import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
+import com.tilseier.higherloweremojigame.util.ShareUtil
 
 @Composable
 fun MenuContent(
@@ -82,6 +84,8 @@ fun MenuContent(
 
 @Composable
 fun MenuHeader() {
+    val context = LocalContext.current
+    var showRateDialog by remember { mutableStateOf(false) }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -94,14 +98,22 @@ fun MenuHeader() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(
+                onClick = {
+                    showRateDialog = true
+                }
+            ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_thumb_up),
                     contentDescription = "Rate",
                     tint = Color.White
                 )
             }
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(
+                onClick = {
+                    ShareUtil.shareGame(context)
+                }
+            ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_share),
                     contentDescription = "Share",
@@ -117,6 +129,14 @@ fun MenuHeader() {
             contentScale = ContentScale.FillWidth
         )
         Spacer(modifier = Modifier.height(20.dp))
+    }
+
+    if (showRateDialog) {
+        RateDialog(
+            onDismissRequest = {
+                showRateDialog = false
+            }
+        )
     }
 }
 

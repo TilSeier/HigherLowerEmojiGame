@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -16,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -31,9 +33,11 @@ import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 import com.tilseier.higherloweremojigame.presentation.GameEvent
-import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.components.ButtonWithBottomBorder
+import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.*
+import com.tilseier.higherloweremojigame.util.ShareUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
@@ -128,6 +132,7 @@ fun Scores(
     score: Int,
     higherScore: Int
 ) {
+    val context = LocalContext.current
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -153,8 +158,21 @@ fun Scores(
                 fontWeight = FontWeight.Bold,
                 color = HigherScore
             )
-            // TODO add share
         }
+        Spacer(modifier = Modifier.height(10.dp))
+        Icon(
+            painter = painterResource(id = R.drawable.ic_ios_share),
+            contentDescription = "Share",
+            modifier = Modifier
+                .size(34.dp)
+                .clip(CircleShape)
+                .background(Color.White)
+                .clickable {
+                    ShareUtil.shareScore(context, score)
+                }
+                .padding(7.dp),
+            tint = ButtonRed
+        )
     }
 }
 
@@ -251,30 +269,6 @@ fun ContinueButton(viewModel: GameViewModel) {
             textAlign = TextAlign.Center,
             letterSpacing = 2.sp
         )
-    }
-}
-
-@Composable
-fun ButtonWithBottomBorder(
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-    borderColor: Color,
-    backgroundColor: Color,
-    contentPadding: PaddingValues = PaddingValues(horizontal = 28.dp, vertical = 24.dp),
-    content: @Composable RowScope.() -> Unit
-) {
-    Row(
-        modifier = modifier
-            .clip(RoundedCornerShape(5.dp))
-            .background(borderColor)
-            .padding(bottom = 4.dp)
-            .clip(RoundedCornerShape(5.dp))
-            .background(backgroundColor)
-            .clickable { onClick() }
-            .padding(contentPadding),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        content()
     }
 }
 
