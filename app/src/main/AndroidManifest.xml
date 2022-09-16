@@ -14,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HigherLowerEmojiGame">
 
-        <!-- TODO use real instead of Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!-- Real AdMob app ID: ca-app-pub-2635751764310760~4585914285 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-2635751764310760~4585914285" />
 
         <activity
             android:name=".presentation.MainActivity"

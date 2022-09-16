@@ -7,5 +7,6 @@ object Constants {
     const val CATEGORY_EMOJI = "emoji"
 
     // test ID: ca-app-pub-3940256099942544/5224354917
-    const val AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917" // TODO use real
+    // real ID: ca-app-pub-2635751764310760/2326335035
+    const val AD_UNIT_ID = "ca-app-pub-2635751764310760/2326335035"
 }

@@ -1,7 +1,7 @@
 buildscript {
     ext {
         compose_version = '1.2.0'
-        nav_version = '2.5.1'
+        nav_version = '2.5.2'
         snapper_version = '0.2.0'
         coil_version = '1.4.0'
         preference_version = '1.2.0'
