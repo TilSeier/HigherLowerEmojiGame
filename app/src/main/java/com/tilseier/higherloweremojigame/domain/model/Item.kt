@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 data class Item(
     val id: Long,
+    val emojiId: String? = null,
     val name: String,
     val imageUrl: String, // TODO maybe list of images
     val sign: String? = null,
