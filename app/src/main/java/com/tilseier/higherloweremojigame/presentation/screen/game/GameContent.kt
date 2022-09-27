@@ -1,5 +1,6 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
+import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
@@ -21,10 +22,12 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -37,6 +40,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.extantions.copyToClipboard
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
@@ -474,9 +478,9 @@ private fun ItemWithEmoji(
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
 ) {
-    // TODO background from blur image?
+    // TODO background from gradient colors?
+    val context = LocalContext.current
     Box(modifier = modifier) {
-        // TODO shown answer with animation
         item.sign?.let { sign ->
             BackgroundWithTextSign(
                 modifier = Modifier.fillMaxSize(),
@@ -614,6 +618,23 @@ private fun ItemWithEmoji(
                     )
                 }
             }
+        }
+
+        item.sign?.let { sign ->
+            Image(
+                painter = painterResource(id = R.drawable.ic_content_copy),
+                contentDescription = null,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(top = 34.dp, end = 16.dp)
+                    .size(24.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .alpha(0.5f)
+                    .clickable {
+                        context.copyToClipboard(sign, "emoji")
+                        Toast.makeText(context, context.getString(R.string.share_copy_message, sign), Toast.LENGTH_SHORT).show()
+                    }
+            )
         }
     }
 }

@@ -746,7 +746,7 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(253_345_865), // (54509681 / daysFromStartOfStatistic).toLong() * countOfAverageMonths,
             url = "https://emojipedia.org/woman-dancing/"
         ),
-            Item(
+        Item(
             id = 86,
             name = "Expressionless Face",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/expressionless-face_1f611.png",
@@ -1197,7 +1197,7 @@ class ItemsLocalDataSource {
 //            number = calculateMonthAverage(34983833),
 //            url = "https://emojipedia.org/clinking-beer-mugs/"
 //        ),
-                Item(
+        Item(
             id = 111111111, // TODO
             name = "Butterfly",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/butterfly_1f98b.png",
@@ -1315,7 +1315,7 @@ class ItemsLocalDataSource {
 //            number = calculateMonthAverage(84891194),
 //            url = "https://emojipedia.org/double-exclamation-mark/"
 //        ),
-                Item(
+        Item(
             id = 111111111, // TODO
             name = "Crown",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/crown_1f451.png",
@@ -1324,7 +1324,7 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(157_184_398),
             url = "https://emojipedia.org/crown/"
         ),
-                Item(
+        Item(
             id = 111111111, // TODO
             name = "Dog Face",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/dog-face_1f436.png",
@@ -2055,15 +2055,18 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(127_082_874),
             url = "https://emojipedia.org/baby/"
         ),
-        Item(
-            id = 111111111, // TODO
-            name = "Face Holding Back Tears",
-            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-holding-back-tears_1f979.png",
-            sign = "\uD83E\uDD79", // 🥹
-            backgroundColor = null,
-            number = calculateMonthAverage(126_882_874),
-            url = "https://emojipedia.org/face-holding-back-tears/"
-        ),
+
+        // TODO uncomment after moving to iOS 16 font
+//        Item(
+//            id = 111111111,
+//            name = "Face Holding Back Tears",
+//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/face-holding-back-tears_1f979.png",
+//            sign = "\uD83E\uDD79", // 🥹
+//            backgroundColor = null,
+//            number = calculateMonthAverage(126_882_874),
+//            url = "https://emojipedia.org/face-holding-back-tears/"
+//        ),
+
 //        Item(
 //            id = 111111111, // TODO
 //            name = "Red Exclamation Mark",
@@ -3671,9 +3674,6 @@ class ItemsLocalDataSource {
         ),
 
 
-
-
-
         Item(
             id = 111111111,
             name = "Clapper Board",
@@ -3704,7 +3704,6 @@ class ItemsLocalDataSource {
 //            number = calculateMonthAverage(17170293),
 //            url = "https://emojipedia.org/spade-suit/"
 //        ),
-
 
 
         Item(
@@ -3835,7 +3834,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(13961572),
             url = "https://emojipedia.org/santa-claus/"
         ),
-
 
 
 //        Item(
@@ -4497,7 +4495,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(7682276),
             url = "https://emojipedia.org/fireworks/"
         ),
-
 
 
 //        Item(
