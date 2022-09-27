@@ -27,9 +27,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,7 +42,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.domain.model.Item
-import com.tilseier.higherloweremojigame.extantions.copyToClipboard
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
@@ -91,13 +92,6 @@ fun GameContent(
         }
     }
 
-    // TODO move logic to ViewModel
-    // TODO design of game screen
-    // TODO disable user scroll interaction
-
-    // TODO use answer object
-
-    // TODO make on right answer and on wrong answer
     LaunchedEffect(key1 = currentItemIndex) {
         if (lazyListState.firstVisibleItemIndex == currentItemIndex) return@LaunchedEffect
         when (moveToItemAnimation) {
@@ -431,6 +425,8 @@ fun ItemsList(
     onLessClick: () -> Unit,
 ) {
     val windowInfo = rememberWindowInfo()
+    val context = LocalContext.current
+    val localClipboardManager = LocalClipboardManager.current
     LazyColumnOrRow(
         modifier = modifier,
         useLazyColumn = windowInfo.isCompactScreenWidth,
@@ -461,7 +457,17 @@ fun ItemsList(
                 isAnswerVisible = index <= currentItemIndex,
                 showAnswerWithAnimation = index == showAnswerForItemIndex,
                 onMoreClick = onMoreClick,
-                onLessClick = onLessClick
+                onLessClick = onLessClick,
+                onCopyToClipboardClick = {
+                    item.sign?.let { sign ->
+                        localClipboardManager.setText(AnnotatedString(sign))
+                        Toast.makeText(
+                            context,
+                            context.getString(R.string.share_copy_message, sign),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             )
         }
     }
@@ -477,9 +483,9 @@ private fun ItemWithEmoji(
     showAnswerWithAnimation: Boolean,
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
+    onCopyToClipboardClick: () -> Unit,
 ) {
     // TODO background from gradient colors?
-    val context = LocalContext.current
     Box(modifier = modifier) {
         item.sign?.let { sign ->
             BackgroundWithTextSign(
@@ -620,7 +626,7 @@ private fun ItemWithEmoji(
             }
         }
 
-        item.sign?.let { sign ->
+        item.sign?.let {
             Image(
                 painter = painterResource(id = R.drawable.ic_content_copy),
                 contentDescription = null,
@@ -630,10 +636,7 @@ private fun ItemWithEmoji(
                     .size(24.dp)
                     .clip(RoundedCornerShape(4.dp))
                     .alpha(0.5f)
-                    .clickable {
-                        context.copyToClipboard(sign, "emoji")
-                        Toast.makeText(context, context.getString(R.string.share_copy_message, sign), Toast.LENGTH_SHORT).show()
-                    }
+                    .clickable { onCopyToClipboardClick() }
             )
         }
     }
