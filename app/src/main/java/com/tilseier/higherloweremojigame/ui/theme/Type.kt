@@ -8,13 +8,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.tilseier.higherloweremojigame.R
 
-val iOS11EmojiFont = FontFamily(
-    Font(R.font.ios11_emoji, FontWeight.Normal),
-    Font(R.font.ios11_emoji, FontWeight.SemiBold),
-    Font(R.font.ios11_emoji, FontWeight.Bold),
-    Font(R.font.ios11_emoji, FontWeight.Black)
-)
-
 val iOS14EmojiFont = FontFamily(
     Font(R.font.ios14_emoji, FontWeight.Normal),
     Font(R.font.ios14_emoji, FontWeight.SemiBold),
