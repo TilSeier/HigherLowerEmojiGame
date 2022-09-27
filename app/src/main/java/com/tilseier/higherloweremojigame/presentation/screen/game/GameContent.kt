@@ -175,7 +175,6 @@ sealed class VsDividerState(val delayAfterAnimation: Long) {
     object SqueezeWrongAnswer : VsDividerState(200)
 }
 
-@OptIn(ExperimentalTransitionApi::class)
 @Composable
 fun VsDivider(
     modifier: Modifier = Modifier,
