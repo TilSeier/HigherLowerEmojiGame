@@ -15,6 +15,13 @@ val iOS11EmojiFont = FontFamily(
     Font(R.font.ios11_emoji, FontWeight.Black)
 )
 
+val iOS14EmojiFont = FontFamily(
+    Font(R.font.ios14_emoji, FontWeight.Normal),
+    Font(R.font.ios14_emoji, FontWeight.SemiBold),
+    Font(R.font.ios14_emoji, FontWeight.Bold),
+    Font(R.font.ios14_emoji, FontWeight.Black)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     h1 = TextStyle(

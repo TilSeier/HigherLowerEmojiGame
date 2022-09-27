@@ -41,7 +41,7 @@ import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.model.MenuDifficulty
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.Typography
-import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
+import com.tilseier.higherloweremojigame.ui.theme.iOS14EmojiFont
 import com.tilseier.higherloweremojigame.util.ShareUtil
 
 @Composable
@@ -164,7 +164,7 @@ fun MenuDifficultyItem(
             EmojisAroundElement(
                 sign = menuDifficulty.sign,
                 modifier = Modifier.fillMaxSize(),
-                fontFamily = iOS11EmojiFont
+                fontFamily = iOS14EmojiFont
             ) {
                 RoundButton(
                     onClick = { onClick(menuDifficulty) },

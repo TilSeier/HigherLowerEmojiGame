@@ -38,11 +38,11 @@ import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
+import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
 import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
 import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
-import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
@@ -482,7 +482,7 @@ private fun ItemWithEmoji(
                 modifier = Modifier.fillMaxSize(),
                 sign = sign,
                 color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length),
-                fontFamily = iOS11EmojiFont
+                fontFamily = iOS14EmojiFont
             )
         } ?: run {
             BackgroundWithImageURL(

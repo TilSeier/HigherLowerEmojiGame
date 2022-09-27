@@ -1,9 +1,10 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -17,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundDarkPurple
-import com.tilseier.higherloweremojigame.ui.theme.iOS11EmojiFont
+import com.tilseier.higherloweremojigame.ui.theme.iOS14EmojiFont
 
 @Composable
 fun BackgroundWithTextSign(
@@ -396,6 +397,6 @@ private fun BackgroundWithTextSignPreview() {
         modifier = Modifier.fillMaxSize(),
         sign = "\uD83D\uDE02",
         color = ItemBackgroundDarkPurple,
-        fontFamily = iOS11EmojiFont
+        fontFamily = iOS14EmojiFont
     )
 }
