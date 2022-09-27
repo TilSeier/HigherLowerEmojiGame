@@ -3674,16 +3674,6 @@ class ItemsLocalDataSource {
         ),
         Item(
             id = 111111111,
-            emojiId = "1F3A8",
-            name = "Artist",
-            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/artist_1f9d1-200d-1f3a8.png",
-            sign = "\uD83E\uDDD1\u200D\uD83C\uDFA8", // 🧑‍🎨
-            backgroundColor = null,
-            number = calculateMonthAverage(9867374),
-            url = "https://emojipedia.org/artist/"
-        ),
-        Item(
-            id = 111111111,
             emojiId = "1F4D6",
             name = "Open Book",
             imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/open-book_1f4d6.png",
