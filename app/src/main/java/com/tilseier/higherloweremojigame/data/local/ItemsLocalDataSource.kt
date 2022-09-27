@@ -27,7 +27,7 @@ import com.tilseier.higherloweremojigame.ui.theme.*
  */
 
 class ItemsLocalDataSource {
-    private val socialMultiplier = 3 // 3 // Tweeter + Facebook + Instagram
+    private val socialMultiplier = 3 // Tweeter + Facebook + Instagram
     private val daysFromStartOfStatistic = 3184 // 04.07.2013 - 23.03.2022 (current date)
     private val countOfAverageMonths = 30
 
@@ -2215,15 +2215,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(123_182_874),
             url = "https://emojipedia.org/hatching-chick/"
         ),
-//        Item(
-//            id = 111111111,
-//            name = "Hollow Red Circle",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/hollow-red-circle_2b55.png",
-//            sign = "⭕",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(18371271),
-//            url = "https://emojipedia.org/hollow-red-circle/"
-//        ),
         Item(
             id = 111111111, // TODO
             name = "Crying Cat",
@@ -2241,16 +2232,6 @@ class ItemsLocalDataSource {
 //            backgroundColor = null,
 //            number = calculateMonthAverage(0),
 //            url = "https://emojipedia.org/tumbler-glass/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "2753",
-//            name = "Red Question Mark",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/question-mark_2753.png",
-//            sign = "❓",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12878932),
-//            url = "https://emojipedia.org/question-mark/"
 //        ),
         Item(
             id = 111111111,
@@ -2399,15 +2380,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(119_482_874),
             url = "https://emojipedia.org/cherries/"
         ),
-//        Item( // controversial
-//            id = 111111111,
-//            name = "Women Holding Hands",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/women-holding-hands_1f46d.png",
-//            sign = "\uD83D\uDC6D", // 👭
-//            backgroundColor = null,
-//            number = calculateMonthAverage(13779514),
-//            url = "https://emojipedia.org/women-holding-hands/"
-//        ),
         Item(
             id = 111111111, // TODO
             name = "Leaf Fluttering in Wind",
@@ -2435,16 +2407,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(118_682_874),
             url = "https://emojipedia.org/bomb/"
         ),
-//        Item( // controversial emoji
-//            id = 111111111,
-//            emojiId = "1F489",
-//            name = "Syringe",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/syringe_1f489.png",
-//            sign = "\uD83D\uDC89", // 💉
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12760584),
-//            url = "https://emojipedia.org/syringe/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "1F412",
@@ -2629,16 +2591,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(113_982_874),
             url = "https://emojipedia.org/thought-balloon/"
         ),
-//        Item( // constoversial emoji
-//            id = 111111111,
-//            emojiId = "1F459",
-//            name = "Bikini",
-//            imageUrl = "",
-//            sign = "\uD83D\uDC59", // 👙
-//            backgroundColor = null,
-//            number = calculateMonthAverage(7890651),
-//            url = "https://emojipedia.org/bikini/"
-//        ),
         Item(
             id = 111111111, // TODO
             name = "Cat with Wry Smile",
@@ -2760,7 +2712,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(110_028_736),
             url = "https://emojipedia.org/camera-with-flash/"
         ),
-        // from here 110_028_736 -> 38_389_622
         Item(
             id = 111111111, // TODO
             name = "Cloud",
@@ -3201,15 +3152,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(57_628_736),
             url = "https://emojipedia.org/person-lifting-weights/"
         ),
-//        Item(
-//            id = 111111111,
-//            name = "Globe Showing Asia-Australia",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/globe-showing-asia-australia_1f30f.png",
-//            sign = "\uD83C\uDF0F", // 🌏
-//            backgroundColor = null,
-//            number = calculateMonthAverage(13684579),
-//            url = "https://emojipedia.org/globe-showing-asia-australia/"
-//        ),
         Item(
             id = 111111111, // TODO
             name = "Koala",
@@ -3378,95 +3320,6 @@ class ItemsLocalDataSource {
 
         // END OF ORDERED POINT http://www.emojistats.org/
 
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Left Arrow",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/left-arrow_2b05-fe0f.png",
-//            sign = "⬅️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(240063300),
-//            url = "https://emojipedia.org/left-arrow/"
-//        ),
-
-//        Item(
-//            id = 71,
-//            name = "Green Heart",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/green-heart_1f49a.png",
-//            sign = "\uD83D\uDC9A", // 💚
-//            backgroundColor = null,
-//            number = calculateMonthAverage(145493542), // (145493542 / daysFromStartOfStatistic).toLong() * countOfAverageMonths,
-//            url = "https://emojipedia.org/green-heart/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Play Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/play-button_25b6-fe0f.png",
-//            sign = "▶️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(112037700),
-//            url = "https://emojipedia.org/play-button/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Right Arrow",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/right-arrow_27a1-fe0f.png",
-//            sign = "➡️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(108238114),
-//            url = "https://emojipedia.org/right-arrow/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Red Circle",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/large-red-circle_1f534.png",
-//            sign = "\uD83D\uDD34", // 🔴
-//            backgroundColor = null,
-//            number = calculateMonthAverage(101889783),
-//            url = "https://emojipedia.org/large-red-circle/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Keycap Digit One",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/keycap-digit-one_31-fe0f-20e3.png",
-//            sign = "1️⃣",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(48869465),
-//            url = "https://emojipedia.org/keycap-digit-one/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Keycap Digit Two",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/keycap-digit-two_32-fe0f-20e3.png",
-//            sign = "2️⃣",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(45974442),
-//            url = "https://emojipedia.org/keycap-digit-two/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Copyright",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/copyright_a9-fe0f.png",
-//            sign = "©️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(43048470),
-//            url = "https://emojipedia.org/copyright/"
-//        ),
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Flag: United States",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/flag-united-states_1f1fa-1f1f8.png",
-//            sign = "\uD83C\uDDFA\uD83C\uDDF8", // 🇺🇸
-//            backgroundColor = null,
-//            number = calculateMonthAverage(42173813),
-//            url = "https://emojipedia.org/flag-united-states/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "1F552",
@@ -3477,17 +3330,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(38_389_622), // Three O'Click - 11039538
             url = "https://emojipedia.org/three-oclock/"
         ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Left Arrow Curving Right",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/left-arrow-curving-right_21aa-fe0f.png",
-//            sign = "↪️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(37094598),
-//            url = "https://emojipedia.org/left-arrow-curving-right/"
-//        ),
-
         Item(
             id = 111111111, // TODO
             name = "Telephone",
@@ -3497,7 +3339,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(36120888),
             url = "https://emojipedia.org/telephone/"
         ),
-
         Item(
             id = 111111111, // TODO
             name = "Movie Camera",
@@ -3507,47 +3348,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(36051816),
             url = "https://emojipedia.org/movie-camera/"
         ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Reverse Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/reverse-button_25c0-fe0f.png",
-//            sign = "◀️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(35165760),
-//            url = "https://emojipedia.org/reverse-button/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Check Box with Check",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/check-box-with-check_2611-fe0f.png",
-//            sign = "☑️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(33963622),
-//            url = "https://emojipedia.org/check-box-with-check/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Right Arrow Curving Left",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/right-arrow-curving-left_21a9-fe0f.png",
-//            sign = "↩️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(33022878),
-//            url = "https://emojipedia.org/right-arrow-curving-left/"
-//        ),
-
-//        Item(
-//            id = 111111111, // TODO
-//            name = "Down Arrow",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/down-arrow_2b07-fe0f.png",
-//            sign = "⬇️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(29689476),
-//            url = "https://emojipedia.org/down-arrow/"
-//        ),
-
         Item(
             id = 111111111, // TODO
             name = "Loudspeaker",
@@ -3566,7 +3366,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(26384678),
             url = "https://emojipedia.org/round-pushpin/"
         ),
-
         Item(
             id = 111111111, // TODO
             name = "Goat",
@@ -3576,7 +3375,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(24919442),
             url = "https://emojipedia.org/goat/"
         ),
-
         Item(
             id = 111111111,
             name = "Alarm Clock",
@@ -3595,16 +3393,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(21928832),
             url = "https://emojipedia.org/hot-springs/"
         ),
-//        Item(
-//            id = 111111111,
-//            name = "Club Suit",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/club-suit_2663-fe0f.png",
-//            sign = "♣️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(21874657),
-//            url = "https://emojipedia.org/club-suit/"
-//        ),
-
         Item(
             id = 111111111,
             name = "Video Camera",
@@ -3614,7 +3402,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(21519366),
             url = "https://emojipedia.org/video-camera/"
         ),
-
         Item(
             id = 111111111,
             name = "Megaphone",
@@ -3624,8 +3411,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(21301385),
             url = "https://emojipedia.org/megaphone/"
         ),
-
-
         Item(
             id = 111111111,
             name = "Speaker High Volume",
@@ -3635,25 +3420,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(20783219),
             url = "https://emojipedia.org/speaker-high-volume/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            name = "Multiply",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/multiply_2716-fe0f.png",
-//            sign = "✖️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(19651444),
-//            url = "https://emojipedia.org/multiply/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            name = "Blue Circle",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/large-blue-circle_1f535.png",
-//            sign = "\uD83D\uDD35", // 🔵
-//            backgroundColor = null,
-//            number = calculateMonthAverage(19239423),
-//            url = "https://emojipedia.org/large-blue-circle/"
-//        ),
         Item(
             id = 111111111,
             name = "Telephone Receiver",
@@ -3672,8 +3438,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(18867332),
             url = "https://emojipedia.org/mobile-phone/"
         ),
-
-
         Item(
             id = 111111111,
             name = "Clapper Board",
@@ -3683,7 +3447,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(17873581),
             url = "https://emojipedia.org/clapper-board/"
         ),
-
         Item(
             id = 111111111,
             name = "Link",
@@ -3693,19 +3456,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(17623594),
             url = "https://emojipedia.org/link/"
         ),
-
-
-//        Item(
-//            id = 111111111,
-//            name = "Spade Suit",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/spade-suit_2660-fe0f.png",
-//            sign = "♠️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(17170293),
-//            url = "https://emojipedia.org/spade-suit/"
-//        ),
-
-
         Item(
             id = 111111111,
             name = "Anchor",
@@ -3715,18 +3465,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(16630982),
             url = "https://emojipedia.org/anchor/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            name = "Fast-Forward Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/fast-forward-button_23e9.png",
-//            sign = "⏩",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(16410865),
-//            url = "https://emojipedia.org/fast-forward-button/"
-//        ),
-
-
         Item(
             id = 111111111,
             name = "Memo",
@@ -3736,8 +3474,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(15336351),
             url = "https://emojipedia.org/memo/"
         ),
-
-
         Item(
             id = 111111111,
             name = "Bell",
@@ -3747,19 +3483,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(15265940),
             url = "https://emojipedia.org/bell/"
         ),
-
-
-//        Item( // TODO maybe comment
-//            id = 111111111,
-//            name = "Kiss: Woman, Man",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/kiss_1f48f.png",
-//            sign = "\uD83D\uDC69\u200D❤️\u200D\uD83D\uDC8B\u200D\uD83D\uDC68", // 👩‍❤️‍💋‍👨
-//            backgroundColor = null,
-//            number = calculateMonthAverage(15027217),
-//            url = "https://emojipedia.org/kiss-woman-man/"
-//        ),
-
-
         Item(
             id = 111111111,
             name = "Speech Balloon",
@@ -3769,16 +3492,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(14653888),
             url = "https://emojipedia.org/speech-balloon/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            name = "Small Orange Diamond",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/small-orange-diamond_1f538.png",
-//            sign = "\uD83D\uDD38", // 🔸
-//            backgroundColor = null,
-//            number = calculateMonthAverage(14510334),
-//            url = "https://emojipedia.org/small-orange-diamond/"
-//        ),
         Item(
             id = 111111111,
             name = "Books",
@@ -3788,7 +3501,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(14496044),
             url = "https://emojipedia.org/books/"
         ),
-
         Item(
             id = 111111111,
             name = "Light Bulb",
@@ -3798,33 +3510,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(14230743),
             url = "https://emojipedia.org/light-bulb/"
         ),
-//        Item( // TODO maybe comment
-//            id = 111111111,
-//            name = "Flag: France",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/flag-france_1f1eb-1f1f7.png",
-//            sign = "\uD83C\uDDEB\uD83C\uDDF7", // 🇫🇷
-//            backgroundColor = null,
-//            number = calculateMonthAverage(14116965),
-//            url = "https://emojipedia.org/flag-france/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            name = "Anger Symbol",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/anger-symbol_1f4a2.png",
-//            sign = "\uD83D\uDCA2", // 💢
-//            backgroundColor = null,
-//            number = calculateMonthAverage(14110139),
-//            url = "https://emojipedia.org/anger-symbol/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            name = "Diamond Suit",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/diamond-suit_2666-fe0f.png",
-//            sign = "♦️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(13969913),
-//            url = "https://emojipedia.org/diamond-suit/"
-//        ),
         Item(
             id = 111111111,
             name = "Santa Claus",
@@ -3834,18 +3519,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(13961572),
             url = "https://emojipedia.org/santa-claus/"
         ),
-
-
-//        Item(
-//            id = 111111111,
-//            name = "Black Small Square",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/black-small-square_25aa-fe0f.png",
-//            sign = "▪️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(13678909),
-//            url = "https://emojipedia.org/black-small-square/"
-//        ),
-
         Item(
             id = 111111111,
             name = "Video Game",
@@ -3855,26 +3528,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(13588965),
             url = "https://emojipedia.org/video-game/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            name = "Small Blue Diamond",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/small-blue-diamond_1f539.png",
-//            sign = "\uD83D\uDD39", // 🔹
-//            backgroundColor = null,
-//            number = calculateMonthAverage(13007925),
-//            url = "https://emojipedia.org/small-blue-diamond/"
-//        ),
-
-//        Item(
-//            id = 111111111,
-//            name = "Right Arrow Curving Down",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/right-arrow-curving-down_2935-fe0f.png",
-//            sign = "⤵️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12608552),
-//            url = "https://emojipedia.org/right-arrow-curving-down/"
-//        ),
         Item(
             id = 111111111,
             name = "Laptop",
@@ -3897,26 +3550,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(12914404),
             url = "https://emojipedia.org/radio/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "2753",
-//            name = "Red Question Mark",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/question-mark_2753.png",
-//            sign = "❓",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12878932),
-//            url = "https://emojipedia.org/question-mark/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "26AA",
-//            name = "White Circle",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/white-circle_26aa.png",
-//            sign = "⚪",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12828360),
-//            url = "https://emojipedia.org/white-circle/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "1F4C8",
@@ -3968,7 +3601,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(12163277),
             url = "https://emojipedia.org/pencil/"
         ),
-
         Item(
             id = 111111111,
             emojiId = "1F52E",
@@ -3979,17 +3611,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(12153373),
             url = "https://emojipedia.org/crystal-ball/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "2122",
-//            name = "Trade Mark",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/trade-mark_2122-fe0f.png",
-//            sign = "™️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(12022215),
-//            url = "https://emojipedia.org/trade-mark/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "26C5",
@@ -4021,17 +3642,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(11757617),
             url = "https://emojipedia.org/envelope-with-arrow/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F6AE",
-//            name = "Litter in Bin Sign",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/litter-in-bin-sign_1f6ae.png",
-//            sign = "\uD83D\uDEAE", // 🚮
-//            backgroundColor = null,
-//            number = calculateMonthAverage(11740914),
-//            url = "https://emojipedia.org/litter-in-bin-sign/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "1F33E",
@@ -4042,49 +3652,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(11589239),
             url = "https://emojipedia.org/farmer/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F1EE-1F1F9",
-//            name = "Flag: Italy",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/flag-italy_1f1ee-1f1f9.png",
-//            sign = "\uD83C\uDDEE\uD83C\uDDF9", // 🇮🇹
-//            backgroundColor = null,
-//            number = calculateMonthAverage(11532762),
-//            url = "https://emojipedia.org/flag-italy/"
-//        ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "00AE",
-//            name = "",
-//            imageUrl = "",
-//            sign = "", //
-//            backgroundColor = null,
-//            number = calculateMonthAverage(11397124),
-//            url = ""
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F1EA-1F1F8",
-//            name = "Flag: Sweden",
-//            imageUrl = "",
-//            sign = "\uD83C\uDDF8\uD83C\uDDEA", // 🇸🇪
-//            backgroundColor = null,
-//            number = calculateMonthAverage(11371797),
-//            url = "https://emojipedia.org/flag-sweden/"
-//        ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "2049",
-//            name = "Exclamation Question Mark",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/exclamation-question-mark_2049-fe0f.png",
-//            sign = "⁉️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(11088587),
-//            url = "https://emojipedia.org/exclamation-question-mark/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "1F30C",
@@ -4095,17 +3662,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(10776901),
             url = "https://emojipedia.org/milky-way/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "26AB",
-//            name = "Black Circle",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/black-circle_26ab.png",
-//            sign = "⚫",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(10684491),
-//            url = "https://emojipedia.org/black-circle/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "1F64D",
@@ -4116,29 +3672,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(10373896),
             url = "https://emojipedia.org/man-frowning/"
         ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F197",
-//            name = "OK Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/ok-button_1f197.png",
-//            sign = "\uD83C\uDD97", // 🆗
-//            backgroundColor = null,
-//            number = calculateMonthAverage(10208608),
-//            url = "https://emojipedia.org/ok-button/"
-//        ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F19A",
-//            name = "Vs Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/vs-button_1f19a.png",
-//            sign = "\uD83C\uDD9A", // 🆚
-//            backgroundColor = null,
-//            number = calculateMonthAverage(10095606),
-//            url = "https://emojipedia.org/vs-button/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "1F3A8",
@@ -4179,7 +3712,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(9629278),
             url = "https://emojipedia.org/globe-with-meridians/"
         ),
-
         Item(
             id = 111111111,
             emojiId = "1F4F0",
@@ -4190,28 +3722,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(9475392),
             url = "https://emojipedia.org/newspaper/"
         ),
-//        Item( // controversial emoli
-//            id = 111111111,
-//            emojiId = "1F467",
-//            name = "Family",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/family-man-woman-girl-girl_1f468-200d-1f469-200d-1f467-200d-1f467.png",
-//            sign = "\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC67", // 👨‍👩‍👧‍👧
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9385287),
-//            url = "https://emojipedia.org/family-man-woman-girl-girl/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "0034-20E3",
-//            name = "",
-//            imageUrl = "",
-//            sign = "", //
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9353382),
-//            url = ""
-//        ),
-
-
         Item(
             id = 111111111,
             emojiId = "1F374",
@@ -4222,26 +3732,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(9205833),
             url = "https://emojipedia.org/fork-and-knife/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "2B06",
-//            name = "Up Arrow",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/up-arrow_2b06-fe0f.png",
-//            sign = "⬆️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9165970),
-//            url = "https://emojipedia.org/up-arrow/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "2194",
-//            name = "Left-Right Arrow",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/left-right-arrow_2194-fe0f.png",
-//            sign = "↔️",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9121514),
-//            url = "https://emojipedia.org/left-right-arrow/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "1F511",
@@ -4252,16 +3742,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(9113742),
             url = "https://emojipedia.org/key/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F501",
-//            name = "Repeat Button",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/repeat-button_1f501.png",
-//            sign = "\uD83D\uDD01", // 🔁
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9113042),
-//            url = "https://emojipedia.org/repeat-button/"
-//        ),
         Item(
             id = 111111111,
             emojiId = "1F696",
@@ -4282,29 +3762,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(9035085),
             url = "https://emojipedia.org/shooting-star/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "2755",
-//            name = "White Exclamation Mark",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/white-exclamation-mark_2755.png",
-//            sign = "❕",
-//            backgroundColor = null,
-//            number = calculateMonthAverage(9033868),
-//            url = "https://emojipedia.org/white-exclamation-mark/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F537",
-//            name = "Large Blue Diamond",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/large-blue-diamond_1f537.png",
-//            sign = "\uD83D\uDD37", // 🔷
-//            backgroundColor = null,
-//            number = calculateMonthAverage(8987120),
-//            url = "https://emojipedia.org/large-blue-diamond/"
-//        ),
-
-        // NEXT STEP
-
         Item(
             id = 111111111,
             emojiId = "1F415",
@@ -4366,38 +3823,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(8699016),
             url = "https://emojipedia.org/chequered-flag/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F1E9-1F1EA",
-//            name = "Flag: Germany",
-//            imageUrl = "",
-//            sign = "\uD83C\uDDE9\uD83C\uDDEA", // 🇩🇪
-//            backgroundColor = null,
-//            number = calculateMonthAverage(8633231),
-//            url = "https://emojipedia.org/flag-germany/"
-//        ),
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F53B",
-//            name = "Red Triangle Pointed Down",
-//            imageUrl = "",
-//            sign = "\uD83D\uDD3B", // 🔻
-//            backgroundColor = null,
-//            number = calculateMonthAverage(8510354),
-//            url = "https://emojipedia.org/red-triangle-pointed-down/"
-//        ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F536",
-//            name = "Large Orange Diamond",
-//            imageUrl = "",
-//            sign = "\uD83D\uDD36", // 🔶
-//            backgroundColor = null,
-//            number = calculateMonthAverage(8500593),
-//            url = "https://emojipedia.org/large-orange-diamond/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "1F305",
@@ -4408,8 +3833,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(8489736),
             url = "https://emojipedia.org/sunrise/"
         ),
-
-
         Item(
             id = 111111111,
             emojiId = "1F43A",
@@ -4420,7 +3843,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(8459446),
             url = "https://emojipedia.org/wolf/"
         ),
-
         Item(
             id = 111111111,
             emojiId = "1F393",
@@ -4441,19 +3863,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(8215129),
             url = "https://emojipedia.org/envelope/"
         ),
-
-
-//        Item(
-//            id = 111111111,
-//            emojiId = "0035-20E3",
-//            name = "",
-//            imageUrl = "",
-//            sign = "", //
-//            backgroundColor = null,
-//            number = calculateMonthAverage(8162375),
-//            url = ""
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "231A",
@@ -4464,17 +3873,6 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(7918031),
             url = "https://emojipedia.org/watch/"
         ),
-//        Item(
-//            id = 111111111,
-//            emojiId = "1F503",
-//            name = "Clockwise Vertical Arrows",
-//            imageUrl = "",
-//            sign = "\uD83D\uDD03", // 🔃
-//            backgroundColor = null,
-//            number = calculateMonthAverage(7915389),
-//            url = "https://emojipedia.org/clockwise-vertical-arrows/"
-//        ),
-
         Item(
             id = 111111111,
             emojiId = "26D4",
@@ -4495,36 +3893,5 @@ class ItemsLocalDataSource {
             number = calculateMonthAverage(7682276),
             url = "https://emojipedia.org/fireworks/"
         ),
-
-
-//        Item(
-//            id = 46,
-//            name = "Heart Suit",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/heart-suit_2665-fe0f.png",
-//            sign = "♥️",
-//            backgroundColor = null,
-//            number = (TODO / daysFromStartOfStatistic).toLong() * countOfAverageMonths,
-//            url = "https://emojipedia.org/heart-suit/"
-//        ),
-
-//        Item( // TODO don't use
-//            id = 67,
-//            name = "Middle Finger",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/middle-finger_1f595.png",
-//            sign = "\uD83D\uDD95", // 🖕
-//            backgroundColor = null,
-//            number = (TODO / daysFromStartOfStatistic).toLong() * countOfAverageMonth,
-//            url = "https://emojipedia.org/middle-finger/"
-//        ),
-//        Item(
-//            id = 68,
-//            name = "Black Heart",
-//            imageUrl = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/black-heart_1f5a4.png",
-//            sign = "\uD83D\uDDA4", // 🖤
-//            backgroundColor = null,
-//            number = (TODO / daysFromStartOfStatistic).toLong() * countOfAverageMonth,
-//            url = "https://emojipedia.org/black-heart/"
-//        ),
-
     )
 }
