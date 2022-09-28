@@ -1,7 +1,6 @@
 package com.tilseier.higherloweremojigame.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -13,7 +12,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
-import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.data.local.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.repository.ItemRepositoryImpl
@@ -23,6 +21,7 @@ import com.tilseier.higherloweremojigame.presentation.navigation.NavGraph
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.StatusBar
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 
 class MainActivity : ComponentActivity() {
 
@@ -100,9 +99,9 @@ class MainActivity : ComponentActivity() {
             adRequest,
             object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
-                    Toast.makeText(context, adError.message, Toast.LENGTH_LONG).show()
                     rewardedAd = null
                     viewModel.onEvent(GameEvent.OnRewardedVideoFailedToLoad)
+                    TrackingUtil.trackAdError("Message: ${adError.message} Code: ${adError.code}")
                 }
 
                 override fun onAdLoaded(rewardedAd: RewardedAd) {
@@ -156,8 +155,6 @@ class MainActivity : ComponentActivity() {
             }
         } else {
             // The rewarded ad wasn't ready yet
-            Toast.makeText(this, getString(R.string.error_try_again_later), Toast.LENGTH_LONG)
-                .show()
             loadRewardedVideoAdIfNeeded()
         }
     }

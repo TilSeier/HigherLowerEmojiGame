@@ -13,6 +13,7 @@ object TrackingUtil {
     private const val EVENT_NAME_RATE_INTERACTION = "Rate Interaction"
     private const val EVENT_NAME_SHARE_INTERACTION = "Share Interaction"
     private const val EVENT_NAME_FACT_INTERACTION = "Fact Interaction"
+    private const val EVENT_NAME_AD_ERROR = "Ad Error"
     private const val EVENT_NAME_SCREEN_INTERACTION = "Screen Interaction"
     private const val EVENT_NAME_COPY_EMOJI = "Copy Emoji"
     private const val EVENT_NAME_BUTTON_CLICK = "Button Click"
@@ -24,6 +25,7 @@ object TrackingUtil {
     private const val ATTR_EMOJI = "Emoji"
     private const val ATTR_BUTTON = "Button"
     private const val ATTR_TITLE = "Title"
+    private const val ATTR_MESSAGE = "Message"
 
     private lateinit var firebaseAnalytics: FirebaseAnalytics
 
@@ -150,6 +152,14 @@ object TrackingUtil {
             .withAttribute(ATTR_SCORE, score)
             .withAttribute(ATTR_HIGH_SCORE, highScore)
             .withAttribute(ATTR_DIFFICULTY, difficulty.name)
+            .build()
+            .fire()
+    }
+
+    fun trackAdError(message: String) {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_AD_ERROR)
+            .withAttribute(ATTR_MESSAGE, message)
             .build()
             .fire()
     }
