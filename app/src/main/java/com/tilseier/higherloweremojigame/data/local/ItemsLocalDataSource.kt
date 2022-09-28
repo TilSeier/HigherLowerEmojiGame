@@ -2902,7 +2902,7 @@ class ItemsLocalDataSource {
             name = "Deciduous Tree",
             imageUrl = "",
             sign = "\uD83C\uDF33", // 🌳
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundOrange,
             number = calculateMonthAverage(87_928_736),
             url = "https://emojipedia.org/deciduous-tree/"
         ),

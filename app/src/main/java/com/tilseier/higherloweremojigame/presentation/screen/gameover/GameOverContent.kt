@@ -234,7 +234,7 @@ fun RestartButton(
             text = stringResource(id = R.string.button_restart),
             modifier = Modifier.weight(1f),
             color = Color.White,
-            fontSize = 26.sp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             letterSpacing = 2.sp
@@ -264,7 +264,7 @@ fun ContinueButton(viewModel: GameViewModel) {
             text = stringResource(id = R.string.button_continue),
             modifier = Modifier.weight(1f),
             color = Color.White,
-            fontSize = 26.sp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             letterSpacing = 2.sp
