@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1037763102280",
+    "project_id": "higher-lower-emoji-game",
+    "storage_bucket": "higher-lower-emoji-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037763102280:android:ed997f795acdea4763ba7d",
+        "android_client_info": {
+          "package_name": "com.tilseier.higherloweremojigame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037763102280-92ghq97h5nk19crd9dn052vbcvj3isip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOVA2YzlrrlGswm5402nfA4aEy4tZdzDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037763102280-92ghq97h5nk19crd9dn052vbcvj3isip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
