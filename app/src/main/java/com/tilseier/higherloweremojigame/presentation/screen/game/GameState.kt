@@ -1,6 +1,5 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
-import android.util.Log
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.model.Item
@@ -79,11 +78,6 @@ data class GameState(
                 else -> forth.add(item)
             }
         }
-
-        Log.e("ITEMS_TAG", "shuffleItemsWithDifferenceFirst: first = $first")
-        Log.e("ITEMS_TAG", "shuffleItemsWithDifferenceFirst: second = $second")
-        Log.e("ITEMS_TAG", "shuffleItemsWithDifferenceFirst: third = $third")
-        Log.e("ITEMS_TAG", "shuffleItemsWithDifferenceFirst: forth = $forth")
 
         return first + second + third + forth
     }
