@@ -43,6 +43,7 @@ import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.Typography
 import com.tilseier.higherloweremojigame.ui.theme.iOS14EmojiFont
 import com.tilseier.higherloweremojigame.util.ShareUtil
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 
 @Composable
 fun MenuContent(
@@ -73,6 +74,7 @@ fun MenuContent(
                             it.difficulty.name
                         )
                     )
+                    TrackingUtil.trackSelectDifficulty(it.difficulty)
                 }
             )
         }
@@ -101,6 +103,7 @@ fun MenuHeader() {
             IconButton(
                 onClick = {
                     showRateDialog = true
+                    TrackingUtil.trackThumbUpClick()
                 }
             ) {
                 Icon(
@@ -112,6 +115,7 @@ fun MenuHeader() {
             IconButton(
                 onClick = {
                     ShareUtil.shareGame(context)
+                    TrackingUtil.trackMenuShareClick()
                 }
             ) {
                 Icon(

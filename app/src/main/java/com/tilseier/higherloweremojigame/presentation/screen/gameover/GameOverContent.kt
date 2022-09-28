@@ -31,6 +31,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
+import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
@@ -38,6 +39,7 @@ import com.tilseier.higherloweremojigame.presentation.components.ButtonWithBotto
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.*
 import com.tilseier.higherloweremojigame.util.ShareUtil
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
@@ -50,6 +52,11 @@ fun GameOverContent(
 ) {
     LaunchedEffect(key1 = true) {
         viewModel.onEvent(GameEvent.OnGameOverScreenOpen)
+        TrackingUtil.trackGameOverScreenOpen(
+            viewModel.state.value.score,
+            viewModel.state.value.higherScore,
+            viewModel.state.value.difficulty
+        )
     }
     Column(
         modifier = Modifier
@@ -74,7 +81,8 @@ fun GameOverContent(
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Scores(
                         score = viewModel.state.value.score,
-                        higherScore = viewModel.state.value.higherScore
+                        higherScore = viewModel.state.value.higherScore,
+                        difficulty = viewModel.state.value.difficulty
                     )
                     Spacer(modifier = Modifier.height(60.dp))
                     NextStepsButtons(
@@ -130,7 +138,8 @@ fun GameOverStatusBar(
 fun Scores(
     modifier: Modifier = Modifier,
     score: Int,
-    higherScore: Int
+    higherScore: Int,
+    difficulty: Difficulty
 ) {
     val context = LocalContext.current
     Column(
@@ -169,6 +178,7 @@ fun Scores(
                 .background(Color.White)
                 .clickable {
                     ShareUtil.shareScore(context, score)
+                    TrackingUtil.trackScoreShareClick(score, higherScore, difficulty)
                 }
                 .padding(7.dp),
             tint = ButtonRed
@@ -217,6 +227,7 @@ fun RestartButton(
             ) {
                 popUpTo(Screen.Menu.route)
             }
+            TrackingUtil.trackRestartClick()
         },
         modifier = Modifier.fillMaxWidth(),
         backgroundColor = ButtonYellow,
@@ -247,6 +258,7 @@ fun ContinueButton(viewModel: GameViewModel) {
     ButtonWithBottomBorder(
         onClick = {
             viewModel.onEvent(GameEvent.OnContinueButtonClick)
+            TrackingUtil.trackContinueClick()
         },
         modifier = Modifier.fillMaxWidth(),
         backgroundColor = ButtonRed,
@@ -312,6 +324,7 @@ fun EmojiFactsCarousel(
                     onClick = {
                         factForDialog = it
                         showFactDialog = true
+                        TrackingUtil.trackFactClick(it)
                     },
                     emojiFact = emojiFact,
                     backgroundColor = Color.White,

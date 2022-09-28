@@ -25,11 +25,17 @@ import com.tilseier.higherloweremojigame.ui.theme.Background
 import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyMedium
 import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyMediumBorder
 import com.tilseier.higherloweremojigame.util.Intents
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 
 @Composable
 fun RateDialog(onDismissRequest: () -> Unit) {
     val context = LocalContext.current
-    Dialog(onDismissRequest = onDismissRequest) {
+    Dialog(
+        onDismissRequest = {
+            onDismissRequest()
+            TrackingUtil.trackRateDismissClick()
+        }
+    ) {
         Column(
             modifier = Modifier
                 .clip(RoundedCornerShape(5.dp))
@@ -60,6 +66,7 @@ fun RateDialog(onDismissRequest: () -> Unit) {
             ButtonWithBottomBorder(
                 onClick = {
                     Intents.openRatePage(context)
+                    TrackingUtil.trackRateClick()
                 },
                 modifier = Modifier
                     .padding(horizontal = 10.dp)
@@ -78,6 +85,7 @@ fun RateDialog(onDismissRequest: () -> Unit) {
             ButtonWithBottomBorder(
                 onClick = {
                     onDismissRequest()
+                    TrackingUtil.trackMaybeLaterClick()
                 },
                 modifier = Modifier
                     .padding(horizontal = 10.dp)

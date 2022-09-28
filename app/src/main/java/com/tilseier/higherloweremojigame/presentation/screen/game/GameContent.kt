@@ -53,6 +53,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.components.Bac
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
 import com.tilseier.higherloweremojigame.ui.theme.*
 import com.tilseier.higherloweremojigame.util.ColorUtil
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
 import dev.chrisbanes.snapper.rememberSnapperFlingBehavior
@@ -465,6 +466,7 @@ fun ItemsList(
                             context.getString(R.string.share_copy_message, sign),
                             Toast.LENGTH_SHORT
                         ).show()
+                        TrackingUtil.trackCopyEmojiClick(sign)
                     }
                 }
             )
