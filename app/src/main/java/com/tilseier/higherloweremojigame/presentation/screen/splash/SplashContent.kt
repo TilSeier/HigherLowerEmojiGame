@@ -29,7 +29,7 @@ fun SplashContent(navController: NavHostController) {
     LaunchedEffect(Unit) {
         delay(2000)
         navController.popBackStack()
-        navController.navigate(Screen.Menu.route)
+        navController.navigate(Screen.GamesMenu.route)
     }
     val infiniteTransition = rememberInfiniteTransition()
     val movingDotsCount by infiniteTransition.animateFloat(

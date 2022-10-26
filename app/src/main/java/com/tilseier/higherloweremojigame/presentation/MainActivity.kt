@@ -73,9 +73,10 @@ class MainActivity : ComponentActivity() {
                     is GameViewModel.UiEvent.OnReward -> {
                         viewModel.continueGame()
                         navController.navigate(Screen.Game.route) {
-                            popUpTo(Screen.Menu.route)
+                            popUpTo(Screen.EmojiDifficultiesMenu.route)
                         }
                     }
+                    else -> {}
                 }
             }
         }

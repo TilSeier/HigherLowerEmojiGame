@@ -1,6 +1,7 @@
 package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import com.tilseier.higherloweremojigame.common.Difficulty
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.model.Item
 import kotlin.math.absoluteValue
@@ -27,18 +28,34 @@ data class GameState(
     val isGameOver: Boolean = false,
     val isLoading: Boolean = false,
     val difficulty: Difficulty = Difficulty.EASY,
+    val game: Game = Game.EMOJI_GAME,
     val error: String = ""
 ) {
 
     // TODO generate items properly
-    fun generateItems(difficulty: Difficulty): List<Item> {
-        return when (difficulty) {
-            Difficulty.EASY -> {
-                // TODO fix more less more less issue for big difference number
-                shuffleItemsWithDifferenceFirst(allItems.easyItems, 2_000_000)
+    fun generateItems(game: Game, difficulty: Difficulty): List<Item> {
+        return when (game) {
+            Game.EMOJI_GAME -> {
+                when (difficulty) {
+                    Difficulty.EASY -> {
+                        val items = allItems.easyItems.filter { it.emoji != null }
+                        // TODO fix more less more less issue for big difference number
+                        shuffleItemsWithDifferenceFirst(items, 2_000_000)
+                    }
+                    Difficulty.MEDIUM -> {
+                        val items = allItems.mediumItems.filter { it.emoji != null }
+                        shuffleItemsWithDifferenceFirst(items, 500_000)
+                    }
+                    Difficulty.HARD -> {
+                        val items = allItems.hardItems.filter { it.emoji != null }
+                        items.shuffled()
+                    }
+                }
             }
-            Difficulty.MEDIUM -> shuffleItemsWithDifferenceFirst(allItems.mediumItems, 500_000)
-            Difficulty.HARD -> allItems.hardItems.shuffled()
+            Game.INVENTION_GAME -> {
+                val items = allItems.easyItems.filter { it.invention != null }
+                items.shuffled()
+            }
         }
     }
 
@@ -60,14 +77,15 @@ data class GameState(
         val forth = ArrayList<Item>()
 
         for (item in shuffledItems) {
+            val emoji = item.emoji ?: continue
             val lastElementFirst = first.lastOrNull()
             val lastElementSecond = second.lastOrNull()
             val lastElementThird = third.lastOrNull()
-            val number = item.number
+            val number = emoji.number
             val listOrder = when {
-                number.haveMinDifferenceWith(lastElementFirst?.number, difference) -> ListOrder.FIRST
-                number.haveMinDifferenceWith(lastElementSecond?.number, difference) -> ListOrder.SECOND
-                number.haveMinDifferenceWith(lastElementThird?.number, difference) -> ListOrder.THIRD
+                number.haveMinDifferenceWith(lastElementFirst?.emoji?.number, difference) -> ListOrder.FIRST
+                number.haveMinDifferenceWith(lastElementSecond?.emoji?.number, difference) -> ListOrder.SECOND
+                number.haveMinDifferenceWith(lastElementThird?.emoji?.number, difference) -> ListOrder.THIRD
                 else -> ListOrder.FORTH
             }
 

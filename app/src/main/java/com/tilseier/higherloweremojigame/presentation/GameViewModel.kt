@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.plcoding.cryptocurrencyappyt.common.Resource
 import com.tilseier.higherloweremojigame.common.Difficulty
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameState
@@ -70,19 +71,20 @@ class GameViewModel constructor(
         }.launchIn(viewModelScope)
     }
 
-    fun newGame(difficulty: Difficulty) {
+    fun newGame(game: Game, difficulty: Difficulty) {
         _state.value = _state.value.copy(
-            currentItems = _state.value.generateItems(difficulty),
+            currentItems = _state.value.generateItems(game, difficulty),
             currentItemIndex = 0,
             showAnswerForItemIndex = 0,
             moveToItemAnimation = MoveAnimation.None,
             score = 0,
             continueCount = 0,
             isGameOver = false,
-            higherScore = AppPreferences.preferences()?.higherScore(difficulty)
+            higherScore = AppPreferences.preferences()?.higherScore(game, difficulty)
                 ?: AppPreferences.DEFAULT_HIGHER_SCORE,
             isLoading = false,
             difficulty = difficulty,
+            game = game,
             error = ""
         )
     }
@@ -103,10 +105,25 @@ class GameViewModel constructor(
             )
             delay(SHOW_ANSWER_DURATION)
 
-            if (_state.value.guessItem.number >= _state.value.compareItem.number) {
-                rightAnswer()
-            } else {
-                wrongAnswer()
+            when (_state.value.game) {
+                Game.EMOJI_GAME -> {
+                    val itemNumber = _state.value.guessItem.emoji?.number ?: 0
+                    val compareItemNumber = _state.value.compareItem.emoji?.number ?: 0
+                    if (itemNumber >= compareItemNumber) {
+                        rightAnswer()
+                    } else {
+                        wrongAnswer()
+                    }
+                }
+                Game.INVENTION_GAME -> {
+                    val itemYearOfInvention = _state.value.guessItem.invention?.yearOfInvention ?: 0
+                    val compareItemYearOfInvention = _state.value.compareItem.invention?.yearOfInvention ?: 0
+                    if (itemYearOfInvention >= compareItemYearOfInvention) {
+                        rightAnswer()
+                    } else {
+                        wrongAnswer()
+                    }
+                }
             }
         }
     }
@@ -118,10 +135,25 @@ class GameViewModel constructor(
             )
             delay(SHOW_ANSWER_DURATION)
 
-            if (_state.value.guessItem.number <= _state.value.compareItem.number) {
-                rightAnswer()
-            } else {
-                wrongAnswer()
+            when (_state.value.game) {
+                Game.EMOJI_GAME -> {
+                    val itemNumber = _state.value.guessItem.emoji?.number ?: 0
+                    val compareItemNumber = _state.value.compareItem.emoji?.number ?: 0
+                    if (itemNumber <= compareItemNumber) {
+                        rightAnswer()
+                    } else {
+                        wrongAnswer()
+                    }
+                }
+                Game.INVENTION_GAME -> {
+                    val itemYearOfInvention = _state.value.guessItem.invention?.yearOfInvention ?: 0
+                    val compareItemYearOfInvention = _state.value.compareItem.invention?.yearOfInvention ?: 0
+                    if (itemYearOfInvention <= compareItemYearOfInvention) {
+                        rightAnswer()
+                    } else {
+                        wrongAnswer()
+                    }
+                }
             }
         }
     }
@@ -168,7 +200,7 @@ class GameViewModel constructor(
         val higherScore = _state.value.higherScore
         val changeHigherScore = score > higherScore
         if (changeHigherScore) {
-            AppPreferences.preferences()?.setHigherScore(score, _state.value.difficulty)
+            AppPreferences.preferences()?.setHigherScore(_state.value.game, score, _state.value.difficulty)
             _state.value = _state.value.copy(higherScore = score)
         }
         _state.value = _state.value.copy(isGameOver = true)
@@ -178,7 +210,7 @@ class GameViewModel constructor(
         val itemIndex = _state.value.currentItemIndex + 1
         if (_state.value.currentItems.size - 2 <= itemIndex) {
             _state.value = _state.value.copy(
-                currentItems = _state.value.currentItems + _state.value.generateItems(_state.value.difficulty)
+                currentItems = _state.value.currentItems + _state.value.generateItems(_state.value.game, _state.value.difficulty)
             )
         }
         if (_state.value.currentItems.size <= itemIndex) {

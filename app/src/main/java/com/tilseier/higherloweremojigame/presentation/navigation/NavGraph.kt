@@ -29,6 +29,7 @@ import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
+import com.tilseier.higherloweremojigame.presentation.screen.games_menu.GamesMenuScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
 import com.tilseier.higherloweremojigame.presentation.screen.splash.SplashScreen
 import com.tilseier.higherloweremojigame.ui.theme.DialogBackground
@@ -43,7 +44,10 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
         composable(route = Screen.Splash.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = Screen.Menu.route) {
+        composable(route = Screen.GamesMenu.route) {
+            GamesMenuScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(route = Screen.EmojiDifficultiesMenu.route) {
             HomeScreen(navController = navController, viewModel = viewModel)
         }
         composable(
@@ -138,7 +142,7 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
                                     .weight(1f)
                                     .clickable {
                                         navController.popBackStack(
-                                            route = Screen.Menu.route,
+                                            route = Screen.EmojiDifficultiesMenu.route,
                                             inclusive = false
                                         )
                                     }

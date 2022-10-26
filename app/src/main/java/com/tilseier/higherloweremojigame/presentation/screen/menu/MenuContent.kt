@@ -34,6 +34,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.RoundButton
 import com.tilseier.higherloweremojigame.presentation.components.dialog.RateDialog
@@ -67,7 +68,7 @@ fun MenuContent(
             MenuDifficultyItem(
                 menuDifficulty = item,
                 onClick = {
-                    viewModel.newGame(it.difficulty)
+                    viewModel.newGame(Game.EMOJI_GAME, it.difficulty)
                     navController.navigate(
                         route = Screen.Game.pass(
                             Constants.CATEGORY_EMOJI,

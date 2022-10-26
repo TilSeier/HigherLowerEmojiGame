@@ -41,6 +41,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
@@ -72,6 +73,7 @@ fun GameContent(
     val isGameOver: Boolean = state.isGameOver
     val higherScore: Int = state.higherScore
     val score: Int = state.score
+    val game: Game = state.game
 
     val onBackClick: () -> Unit = {
         navController.navigate(route = Screen.ExitDialog.route)
@@ -88,7 +90,7 @@ fun GameContent(
             vsDividerState = VsDividerState.ShowWrongAnswer
             delay(VsDividerState.ShowWrongAnswer.delayAfterAnimation)
             navController.navigate(route = Screen.GameOver.route) {
-                popUpTo(Screen.Menu.route)
+                popUpTo(Screen.EmojiDifficultiesMenu.route)
             }
         }
     }
@@ -123,6 +125,7 @@ fun GameContent(
     Column(modifier = Modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize()) {
             ItemsList(
+                game = game,
                 items = currentItems,
                 currentItemIndex = currentItemIndex,
                 showAnswerForItemIndex = showAnswerForItemIndex,
@@ -416,6 +419,7 @@ fun StatusBar(
 @OptIn(ExperimentalSnapperApi::class)
 @Composable
 fun ItemsList(
+    game: Game,
     items: List<Item>,
     currentItemIndex: Int,
     showAnswerForItemIndex: Int,
@@ -427,6 +431,15 @@ fun ItemsList(
     val windowInfo = rememberWindowInfo()
     val context = LocalContext.current
     val localClipboardManager = LocalClipboardManager.current
+    val onCopyToClipboardClick: (String) -> Unit = { sign ->
+        localClipboardManager.setText(AnnotatedString(sign))
+        Toast.makeText(
+            context,
+            context.getString(R.string.share_copy_message, sign),
+            Toast.LENGTH_SHORT
+        ).show()
+        TrackingUtil.trackCopyEmojiClick(sign)
+    }
     LazyColumnOrRow(
         modifier = modifier,
         useLazyColumn = windowInfo.isCompactScreenWidth,
@@ -450,26 +463,32 @@ fun ItemsList(
                     .fillMaxHeight()
                     .fillParentMaxWidth(fraction = 0.5f)
             }
-            ItemWithEmoji(
-                modifier = itemModifier,
-                item = item,
-                compareItem = previousItem,
-                isAnswerVisible = index <= currentItemIndex,
-                showAnswerWithAnimation = index == showAnswerForItemIndex,
-                onMoreClick = onMoreClick,
-                onLessClick = onLessClick,
-                onCopyToClipboardClick = {
-                    item.sign?.let { sign ->
-                        localClipboardManager.setText(AnnotatedString(sign))
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.share_copy_message, sign),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        TrackingUtil.trackCopyEmojiClick(sign)
-                    }
+            when (game) {
+                Game.EMOJI_GAME -> {
+                    ItemWithEmoji(
+                        modifier = itemModifier,
+                        item = item,
+                        compareItem = previousItem,
+                        isAnswerVisible = index <= currentItemIndex,
+                        showAnswerWithAnimation = index == showAnswerForItemIndex,
+                        onMoreClick = onMoreClick,
+                        onLessClick = onLessClick,
+                        onCopyToClipboardClick = { onCopyToClipboardClick(it) }
+                    )
                 }
-            )
+                Game.INVENTION_GAME -> {
+                    ItemWithInvention(
+                        modifier = itemModifier,
+                        item = item,
+                        compareItem = previousItem,
+                        isAnswerVisible = index <= currentItemIndex,
+                        showAnswerWithAnimation = index == showAnswerForItemIndex,
+                        onMoreClick = onMoreClick,
+                        onLessClick = onLessClick,
+                        onCopyToClipboardClick = { onCopyToClipboardClick(it) }
+                    )
+                }
+            }
         }
     }
 }
@@ -484,22 +503,27 @@ private fun ItemWithEmoji(
     showAnswerWithAnimation: Boolean,
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
-    onCopyToClipboardClick: () -> Unit,
+    onCopyToClipboardClick: (sign: String) -> Unit,
 ) {
+    val itemSign = item.emoji?.sign
+    val itemName = item.emoji?.name ?: ""
+    val itemNumber = item.emoji?.number?.toInt() ?: 0
+    val itemImageUrl = item.emoji?.imageUrl ?: ""
+    val compareItemName = compareItem?.emoji?.name
     // TODO background from gradient colors?
     Box(modifier = modifier) {
-        item.sign?.let { sign ->
+        itemSign?.let { sign ->
             BackgroundWithTextSign(
                 modifier = Modifier.fillMaxSize(),
                 sign = sign,
-                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length),
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(itemName.length),
                 fontFamily = iOS14EmojiFont
             )
         } ?: run {
             BackgroundWithImageURL(
                 modifier = Modifier.fillMaxSize(),
-                imageURL = item.imageUrl,
-                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(item.name.length)
+                imageURL = itemImageUrl,
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(itemName.length)
             )
         }
         Box(
@@ -514,7 +538,7 @@ private fun ItemWithEmoji(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 AutoSizeText(
-                    text = stringResource(id = R.string.item_name, item.name),
+                    text = stringResource(id = R.string.item_name, itemName),
                     modifier = Modifier.padding(horizontal = 16.dp),
                     color = Color.White,
                     maxFontSize = 24.sp,
@@ -549,7 +573,7 @@ private fun ItemWithEmoji(
                         transitionSpec = { tween(durationMillis = NUMBER_ANIMATION_DURATION) },
                         label = "number animation"
                     ) { state ->
-                        if (state == EnterExitState.Visible) item.number.toInt() else 0
+                        if (state == EnterExitState.Visible) itemNumber else 0
                     }.value.toLong()
                     AnswerNumber(
                         modifier = Modifier.fillMaxWidth(),
@@ -615,7 +639,7 @@ private fun ItemWithEmoji(
                     AutoSizeText(
                         text = stringResource(
                             id = R.string.text_than_this_item,
-                            compareItem?.name ?: ""
+                            compareItemName ?: ""
                         ),
                         modifier = Modifier.padding(horizontal = 16.dp),
                         color = Color.White,
@@ -627,7 +651,7 @@ private fun ItemWithEmoji(
             }
         }
 
-        item.sign?.let {
+        itemSign?.let { sign ->
             Image(
                 painter = painterResource(id = R.drawable.ic_content_copy),
                 contentDescription = null,
@@ -637,7 +661,181 @@ private fun ItemWithEmoji(
                     .size(24.dp)
                     .clip(RoundedCornerShape(4.dp))
                     .alpha(0.5f)
-                    .clickable { onCopyToClipboardClick() }
+                    .clickable { onCopyToClipboardClick(sign) }
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+private fun ItemWithInvention(
+    modifier: Modifier = Modifier,
+    item: Item,
+    compareItem: Item?,
+    isAnswerVisible: Boolean,
+    showAnswerWithAnimation: Boolean,
+    onMoreClick: () -> Unit,
+    onLessClick: () -> Unit,
+    onCopyToClipboardClick: (sign: String) -> Unit,
+) {
+    val itemSign = item.invention?.emoji
+    val itemName = item.invention?.nameOfInvention ?: ""
+    val itemNumber = item.invention?.yearOfInvention ?: 0
+    val itemImageUrl = item.invention?.imageUrl ?: ""
+    val compareItemName = compareItem?.invention?.nameOfInvention
+    // TODO background from gradient colors?
+    Box(modifier = modifier) {
+        itemSign?.let { sign ->
+            BackgroundWithTextSign(
+                modifier = Modifier.fillMaxSize(),
+                sign = sign,
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(itemName.length),
+                fontFamily = iOS14EmojiFont
+            )
+        } ?: run {
+            BackgroundWithImageURL(
+                modifier = Modifier.fillMaxSize(),
+                imageURL = itemImageUrl,
+                color = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(itemName.length)
+            )
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = DarkHover),
+            contentAlignment = Alignment.TopCenter
+        ) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                AutoSizeText(
+                    text = stringResource(id = R.string.item_name, itemName),
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    color = Color.White,
+                    maxFontSize = 24.sp,
+                    fontWeight = FontWeight.Normal,
+                    textAlign = TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = stringResource(id = R.string.text_is_used),
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    textAlign = TextAlign.Center
+                )
+
+                var moreClick by rememberSaveable { mutableStateOf(false) }
+                var lessClick by rememberSaveable { mutableStateOf(false) }
+
+                AnimatedVisibility(
+                    visible = isAnswerVisible || showAnswerWithAnimation,
+                    enter = if (showAnswerWithAnimation) {
+                        fadeIn() + expandVertically()
+                    } else {
+                        EnterTransition.None
+                    },
+                    exit = if (showAnswerWithAnimation) {
+                        fadeOut() + shrinkVertically()
+                    } else {
+                        ExitTransition.None
+                    },
+                ) {
+                    val animatedNumber = transition.animateInt(
+                        transitionSpec = { tween(durationMillis = NUMBER_ANIMATION_DURATION) },
+                        label = "number animation"
+                    ) { state ->
+                        if (state == EnterExitState.Visible) itemNumber else 0
+                    }.value.toLong()
+                    AnswerNumber(
+                        modifier = Modifier.fillMaxWidth(),
+                        number = animatedNumber.formatNumberToString()
+                    )
+                }
+
+                if (!isAnswerVisible && !showAnswerWithAnimation) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    ItemButton(
+                        onClick = {
+                            if (!lessClick) {
+                                moreClick = true
+                                onMoreClick()
+                            }
+                        }
+                    ) {
+                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
+                            Text(
+                                text = stringResource(id = R.string.button_more),
+                                fontSize = 18.sp,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_arrow_drop_up),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(end = 8.dp)
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd),
+                                tint = Color.White
+                            )
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(4.dp))
+                    ItemButton(
+                        onClick = {
+                            if (!moreClick) {
+                                lessClick = true
+                                onLessClick()
+                            }
+                        }
+                    ) {
+                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
+                            Text(
+                                text = stringResource(id = R.string.button_less),
+                                fontSize = 18.sp,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_arrow_drop_down),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .padding(end = 8.dp)
+                                    .size(32.dp)
+                                    .align(Alignment.CenterEnd),
+                                tint = Color.White
+                            )
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    AutoSizeText(
+                        text = stringResource(
+                            id = R.string.text_than_this_item,
+                            compareItemName ?: ""
+                        ),
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        color = Color.White,
+                        maxFontSize = 16.sp,
+                        fontWeight = FontWeight.Normal,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+        }
+
+        itemSign?.let { sign ->
+            Image(
+                painter = painterResource(id = R.drawable.ic_content_copy),
+                contentDescription = null,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(top = 34.dp, end = 16.dp)
+                    .size(24.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .alpha(0.5f)
+                    .clickable { onCopyToClipboardClick(sign) }
             )
         }
     }

@@ -5,15 +5,15 @@ import com.tilseier.higherloweremojigame.domain.model.Item
 object TempEmojiItems {
     val tempEmojiItems = listOf(
         Item(
-            id = 111111111, // TODO
-            emojiId = "",
-            name = "",
-            imageUrl = "",
-            sign = "", //
+            id = 0,
             backgroundColor = null,
-//            number = calculateMonthAverage(0),
-            number = 0,
-            url = ""
+            invention = Item.Invention(
+                nameOfInvention = "First Watch",
+                yearOfInvention = 1505,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_watches",
+                emoji = "\uD83D\uDD52", // 🕒
+                imageUrl = ""
+            )
         ),
 
         // NEXT STEP 2
