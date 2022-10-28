@@ -3,13 +3,17 @@
 
     <string name="item_name">\"%1$s\"</string>
     <string name="formatted_number">"%1$s"</string>
+    <string name="number_divider">-</string>
     <string name="high_score">High Score: %1$d</string>
     <string name="score">Score: %1$d</string>
     <string name="vs">vs</string>
 
     <string name="text.is_used">is used</string>
+    <string name="text.was_invented">was</string>
+    <string name="text.was_invented_in">was in</string>
     <string name="text.on_average_monthly">average monthly</string>
     <string name="text.than_this_item">than \"%1$s\"</string>
+    <string name="text.this_item">\"%1$s\"</string>
     <string name="text.loading">LOADING</string>
     <string name="text.your_score">Your score: %1$s</string>
 
@@ -20,6 +24,8 @@
 
     <string name="button.more">More</string>
     <string name="button.less">Less</string>
+    <string name="button.before">Before</string>
+    <string name="button.after">After</string>
     <string name="button.main_menu">Main Menu</string>
     <string name="button.play">Play</string>
     <string name="button.ok">Ok</string>
