@@ -577,7 +577,8 @@ private fun ItemWithEmoji(
                     }.value.toLong()
                     AnswerNumber(
                         modifier = Modifier.fillMaxWidth(),
-                        number = animatedNumber.formatNumberToString()
+                        number = animatedNumber.formatNumberToString(),
+                        description = stringResource(id = R.string.text_on_average_monthly)
                     )
                 }
 
@@ -682,6 +683,7 @@ private fun ItemWithInvention(
     val itemSign = item.invention?.emoji
     val itemName = item.invention?.nameOfInvention ?: ""
     val itemNumber = item.invention?.yearOfInvention ?: 0
+    val itemSecondNumber = item.invention?.yearOfInventionEnd ?: 0
     val itemImageUrl = item.invention?.imageUrl ?: ""
     val compareItemName = compareItem?.invention?.nameOfInvention
     // TODO background from gradient colors?
@@ -720,8 +722,14 @@ private fun ItemWithInvention(
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(8.dp))
+                val showAnswerOptions = !isAnswerVisible && !showAnswerWithAnimation
+                val wasInventedText = if (showAnswerOptions) {
+                    stringResource(id = R.string.text_was_invented)
+                } else {
+                    stringResource(id = R.string.text_was_invented_in)
+                }
                 Text(
-                    text = stringResource(id = R.string.text_is_used),
+                    text = wasInventedText,
                     color = Color.White,
                     fontSize = 14.sp,
                     textAlign = TextAlign.Center
@@ -749,25 +757,36 @@ private fun ItemWithInvention(
                     ) { state ->
                         if (state == EnterExitState.Visible) itemNumber else 0
                     }.value.toLong()
+                    val animatedSecondNumber = transition.animateInt(
+                        transitionSpec = { tween(durationMillis = NUMBER_ANIMATION_DURATION) },
+                        label = "number animation"
+                    ) { state ->
+                        if (state == EnterExitState.Visible) itemSecondNumber else 0
+                    }.value.toLong()
                     AnswerNumber(
                         modifier = Modifier.fillMaxWidth(),
-                        number = animatedNumber.formatNumberToString()
+                        number = animatedNumber.toString(),
+                        secondNumber = if (itemSecondNumber > 0) {
+                            animatedSecondNumber.toString()
+                        } else {
+                            null
+                        },
                     )
                 }
 
-                if (!isAnswerVisible && !showAnswerWithAnimation) {
+                if (showAnswerOptions) {
                     Spacer(modifier = Modifier.height(8.dp))
                     ItemButton(
                         onClick = {
-                            if (!lessClick) {
-                                moreClick = true
-                                onMoreClick()
+                            if (!moreClick) {
+                                lessClick = true
+                                onLessClick()
                             }
                         }
                     ) {
                         Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
                             Text(
-                                text = stringResource(id = R.string.button_more),
+                                text = stringResource(id = R.string.button_before),
                                 fontSize = 18.sp,
                                 modifier = Modifier.align(Alignment.Center)
                             )
@@ -785,15 +804,15 @@ private fun ItemWithInvention(
                     Spacer(modifier = Modifier.height(4.dp))
                     ItemButton(
                         onClick = {
-                            if (!moreClick) {
-                                lessClick = true
-                                onLessClick()
+                            if (!lessClick) {
+                                moreClick = true
+                                onMoreClick()
                             }
                         }
                     ) {
                         Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
                             Text(
-                                text = stringResource(id = R.string.button_less),
+                                text = stringResource(id = R.string.button_after),
                                 fontSize = 18.sp,
                                 modifier = Modifier.align(Alignment.Center)
                             )
@@ -812,7 +831,7 @@ private fun ItemWithInvention(
 
                     AutoSizeText(
                         text = stringResource(
-                            id = R.string.text_than_this_item,
+                            id = R.string.text_this_item,
                             compareItemName ?: ""
                         ),
                         modifier = Modifier.padding(horizontal = 16.dp),
@@ -844,23 +863,41 @@ private fun ItemWithInvention(
 @Composable
 private fun AnswerNumber(
     modifier: Modifier = Modifier,
-    number: String
+    number: String,
+    secondNumber: String? = null,
+    description: String? = null
 ) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(50.dp))
-        Text(
-            text = stringResource(id = R.string.formatted_number, number),
-            color = ItemNumber,
-            fontSize = 35.sp
-        )
-        Text(
-            text = stringResource(id = R.string.text_on_average_monthly),
-            color = Color.White,
-            fontSize = 14.sp
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                text = stringResource(id = R.string.formatted_number, number),
+                color = ItemNumber,
+                fontSize = 35.sp
+            )
+            secondNumber?.let {
+                Text(
+                    text = stringResource(id = R.string.number_divider),
+                    color = ItemNumber,
+                    fontSize = 35.sp
+                )
+                Text(
+                    text = stringResource(id = R.string.formatted_number, it),
+                    color = ItemNumber,
+                    fontSize = 35.sp
+                )
+            }
+        }
+        description?.let {
+            Text(
+                text = it,
+                color = Color.White,
+                fontSize = 14.sp
+            )
+        }
     }
 }
 
