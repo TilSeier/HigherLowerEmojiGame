@@ -2382,7 +2382,6 @@ object InventedItemsLocalDataSource {
             invention = Item.Invention(
                 nameOfInvention = "First Pointe Shoe",
                 yearOfInvention = 1795,
-                yearOfInventionEnd = 1976,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pointe_shoe",
                 emoji = "🩰", // 🩰
                 imageUrl = ""

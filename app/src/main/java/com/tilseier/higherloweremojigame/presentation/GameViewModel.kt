@@ -116,9 +116,14 @@ class GameViewModel constructor(
                     }
                 }
                 Game.INVENTION_GAME -> {
-                    val itemYearOfInvention = _state.value.guessItem.invention?.yearOfInvention ?: 0
-                    val compareItemYearOfInvention = _state.value.compareItem.invention?.yearOfInvention ?: 0
-                    if (itemYearOfInvention >= compareItemYearOfInvention) {
+                    val itemYearOfInvention =
+                        _state.value.guessItem.invention?.yearOfInvention ?: 0
+                    val itemYearOfInventionEnd =
+                        _state.value.guessItem.invention?.yearOfInventionEnd ?: itemYearOfInvention
+                    val compareItemYearOfInvention =
+                        _state.value.compareItem.invention?.yearOfInvention ?: 0
+
+                    if (itemYearOfInventionEnd >= compareItemYearOfInvention) {
                         rightAnswer()
                     } else {
                         wrongAnswer()
@@ -146,9 +151,14 @@ class GameViewModel constructor(
                     }
                 }
                 Game.INVENTION_GAME -> {
-                    val itemYearOfInvention = _state.value.guessItem.invention?.yearOfInvention ?: 0
-                    val compareItemYearOfInvention = _state.value.compareItem.invention?.yearOfInvention ?: 0
-                    if (itemYearOfInvention <= compareItemYearOfInvention) {
+                    val itemYearOfInvention =
+                        _state.value.guessItem.invention?.yearOfInvention ?: 0
+                    val compareItemYearOfInvention =
+                        _state.value.compareItem.invention?.yearOfInvention ?: 0
+                    val compareItemYearOfInventionEnd =
+                        _state.value.compareItem.invention?.yearOfInventionEnd ?: compareItemYearOfInvention
+
+                    if (itemYearOfInvention <= compareItemYearOfInventionEnd) {
                         rightAnswer()
                     } else {
                         wrongAnswer()
