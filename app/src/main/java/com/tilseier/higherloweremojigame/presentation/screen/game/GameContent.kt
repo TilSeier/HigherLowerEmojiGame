@@ -27,6 +27,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -51,6 +52,7 @@ import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithImageURL
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
+import com.tilseier.higherloweremojigame.presentation.screen.game.components.EmojiPin
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
 import com.tilseier.higherloweremojigame.ui.theme.*
 import com.tilseier.higherloweremojigame.util.ColorUtil
@@ -685,7 +687,10 @@ private fun ItemWithInvention(
     val itemNumber = item.invention?.yearOfInvention ?: 0
     val itemSecondNumber = item.invention?.yearOfInventionEnd ?: 0
     val itemImageUrl = item.invention?.imageUrl ?: ""
-    val compareItemName = compareItem?.invention?.nameOfInvention
+    val compareItemName = compareItem?.invention?.nameOfInvention ?: ""
+    val compareItemSign = compareItem?.invention?.emoji ?: ""
+    val compareItemBackgroundColor = compareItem?.backgroundColor
+        ?: ColorUtil.getItemBackgroundColor(compareItemName.length)
     // TODO background from gradient colors?
     Box(modifier = modifier) {
         itemSign?.let { sign ->
@@ -713,6 +718,7 @@ private fun ItemWithInvention(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Spacer(modifier = Modifier.height(84.dp))
                 AutoSizeText(
                     text = stringResource(id = R.string.item_name, itemName),
                     modifier = Modifier.padding(horizontal = 16.dp),
@@ -734,6 +740,8 @@ private fun ItemWithInvention(
                     fontSize = 14.sp,
                     textAlign = TextAlign.Center
                 )
+
+                Spacer(modifier = Modifier.weight(1f))
 
                 var moreClick by rememberSaveable { mutableStateOf(false) }
                 var lessClick by rememberSaveable { mutableStateOf(false) }
@@ -775,55 +783,40 @@ private fun ItemWithInvention(
                 }
 
                 if (showAnswerOptions) {
-                    Spacer(modifier = Modifier.height(8.dp))
-                    ItemButton(
-                        onClick = {
-                            if (!moreClick) {
-                                lessClick = true
-                                onLessClick()
-                            }
-                        }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.BottomCenter
                     ) {
-                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
-                            Text(
-                                text = stringResource(id = R.string.button_before),
-                                fontSize = 18.sp,
-                                modifier = Modifier.align(Alignment.Center)
+                        Divider(
+                            modifier = Modifier.height(2.dp),
+                            color = Gray
+                        )
+                        Row(verticalAlignment = Alignment.Bottom) {
+                            InventedItemButton(
+                                onClick = {
+                                    if (!moreClick) {
+                                        lessClick = true
+                                        onLessClick()
+                                    }
+                                },
+                                text = stringResource(id = R.string.button_before)
                             )
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_arrow_drop_up),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .padding(end = 8.dp)
-                                    .size(32.dp)
-                                    .align(Alignment.CenterEnd),
-                                tint = Color.White
+                            Spacer(modifier = Modifier.width(36.dp))
+                            EmojiPin(
+                                emoji = compareItemSign,
+                                mainColor = compareItemBackgroundColor,
+                                borderColor = Color.Black
                             )
-                        }
-                    }
-                    Spacer(modifier = Modifier.height(4.dp))
-                    ItemButton(
-                        onClick = {
-                            if (!lessClick) {
-                                moreClick = true
-                                onMoreClick()
-                            }
-                        }
-                    ) {
-                        Box(modifier = Modifier.defaultMinSize(minWidth = 140.dp)) {
-                            Text(
-                                text = stringResource(id = R.string.button_after),
-                                fontSize = 18.sp,
-                                modifier = Modifier.align(Alignment.Center)
-                            )
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_arrow_drop_down),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .padding(end = 8.dp)
-                                    .size(32.dp)
-                                    .align(Alignment.CenterEnd),
-                                tint = Color.White
+                            Spacer(modifier = Modifier.width(36.dp))
+                            InventedItemButton(
+                                onClick = {
+                                    if (!lessClick) {
+                                        moreClick = true
+                                        onMoreClick()
+                                    }
+                                },
+                                text = stringResource(id = R.string.button_after)
                             )
                         }
                     }
@@ -841,6 +834,7 @@ private fun ItemWithInvention(
                         textAlign = TextAlign.Center
                     )
                 }
+                Spacer(modifier = Modifier.height(48.dp))
             }
         }
 
@@ -871,7 +865,6 @@ private fun AnswerNumber(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.height(50.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = stringResource(id = R.string.formatted_number, number),
@@ -898,6 +891,7 @@ private fun AnswerNumber(
                 fontSize = 14.sp
             )
         }
+        Spacer(modifier = Modifier.height(50.dp))
     }
 }
 
@@ -905,12 +899,13 @@ private fun AnswerNumber(
 private fun ItemButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    shape: Shape = CircleShape,
     content: @Composable RowScope.() -> Unit
 ) {
     OutlinedButton(
         onClick = onClick,
         modifier = modifier,
-        shape = CircleShape,
+        shape = shape,
         border = BorderStroke((1.2).dp, Color.White),
         elevation = ButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
         contentPadding = PaddingValues(vertical = 6.dp, horizontal = 8.dp),
@@ -920,6 +915,32 @@ private fun ItemButton(
         )
     ) {
         content()
+    }
+}
+
+@Composable
+private fun InventedItemButton(
+    onClick: () -> Unit,
+    text: String,
+    modifier: Modifier = Modifier,
+) {
+    ItemButton(
+        modifier = modifier,
+        shape = PinShape(angleDegrees = 270f), // 340f
+        onClick = onClick
+    ) {
+        Box(
+            modifier = Modifier
+                .width(70.dp)
+                .height(100.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = text,
+                fontSize = 18.sp,
+                modifier = Modifier.align(Alignment.Center)
+            )
+        }
     }
 }
 

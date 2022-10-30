@@ -1,6 +1,7 @@
 package com.tilseier.higherloweremojigame.data.local
 
 import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundOrange
 
 object InventedItemsLocalDataSource {
     val emojiInventionItems = listOf(
@@ -786,7 +787,7 @@ object InventedItemsLocalDataSource {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First DNA",
+                nameOfInvention = "First DNA Investigation",
                 yearOfInvention = 1869,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/DNA",
                 emoji = "🧬", // 🧬
@@ -862,7 +863,7 @@ object InventedItemsLocalDataSource {
         ),
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundOrange,
             invention = Item.Invention(
                 nameOfInvention = "First Stethoscope",
                 yearOfInvention = 1816,
@@ -989,7 +990,7 @@ object InventedItemsLocalDataSource {
                 yearOfInvention = 1985,
                 yearOfInventionEnd = 1988,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Identity_document",
-                emoji = "🪪", // 🪪
+                emoji = "\uD83E\uDEAA", // 🪪
                 imageUrl = ""
             )
         ),
@@ -1435,7 +1436,7 @@ object InventedItemsLocalDataSource {
             backgroundColor = null,
             invention = Item.Invention(
                 nameOfInvention = "First Modern Boxing Gloves",
-                yearOfInvention = 0,
+                yearOfInvention = 1743,
                 urlWithMoreInformation = "https://www.infinitudefight.com/boxing-gloves-when-did-boxing-start-using-gloves/",
                 emoji = "🥊", // 🥊
                 imageUrl = ""
@@ -2036,7 +2037,7 @@ object InventedItemsLocalDataSource {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "Motorised Fire Engines",
+                nameOfInvention = "First Motorised Fire Engines",
                 yearOfInvention = 1897,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fire_engine",
                 emoji = "🚒", // 🚒
@@ -3128,17 +3129,6 @@ object InventedItemsLocalDataSource {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Russian set of nesting dolls",
-                yearOfInvention = 1890,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Matryoshka_doll",
-                emoji = "🪆", // 🪆
-                imageUrl = ""
-            )
-        ),
-        Item(
-            id = 0,
-            backgroundColor = null,
-            invention = Item.Invention(
                 nameOfInvention = "First device for recording Sound",
                 yearOfInvention = 1857,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Sound_recording_and_reproduction",
@@ -3439,7 +3429,7 @@ object InventedItemsLocalDataSource {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First attested Coffin ",
+                nameOfInvention = "First attested Coffin",
                 yearOfInvention = 1380,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Coffin",
                 emoji = "⚰️", // ⚰️
