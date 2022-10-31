@@ -2601,10 +2601,10 @@ object InventedItemsLocalDataSource {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First invention of the World Wide Web",
-                yearOfInvention = 1989,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/World_Wide_Web",
-                emoji = "🕸️", // 🕸️
+                nameOfInvention = "First Internet",
+                yearOfInvention = 1969,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Internet",
+                emoji = "\uD83C\uDF10️", // 🌐
                 imageUrl = ""
             )
         ),

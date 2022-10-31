@@ -691,6 +691,11 @@ private fun ItemWithInvention(
     val compareItemSign = compareItem?.invention?.emoji ?: ""
     val compareItemBackgroundColor = compareItem?.backgroundColor
         ?: ColorUtil.getItemBackgroundColor(compareItemName.length)
+    var compareItemYear = compareItem?.invention?.yearOfInvention?.toString() ?: "0"
+    compareItem?.invention?.yearOfInventionEnd?.let {
+        compareItemYear += "-$it"
+    }
+
     // TODO background from gradient colors?
     Box(modifier = modifier) {
         itemSign?.let { sign ->
@@ -720,7 +725,7 @@ private fun ItemWithInvention(
             ) {
                 Spacer(modifier = Modifier.height(84.dp))
                 AutoSizeText(
-                    text = stringResource(id = R.string.item_name, itemName),
+                    text = itemName,
                     modifier = Modifier.padding(horizontal = 16.dp),
                     color = Color.White,
                     maxFontSize = 24.sp,
@@ -792,7 +797,10 @@ private fun ItemWithInvention(
                             modifier = Modifier.height(2.dp),
                             color = Gray
                         )
-                        Row(verticalAlignment = Alignment.Bottom) {
+                        Row(
+                            modifier = Modifier.padding(bottom = 1.dp),
+                            verticalAlignment = Alignment.Bottom
+                        ) {
                             InventedItemButton(
                                 onClick = {
                                     if (!moreClick) {
@@ -820,21 +828,24 @@ private fun ItemWithInvention(
                             )
                         }
                     }
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = compareItemYear,
+                        color = Color.White,
+                        fontSize = 12.sp,
+                        textAlign = TextAlign.Center
+                    )
 
                     AutoSizeText(
-                        text = stringResource(
-                            id = R.string.text_this_item,
-                            compareItemName ?: ""
-                        ),
+                        text = compareItemName,
                         modifier = Modifier.padding(horizontal = 16.dp),
                         color = Color.White,
-                        maxFontSize = 16.sp,
+                        maxFontSize = 12.sp,
                         fontWeight = FontWeight.Normal,
                         textAlign = TextAlign.Center
                     )
                 }
-                Spacer(modifier = Modifier.height(48.dp))
+                Spacer(modifier = Modifier.height(36.dp))
             }
         }
 
