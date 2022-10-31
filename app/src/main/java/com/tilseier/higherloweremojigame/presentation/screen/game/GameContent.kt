@@ -177,7 +177,7 @@ sealed class VsDividerState(val delayAfterAnimation: Long) {
     object SqueezeVsBoxWithLine : VsDividerState(300)
     object ShowRightAnswer : VsDividerState(1000)
     object SqueezeRightAnswer : VsDividerState(200)
-    object ShowWrongAnswer : VsDividerState(1000)
+    object ShowWrongAnswer : VsDividerState(2000)
     object SqueezeWrongAnswer : VsDividerState(200)
 }
 
