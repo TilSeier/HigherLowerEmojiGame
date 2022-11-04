@@ -41,3 +41,73 @@ fun PinShape(
         close()
     }
 }
+
+fun GameItemShape(
+    topRadiusPx: Float,
+    bottomRadiusPx: Float,
+): GenericShape {
+
+    return GenericShape { size, _ ->
+        val width = size.width
+        val height = size.height
+
+        moveTo(
+            width,
+            height - bottomRadiusPx
+        )
+
+        arcTo(
+            rect = Rect(
+                center = Offset(
+                    x = width - bottomRadiusPx,
+                    y = height - bottomRadiusPx,
+                ),
+                radius = bottomRadiusPx,
+            ),
+            startAngleDegrees = 0f,
+            sweepAngleDegrees = 90f,
+            forceMoveTo = false
+        )
+
+        arcTo(
+            rect = Rect(
+                center = Offset(
+                    x = bottomRadiusPx,
+                    y = height - bottomRadiusPx,
+                ),
+                radius = bottomRadiusPx,
+            ),
+            startAngleDegrees = 90f,
+            sweepAngleDegrees = 90f,
+            forceMoveTo = false
+        )
+
+        arcTo(
+            rect = Rect(
+                center = Offset(
+                    x = topRadiusPx,
+                    y = height.times(0.35f) - topRadiusPx,
+                ),
+                radius = topRadiusPx,
+            ),
+            startAngleDegrees = 180f,
+            sweepAngleDegrees = 75f,
+            forceMoveTo = false
+        )
+        arcTo(
+            rect = Rect(
+                center = Offset(
+                    x = width - topRadiusPx,
+                    y = topRadiusPx,
+                ),
+                radius = topRadiusPx,
+            ),
+            startAngleDegrees = 250f,
+            sweepAngleDegrees = 110f,
+            forceMoveTo = false
+        )
+
+        lineTo(width, height)
+        close()
+    }
+}

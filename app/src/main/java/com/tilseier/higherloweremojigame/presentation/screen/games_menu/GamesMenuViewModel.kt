@@ -18,7 +18,17 @@ class GamesMenuViewModel : ViewModel() {
     fun updateMenuGames() {
         menuGames.value = listOf(
             MenuGame(
-                title = UiText.StringResource(resId = R.string.menu_difficulty_easy),
+                title = UiText.StringResource(resId = R.string.text_invention_game_title),
+                game = Game.INVENTION_GAME,
+                score = AppPreferences.preferences()?.higherScore(Game.INVENTION_GAME, Difficulty.EASY)
+                    ?: AppPreferences.DEFAULT_HIGHER_SCORE,
+                sign = "\uD83D\uDCF1", // 📱
+                color = MenuDifficultyMedium,
+                borderColor = MenuDifficultyMediumBorder,
+                buttonColor = MenuDifficultyMediumButton
+            ),
+            MenuGame(
+                title = UiText.StringResource(resId = R.string.text_emoji_game_title),
                 game = Game.EMOJI_GAME,
                 score = AppPreferences.preferences()?.higherScore(Game.EMOJI_GAME, Difficulty.EASY)
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,
@@ -26,16 +36,6 @@ class GamesMenuViewModel : ViewModel() {
                 color = MenuDifficultyEasy,
                 borderColor = MenuDifficultyEasyBorder,
                 buttonColor = MenuDifficultyEasyButton
-            ),
-            MenuGame(
-                title = UiText.StringResource(resId = R.string.menu_difficulty_medium),
-                game = Game.INVENTION_GAME,
-                score = AppPreferences.preferences()?.higherScore(Game.INVENTION_GAME, Difficulty.EASY)
-                    ?: AppPreferences.DEFAULT_HIGHER_SCORE,
-                sign = "\uD83D\uDE15", // 😕
-                color = MenuDifficultyMedium,
-                borderColor = MenuDifficultyMediumBorder,
-                buttonColor = MenuDifficultyMediumButton
             ),
         )
     }
