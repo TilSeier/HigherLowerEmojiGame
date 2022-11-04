@@ -25,46 +25,55 @@ fun EmojiPin(
     modifier: Modifier = Modifier,
     fontFamily: FontFamily? = iOS14EmojiFont,
 ) {
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.BottomCenter
-    ) {
-        Canvas(
-            modifier = Modifier
-                .width(40.dp)
-                .height(20.dp)
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Box(
+            modifier = modifier,
+            contentAlignment = Alignment.BottomCenter
         ) {
-            val path = Path().apply {
-                moveTo(0f, 0f)
-                lineTo(size.width, 0f)
-                lineTo(size.width / 2f, size.height)
-                close()
-            }
+            Canvas(
+                modifier = Modifier
+                    .width(40.dp)
+                    .height(20.dp)
+            ) {
+                val path = Path().apply {
+                    moveTo(0f, 0f)
+                    lineTo(size.width, 0f)
+                    lineTo(size.width / 2f, size.height)
+                    close()
+                }
 
-            drawPath(
-                path = path,
-                brush = SolidColor(mainColor)
-            )
+                drawPath(
+                    path = path,
+                    brush = SolidColor(mainColor)
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .padding(bottom = 10.dp)
+                    .size(50.dp)
+                    .clip(CircleShape)
+                    .background(mainColor)
+                    .padding(4.dp)
+                    .clip(CircleShape)
+                    .background(borderColor)
+                    .padding(4.dp)
+                    .clip(CircleShape)
+                    .background(mainColor),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = emoji,
+                    fontSize = 16.sp,
+                    fontFamily = fontFamily
+                )
+            }
         }
+        Spacer(modifier = Modifier.height(2.dp))
         Box(
             modifier = Modifier
-                .padding(bottom = 10.dp)
-                .size(50.dp)
+                .size(6.dp)
                 .clip(CircleShape)
                 .background(mainColor)
-                .padding(4.dp)
-                .clip(CircleShape)
-                .background(borderColor)
-                .padding(4.dp)
-                .clip(CircleShape)
-                .background(mainColor),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = emoji,
-                fontSize = 16.sp,
-                fontFamily = fontFamily
-            )
-        }
+        )
     }
 }

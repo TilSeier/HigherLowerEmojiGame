@@ -1,13 +1,41 @@
 package com.tilseier.higherloweremojigame.data.local
 
 import com.tilseier.higherloweremojigame.domain.model.Item
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundDarkPurple
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundLightPurple
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundOrange
+import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundRed
 
-object InventedItemsLocalDataSource {
+object InventedItemsList {
+    val testItems = listOf(
+        Item(
+            id = 0,
+            backgroundColor = ItemBackgroundRed,
+            invention = Item.Invention(
+                nameOfInvention = "First Airplane",
+                yearOfInvention = 1903,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Airplane",
+                emoji = "✈️", // ✈️
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = ItemBackgroundLightPurple,
+            invention = Item.Invention(
+                nameOfInvention = "First Car",
+                yearOfInvention = 1886,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_automobile",
+                emoji = "\uD83D\uDE97", // 🚗
+                imageUrl = ""
+            )
+        ),
+    )
+
     val emojiInventionItems = listOf(
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundLightPurple,
             invention = Item.Invention(
                 nameOfInvention = "First Car",
                 yearOfInvention = 1886,
@@ -29,7 +57,7 @@ object InventedItemsLocalDataSource {
         ),
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundOrange,
             invention = Item.Invention(
                 nameOfInvention = "First Phone",
                 yearOfInvention = 1876,
@@ -51,7 +79,7 @@ object InventedItemsLocalDataSource {
         ),
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundDarkPurple,
             invention = Item.Invention(
                 nameOfInvention = "First Light Bulb",
                 yearOfInvention = 1879,
@@ -266,7 +294,7 @@ object InventedItemsLocalDataSource {
         ),
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundDarkPurple,
             invention = Item.Invention(
                 nameOfInvention = "First Smartphone",
                 yearOfInvention = 1992,
@@ -1733,7 +1761,7 @@ object InventedItemsLocalDataSource {
         ),
         Item(
             id = 0,
-            backgroundColor = null,
+            backgroundColor = ItemBackgroundRed,
             invention = Item.Invention(
                 nameOfInvention = "First Airplane",
                 yearOfInvention = 1903,

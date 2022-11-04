@@ -794,14 +794,14 @@ private fun ItemWithInvention(
                         contentAlignment = Alignment.BottomCenter
                     ) {
                         Divider(
-                            modifier = Modifier.height(2.dp),
+                            modifier = Modifier
+                                .padding(bottom = 2.dp)
+                                .height(2.dp),
                             color = Gray
                         )
-                        Row(
-                            modifier = Modifier.padding(bottom = 1.dp),
-                            verticalAlignment = Alignment.Bottom
-                        ) {
+                        Row(verticalAlignment = Alignment.Bottom) {
                             InventedItemButton(
+                                modifier = Modifier.padding(bottom = 4.dp),
                                 onClick = {
                                     if (!moreClick) {
                                         lessClick = true
@@ -818,6 +818,7 @@ private fun ItemWithInvention(
                             )
                             Spacer(modifier = Modifier.width(36.dp))
                             InventedItemButton(
+                                modifier = Modifier.padding(bottom = 4.dp),
                                 onClick = {
                                     if (!lessClick) {
                                         moreClick = true
