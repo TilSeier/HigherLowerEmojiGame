@@ -18,7 +18,7 @@
     <string name="text.your_score">Your score: %1$s</string>
 
     <string name="text.invention_game_title">What was\ncreated first?</string>
-    <string name="text.emoji_game_title">What emoji is used more often?</string>
+    <string name="text.emoji_game_title">What emoji is\nused more often?</string>
 
     <string name="text.dialog.exit.title">Are you sure?</string>
     <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>

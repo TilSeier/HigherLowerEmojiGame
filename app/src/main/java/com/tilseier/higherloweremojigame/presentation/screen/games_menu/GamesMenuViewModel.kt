@@ -23,6 +23,7 @@ class GamesMenuViewModel : ViewModel() {
                 score = AppPreferences.preferences()?.higherScore(Game.INVENTION_GAME, Difficulty.EASY)
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,
                 sign = "\uD83D\uDCF1", // 📱
+                icon = R.drawable.icon_invention_game,
                 color = MenuDifficultyMedium,
                 borderColor = MenuDifficultyMediumBorder,
                 buttonColor = MenuDifficultyMediumButton
@@ -33,6 +34,7 @@ class GamesMenuViewModel : ViewModel() {
                 score = AppPreferences.preferences()?.higherScore(Game.EMOJI_GAME, Difficulty.EASY)
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,
                 sign = "\uD83D\uDE0A", // 😊
+                icon = R.drawable.icon_emoji_game,
                 color = MenuDifficultyEasy,
                 borderColor = MenuDifficultyEasyBorder,
                 buttonColor = MenuDifficultyEasyButton

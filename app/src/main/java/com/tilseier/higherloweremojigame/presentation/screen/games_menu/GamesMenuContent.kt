@@ -125,6 +125,7 @@ fun GameCard(
     Box(modifier = modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
+                .padding(top = 8.dp)
                 .fillMaxSize()
                 .clip(GameItemShape(topRadiusPx, bottomRadiusPx))
                 .background(menuGame.borderColor)
@@ -182,6 +183,13 @@ fun GameCard(
                 fontFamily = iOS14EmojiFont,
             )
         }
+        Image(
+            painter = painterResource(id = menuGame.icon),
+            contentDescription = null,
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .size(90.dp)
+        )
     }
 }
 
