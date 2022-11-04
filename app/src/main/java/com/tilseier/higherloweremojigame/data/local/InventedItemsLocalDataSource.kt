@@ -1852,7 +1852,7 @@ object InventedItemsLocalDataSource {
                 yearOfInvention = 1845,
                 yearOfInventionEnd = 1847,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tire",
-                emoji = "🛞", // 🛞
+                emoji = "\uD83D\uDEDE", // 🛞 // TODO fix by using iOS 15 or earlier font
                 imageUrl = ""
             )
         ),

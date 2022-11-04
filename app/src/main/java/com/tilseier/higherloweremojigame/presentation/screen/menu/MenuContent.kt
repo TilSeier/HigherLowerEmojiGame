@@ -33,7 +33,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
-import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.RoundButton
@@ -61,7 +60,7 @@ fun MenuContent(
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
         item {
-            MenuHeader()
+            MenuHeader(onBackClick = { navController.popBackStack() })
         }
         val menuDifficulties = menuViewModel.menuDifficulties.value
         itemsIndexed(menuDifficulties) { _, item ->
@@ -71,7 +70,7 @@ fun MenuContent(
                     viewModel.newGame(Game.EMOJI_GAME, it.difficulty)
                     navController.navigate(
                         route = Screen.Game.pass(
-                            Constants.CATEGORY_EMOJI,
+                            Game.EMOJI_GAME.name,
                             it.difficulty.name
                         )
                     )
@@ -86,7 +85,7 @@ fun MenuContent(
 }
 
 @Composable
-fun MenuHeader() {
+fun MenuHeader(onBackClick: () -> Unit) {
     val context = LocalContext.current
     var showRateDialog by remember { mutableStateOf(false) }
     Column(
@@ -101,15 +100,11 @@ fun MenuHeader() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(
-                onClick = {
-                    showRateDialog = true
-                    TrackingUtil.trackThumbUpClick()
-                }
-            ) {
+            IconButton(onClick = onBackClick) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_thumb_up),
-                    contentDescription = "Rate",
+                    modifier = Modifier.size(36.dp),
+                    painter = painterResource(id = R.drawable.ic_arrow_back),
+                    contentDescription = "Back",
                     tint = Color.White
                 )
             }

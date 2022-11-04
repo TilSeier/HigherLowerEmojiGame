@@ -92,7 +92,7 @@ fun GameContent(
             vsDividerState = VsDividerState.ShowWrongAnswer
             delay(VsDividerState.ShowWrongAnswer.delayAfterAnimation)
             navController.navigate(route = Screen.GameOver.route) {
-                popUpTo(Screen.EmojiDifficultiesMenu.route)
+                popUpTo(Screen.GamesMenu.route)
             }
         }
     }

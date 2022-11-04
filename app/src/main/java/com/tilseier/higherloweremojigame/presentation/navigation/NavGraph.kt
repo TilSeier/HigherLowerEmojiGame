@@ -26,8 +26,9 @@ import androidx.navigation.navArgument
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.common.Difficulty
-import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.screen.game.GameScreen
 import com.tilseier.higherloweremojigame.presentation.screen.gameover.GameOverScreen
 import com.tilseier.higherloweremojigame.presentation.screen.games_menu.GamesMenuScreen
 import com.tilseier.higherloweremojigame.presentation.screen.menu.HomeScreen
@@ -55,7 +56,7 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
             arguments = listOf(
                 navArgument(Constants.ARGUMENT_KEY_CATEGORY) {
                     type = NavType.StringType
-                    defaultValue = Constants.CATEGORY_EMOJI
+                    defaultValue = Game.INVENTION_GAME.name
                 },
                 navArgument(Constants.ARGUMENT_KEY_DIFFICULTY) {
                     type = NavType.StringType
@@ -142,7 +143,7 @@ fun NavGraph(navController: NavHostController, viewModel: GameViewModel) {
                                     .weight(1f)
                                     .clickable {
                                         navController.popBackStack(
-                                            route = Screen.EmojiDifficultiesMenu.route,
+                                            route = Screen.GamesMenu.route,
                                             inclusive = false
                                         )
                                     }

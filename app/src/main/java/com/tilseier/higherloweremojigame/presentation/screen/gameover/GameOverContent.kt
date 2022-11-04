@@ -30,7 +30,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
-import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 import com.tilseier.higherloweremojigame.presentation.GameEvent
@@ -66,7 +65,7 @@ fun GameOverContent(
         GameOverStatusBar(
             onMenuClick = {
                 navController.popBackStack(
-                    route = Screen.EmojiDifficultiesMenu.route,
+                    route = Screen.GamesMenu.route,
                     inclusive = false
                 )
             }
@@ -221,11 +220,11 @@ fun RestartButton(
             viewModel.newGame(viewModel.state.value.game, viewModel.state.value.difficulty)
             navController.navigate(
                 Screen.Game.pass(
-                    Constants.CATEGORY_EMOJI,
+                    viewModel.state.value.game.name,
                     viewModel.state.value.difficulty.name
                 )
             ) {
-                popUpTo(Screen.EmojiDifficultiesMenu.route)
+                popUpTo(Screen.GamesMenu.route)
             }
             TrackingUtil.trackRestartClick()
         },
