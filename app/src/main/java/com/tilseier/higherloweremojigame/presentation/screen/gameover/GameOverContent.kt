@@ -54,7 +54,8 @@ fun GameOverContent(
         TrackingUtil.trackGameOverScreenOpen(
             viewModel.state.value.score,
             viewModel.state.value.higherScore,
-            viewModel.state.value.difficulty
+            viewModel.state.value.difficulty,
+            viewModel.state.value.game
         )
     }
     Column(
@@ -226,7 +227,7 @@ fun RestartButton(
             ) {
                 popUpTo(Screen.GamesMenu.route)
             }
-            TrackingUtil.trackRestartClick()
+            TrackingUtil.trackRestartClick(viewModel.state.value.game)
         },
         modifier = Modifier.fillMaxWidth(),
         backgroundColor = ButtonYellow,
@@ -257,7 +258,7 @@ fun ContinueButton(viewModel: GameViewModel) {
     ButtonWithBottomBorder(
         onClick = {
             viewModel.onEvent(GameEvent.OnContinueButtonClick)
-            TrackingUtil.trackContinueClick()
+            TrackingUtil.trackContinueClick(viewModel.state.value.game)
         },
         modifier = Modifier.fillMaxWidth(),
         backgroundColor = ButtonRed,

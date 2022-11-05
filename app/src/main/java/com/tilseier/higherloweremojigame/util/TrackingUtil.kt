@@ -4,11 +4,13 @@ import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.tilseier.higherloweremojigame.common.Difficulty
+import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 
 object TrackingUtil {
     private const val TAG = "TrackingUtil"
 
+    private const val EVENT_NAME_PLAY_GAME_CLICK = "Play Game Click"
     private const val EVENT_NAME_SELECT_DIFFICULTY = "Select Difficulty"
     private const val EVENT_NAME_RATE_INTERACTION = "Rate Interaction"
     private const val EVENT_NAME_SHARE_INTERACTION = "Share Interaction"
@@ -26,6 +28,7 @@ object TrackingUtil {
     private const val ATTR_BUTTON = "Button"
     private const val ATTR_TITLE = "Title"
     private const val ATTR_MESSAGE = "Message"
+    private const val ATTR_GAME_NAME = "GameName"
 
     private lateinit var firebaseAnalytics: FirebaseAnalytics
 
@@ -52,6 +55,14 @@ object TrackingUtil {
     }
 
     // TRACKING EVENTS
+
+    fun trackPlayClick(game: Game) {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_PLAY_GAME_CLICK)
+            .withAttribute(ATTR_GAME_NAME, game.name)
+            .build()
+            .fire()
+    }
 
     fun trackSelectDifficulty(difficulty: Difficulty) {
         TrackingEvent.newBuilder()
@@ -101,6 +112,14 @@ object TrackingUtil {
             .fire()
     }
 
+    fun trackGamesMenuShareClick() {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_SHARE_INTERACTION)
+            .withAttribute(ATTR_INTERACTION, "games menu share click")
+            .build()
+            .fire()
+    }
+
     fun trackScoreShareClick(score: Int, highScore: Int, difficulty: Difficulty) {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_SHARE_INTERACTION)
@@ -112,26 +131,29 @@ object TrackingUtil {
             .fire()
     }
 
-    fun trackCopyEmojiClick(emoji: String) {
+    fun trackCopyEmojiClick(emoji: String, game: Game) {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_COPY_EMOJI)
             .withAttribute(ATTR_EMOJI, emoji)
+            .withAttribute(ATTR_GAME_NAME, game.name)
             .build()
             .fire()
     }
 
-    fun trackContinueClick() {
+    fun trackContinueClick(game: Game) {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_BUTTON_CLICK)
             .withAttribute(ATTR_BUTTON, "continue?")
+            .withAttribute(ATTR_GAME_NAME, game.name)
             .build()
             .fire()
     }
 
-    fun trackRestartClick() {
+    fun trackRestartClick(game: Game) {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_BUTTON_CLICK)
             .withAttribute(ATTR_BUTTON, "restart")
+            .withAttribute(ATTR_GAME_NAME, game.name)
             .build()
             .fire()
     }
@@ -145,13 +167,14 @@ object TrackingUtil {
             .fire()
     }
 
-    fun trackGameOverScreenOpen(score: Int, highScore: Int, difficulty: Difficulty) {
+    fun trackGameOverScreenOpen(score: Int, highScore: Int, difficulty: Difficulty, game: Game) {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_SCREEN_INTERACTION)
             .withAttribute(ATTR_INTERACTION, "game over open")
             .withAttribute(ATTR_SCORE, score)
             .withAttribute(ATTR_HIGH_SCORE, highScore)
             .withAttribute(ATTR_DIFFICULTY, difficulty.name)
+            .withAttribute(ATTR_GAME_NAME, game.name)
             .build()
             .fire()
     }

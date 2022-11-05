@@ -88,6 +88,7 @@ fun GamesMenuContent(
                                         Difficulty.EASY.name // make no sense
                                     )
                                 )
+                                TrackingUtil.trackPlayClick(Game.INVENTION_GAME)
                             }
                         )
                     }
@@ -101,6 +102,7 @@ fun GamesMenuContent(
                                 navController.navigate(
                                     route = Screen.EmojiDifficultiesMenu.route
                                 )
+                                TrackingUtil.trackPlayClick(Game.EMOJI_GAME)
                             }
                         )
                     }
@@ -113,6 +115,7 @@ fun GamesMenuContent(
     }
 }
 
+// TODO Implement Users' Choice
 @Composable
 fun GameCard(
     modifier: Modifier = Modifier,
@@ -125,7 +128,7 @@ fun GameCard(
     Box(modifier = modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
-                .padding(top = 8.dp)
+                .padding(top = 10.dp)
                 .fillMaxSize()
                 .clip(GameItemShape(topRadiusPx, bottomRadiusPx))
                 .background(menuGame.borderColor)
@@ -224,7 +227,7 @@ fun GamesMenuHeader() {
             IconButton(
                 onClick = {
                     ShareUtil.shareGame(context)
-                    TrackingUtil.trackMenuShareClick()
+                    TrackingUtil.trackGamesMenuShareClick()
                 }
             ) {
                 Icon(
@@ -241,7 +244,7 @@ fun GamesMenuHeader() {
             modifier = Modifier.width(300.dp),
             contentScale = ContentScale.FillWidth
         )
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(50.dp))
     }
 
     if (showRateDialog) {

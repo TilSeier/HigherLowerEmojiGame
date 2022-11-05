@@ -440,7 +440,7 @@ fun ItemsList(
             context.getString(R.string.share_copy_message, sign),
             Toast.LENGTH_SHORT
         ).show()
-        TrackingUtil.trackCopyEmojiClick(sign)
+        TrackingUtil.trackCopyEmojiClick(sign, game)
     }
     LazyColumnOrRow(
         modifier = modifier,
@@ -742,7 +742,7 @@ private fun ItemWithInvention(
                 Text(
                     text = wasInventedText,
                     color = Color.White,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     textAlign = TextAlign.Center
                 )
 
