@@ -742,7 +742,7 @@ private fun ItemWithInvention(
                 Text(
                     text = wasInventedText,
                     color = Color.White,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     textAlign = TextAlign.Center
                 )
 
