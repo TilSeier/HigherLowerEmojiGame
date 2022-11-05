@@ -115,6 +115,7 @@ fun GamesMenuContent(
     }
 }
 
+// TODO Implement Users' Choice
 @Composable
 fun GameCard(
     modifier: Modifier = Modifier,
