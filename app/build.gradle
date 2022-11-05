@@ -73,7 +73,10 @@ dependencies {
     implementation "dev.chrisbanes.snapper:snapper:$snapper_version"
 
     // System UI Controller
-    implementation "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
+
+    // WebView
+    implementation "com.google.accompanist:accompanist-webview:$accompanist_version"
 
     // Coil
     implementation "io.coil-kt:coil-compose:$coil_version"

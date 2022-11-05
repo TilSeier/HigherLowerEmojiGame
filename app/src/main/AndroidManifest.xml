@@ -33,6 +33,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.browser.BrowserActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HigherLowerEmojiGame" />
     </application>
 
 </manifest>
