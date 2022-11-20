@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import com.tilseier.higherloweremojigame.presentation.screen.browser.BrowserActivity
 
 object Intents {
     fun openRatePage(context: Context) {
@@ -22,5 +23,15 @@ object Intents {
                 )
             )
         }
+    }
+
+    // TODO open browser
+    fun toBrowser(
+        context: Context?,
+        url: String
+    ): Intent {
+        val intent = Intent(context, BrowserActivity::class.java)
+        intent.putExtra(BrowserActivity.MORE_INFO_URL, url)
+        return intent
     }
 }

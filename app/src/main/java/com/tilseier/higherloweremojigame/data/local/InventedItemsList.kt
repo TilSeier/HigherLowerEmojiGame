@@ -1804,17 +1804,17 @@ object InventedItemsList {
                 imageUrl = ""
             )
         ),
-        Item(
-            id = 0,
-            backgroundColor = null,
-            invention = Item.Invention(
-                nameOfInvention = "First Motorboat",
-                yearOfInvention = 1888,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorboat",
-                emoji = "🚤", // 🚤
-                imageUrl = ""
-            )
-        ),
+//        Item(
+//            id = 0,
+//            backgroundColor = null,
+//            invention = Item.Invention(
+//                nameOfInvention = "First Motorboat",
+//                yearOfInvention = 1888,
+//                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorboat",
+//                emoji = "🚤", // 🚤
+//                imageUrl = ""
+//            )
+//        ),
         Item(
             id = 0,
             backgroundColor = null,
@@ -3175,17 +3175,17 @@ object InventedItemsList {
                 imageUrl = ""
             )
         ),
-        Item(
-            id = 0,
-            backgroundColor = null,
-            invention = Item.Invention(
-                nameOfInvention = "First Stethoscope",
-                yearOfInvention = 1816,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Stethoscope",
-                emoji = "🩺", // 🩺
-                imageUrl = ""
-            )
-        ),
+//        Item(
+//            id = 0,
+//            backgroundColor = null,
+//            invention = Item.Invention(
+//                nameOfInvention = "First Stethoscope",
+//                yearOfInvention = 1816,
+//                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Stethoscope",
+//                emoji = "🩺", // 🩺
+//                imageUrl = ""
+//            )
+//        ),
         Item(
             id = 0,
             backgroundColor = null,

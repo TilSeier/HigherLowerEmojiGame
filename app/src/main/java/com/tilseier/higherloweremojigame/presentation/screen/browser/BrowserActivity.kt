@@ -1,4 +1,4 @@
-package com.tilseier.higherloweremojigame.presentation.browser
+package com.tilseier.higherloweremojigame.presentation.screen.browser
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,11 +12,15 @@ class BrowserActivity : ComponentActivity() {
         setContent {
             HigherLowerEmojiGameTheme {
                 // TODO implement
+                BrowserContent()
             }
         }
     }
 
     companion object {
         const val TAG = "MainActivity"
+        const val MORE_INFO_URL = "more_info_url"
+        const val OBJECT_NAME = "object_name"
+        const val OBJECT_EMOJI = "object_emoji"
     }
 }
