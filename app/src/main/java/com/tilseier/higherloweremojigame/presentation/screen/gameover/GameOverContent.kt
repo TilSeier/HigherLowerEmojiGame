@@ -34,6 +34,7 @@ import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
 import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
+import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
 import com.tilseier.higherloweremojigame.presentation.components.ButtonWithBottomBorder
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.*
@@ -241,11 +242,11 @@ fun RestartButton(
             tint = Color.White
         )
         Spacer(modifier = Modifier.width(5.dp))
-        Text(
+        AutoSizeText(
             text = stringResource(id = R.string.button_restart),
             modifier = Modifier.weight(1f),
             color = Color.White,
-            fontSize = 24.sp,
+            maxFontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             letterSpacing = 2.sp

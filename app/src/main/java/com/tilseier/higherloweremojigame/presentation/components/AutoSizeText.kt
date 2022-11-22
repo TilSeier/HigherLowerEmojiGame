@@ -17,7 +17,8 @@ fun AutoSizeText(
     color: Color = Color.Unspecified,
     textAlign: TextAlign? = null,
     maxFontSize: TextUnit = TextUnit.Unspecified,
-    fontWeight: FontWeight? = null
+    fontWeight: FontWeight? = null,
+    letterSpacing: TextUnit = TextUnit.Unspecified,
 ) {
     val defaultTextStyle = TextStyle(
         fontWeight = fontWeight,
@@ -32,6 +33,7 @@ fun AutoSizeText(
         softWrap = false,
         color = color,
         textAlign = textAlign,
+        letterSpacing = letterSpacing,
         modifier = modifier.drawWithContent {
             if (readyToDraw) drawContent()
         },

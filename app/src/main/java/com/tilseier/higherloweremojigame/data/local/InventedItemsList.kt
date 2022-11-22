@@ -48,6 +48,18 @@ object InventedItemsList {
                 imageUrl = ""
             )
         ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_piñata),
+                yearOfInvention = 1586,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pi%C3%B1ata",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_piñata),
+                emoji = "🪅", // 🪅
+                imageUrl = ""
+            )
+        ),
     )
 
     val emojiInventionItems = listOf(
