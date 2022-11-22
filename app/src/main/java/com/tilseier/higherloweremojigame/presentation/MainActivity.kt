@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
+import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -32,6 +34,7 @@ class MainActivity : ComponentActivity() {
         viewModelFactory { GameViewModel(GetItemsUseCase(ItemRepositoryImpl(ItemsLocalDataSource()))) }
     }
 
+    @OptIn(ExperimentalMaterialNavigationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,12 +46,14 @@ class MainActivity : ComponentActivity() {
                 systemUiController.setSystemBarsColor(
                     color = StatusBar
                 )
-                val navController = rememberNavController()
+                val bottomSheetNavigator = rememberBottomSheetNavigator()
+                val navController = rememberNavController(bottomSheetNavigator)
                 EventHandler(
                     viewModel = viewModel,
                     navController =  navController
                 )
                 NavGraph(
+                    bottomSheetNavigator = bottomSheetNavigator,
                     navController = navController,
                     viewModel = viewModel
                 )

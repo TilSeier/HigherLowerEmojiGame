@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -56,6 +57,7 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.components.Emo
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
 import com.tilseier.higherloweremojigame.ui.theme.*
 import com.tilseier.higherloweremojigame.util.ColorUtil
+import com.tilseier.higherloweremojigame.util.Intents
 import com.tilseier.higherloweremojigame.util.TrackingUtil
 import dev.chrisbanes.snapper.ExperimentalSnapperApi
 import dev.chrisbanes.snapper.SnapOffsets
@@ -67,6 +69,7 @@ fun GameContent(
     navController: NavHostController,
     viewModel: GameViewModel
 ) {
+    val context = LocalContext.current
     val state = viewModel.state.value
     val currentItems: List<Item> = state.currentItems
     val currentItemIndex: Int = state.currentItemIndex
@@ -138,6 +141,24 @@ fun GameContent(
                 },
                 onLessClick = {
                     viewModel.onLessClick()
+                },
+                onMoreInfoClick = { item ->
+                    val itemUrl = item.invention?.urlWithMoreInformationUiText?.asString(context)
+                    val itemName = item.invention?.nameOfInvention?.asString(context) ?: ""
+                    val itemEmoji = item.invention?.emoji ?: ""
+                    val itemColor = item.backgroundColor ?: ColorUtil.getItemBackgroundColor(itemName.length)
+                    itemUrl?.let { url ->
+                        context.startActivity(
+                            Intents.toBrowser(
+                                context = context,
+                                url = url,
+                                itemName = itemName,
+                                itemEmoji = itemEmoji,
+                                itemColorArgb = itemColor.toArgb()
+                            )
+                        )
+                    }
+                    TrackingUtil.trackMoreInfoClick(itemName, itemEmoji, game)
                 }
             )
 
@@ -429,6 +450,7 @@ fun ItemsList(
     state: LazyListState = rememberLazyListState(),
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
+    onMoreInfoClick: (Item) -> Unit,
 ) {
     val windowInfo = rememberWindowInfo()
     val context = LocalContext.current
@@ -487,7 +509,8 @@ fun ItemsList(
                         showAnswerWithAnimation = index == showAnswerForItemIndex,
                         onMoreClick = onMoreClick,
                         onLessClick = onLessClick,
-                        onCopyToClipboardClick = { onCopyToClipboardClick(it) }
+                        onCopyToClipboardClick = { onCopyToClipboardClick(it) },
+                        onMoreInfoClick = { onMoreInfoClick(it) }
                     )
                 }
             }
@@ -681,13 +704,16 @@ private fun ItemWithInvention(
     onMoreClick: () -> Unit,
     onLessClick: () -> Unit,
     onCopyToClipboardClick: (sign: String) -> Unit,
+    onMoreInfoClick: (Item) -> Unit,
 ) {
     val itemSign = item.invention?.emoji
     val itemName = item.invention?.nameOfInvention?.asString() ?: ""
     val itemNumber = item.invention?.yearOfInvention ?: 0
     val itemSecondNumber = item.invention?.yearOfInventionEnd ?: 0
     val itemImageUrl = item.invention?.imageUrl ?: ""
-    val itemSubtext = item.invention?.subtextOfInvention?.asString() ?: getInventionSubtextFromName(itemName)
+    val itemMoreInfoUrl = item.invention?.urlWithMoreInformationUiText?.asString() ?: ""
+    val itemSubtext =
+        item.invention?.subtextOfInvention?.asString() ?: getInventionSubtextFromName(itemName)
     val compareItemName = compareItem?.invention?.nameOfInvention?.asString() ?: ""
     val compareItemSign = compareItem?.invention?.emoji ?: ""
     val compareItemBackgroundColor = compareItem?.backgroundColor
@@ -696,9 +722,11 @@ private fun ItemWithInvention(
     compareItem?.invention?.yearOfInventionEnd?.let {
         compareItemYear += "-$it"
     }
+    val showAnswerOptions = !isAnswerVisible && !showAnswerWithAnimation
+    val canOpenMoreInfo = !showAnswerOptions && itemMoreInfoUrl.contains("wikipedia.org")
 
     // TODO background from gradient colors?
-    Box(modifier = modifier) {
+    Box(modifier = modifier.clickable(canOpenMoreInfo) { onMoreInfoClick(item) }) {
         itemSign?.let { sign ->
             BackgroundWithTextSign(
                 modifier = Modifier.fillMaxSize(),
@@ -734,7 +762,6 @@ private fun ItemWithInvention(
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-                val showAnswerOptions = !isAnswerVisible && !showAnswerWithAnimation
                 val wasInventedText = if (showAnswerOptions) {
                     itemSubtext
                 } else {
@@ -858,11 +885,25 @@ private fun ItemWithInvention(
                 contentDescription = null,
                 modifier = Modifier
                     .align(Alignment.TopEnd)
-                    .padding(top = 34.dp, end = 16.dp)
+                    .padding(top = 36.dp, end = 16.dp)
                     .size(24.dp)
                     .clip(RoundedCornerShape(4.dp))
                     .alpha(0.5f)
                     .clickable { onCopyToClipboardClick(sign) }
+            )
+        }
+
+        if (canOpenMoreInfo) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_more_info),
+                contentDescription = null,
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(bottom = 28.dp, end = 16.dp)
+                    .size(24.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .alpha(0.5f)
+                    .clickable { onMoreInfoClick(item) }
             )
         }
     }

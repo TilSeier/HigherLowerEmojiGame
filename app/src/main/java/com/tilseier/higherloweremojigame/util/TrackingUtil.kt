@@ -18,6 +18,7 @@ object TrackingUtil {
     private const val EVENT_NAME_AD_ERROR = "Ad Error"
     private const val EVENT_NAME_SCREEN_INTERACTION = "Screen Interaction"
     private const val EVENT_NAME_COPY_EMOJI = "Copy Emoji"
+    private const val EVENT_NAME_MORE_INFO = "More Info"
     private const val EVENT_NAME_BUTTON_CLICK = "Button Click"
 
     private const val ATTR_DIFFICULTY = "Difficulty"
@@ -135,6 +136,16 @@ object TrackingUtil {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_COPY_EMOJI)
             .withAttribute(ATTR_EMOJI, emoji)
+            .withAttribute(ATTR_GAME_NAME, game.name)
+            .build()
+            .fire()
+    }
+
+    fun trackMoreInfoClick(title: String, emoji: String, game: Game) {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_MORE_INFO)
+            .withAttribute(ATTR_EMOJI, emoji)
+            .withAttribute(ATTR_TITLE, title)
             .withAttribute(ATTR_GAME_NAME, game.name)
             .build()
             .fire()

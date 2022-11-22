@@ -78,6 +78,9 @@ dependencies {
     // WebView
     implementation "com.google.accompanist:accompanist-webview:$accompanist_version"
 
+    // Bottom Sheet Navigation
+    implementation "com.google.accompanist:accompanist-navigation-material:$accompanist_version"
+
     // Coil
     implementation "io.coil-kt:coil-compose:$coil_version"
 

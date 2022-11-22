@@ -26,7 +26,7 @@
     <string name="text.your_score">Рекорд: %1$s</string>
 
     <string name="text.invention_game_title">Що було\nвинайдено ДО, а що ПІСЛЯ?</string>
-    <string name="text.emoji_game_title">Яке Емоджі більш популяре?</string>
+    <string name="text.emoji_game_title">Яке Емоджі більш популярне?</string>
 
     <string name="text.dialog.exit.title">Ви впевненні?</string>
     <string name="text.dialog.exit.description">Це завершить вашу поточну гру, і ваш рахунок буде втрачено</string>

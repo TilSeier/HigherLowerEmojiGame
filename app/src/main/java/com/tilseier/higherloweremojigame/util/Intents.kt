@@ -25,13 +25,18 @@ object Intents {
         }
     }
 
-    // TODO open browser
     fun toBrowser(
         context: Context?,
-        url: String
+        url: String,
+        itemName: String?,
+        itemEmoji: String?,
+        itemColorArgb: Int?,
     ): Intent {
         val intent = Intent(context, BrowserActivity::class.java)
         intent.putExtra(BrowserActivity.MORE_INFO_URL, url)
+        intent.putExtra(BrowserActivity.ITEM_NAME, itemName)
+        intent.putExtra(BrowserActivity.ITEM_EMOJI, itemEmoji)
+        intent.putExtra(BrowserActivity.ITEM_COLOR, itemColorArgb)
         return intent
     }
 }
