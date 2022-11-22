@@ -1,5 +1,7 @@
 package com.tilseier.higherloweremojigame.data.local
 
+import com.tilseier.higherloweremojigame.R
+import com.tilseier.higherloweremojigame.common.UiText
 import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundDarkPurple
 import com.tilseier.higherloweremojigame.ui.theme.ItemBackgroundLightPurple
@@ -12,9 +14,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = ItemBackgroundRed,
             invention = Item.Invention(
-                nameOfInvention = "First Airplane",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_airplane),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1903,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Airplane",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_airplane),
                 emoji = "✈️", // ✈️
                 imageUrl = ""
             )
@@ -23,10 +27,24 @@ object InventedItemsList {
             id = 0,
             backgroundColor = ItemBackgroundLightPurple,
             invention = Item.Invention(
-                nameOfInvention = "First Car",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_car),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_she),
                 yearOfInvention = 1886,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_automobile",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_car),
                 emoji = "\uD83D\uDE97", // 🚗
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_largest_accordion),
+                yearOfInvention = 2001,
+                urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/largest-accordion",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_largest_accordion),
+                emoji = "🪗", // 🪗
                 imageUrl = ""
             )
         ),
@@ -35,68 +53,13 @@ object InventedItemsList {
     val emojiInventionItems = listOf(
         Item(
             id = 0,
-            backgroundColor = ItemBackgroundLightPurple,
-            invention = Item.Invention(
-                nameOfInvention = "First Car",
-                yearOfInvention = 1886,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_automobile",
-                emoji = "\uD83D\uDE97", // 🚗
-                imageUrl = ""
-            )
-        ),
-        Item(
-            id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Watch",
-                yearOfInvention = 1505,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_watches",
-                emoji = "⌚", // ⌚
-                imageUrl = ""
-            )
-        ),
-        Item(
-            id = 0,
-            backgroundColor = ItemBackgroundOrange,
-            invention = Item.Invention(
-                nameOfInvention = "First Phone",
-                yearOfInvention = 1876,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_telephone",
-                emoji = "☎️", // ☎️
-                imageUrl = ""
-            )
-        ),
-        Item(
-            id = 0,
-            backgroundColor = null,
-            invention = Item.Invention(
-                nameOfInvention = "First Video Camera",
-                yearOfInvention = 1918,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Video_camera",
-                emoji = "\uD83C\uDFA5", // 🎥
-                imageUrl = ""
-            )
-        ),
-        Item(
-            id = 0,
-            backgroundColor = ItemBackgroundDarkPurple,
-            invention = Item.Invention(
-                nameOfInvention = "First Light Bulb",
-                yearOfInvention = 1879,
-                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Edison_light_bulb",
-                emoji = "💡", // 💡
-                imageUrl = ""
-            )
-        ),
-
-        // START
-        Item(
-            id = 0,
-            backgroundColor = null,
-            invention = Item.Invention(
-                nameOfInvention = "First Hamburger",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_hamburger),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1747,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Hamburger",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_hamburger),
                 emoji = "🍔", // 🍔
                 imageUrl = ""
             )
@@ -105,9 +68,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bomb",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bomb),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_she),
                 yearOfInvention = 1221,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bomb",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bomb),
                 emoji = "💣", // 💣
                 imageUrl = ""
             )
@@ -116,9 +81,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Compass",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_compass),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1088,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Compass",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_compass),
                 emoji = "🧭", // 🧭
                 imageUrl = ""
             )
@@ -127,9 +94,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Manual Wheelchair",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_manual_wheelchair),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1655,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Wheelchair#Manual_self-propelled_wheelchairs",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_manual_wheelchair),
                 emoji = "🦽", // 🦽
                 imageUrl = ""
             )
@@ -138,10 +107,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motorized Wheelchair",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorized_wheelchair),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1930,
                 yearOfInventionEnd = 1939,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorized_wheelchair",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorized_wheelchair),
                 emoji = "🦼", // 🦼
                 imageUrl = ""
             )
@@ -150,9 +121,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Flashlight",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_flashlight),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1899,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Flashlight",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_flashlight),
                 emoji = "🔦", // 🔦
                 imageUrl = ""
             )
@@ -161,9 +134,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Mechanical Alarm Clock",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mechanical_alarm_clock),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1787,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Alarm_clock",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mechanical_alarm_clock),
                 emoji = "⏰", // ⏰
                 imageUrl = ""
             )
@@ -172,9 +147,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Stopwatch",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_stopwatch),
+                subtextOfInvention = UiText.StringResource(R.string.text_was_invented_he),
                 yearOfInvention = 1695,
                 urlWithMoreInformation = "https://museum.seiko.co.jp/en/knowledge/story_06/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_stopwatch),
                 emoji = "⏱️", // ⏱️
                 imageUrl = ""
             )
@@ -183,10 +160,72 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Mantelpiece Clock",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_manual_wheelchair),
+                yearOfInvention = 1655,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Wheelchair#Manual_self-propelled_wheelchairs",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_manual_wheelchair),
+                emoji = "🦽", // 🦽
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorized_wheelchair),
+                yearOfInvention = 1930,
+                yearOfInventionEnd = 1939,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorized_wheelchair",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorized_wheelchair),
+                emoji = "🦼", // 🦼
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_flashlight),
+                yearOfInvention = 1899,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Flashlight",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_flashlight),
+                emoji = "🔦", // 🔦
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mechanical_alarm_clock),
+                yearOfInvention = 1787,
+                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Alarm_clock",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mechanical_alarm_clock),
+                emoji = "⏰", // ⏰
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_stopwatch),
+                yearOfInvention = 1695,
+                urlWithMoreInformation = "https://museum.seiko.co.jp/en/knowledge/story_06/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_stopwatch),
+                emoji = "⏱️", // ⏱️
+                imageUrl = ""
+            )
+        ),
+        Item(
+            id = 0,
+            backgroundColor = null,
+            invention = Item.Invention(
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mantelpiece_clock),
                 yearOfInvention = 1750,
                 yearOfInventionEnd = 1759,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mantel_clock",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mantelpiece_clock),
                 emoji = "🕰️", // 🕰️
                 imageUrl = ""
             )
@@ -195,9 +234,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Thermometer",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_thermometer),
                 yearOfInvention = 1629,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Thermometer",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_thermometer),
                 emoji = "🌡️", // 🌡️
                 imageUrl = ""
             )
@@ -206,9 +246,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Rubber Balloon",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_rubber_balloon),
                 yearOfInvention = 1824,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Balloon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_rubber_balloon),
                 emoji = "🎈", // 🎈
                 imageUrl = ""
             )
@@ -217,9 +258,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Joystick",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_joystick),
                 yearOfInvention = 1926,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Joystick",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_joystick),
                 emoji = "🕹️", // 🕹️
                 imageUrl = ""
             )
@@ -228,9 +270,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Teddy Bear",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_teddy_bear),
                 yearOfInvention = 1902,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Teddy_bear",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_teddy_bear),
                 emoji = "🧸", // 🧸
                 imageUrl = ""
             )
@@ -239,9 +282,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Piñata",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_piñata),
                 yearOfInvention = 1586,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pi%C3%B1ata",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_piñata),
                 emoji = "🪅", // 🪅
                 imageUrl = ""
             )
@@ -250,10 +294,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Studio Microphone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_studio_microphone),
                 yearOfInvention = 1876,
                 yearOfInventionEnd = 1877,
                 urlWithMoreInformation = "https://digilab.libs.uga.edu/scl/exhibits/show/steel_vintage_mics/mic_early_history",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_studio_microphone),
                 emoji = "🎙️", // 🎙️
                 imageUrl = ""
             )
@@ -262,10 +307,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Banjo",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_banjo),
                 yearOfInvention = 1770,
                 yearOfInventionEnd = 1777,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Banjo",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_banjo),
                 emoji = "🪕", // 🪕
                 imageUrl = ""
             )
@@ -274,9 +320,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Radio",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_radio),
                 yearOfInvention = 1895,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Invention_of_radio",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_radio),
                 emoji = "📻", // 📻
                 imageUrl = ""
             )
@@ -285,9 +332,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Mobile Phone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mobile_phone),
                 yearOfInvention = 1973,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mobile_phone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mobile_phone),
                 emoji = "📱", // 📱
                 imageUrl = ""
             )
@@ -296,10 +344,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = ItemBackgroundDarkPurple,
             invention = Item.Invention(
-                nameOfInvention = "First Smartphone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_smartphone),
                 yearOfInvention = 1992,
                 yearOfInventionEnd = 1994,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Smartphone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_smartphone),
                 emoji = "📱", // 📱
                 imageUrl = ""
             )
@@ -308,9 +357,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First iPhone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_iphone),
                 yearOfInvention = 2007,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/IPhone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_iphone),
                 emoji = "📱", // 📱
                 imageUrl = ""
             )
@@ -319,10 +369,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pager",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pager),
                 yearOfInvention = 1950,
                 yearOfInventionEnd = 1959,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pager",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pager),
                 emoji = "📟", // 📟
                 imageUrl = ""
             )
@@ -331,9 +382,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Fax Machine",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_fax_machine),
                 yearOfInvention = 1964, // but the technology that led to that advancement was created much earlier
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fax",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_fax_machine),
                 emoji = "📠", // 📠
                 imageUrl = ""
             )
@@ -342,9 +394,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Battery",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_battery),
                 yearOfInvention = 1800,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Electric_battery",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_battery),
                 emoji = "🔋", // 🔋
                 imageUrl = ""
             )
@@ -353,9 +406,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Plug",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_plug),
                 yearOfInvention = 1904,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_AC_power_plugs_and_sockets",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_plug),
                 emoji = "🔌", // 🔌
                 imageUrl = ""
             )
@@ -364,9 +418,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Laptop",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_laptop),
                 yearOfInvention = 1981,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Laptop",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_laptop),
                 emoji = "💻", // 💻
                 imageUrl = ""
             )
@@ -375,9 +430,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Desktop Computer",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_desktop_computer),
                 yearOfInvention = 1970, // Programma 101 computer - 1964
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Desktop_computer",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_desktop_computer),
                 emoji = "🖥️", // 🖥️
                 imageUrl = ""
             )
@@ -386,9 +442,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Printer",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_printer),
                 yearOfInvention = 1968,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Printer_(computing)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_printer),
                 emoji = "🖨️", // 🖨️
                 imageUrl = ""
             )
@@ -397,9 +454,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First QWERTY Keyboard",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_qwerty_keyboard),
                 yearOfInvention = 1873,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/QWERTY",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_qwerty_keyboard),
                 emoji = "⌨️", // ⌨️
                 imageUrl = ""
             )
@@ -408,9 +466,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Computer Mouse",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_computer_mouse),
                 yearOfInvention = 1964,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Computer_mouse",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_computer_mouse),
                 emoji = "🖱️", // 🖱️
                 imageUrl = ""
             )
@@ -419,10 +478,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Trackball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_trackball),
                 yearOfInvention = 1946,
                 yearOfInventionEnd = 1947,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Trackball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_trackball),
                 emoji = "🖲️", // 🖲️
                 imageUrl = ""
             )
@@ -431,9 +491,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Computer Disk",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_computer_disk),
                 yearOfInvention = 1956,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Disk_storage",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_computer_disk),
                 emoji = "💽", // 💽
                 imageUrl = ""
             )
@@ -442,9 +503,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Floppy Disk",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_floppy_disk),
                 yearOfInvention = 1971,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Floppy_disk",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_floppy_disk),
                 emoji = "💾", // 💾
                 imageUrl = ""
             )
@@ -453,9 +515,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Optical Disk",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_optical_disk),
                 yearOfInvention = 1958,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Optical_disc",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_optical_disk),
                 emoji = "💿", // 💿
                 imageUrl = ""
             )
@@ -464,10 +527,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First DVD",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_dvd),
                 yearOfInvention = 1995,
                 yearOfInventionEnd = 1996,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/DVD",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_dvd),
                 emoji = "📀", // 📀
                 imageUrl = ""
             )
@@ -476,10 +540,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Movie Camera",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_movie_camera),
                 yearOfInvention = 1890,
                 yearOfInventionEnd = 1891,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Movie_camera",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_movie_camera),
                 emoji = "🎥", // 🎥
                 imageUrl = ""
             )
@@ -488,9 +553,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Movie Projector",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_movie_projector),
                 yearOfInvention = 1879,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Movie_projector",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_movie_projector),
                 emoji = "📽️", // 📽️
                 imageUrl = ""
             )
@@ -499,10 +565,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Television",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_television),
                 yearOfInvention = 1926,
                 yearOfInventionEnd = 1927,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Television",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_television),
                 emoji = "📺", // 📺
                 imageUrl = ""
             )
@@ -511,9 +578,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Photographic Camera",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_photographic_camera),
                 yearOfInvention = 1816,
                 urlWithMoreInformation = "https://www.nfi.edu/when-was-the-camera-invented/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_photographic_camera),
                 emoji = "📷", // 📷
                 imageUrl = ""
             )
@@ -522,10 +590,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Videocassette", // or First Videotape
+                nameOfInvention = UiText.StringResource(R.string.invention_first_videocassette),
                 yearOfInvention = 1951,
                 yearOfInventionEnd = 1956,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Videotape",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_videocassette),
                 emoji = "📼", // 📼
                 imageUrl = ""
             )
@@ -534,9 +603,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First one-dollar bill",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_one_dollar_bill),
                 yearOfInvention = 1862,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/United_States_one-dollar_bill",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_one_dollar_bill),
                 emoji = "💵", // 💵
                 imageUrl = ""
             )
@@ -545,9 +615,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First 100 euro note",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_100_euro_note),
                 yearOfInvention = 1999,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/100_euro_note",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_100_euro_note),
                 emoji = "💶", // 💶
                 imageUrl = ""
             )
@@ -556,9 +627,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First 1000 yen note",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_1000_yen_note),
                 yearOfInvention = 1945,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/1000_yen_note",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_1000_yen_note),
                 emoji = "💴", // 💴
                 imageUrl = ""
             )
@@ -567,9 +639,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Twenty pound note",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_twenty_pound_note),
                 yearOfInvention = 1725,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bank_of_England_%C2%A320_note",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_twenty_pound_note),
                 emoji = "💷", // 💷
                 imageUrl = ""
             )
@@ -578,9 +651,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Credit Card",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_credit_card),
                 yearOfInvention = 1950,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Credit_card",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_credit_card),
                 emoji = "💳", // 💳
                 imageUrl = ""
             )
@@ -589,9 +663,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First E-Mail",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_e_mail),
                 yearOfInvention = 1971,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Email",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_e_mail),
                 emoji = "📧", // 📧
                 imageUrl = ""
             )
@@ -600,9 +675,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Postbox",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_postbox),
                 yearOfInvention = 1653,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Post_box",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_postbox),
                 emoji = "📮", // 📮
                 imageUrl = ""
             )
@@ -611,9 +687,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ballot Box",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ballot_box),
                 yearOfInvention = 1872,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ballot_box",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ballot_box),
                 emoji = "🗳️", // 🗳️
                 imageUrl = ""
             )
@@ -622,9 +699,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pushpin",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pushpin),
                 yearOfInvention = 1900,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Drawing_pin",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pushpin),
                 emoji = "📌", // 📌
                 imageUrl = ""
             )
@@ -633,10 +711,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bar Chart",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bar_chart),
                 yearOfInvention = 1780,
                 yearOfInventionEnd = 1781,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bar_chart",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bar_chart),
                 emoji = "📊", // 📊
                 imageUrl = ""
             )
@@ -645,10 +724,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Clipboard",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_clipboard),
                 yearOfInvention = 1870,
                 yearOfInventionEnd = 1871,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Clipboard",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_clipboard),
                 emoji = "📋", // 📋
                 imageUrl = ""
             )
@@ -657,9 +737,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ballpoint Pen ",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ballpoint_pen),
                 yearOfInvention = 1888,
                 urlWithMoreInformation = "https://www.bbc.com/future/article/20201028-history-of-the-ballpoint-pen",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ballpoint_pen),
                 emoji = "🖊️", // 🖊️
                 imageUrl = ""
             )
@@ -668,9 +749,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Crayon",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_crayon),
                 yearOfInvention = 1903,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Crayon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_crayon),
                 emoji = "🖍️", // 🖍️
                 imageUrl = ""
             )
@@ -679,9 +761,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pen Nib",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pen_nib),
                 yearOfInvention = 1803,
                 urlWithMoreInformation = "https://www.zenzoi.com/blogs/articles/the-journey-of-the-pen-nib",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pen_nib),
                 emoji = "✒️", // ✒️
                 imageUrl = ""
             )
@@ -690,9 +773,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Fountain Pen",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_fountain_pen),
                 yearOfInvention = 1827,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fountain_pen",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_fountain_pen),
                 emoji = "🖋️", // 🖋️
                 imageUrl = ""
             )
@@ -701,9 +785,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Pencil",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_pencil),
                 yearOfInvention = 1795,
                 urlWithMoreInformation = "https://blogs.bl.uk/untoldlives/2019/05/the-history-of-the-pencil.html",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_pencil),
                 emoji = "✏️", // ✏️
                 imageUrl = ""
             )
@@ -712,9 +797,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Notebook",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_notebook),
                 yearOfInvention = 1888,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Notebook",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_notebook),
                 emoji = "📓", // 📓
                 imageUrl = ""
             )
@@ -723,9 +809,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Paperclip",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_paperclip),
                 yearOfInvention = 1867,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Paper_clip",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_paperclip),
                 emoji = "📎", // 📎
                 imageUrl = ""
             )
@@ -734,10 +821,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First File Cabinet",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_file_cabinet),
                 yearOfInvention = 1893,
                 yearOfInventionEnd = 1895,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Filing_cabinet",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_file_cabinet),
                 emoji = "🗄️", // 🗄️
                 imageUrl = ""
             )
@@ -746,9 +834,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Water Gun",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_water_gun),
                 yearOfInvention = 1896,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Water_gun",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_water_gun),
                 emoji = "🔫", // 🔫
                 imageUrl = ""
             )
@@ -757,9 +846,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Wrench",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_wrench),
                 yearOfInvention = 1835,
                 urlWithMoreInformation = "https://patentyogi.com/this-day-in-patent-history/first-wrench-patented-day-day-patent-history/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_wrench),
                 emoji = "🔧", // 🔧
                 imageUrl = ""
             )
@@ -768,9 +858,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Screwdriver",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_screwdriver),
                 yearOfInvention = 1475, // between 1475 and 1490
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Screwdriver",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_screwdriver),
                 emoji = "🪛", // 🪛
                 imageUrl = ""
             )
@@ -779,10 +870,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Hyperlink",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_hyperlink),
                 yearOfInvention = 1964,
                 yearOfInventionEnd = 1965,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Hyperlink",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_hyperlink),
                 emoji = "🔗", // 🔗
                 imageUrl = ""
             )
@@ -791,10 +883,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Test Tube",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_test_tube),
                 yearOfInvention = 1820,
                 yearOfInventionEnd = 1829,
                 urlWithMoreInformation = "https://daily.jstor.org/the-invention-of-the-test-tube/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_test_tube),
                 emoji = "🧪", // 🧪
                 imageUrl = ""
             )
@@ -803,10 +896,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Petri Dish",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_petri_dish),
                 yearOfInvention = 1881,
                 yearOfInventionEnd = 1887,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Petri_dish",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_petri_dish),
                 emoji = "🧫", // 🧫
                 imageUrl = ""
             )
@@ -815,9 +909,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First DNA Investigation",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_dna_investigation),
                 yearOfInvention = 1869,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/DNA",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_dna_investigation),
                 emoji = "🧬", // 🧬
                 imageUrl = ""
             )
@@ -826,9 +921,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Microscope",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_microscope),
                 yearOfInvention = 1600, // around
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Microscope",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_microscope),
                 emoji = "🔬", // 🔬
                 imageUrl = ""
             )
@@ -837,9 +933,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Telescope",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_telescope),
                 yearOfInvention = 1608,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Telescope",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_telescope),
                 emoji = "🔭", // 🔭
                 imageUrl = ""
             )
@@ -848,9 +945,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Satellite Dish",
-                yearOfInvention = 1976,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_satellite_dish),
+                yearOfInvention =
+                1976,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Satellite_dish",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_satellite_dish),
                 emoji = "📡", // 📡
                 imageUrl = ""
             )
@@ -859,9 +958,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Syringe",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_syringe),
                 yearOfInvention = 1853,
                 urlWithMoreInformation = "https://www.nms.ac.uk/explore-our-collections/stories/science-and-technology/syringes/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_syringe),
                 emoji = "💉", // 💉
                 imageUrl = ""
             )
@@ -870,10 +970,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Adhesive Bandage",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_adhesive_bandage),
                 yearOfInvention = 1920,
                 yearOfInventionEnd = 1921,
                 urlWithMoreInformation = "https://www.band-aid.com/our-brand/brand-history",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_adhesive_bandage),
                 emoji = "🩹", // 🩹
                 imageUrl = ""
             )
@@ -882,9 +983,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Crutch",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_crutch),
                 yearOfInvention = 1917,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Crutch",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_crutch),
                 emoji = "🩼", // 🩼
                 imageUrl = ""
             )
@@ -893,9 +995,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = ItemBackgroundOrange,
             invention = Item.Invention(
-                nameOfInvention = "First Stethoscope",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_stethoscope),
                 yearOfInvention = 1816,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Stethoscope",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_stethoscope),
                 emoji = "🩺", // 🩺
                 imageUrl = ""
             )
@@ -904,9 +1007,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Flush Toilet",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_flush_toilet),
                 yearOfInvention = 1596,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Flush_toilet",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_flush_toilet),
                 emoji = "🚽", // 🚽
                 imageUrl = ""
             )
@@ -915,9 +1019,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Plunger",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_plunger),
                 yearOfInvention = 1874,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Plunger",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_plunger),
                 emoji = "🪠", // 🪠
                 imageUrl = ""
             )
@@ -926,9 +1031,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Shower",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_shower),
                 yearOfInvention = 1767,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Shower",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_shower),
                 emoji = "🚿", // 🚿
                 imageUrl = ""
             )
@@ -937,9 +1043,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bathtub",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bathtub),
                 yearOfInvention = 1883,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bathtub",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bathtub),
                 emoji = "🛁", // 🛁
                 imageUrl = ""
             )
@@ -948,9 +1055,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Mouse Trap",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mouse_trap),
                 yearOfInvention = 1894,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mousetrap",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mouse_trap),
                 emoji = "🪤", // 🪤
                 imageUrl = ""
             )
@@ -959,9 +1067,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Razor",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_razor),
                 yearOfInvention = 1762,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Razor",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_razor),
                 emoji = "🪒", // 🪒
                 imageUrl = ""
             )
@@ -970,9 +1079,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Safety Pin",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_safety_pin),
                 yearOfInvention = 1849,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Safety_pin",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_safety_pin),
                 emoji = "🧷", // 🧷
                 imageUrl = ""
             )
@@ -981,9 +1091,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Toilet Paper",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_toilet_paper),
                 yearOfInvention = 1857,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Toilet_paper",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_toilet_paper),
                 emoji = "🧻", // 🧻
                 imageUrl = ""
             )
@@ -992,9 +1103,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Fire Extinguisher",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_fire_extinguisher),
                 yearOfInvention = 1723,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fire_extinguisher",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_fire_extinguisher),
                 emoji = "🧯", // 🧯
                 imageUrl = ""
             )
@@ -1003,9 +1115,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Shopping Cart",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_shopping_cart),
                 yearOfInvention = 1937,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Shopping_cart",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_shopping_cart),
                 emoji = "🛒", // 🛒
                 imageUrl = ""
             )
@@ -1014,10 +1127,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Identification Card",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_identification_card),
                 yearOfInvention = 1985,
                 yearOfInventionEnd = 1988,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Identity_document",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_identification_card),
                 emoji = "\uD83E\uDEAA", // 🪪
                 imageUrl = ""
             )
@@ -1026,10 +1140,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Croissant",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_croissant),
                 yearOfInvention = 1838,
                 yearOfInventionEnd = 1839,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Croissant",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_croissant),
                 emoji = "🥐", // 🥐
                 imageUrl = ""
             )
@@ -1038,9 +1153,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Baguette",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_baguette),
                 yearOfInvention = 1920,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Baguette",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_baguette),
                 emoji = "🥖", // 🥖
                 imageUrl = ""
             )
@@ -1049,9 +1165,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bagel",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bagel),
                 yearOfInvention = 1610,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bagel",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bagel),
                 emoji = "🥯", // 🥯
                 imageUrl = ""
             )
@@ -1060,9 +1177,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First French Fries",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_french_fries),
                 yearOfInvention = 1775, //1795
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/French_Fries",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_french_fries),
                 emoji = "🍟", // 🍟
                 imageUrl = ""
             )
@@ -1071,9 +1189,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pepperoni Pizza",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pepperoni_pizza),
                 yearOfInvention = 1919, // 1950
                 urlWithMoreInformation = "https://www.pizzerialocale.com/pepperoni-a-short-history/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pepperoni_pizza),
                 emoji = "🍕", // 🍕
                 imageUrl = ""
             )
@@ -1082,9 +1201,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Taco",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_taco),
                 yearOfInvention = 1905,
                 urlWithMoreInformation = "https://www.twistedtaco.com/the-history-of-the-taco",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_taco),
                 emoji = "🌮", // 🌮
                 imageUrl = ""
             )
@@ -1093,9 +1213,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Kebab",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_kebab),
                 yearOfInvention = 1867,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Kebab",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_kebab),
                 emoji = "🍢", // 🍢
                 imageUrl = ""
             )
@@ -1104,9 +1225,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Sushi",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_sushi),
                 yearOfInvention = 1824,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_sushi",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_sushi),
                 emoji = "🍣", // 🍣
                 imageUrl = ""
             )
@@ -1115,10 +1237,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Narutomaki",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_narutomaki),
                 yearOfInvention = 1800,
                 yearOfInventionEnd = 1809,
                 urlWithMoreInformation = "https://www.atlasobscura.com/foods/narutomaki-fishcake-ramen",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_narutomaki),
                 emoji = "🍥", // 🍥
                 imageUrl = ""
             )
@@ -1127,9 +1250,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Hanami Dango",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_hanami_dango),
                 yearOfInvention = 1598,
                 urlWithMoreInformation = "https://www.kyotojournal.org/tea-food-2/the-world-of-japanese-dango/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_hanami_dango),
                 emoji = "🍡", // 🍡
                 imageUrl = ""
             )
@@ -1138,10 +1262,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Fortune Cookie",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_fortune_cookie),
                 yearOfInvention = 1914,
                 yearOfInventionEnd = 1918,
                 urlWithMoreInformation = "https://www.infoplease.com/culture-entertainment/food/history-fortune-cookie",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_fortune_cookie),
                 emoji = "🥠", // 🥠
                 imageUrl = ""
             )
@@ -1150,9 +1275,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Takeout Box",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_takeout_box),
                 yearOfInvention = 1894,
                 urlWithMoreInformation = "https://www.nytimes.com/2012/01/15/magazine/the-chinese-takeout-container-is-uniquely-american.html",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_takeout_box),
                 emoji = "🥡", // 🥡
                 imageUrl = ""
             )
@@ -1161,9 +1287,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Doughnut",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_doughnut),
                 yearOfInvention = 1847,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Doughnut",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_doughnut),
                 emoji = "🍩", // 🍩
                 imageUrl = ""
             )
@@ -1172,9 +1299,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Cupcake",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_cupcake),
                 yearOfInvention = 1796,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Cupcake",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_cupcake),
                 emoji = "🧁", // 🧁
                 imageUrl = ""
             )
@@ -1183,9 +1311,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Chocolate Bar",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_chocolate_bar),
                 yearOfInvention = 1847,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Chocolate_bar",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_chocolate_bar),
                 emoji = "🍫", // 🍫
                 imageUrl = ""
             )
@@ -1194,9 +1323,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Lollipop",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_lollipop),
                 yearOfInvention = 1908,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Lollipop",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_lollipop),
                 emoji = "🍭", // 🍭
                 imageUrl = ""
             )
@@ -1205,9 +1335,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Baby Bottle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_baby_bottle),
                 yearOfInvention = 1841,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Baby_bottle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_baby_bottle),
                 emoji = "🍼", // 🍼
                 imageUrl = ""
             )
@@ -1216,9 +1347,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Horse Race",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_horse_race),
                 yearOfInvention = 1776,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Horse_racing",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_horse_race),
                 emoji = "🏇", // 🏇
                 imageUrl = ""
             )
@@ -1227,9 +1359,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Snowboarding",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_snowboarding),
                 yearOfInvention = 1965,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Snowboarding",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_snowboarding),
                 emoji = "🏂", // 🏂
                 imageUrl = ""
             )
@@ -1238,9 +1371,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Golf",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_golf),
                 yearOfInvention = 1457,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Golf",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_golf),
                 emoji = "🏌️", // 🏌️
                 imageUrl = ""
             )
@@ -1249,9 +1383,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bouncy Ball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bouncy_ball),
                 yearOfInvention = 1965,
                 urlWithMoreInformation = "https://www.benjobags.com/the-mighty-bouncy-ball/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bouncy_ball),
                 emoji = "⛹️", // ⛹️
                 imageUrl = ""
             )
@@ -1260,10 +1395,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Clapper Board",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_clapper_board),
                 yearOfInvention = 1920,
                 yearOfInventionEnd = 1929,
                 urlWithMoreInformation = "https://definition.org/clapperboard-finally-explained/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_clapper_board),
                 emoji = "🎬", // 🎬
                 imageUrl = ""
             )
@@ -1272,10 +1408,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Violin",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_violin),
                 yearOfInvention = 1530,
                 yearOfInventionEnd = 1539,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_violin",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_violin),
                 emoji = "🎻", // 🎻
                 imageUrl = ""
             )
@@ -1284,9 +1421,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Saxophone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_saxophone),
                 yearOfInvention = 1846,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Saxophone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_saxophone),
                 emoji = "🎷", // 🎷
                 imageUrl = ""
             )
@@ -1295,9 +1433,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Headphones",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_headphones),
                 yearOfInvention = 1910,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Headphones",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_headphones),
                 emoji = "🎧", // 🎧
                 imageUrl = ""
             )
@@ -1306,10 +1445,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Microphone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_microphone),
                 yearOfInvention = 1876,
                 yearOfInventionEnd = 1877,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Microphone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_microphone),
                 emoji = "🎤", // 🎤
                 imageUrl = ""
             )
@@ -1318,9 +1458,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Disco Ball", // Mirror Ball
+                nameOfInvention = UiText.StringResource(R.string.invention_first_disco_ball),
                 yearOfInvention = 1917,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Disco_ball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_disco_ball),
                 emoji = "🪩", // 🪩
                 imageUrl = ""
             )
@@ -1329,10 +1470,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Puzzle Piece",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_puzzle_piece),
                 yearOfInvention = 1760,
                 yearOfInventionEnd = 1762,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Jigsaw_puzzle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_puzzle_piece),
                 emoji = "🧩", // 🧩
                 imageUrl = ""
             )
@@ -1341,9 +1483,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Slot Machine",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_slot_machine),
                 yearOfInvention = 1891,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Slot_machine",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_slot_machine),
                 emoji = "🎰", // 🎰
                 imageUrl = ""
             )
@@ -1352,9 +1495,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pool 8 Ball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pool_8_ball),
                 yearOfInvention = 1900,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Eight-ball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pool_8_ball),
                 emoji = "🎱", // 🎱
                 imageUrl = ""
             )
@@ -1363,9 +1507,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Curling Stone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_curling_stone),
                 yearOfInvention = 1511,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Curling",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_curling_stone),
                 emoji = "🥌", // 🥌
                 imageUrl = ""
             )
@@ -1374,9 +1519,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Sled", // or a Cutter is an open, lightweight, horse-drawn sleigh that usually holds no more than two people
+                nameOfInvention = UiText.StringResource(R.string.invention_first_sled),
                 yearOfInvention = 1880,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Sled",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_sled),
                 emoji = "🛷", // 🛷
                 imageUrl = ""
             )
@@ -1385,10 +1531,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Frisbee Disc",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_frisbee_disc),
                 yearOfInvention = 1957,
                 yearOfInventionEnd = 1958,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Frisbee",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_frisbee_disc),
                 emoji = "🥏", // 🥏
                 imageUrl = ""
             )
@@ -1397,9 +1544,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Train",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_train),
                 yearOfInvention = 1804,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Train",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_train),
                 emoji = "🚆", // 🚆
                 imageUrl = ""
             )
@@ -1408,9 +1556,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Xbox controller",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_xbox_controller),
                 yearOfInvention = 2001, // 2000-2001
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Xbox_controller",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_xbox_controller),
                 emoji = "🎮", // 🎮
                 imageUrl = ""
             )
@@ -1419,9 +1568,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Synthesizer",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_synthesizer),
                 yearOfInvention = 1952,
                 urlWithMoreInformation = "https://artsandculture.google.com/story/NAWhuXju46u1pg",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_synthesizer),
                 emoji = "🎹", // 🎹
                 imageUrl = ""
             )
@@ -1430,9 +1580,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Guitar",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_guitar),
                 yearOfInvention = 1932,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Electric_guitar",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_guitar),
                 emoji = "🎸", // 🎸
                 imageUrl = ""
             )
@@ -1441,9 +1592,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Figure Skates",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_figure_skates),
                 yearOfInvention = 1865,
                 urlWithMoreInformation = "https://www.wonderopolis.org/wonder/when-were-ice-skates-invented",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_figure_skates),
                 emoji = "⛸️", // ⛸️
                 imageUrl = ""
             )
@@ -1452,9 +1604,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Goal Net",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_goal_net),
                 yearOfInvention = 1889,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/John_Alexander_Brodie",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_goal_net),
                 emoji = "🥅", // 🥅
                 imageUrl = ""
             )
@@ -1463,9 +1616,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Boxing Gloves",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_boxing_gloves),
                 yearOfInvention = 1743,
                 urlWithMoreInformation = "https://www.infinitudefight.com/boxing-gloves-when-did-boxing-start-using-gloves/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_boxing_gloves),
                 emoji = "🥊", // 🥊
                 imageUrl = ""
             )
@@ -1474,9 +1628,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Badminton Game",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_badminton_game),
                 yearOfInvention = 1873,
                 urlWithMoreInformation = "https://www.britannica.com/sports/badminton",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_badminton_game),
                 emoji = "🏸", // 🏸
                 imageUrl = ""
             )
@@ -1485,10 +1640,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ping Pong",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ping_pong),
                 yearOfInvention = 1860,
                 yearOfInventionEnd = 1879,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Table_tennis",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ping_pong),
                 emoji = "🏓", // 🏓
                 imageUrl = ""
             )
@@ -1497,9 +1653,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First named the game “Lacrosse”",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_named_the_game_lacrosse),
                 yearOfInvention = 1636,
                 urlWithMoreInformation = "https://worldlacrosse.sport/about-world-lacrosse/origin-history/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_named_the_game_lacrosse),
                 emoji = "🥍", // 🥍
                 imageUrl = ""
             )
@@ -1508,9 +1665,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ten Pin Bowling",
-                yearOfInvention = 1820,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ten_pin_bowling),
+                yearOfInvention =
+                1820,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ten-pin_bowling",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ten_pin_bowling),
                 emoji = "🎳", // 🎳
                 imageUrl = ""
             )
@@ -1519,9 +1678,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Tennis rules",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_tennis_rules),
                 yearOfInvention = 1875,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_tennis",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_tennis_rules),
                 emoji = "🎾", // 🎾
                 imageUrl = ""
             )
@@ -1530,9 +1690,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Rugby Football",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_rugby_football),
                 yearOfInvention = 1823,
                 urlWithMoreInformation = "https://hanazono-rugby-hos.com/museum-en/origins/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_rugby_football),
                 emoji = "🏉", // 🏉
                 imageUrl = ""
             )
@@ -1541,9 +1702,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First American Football Match",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_american_football_match),
                 yearOfInvention = 1869,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/American_football",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_american_football_match),
                 emoji = "🏈", // 🏈
                 imageUrl = ""
             )
@@ -1552,9 +1714,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Volleyball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_volleyball),
                 yearOfInvention = 1895,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Volleyball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_volleyball),
                 emoji = "🏐", // 🏐
                 imageUrl = ""
             )
@@ -1563,9 +1726,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Basketball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_basketball),
                 yearOfInvention = 1891,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Basketball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_basketball),
                 emoji = "🏀", // 🏀
                 imageUrl = ""
             )
@@ -1574,9 +1738,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Softball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_softball),
                 yearOfInvention = 1887,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Softball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_softball),
                 emoji = "🥎", // 🥎
                 imageUrl = ""
             )
@@ -1585,9 +1750,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Reference to Baseball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_reference_to_baseball),
                 yearOfInvention = 1744,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Baseball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_reference_to_baseball),
                 emoji = "⚾", // ⚾
                 imageUrl = ""
             )
@@ -1596,9 +1762,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern 32-panel Soccer ball",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_32_panel_soccer_ball),
                 yearOfInvention = 1962,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ball_(association_football)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_32_panel_soccer_ball),
                 emoji = "⚽", // ⚽
                 imageUrl = ""
             )
@@ -1607,9 +1774,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Roller Skates",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_roller_skates),
                 yearOfInvention = 1760,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Roller_skates",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_roller_skates),
                 emoji = "🛼", // 🛼
                 imageUrl = ""
             )
@@ -1618,10 +1786,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Skateboard",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_skateboard),
                 yearOfInvention = 1920,
                 yearOfInventionEnd = 1929,
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Skateboard",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_skateboard),
                 emoji = "🛹", // 🛹
                 imageUrl = ""
             )
@@ -1630,9 +1800,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Circus Tent",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_circus_tent),
                 yearOfInvention = 1825,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Circus",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_circus_tent),
                 emoji = "🎪", // 🎪
                 imageUrl = ""
             )
@@ -1641,9 +1812,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bicycle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bicycle),
                 yearOfInvention = 1817,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bicycle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bicycle),
                 emoji = "🚴", // 🚴
                 imageUrl = ""
             )
@@ -1652,10 +1824,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = " First Keikogi",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_keikogi),
                 yearOfInvention = 1882,
                 yearOfInventionEnd = 1889,
+
                 urlWithMoreInformation = "https://dragonspiritaylesbury.co.uk/education/the-history-of-the-keikogi/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_keikogi),
                 emoji = "🥋", // 🥋
                 imageUrl = ""
             )
@@ -1664,9 +1838,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Darts",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_darts),
                 yearOfInvention = 1896,
                 urlWithMoreInformation = "https://darthelp.com/articles/the-history-of-darts/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_darts),
                 emoji = "🎯", // 🎯
                 imageUrl = ""
             )
@@ -1675,9 +1850,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First mention a Flying Saucer",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mention_a_flying_saucer),
                 yearOfInvention = 1878,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Flying_saucer",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mention_a_flying_saucer),
                 emoji = "🛸", // 🛸
                 imageUrl = ""
             )
@@ -1686,9 +1862,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Space Shuttle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_space_shuttle),
                 yearOfInvention = 1976,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Space_Shuttle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_space_shuttle),
                 emoji = "🚀", // 🚀
                 imageUrl = ""
             )
@@ -1697,9 +1874,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Satellite",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_satellite),
                 yearOfInvention = 1957,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Satellite",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_satellite),
                 emoji = "🛰️", // 🛰️
                 imageUrl = ""
             )
@@ -1708,9 +1886,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Aerial Tramway",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_aerial_tramway),
                 yearOfInvention = 1644,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Aerial_tramway",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_aerial_tramway),
                 emoji = "🚡", // 🚡
                 imageUrl = ""
             )
@@ -1719,9 +1898,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Table Mountain Aerial Cableway",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_table_mountain_aerial_cableway),
                 yearOfInvention = 1929,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Table_Mountain_Aerial_Cableway",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_table_mountain_aerial_cableway),
                 emoji = "🚠", // 🚠
                 imageUrl = ""
             )
@@ -1730,9 +1910,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Suspension Railway",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_suspension_railway),
                 yearOfInvention = 1825,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Suspension_railway",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_suspension_railway),
                 emoji = "🚟", // 🚟
                 imageUrl = ""
             )
@@ -1741,9 +1922,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First mentioned word 'Helicopter'",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mentioned_word_helicopter),
                 yearOfInvention = 1861,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Helicopter",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mentioned_word_helicopter),
                 emoji = "🚁", // 🚁
                 imageUrl = ""
             )
@@ -1752,9 +1934,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Parachute",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_parachute),
                 yearOfInvention = 1783, // in 1785 coined the word "parachute"
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Parachute",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_parachute),
                 emoji = "🪂", // 🪂
                 imageUrl = ""
             )
@@ -1763,9 +1946,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = ItemBackgroundRed,
             invention = Item.Invention(
-                nameOfInvention = "First Airplane",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_airplane),
                 yearOfInvention = 1903,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Airplane",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_airplane),
                 emoji = "✈️", // ✈️
                 imageUrl = ""
             )
@@ -1774,9 +1958,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motorboat",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorboat),
                 yearOfInvention = 1886,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorboat",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorboat),
                 emoji = "🛥️", // 🛥️
                 imageUrl = ""
             )
@@ -1785,9 +1970,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ferry",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ferry),
                 yearOfInvention = 1811,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ferry",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ferry),
                 emoji = "⛴️", // ⛴️
                 imageUrl = ""
             )
@@ -1796,32 +1982,24 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Passenger Ship",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_passenger_ship),
                 yearOfInvention = 1900,
                 yearOfInventionEnd = 1901,
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Prinzessin_Victoria_Luise",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_passenger_ship),
                 emoji = "🛳️", // 🛳️
                 imageUrl = ""
             )
         ),
-//        Item(
-//            id = 0,
-//            backgroundColor = null,
-//            invention = Item.Invention(
-//                nameOfInvention = "First Motorboat",
-//                yearOfInvention = 1888,
-//                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorboat",
-//                emoji = "🚤", // 🚤
-//                imageUrl = ""
-//            )
-//        ),
         Item(
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Life Preserver",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_life_preserver),
                 yearOfInvention = 1928,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Personal_flotation_device",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_life_preserver),
                 emoji = "🛟", // 🛟
                 imageUrl = ""
             )
@@ -1830,10 +2008,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Admiralty Pattern Anchor",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_admiralty_pattern_anchor),
                 yearOfInvention = 1946,
                 yearOfInventionEnd = 1952,
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_anchor",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_admiralty_pattern_anchor),
                 emoji = "⚓", // ⚓
                 imageUrl = ""
             )
@@ -1842,9 +2022,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First System of Traffic Signals",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_system_of_traffic_signals),
                 yearOfInvention = 1868,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Traffic_light",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_system_of_traffic_signals),
                 emoji = "🚦", // 🚦
                 imageUrl = ""
             )
@@ -1853,9 +2034,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Traffic Light",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_traffic_light),
                 yearOfInvention = 1912,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Traffic_light",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_traffic_light),
                 emoji = "🚥", // 🚥
                 imageUrl = ""
             )
@@ -1864,10 +2046,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Police Car Light",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_police_car_light),
                 yearOfInvention = 1930,
                 yearOfInventionEnd = 1939,
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Emergency_vehicle_lighting",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_police_car_light),
                 emoji = "🚨", // 🚨
                 imageUrl = ""
             )
@@ -1876,10 +2060,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Tire",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_tire),
                 yearOfInvention = 1845,
                 yearOfInventionEnd = 1847,
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tire",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_tire),
                 emoji = "\uD83D\uDEDE", // 🛞 // TODO fix by using iOS 15 or earlier font
                 imageUrl = ""
             )
@@ -1888,9 +2074,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = " First Gasoline Pump",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_gasoline_pump),
                 yearOfInvention = 1885,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Gasoline_pump",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_gasoline_pump),
                 emoji = "⛽", // ⛽
                 imageUrl = ""
             )
@@ -1899,9 +2086,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Iron Rails",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_iron_rails),
                 yearOfInvention = 1767,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Railway_track",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_iron_rails),
                 emoji = "🛤️", // 🛤️
                 imageUrl = ""
             )
@@ -1910,9 +2098,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motorway",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorway),
                 yearOfInvention = 1924,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Controlled-access_highway",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorway),
                 emoji = "🛣️", // 🛣️
                 imageUrl = ""
             )
@@ -1921,9 +2110,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bus Stop",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bus_stop),
                 yearOfInvention = 1829,
                 urlWithMoreInformation = "https://www.shelter-solutions.co.uk/who-invented-the-bus-stop/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bus_stop),
                 emoji = "🚏", // 🚏
                 imageUrl = ""
             )
@@ -1932,9 +2122,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Kick 'n Go",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_kickn_go),
                 yearOfInvention = 1974,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Kick_scooter",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_kickn_go),
                 emoji = "🛴", // 🛴
                 imageUrl = ""
             )
@@ -1943,9 +2134,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pedal Bicycle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pedal_bicycle),
                 yearOfInvention = 1863,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_bicycle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pedal_bicycle),
                 emoji = "🚲", // 🚲
                 imageUrl = ""
             )
@@ -1954,9 +2146,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Auto Rickshaw",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_auto_rickshaw),
                 yearOfInvention = 1959,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Auto_rickshaw",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_auto_rickshaw),
                 emoji = "🛺", // 🛺
                 imageUrl = ""
             )
@@ -1965,9 +2158,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motor Scooter",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motor_scooter),
                 yearOfInvention = 1915,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Scooter_(motorcycle)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motor_scooter),
                 emoji = "🛵", // 🛵
                 imageUrl = ""
             )
@@ -1976,9 +2170,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motorcycle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorcycle),
                 yearOfInvention = 1885,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Motorcycle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorcycle),
                 emoji = "🏍️", // 🏍️
                 imageUrl = ""
             )
@@ -1987,9 +2182,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Formula One",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_formula_one),
                 yearOfInvention = 1950,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Formula_One",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_formula_one),
                 emoji = "🏎️", // 🏎️
                 imageUrl = ""
             )
@@ -1998,9 +2194,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Gasoline powered Tractor",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_gasoline_powered_tractor),
                 yearOfInvention = 1889,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tractor",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_gasoline_powered_tractor),
                 emoji = "🚜", // 🚜
                 imageUrl = ""
             )
@@ -2009,10 +2206,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Truck",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_truck),
                 yearOfInvention = 1895,
                 yearOfInventionEnd = 1896,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Truck",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_truck),
                 emoji = "🚛", // 🚛
                 imageUrl = ""
             )
@@ -2021,9 +2219,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pickup Truck",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pickup_truck),
                 yearOfInvention = 1925,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pickup_truck",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pickup_truck),
                 emoji = "🛻", // 🛻
                 imageUrl = ""
             )
@@ -2032,9 +2231,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First SUV in the modern style", // SUV - sport utility vehicle
+                nameOfInvention = UiText.StringResource(R.string.invention_first_suv_in_the_modern_style),
                 yearOfInvention = 1984,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Sport_utility_vehicle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_suv_in_the_modern_style),
                 emoji = "🚙", // 🚙
                 imageUrl = ""
             )
@@ -2043,9 +2243,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Taxicab",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_taxicab),
                 yearOfInvention = 1897,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Taxi",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_taxicab),
                 emoji = "🚕", // 🚕
                 imageUrl = ""
             )
@@ -2054,9 +2255,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Police Car",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_police_car),
                 yearOfInvention = 1899,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Police_car",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_police_car),
                 emoji = "🚓", // 🚓
                 imageUrl = ""
             )
@@ -2065,9 +2267,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Motorised Fire Engines",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_motorised_fire_engines),
                 yearOfInvention = 1897,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fire_engine",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_motorised_fire_engines),
                 emoji = "🚒", // 🚒
                 imageUrl = ""
             )
@@ -2076,9 +2279,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Gas Powered Ambulance",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_gas_powered_ambulance),
                 yearOfInvention = 1905,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_the_ambulance",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_gas_powered_ambulance),
                 emoji = "🚑", // 🚑
                 imageUrl = ""
             )
@@ -2087,10 +2291,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Minibus",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_minibus),
                 yearOfInvention = 1935,
                 yearOfInventionEnd = 1955,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Minibus",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_minibus),
                 emoji = "🚐", // 🚐
                 imageUrl = ""
             )
@@ -2099,9 +2304,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Trolleybus",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_trolleybus),
                 yearOfInvention = 1882,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Trolleybus",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_trolleybus),
                 emoji = "🚎", // 🚎
                 imageUrl = ""
             )
@@ -2110,9 +2316,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First mass-produced Bus model",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mass_produced_bus_model),
                 yearOfInvention = 1910,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bus",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mass_produced_bus_model),
                 emoji = "🚌", // 🚌
                 imageUrl = ""
             )
@@ -2121,9 +2328,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Tram line",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_tram_line),
                 yearOfInvention = 1875,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tram",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_tram_line),
                 emoji = "🚋", // 🚋
                 imageUrl = ""
             )
@@ -2132,9 +2340,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Monorail prototype",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_monorail_prototype),
                 yearOfInvention = 1820,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Monorail",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_monorail_prototype),
                 emoji = "🚝", // 🚝
                 imageUrl = ""
             )
@@ -2143,9 +2352,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First LRT introduced term", // LRT - light rail transit
+                nameOfInvention = UiText.StringResource(R.string.invention_first_lrt_introduced_term),
                 yearOfInvention = 1972,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Light_rail",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_lrt_introduced_term),
                 emoji = "🚈", // 🚈
                 imageUrl = ""
             )
@@ -2154,9 +2364,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Metro", // First Electric-traction rapid transit railway
+                nameOfInvention = UiText.StringResource(R.string.invention_first_metro),
                 yearOfInvention = 1890,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Rapid_transit",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_metro),
                 emoji = "🚇", // 🚇
                 imageUrl = ""
             )
@@ -2165,9 +2376,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bullet Train", // First Shinkansen
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bullet_train),
                 yearOfInvention = 1964,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/High-speed_rail",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bullet_train),
                 emoji = "🚅", // 🚅
                 imageUrl = ""
             )
@@ -2176,10 +2388,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First High Speed Train", // or InterCity 125
+                nameOfInvention = UiText.StringResource(R.string.invention_first_high_speed_train),
                 yearOfInvention = 1975,
                 yearOfInventionEnd = 1982,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/InterCity_125",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_high_speed_train),
                 emoji = "🚄", // 🚄
                 imageUrl = ""
             )
@@ -2188,9 +2401,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Railway Steam Locomotive",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_railway_steam_locomotive),
                 yearOfInvention = 1804,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Locomotive",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_railway_steam_locomotive),
                 emoji = "🚂", // 🚂
                 imageUrl = ""
             )
@@ -2199,9 +2413,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Roller Coaster",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_roller_coaster),
                 yearOfInvention = 1817,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Roller_coaster",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_roller_coaster),
                 emoji = "🎢", // 🎢
                 imageUrl = ""
             )
@@ -2210,9 +2425,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ferris Wheel",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ferris_wheel),
                 yearOfInvention = 1893,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ferris_wheel",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ferris_wheel),
                 emoji = "🎡", // 🎡
                 imageUrl = ""
             )
@@ -2221,9 +2437,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Merry Go Round", // First Carousel Horse
+                nameOfInvention = UiText.StringResource(R.string.invention_first_merry_go_round),
                 yearOfInvention = 1861,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Carousel",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_merry_go_round),
                 emoji = "🎠", // 🎠
                 imageUrl = ""
             )
@@ -2232,9 +2449,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "Statue of Liberty ",
+                nameOfInvention = UiText.StringResource(R.string.invention_statue_of_liberty),
                 yearOfInvention = 1886,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_statue_of_liberty),
                 emoji = "🗽", // 🗽
                 imageUrl = ""
             )
@@ -2243,10 +2461,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "Tokyo Tower",
+                nameOfInvention = UiText.StringResource(R.string.invention_tokyo_tower),
                 yearOfInvention = 1957,
                 yearOfInventionEnd = 1958,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tokyo_Tower",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_tokyo_tower),
                 emoji = "🗼", // 🗼
                 imageUrl = ""
             )
@@ -2255,9 +2474,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Love Hotel",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_love_hotel),
                 yearOfInvention = 1968,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Love_hotel",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_love_hotel),
                 emoji = "🏩", // 🏩
                 imageUrl = ""
             )
@@ -2266,9 +2486,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Hotel", // in a modern sense
+                nameOfInvention = UiText.StringResource(R.string.invention_first_hotel),
                 yearOfInvention = 1768,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Hotel",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_hotel),
                 emoji = "🏨", // 🏨
                 imageUrl = ""
             )
@@ -2277,9 +2498,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Modern Japanese Castle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_modern_japanese_castle),
                 yearOfInvention = 1576,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Japanese_castle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_modern_japanese_castle),
                 emoji = "🏯", // 🏯
                 imageUrl = ""
             )
@@ -2288,9 +2510,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First 24-Hour Store", // First Convenience Store
+                nameOfInvention = UiText.StringResource(R.string.invention_first_24_hour_store),
                 yearOfInvention = 1963,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Convenience_store",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_24_hour_store),
                 emoji = "🏪", // 🏪
                 imageUrl = ""
             )
@@ -2299,9 +2522,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Glasses",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_glasses),
                 yearOfInvention = 1285,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Glasses",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_glasses),
                 emoji = "👓", // 👓
                 imageUrl = ""
             )
@@ -2310,9 +2534,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Robot",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_robot),
                 yearOfInvention = 1954,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Robot",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_robot),
                 emoji = "🤖", // 🤖
                 imageUrl = ""
             )
@@ -2321,9 +2546,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First movie with Robots",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_movie_with_robots),
                 yearOfInvention = 1919,
                 urlWithMoreInformation = "https://history-computer.com/the-10-best-movies-about-robots/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_movie_with_robots),
                 emoji = "🤖", // 🤖
                 imageUrl = ""
             )
@@ -2332,9 +2558,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Selfie",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_selfie),
                 yearOfInvention = 1839,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Selfie",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_selfie),
                 emoji = "🤳", // 🤳
                 imageUrl = ""
             )
@@ -2343,9 +2570,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First known use of the word Selfie",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_known_use_of_the_word_selfie),
                 yearOfInvention = 2002,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Selfie",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_known_use_of_the_word_selfie),
                 emoji = "🤳", // 🤳
                 imageUrl = ""
             )
@@ -2354,9 +2582,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First UV Gel system",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_uv_gel_system),
                 yearOfInvention = 1982,
                 urlWithMoreInformation = "https://beautytrainingstudio.co.uk/history-of-nails",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_uv_gel_system),
                 emoji = "💅", // 💅
                 imageUrl = ""
             )
@@ -2365,9 +2594,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Robotic Arm",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_robotic_arm),
                 yearOfInvention = 1961,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mechanical_arm",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_robotic_arm),
                 emoji = "🦾", // 🦾
                 imageUrl = ""
             )
@@ -2376,9 +2606,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First recorded word 'Zombie'",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_recorded_word_zombie),
                 yearOfInvention = 1819,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Zombie",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_recorded_word_zombie),
                 emoji = "🧟", // 🧟
                 imageUrl = ""
             )
@@ -2387,9 +2618,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bikini",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bikini),
                 yearOfInvention = 1946,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bikini",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bikini),
                 emoji = "👙", // 👙
                 imageUrl = ""
             )
@@ -2398,9 +2630,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Commercial Lipstick",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_commercial_lipstick),
                 yearOfInvention = 1884,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Lipstick",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_commercial_lipstick),
                 emoji = "💄", // 💄
                 imageUrl = ""
             )
@@ -2409,9 +2642,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Pointe Shoe",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_pointe_shoe),
                 yearOfInvention = 1795,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Pointe_shoe",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_pointe_shoe),
                 emoji = "🩰", // 🩰
                 imageUrl = ""
             )
@@ -2420,9 +2654,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Alien (film)",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_alien_film),
                 yearOfInvention = 1979,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Alien_(film)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_alien_film),
                 emoji = "👽", // 👽
                 imageUrl = ""
             )
@@ -2431,9 +2666,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Alien video game",
-                yearOfInvention = 1982,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_alien_video_game),
+                yearOfInvention =
+                1982,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/List_of_Alien,_Predator,_and_Alien_vs._Predator_games",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_alien_video_game),
                 emoji = "👽", // 👽
                 imageUrl = ""
             )
@@ -2442,9 +2679,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Electric Loudspeaker",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_electric_loudspeaker),
                 yearOfInvention = 1876,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Loudspeaker",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_electric_loudspeaker),
                 emoji = "📢", // 📢
                 imageUrl = ""
             )
@@ -2453,9 +2691,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Transistorized Megaphone",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_transistorized_megaphone),
                 yearOfInvention = 1954,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Megaphone",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_transistorized_megaphone),
                 emoji = "📣", // 📣
                 imageUrl = ""
             )
@@ -2464,9 +2703,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Grapes",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_grapes),
                 yearOfInvention = 2021,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/100691-most-grapes-eaten-in-one-minute",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_grapes),
                 emoji = "🍇", // 🍇
                 imageUrl = ""
             )
@@ -2475,9 +2715,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Lemons",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_lemons),
                 yearOfInvention = 2010,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/fastest-time-to-peel-and-eat-a-lemon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_lemons),
                 emoji = "🍋", // 🍋
                 imageUrl = ""
             )
@@ -2486,9 +2727,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Bananas",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_bananas),
                 yearOfInvention = 2021,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/615526-fastest-time-to-eat-a-banana-no-hands",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_bananas),
                 emoji = "🍌", // 🍌
                 imageUrl = ""
             )
@@ -2497,9 +2739,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Pineapples",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_pineapples),
                 yearOfInvention = 2020,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/450297-most-pineapples-on-heads-cut-in-half-in-30-seconds",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_pineapples),
                 emoji = "🍍", // 🍍
                 imageUrl = ""
             )
@@ -2508,9 +2751,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Hot Dog",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_hot_dog),
                 yearOfInvention = 2021,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/546576-most-hot-dogs-eaten-at-a-nathans-hot-dog-eating-contest-male",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_hot_dog),
                 emoji = "🌭", // 🌭
                 imageUrl = ""
             )
@@ -2519,9 +2763,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Burrito",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_burrito),
                 yearOfInvention = 2022,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/438487-fastest-time-to-eat-a-burrito",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_burrito),
                 emoji = "🌯", // 🌯
                 imageUrl = ""
             )
@@ -2530,9 +2775,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for Longest Tamale",
-                yearOfInvention = 2018,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_longest_tamale),
+                yearOfInvention =
+                2018,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/longest-tamale",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_longest_tamale),
                 emoji = "🫔", // 🫔
                 imageUrl = ""
             )
@@ -2541,9 +2788,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the heaviest Watermelon",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_heaviest_watermelon),
                 yearOfInvention = 2013,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/heaviest-watermelon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_heaviest_watermelon),
                 emoji = "🍉", // 🍉
                 imageUrl = ""
             )
@@ -2552,9 +2800,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the Longest snake Melon",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_longest_snake_melon),
                 yearOfInvention = 2020,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/609444-longest-snake-melon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_longest_snake_melon),
                 emoji = "🍈", // 🍈
                 imageUrl = ""
             )
@@ -2563,9 +2812,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for eating Kiwi Fruit",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_eating_kiwi_fruit),
                 yearOfInvention = 2008,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/fastest-time-to-peel-and-eat-a-kiwi-fruit",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_eating_kiwi_fruit),
                 emoji = "🥝", // 🥝
                 imageUrl = ""
             )
@@ -2574,9 +2824,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Coconut Festival",
-                yearOfInvention = 1996,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_coconut_festival),
+                yearOfInvention =
+                1996,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Coconut_Festival",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_coconut_festival),
                 emoji = "🥥", // 🥥
                 imageUrl = ""
             )
@@ -2585,9 +2837,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Antivirus program",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_antivirus_program),
                 yearOfInvention = 1987,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Antivirus_software",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_antivirus_program),
                 emoji = "🛡️", // 🛡️
                 imageUrl = ""
             )
@@ -2596,9 +2849,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First known Computer Virus ",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_known_computer_virus),
                 yearOfInvention = 1971,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Antivirus_software",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_known_computer_virus),
                 emoji = "🦠", // 🦠
                 imageUrl = ""
             )
@@ -2607,9 +2861,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Coronavirus",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_coronavirus),
                 yearOfInvention = 1968,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Coronavirus",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_coronavirus),
                 emoji = "🦠", // 🦠
                 imageUrl = ""
             )
@@ -2618,9 +2873,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First movie about Spider-Man",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_movie_about_spider_man),
                 yearOfInvention = 2002,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Spider-Man_(2002_film)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_movie_about_spider_man),
                 emoji = "🕷️", // 🕷️
                 imageUrl = ""
             )
@@ -2629,9 +2885,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Internet",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_internet),
                 yearOfInvention = 1969,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Internet",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_internet),
                 emoji = "\uD83C\uDF10️", // 🌐
                 imageUrl = ""
             )
@@ -2640,9 +2897,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Chess tournament",
-                yearOfInvention = 1841,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_chess_tournament),
+                yearOfInvention =
+                1841,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Chess_tournament",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_chess_tournament),
                 emoji = "♟️", // ♟️
                 imageUrl = ""
             )
@@ -2651,9 +2910,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Oktoberfest",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_oktoberfest),
                 yearOfInvention = 1810,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Oktoberfest",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_oktoberfest),
                 emoji = "🍻", // 🍻
                 imageUrl = ""
             )
@@ -2662,9 +2922,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Refrigeration Machine",
-                yearOfInvention = 1805,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_refrigeration_machine),
+                yearOfInvention =
+                1805,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Icemaker",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_refrigeration_machine),
                 emoji = "🧊", // 🧊
                 imageUrl = ""
             )
@@ -2673,9 +2935,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First single-use Ice Cube Bag",
-                yearOfInvention = 1978,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_single_use_ice_cube_bag),
+                yearOfInvention =
+                1978,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ice_cube",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_single_use_ice_cube_bag),
                 emoji = "🧊", // 🧊
                 imageUrl = ""
             )
@@ -2684,9 +2948,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Juicebox ",
-                yearOfInvention = 1963, // officially incorporated in the U.S. market in 1980
+                nameOfInvention = UiText.StringResource(R.string.invention_first_juicebox),
+                yearOfInvention =
+                1963, // officially incorporated in the U.S. market in 1980
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Juicebox_(container",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_juicebox),
                 emoji = "🧃", // 🧃
                 imageUrl = ""
             )
@@ -2695,9 +2961,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bank robbery",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bank_robbery),
                 yearOfInvention = 1831,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bank_robbery",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bank_robbery),
                 emoji = "🏦", // 🏦
                 imageUrl = ""
             )
@@ -2706,9 +2973,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First published issue of New-York Daily Times",
-                yearOfInvention = 1851,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_published_issue_of_new_york_daily_times),
+                yearOfInvention =
+                1851,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/The_New_York_Times",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_published_issue_of_new_york_daily_times),
                 emoji = "📰", // 📰
                 imageUrl = ""
             )
@@ -2717,9 +2986,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Barber College",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_barber_college),
                 yearOfInvention = 1893,
                 urlWithMoreInformation = "https://www.main-street-barbershop.com/blog/articles/History-of-an-Icon-The-Barbershop",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_barber_college),
                 emoji = "💈", // 💈
                 imageUrl = ""
             )
@@ -2728,9 +2998,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ogre (board game)",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ogre_board_game),
                 yearOfInvention = 1977,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ogre_(board_game)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ogre_board_game),
                 emoji = "👹", // 👹
                 imageUrl = ""
             )
@@ -2739,9 +3010,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ghosts 'n Goblins (video game)",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ghosts_n_goblins_video_game),
                 yearOfInvention = 1985,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ghosts_%27n_Goblins_(video_game)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ghosts_n_goblins_video_game),
                 emoji = "👺", // 👺
                 imageUrl = ""
             )
@@ -2750,9 +3022,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Fencing as a Part of Olympic games",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_fencing_as_a_part_of_olympic_games),
                 yearOfInvention = 1896,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fencing",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_fencing_as_a_part_of_olympic_games),
                 emoji = "🤺", // 🤺
                 imageUrl = ""
             )
@@ -2761,9 +3034,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Weightlifting as a Part of Olympic games",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_weightlifting_as_a_part_of_olympic_games),
                 yearOfInvention = 1896,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Olympic_weightlifting",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_weightlifting_as_a_part_of_olympic_games),
                 emoji = "🏋️", // 🏋️
                 imageUrl = ""
             )
@@ -2772,9 +3046,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First male world championship in Weightlifting ",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_male_world_championship_in_weightlifting),
                 yearOfInvention = 1891,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Olympic_weightlifting",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_male_world_championship_in_weightlifting),
                 emoji = "🏋🏻‍♂️", // 🏋🏻‍♂️
                 imageUrl = ""
             )
@@ -2783,9 +3058,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First 'Blue Jeans'",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_blue_jeans),
                 yearOfInvention = 1871,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Jeans",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_blue_jeans),
                 emoji = "👖", // 👖
                 imageUrl = ""
             )
@@ -2794,9 +3070,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Ninja anime",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ninja_anime),
                 yearOfInvention = 1993,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Ninja_Scroll",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ninja_anime),
                 emoji = "🥷", // 🥷
                 imageUrl = ""
             )
@@ -2805,9 +3082,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Water Polo was played",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_water_polo_was_played),
                 yearOfInvention = 1888,
                 urlWithMoreInformation = "https://collegiatewaterpolo.org/fans/gameinfo/history/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_water_polo_was_played),
                 emoji = "🤽", // 🤽
                 imageUrl = ""
             )
@@ -2816,9 +3094,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First ever official handball match",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ever_official_handball_match),
                 yearOfInvention = 1917,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Handball",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ever_official_handball_match),
                 emoji = "🤾", // 🤾
                 imageUrl = ""
             )
@@ -2827,9 +3106,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Migdal Synagogue was discovered",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_migdal_synagogue_was_discovered),
                 yearOfInvention = 2009,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Migdal_Synagogue",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_migdal_synagogue_was_discovered),
                 emoji = "🕍", // 🕍
                 imageUrl = ""
             )
@@ -2838,9 +3118,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First mosque in North America",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_mosque_in_north_america),
                 yearOfInvention = 1915,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mosque",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_mosque_in_north_america),
                 emoji = "🕌", // 🕌
                 imageUrl = ""
             )
@@ -2849,9 +3130,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First identified Christian church",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_identified_christian_church),
                 yearOfInvention = 233, // founded between 233 and 256
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Church_(building)",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_identified_christian_church),
                 emoji = "⛪", // ⛪
                 imageUrl = ""
             )
@@ -2860,9 +3142,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First observed the rings of Saturn",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_observed_the_rings_of_saturn),
                 yearOfInvention = 1655, // 1659, also Galileo Galilei observed the rings of Saturn in 1610, but was unable to determine what they were
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Saturn",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_observed_the_rings_of_saturn),
                 emoji = "🪐", // 🪐
                 imageUrl = ""
             )
@@ -2871,9 +3154,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First attempt to describe the shape of the Milky Way",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_attempt_to_describe_the_shape_of_the_milky_way),
                 yearOfInvention = 1785,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Milky_Way",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_attempt_to_describe_the_shape_of_the_milky_way),
                 emoji = "🌌", // 🌌
                 imageUrl = ""
             )
@@ -2882,9 +3166,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the heaviest Onion",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_heaviest_onion),
                 yearOfInvention = 2014,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/heaviest-onion",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_heaviest_onion),
                 emoji = "🧅", // 🧅
                 imageUrl = ""
             )
@@ -2893,9 +3178,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the longest Bean",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_longest_bean),
                 yearOfInvention = 1996,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/73819-longest-green-bean",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_longest_bean),
                 emoji = "🫘", // 🫘
                 imageUrl = ""
             )
@@ -2904,9 +3190,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Gilroy Garlic Festival",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_gilroy_garlic_festival),
                 yearOfInvention = 1979,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Gilroy_Garlic_Festival",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_gilroy_garlic_festival),
                 emoji = "🧄", // 🧄
                 imageUrl = ""
             )
@@ -2915,9 +3202,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the longest Cucumber",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_longest_cucumber),
                 yearOfInvention = 2022,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/longest-cucumber",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_longest_cucumber),
                 emoji = "🥒", // 🥒
                 imageUrl = ""
             )
@@ -2926,9 +3214,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Eggplant emoji",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_eggplant_emoji),
                 yearOfInvention = 2010,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Eggplant_emoji",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_eggplant_emoji),
                 emoji = "🍆", // 🍆
                 imageUrl = ""
             )
@@ -2937,9 +3226,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for heaviest Avocado",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_heaviest_avocado),
                 yearOfInvention = 2018,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/heaviest-avocado",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_heaviest_avocado),
                 emoji = "🥑", // 🥑
                 imageUrl = ""
             )
@@ -2948,9 +3238,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for largest Bread",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_largest_bread),
                 yearOfInvention = 2008,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/largest-bread",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_largest_bread),
                 emoji = "🍞", // 🍞
                 imageUrl = ""
             )
@@ -2959,9 +3250,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for largest Pancake",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_largest_pancake),
                 yearOfInvention = 1994,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/68403-largest-pancake",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_largest_pancake),
                 emoji = "🥞", // 🥞
                 imageUrl = ""
             )
@@ -2970,9 +3262,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for largest Waffle",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_largest_waffle),
                 yearOfInvention = 2013,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/largest-waffle",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_largest_waffle),
                 emoji = "🧇", // 🧇
                 imageUrl = ""
             )
@@ -2981,9 +3274,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First commercial Bacon processing plant",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_commercial_bacon_processing_plant),
                 yearOfInvention = 1770,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bacon",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_commercial_bacon_processing_plant),
                 emoji = "🥓", // 🥓
                 imageUrl = ""
             )
@@ -2992,9 +3286,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the most expensive French Fries",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_most_expensive_french_fries),
                 yearOfInvention = 2021,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/655477-most-expensive-french-fries-chips",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_most_expensive_french_fries),
                 emoji = "🍟", // 🍟
                 imageUrl = ""
             )
@@ -3003,9 +3298,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Popcorn Machine",
-                yearOfInvention = 1893,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_popcorn_machine),
+                yearOfInvention =
+                1893,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Popcorn_maker",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_popcorn_machine),
                 emoji = "🍿", // 🍿
                 imageUrl = ""
             )
@@ -3014,9 +3311,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the largest Oyster",
-                yearOfInvention = 2013,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_largest_oyster),
+                yearOfInvention =
+                2013,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/largest-oyster",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_largest_oyster),
                 emoji = "🦪", // 🦪
                 imageUrl = ""
             )
@@ -3025,9 +3324,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First radio Cooking show",
-                yearOfInvention = 1924,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_radio_cooking_show),
+                yearOfInvention =
+                1924,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Cooking_show",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_radio_cooking_show),
                 emoji = "🍳", // 🍳
                 imageUrl = ""
             )
@@ -3036,9 +3337,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Umbrella manufacturing",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_umbrella_manufacturing),
                 yearOfInvention = 1787,
                 urlWithMoreInformation = "https://beachbrella.com/the-history-of-beach-umbrellas/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_umbrella_manufacturing),
                 emoji = "⛱️", // ⛱️
                 imageUrl = ""
             )
@@ -3047,9 +3349,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Silent Fireworks",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_silent_fireworks),
                 yearOfInvention = 2015,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Fireworks",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_silent_fireworks),
                 emoji = "🎆", // 🎆
                 imageUrl = ""
             )
@@ -3058,9 +3361,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First recorded Railway Station",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_recorded_railway_station),
                 yearOfInvention = 1807,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Train_station",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_recorded_railway_station),
                 emoji = "🚉", // 🚉
                 imageUrl = ""
             )
@@ -3069,9 +3373,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Japanese map of provincial surveys",
-                yearOfInvention = 738,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_japanese_map_of_provincial_surveys),
+                yearOfInvention =
+                738,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Japanese_maps",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_japanese_map_of_provincial_surveys),
                 emoji = "🗾", // 🗾
                 imageUrl = ""
             )
@@ -3080,9 +3386,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First record of displaying the doll",
-                yearOfInvention = 1625,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_record_of_displaying_the_doll),
+                yearOfInvention =
+                1625,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Hinamatsuri",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_record_of_displaying_the_doll),
                 emoji = "🎎", // 🎎
                 imageUrl = ""
             )
@@ -3091,9 +3399,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Hinamatsuri legally became the holiday",
-                yearOfInvention = 1687,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_hinamatsuri_legally_became_the_holiday),
+                yearOfInvention =
+                1687,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Hinamatsuri",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_hinamatsuri_legally_became_the_holiday),
                 emoji = "🎎", // 🎎
                 imageUrl = ""
             )
@@ -3102,9 +3412,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First time Koinobori have been flying on Children's Day",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_time_koinobori_have_been_flying_on_childrens_day),
                 yearOfInvention = 1948,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Koinobori",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_time_koinobori_have_been_flying_on_childrens_day),
                 emoji = "🎏", // 🎏
                 imageUrl = ""
             )
@@ -3113,9 +3424,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First digital equivalent of 'Red Envelope'",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_digital_equivalent_of_red_envelope),
                 yearOfInvention = 2014,
                 urlWithMoreInformation = "https://www.imd.org/research-knowledge/articles/the-uneasy-truce-between-alibaba-and-tencent-is-over/",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_digital_equivalent_of_red_envelope),
                 emoji = "🧧", // 🧧
                 imageUrl = ""
             )
@@ -3124,9 +3436,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First standards relating to Diving Masks",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_standards_relating_to_diving_masks),
                 yearOfInvention = 1969,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Diving_mask",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_standards_relating_to_diving_masks),
                 emoji = "🤿", // 🤿
                 imageUrl = ""
             )
@@ -3135,9 +3448,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Yo-yo Manufacturing Company",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_yo_yo_manufacturing_company),
                 yearOfInvention = 1928,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Yo-yo",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_yo_yo_manufacturing_company),
                 emoji = "🪀", // 🪀
                 imageUrl = ""
             )
@@ -3146,9 +3460,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First woodcut print of a Kite",
-                yearOfInvention = 1635,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_woodcut_print_of_a_kite),
+                yearOfInvention =
+                1635,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Kite",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_woodcut_print_of_a_kite),
                 emoji = "🪁", // 🪁
                 imageUrl = ""
             )
@@ -3157,9 +3473,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First device for recording Sound",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_device_for_recording_sound),
                 yearOfInvention = 1857,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Sound_recording_and_reproduction",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_device_for_recording_sound),
                 emoji = "🎵", // 🎵
                 imageUrl = ""
             )
@@ -3168,31 +3485,22 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First developed a form of musical notation",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_developed_a_form_of_musical_notation),
                 yearOfInvention = 1252,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Musical_notation",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_developed_a_form_of_musical_notation),
                 emoji = "🎶", // 🎶
                 imageUrl = ""
             )
         ),
-//        Item(
-//            id = 0,
-//            backgroundColor = null,
-//            invention = Item.Invention(
-//                nameOfInvention = "First Stethoscope",
-//                yearOfInvention = 1816,
-//                urlWithMoreInformation = "https://en.wikipedia.org/wiki/Stethoscope",
-//                emoji = "🩺", // 🩺
-//                imageUrl = ""
-//            )
-//        ),
         Item(
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First series of SpongeBob SquarePants",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_series_of_spongebob_squarepants),
                 yearOfInvention = 1999,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/SpongeBob_SquarePants",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_series_of_spongebob_squarepants),
                 emoji = "🧽", // 🧽
                 imageUrl = ""
             )
@@ -3201,9 +3509,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First known American cookbook",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_known_american_cookbook),
                 yearOfInvention = 1796,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Cookbook",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_known_american_cookbook),
                 emoji = "🍳", // 🍳
                 imageUrl = ""
             )
@@ -3212,9 +3521,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First ever international Cricket game",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_ever_international_cricket_game),
                 yearOfInvention = 1844,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_cricket",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_ever_international_cricket_game),
                 emoji = "🏏", // 🏏
                 imageUrl = ""
             )
@@ -3223,9 +3533,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First cookbooks based on Renaissance ideals",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_cookbooks_based_on_renaissance_ideals),
                 yearOfInvention = 1475,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Cookbook",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_cookbooks_based_on_renaissance_ideals),
                 emoji = "🍳", // 🍳
                 imageUrl = ""
             )
@@ -3234,9 +3545,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First silk Top Hat",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_silk_top_hat),
                 yearOfInvention = 1793,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Top_hat",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_silk_top_hat),
                 emoji = "🎩", // 🎩
                 imageUrl = ""
             )
@@ -3245,10 +3557,12 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Evil Clown comics",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_evil_clown_comics),
                 yearOfInvention = 1987,
                 yearOfInventionEnd = 1992, // ran in the late 1980s and early 1990s
+
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Frenchy_the_Clown",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_evil_clown_comics),
                 emoji = "🤡", // 🤡
                 imageUrl = ""
             )
@@ -3257,9 +3571,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First silk factory ",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_silk_factory),
                 yearOfInvention = 1721,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Factory",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_silk_factory),
                 emoji = "🏭", // 🏭
                 imageUrl = ""
             )
@@ -3268,9 +3583,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First recorded use of the term 'Industrial Revolution'",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_recorded_use_of_the_term_industrial_revolution),
                 yearOfInvention = 1799,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Industrial_Revolution",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_recorded_use_of_the_term_industrial_revolution),
                 emoji = "🏭", // 🏭
                 imageUrl = ""
             )
@@ -3279,10 +3595,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First High-visibility clothing",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_high_visibility_clothing),
                 yearOfInvention = 1930,
                 yearOfInventionEnd = 1939,
                 urlWithMoreInformation = "https://www.hbcw.co.uk/news/history-of-high-visibility-workwear",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_high_visibility_clothing),
                 emoji = "🦺", // 🦺
                 imageUrl = ""
             )
@@ -3291,9 +3608,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First sale of Men's classic briefs ",
-                yearOfInvention = 1935,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_sale_of_mens_classic_briefs),
+                yearOfInvention =
+                1935,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Briefs",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_sale_of_mens_classic_briefs),
                 emoji = "🩲", // 🩲
                 imageUrl = ""
             )
@@ -3302,9 +3621,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First arrest because of One-piece swimsuit",
-                yearOfInvention = 1907,
+                nameOfInvention = UiText.StringResource(R.string.invention_first_arrest_because_of_one_piece_swimsuit),
+                yearOfInvention =
+                1907,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/One-piece_swimsuit",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_arrest_because_of_one_piece_swimsuit),
                 emoji = "🩱", // 🩱
                 imageUrl = ""
             )
@@ -3313,9 +3634,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Havaianas",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_havaianas),
                 yearOfInvention = 1962,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Havaianas",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_havaianas),
                 emoji = "🩴", // 🩴
                 imageUrl = ""
             )
@@ -3324,9 +3646,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First shoes designed for running",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_shoes_designed_for_running),
                 yearOfInvention = 1895,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Sneakers",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_shoes_designed_for_running),
                 emoji = "👟", // 👟
                 imageUrl = ""
             )
@@ -3335,9 +3658,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First National Park", // First "public park or pleasuring-ground for the benefit and enjoyment of the people"
+                nameOfInvention = UiText.StringResource(R.string.invention_first_national_park),
                 yearOfInvention = 1872,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/National_park",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_national_park),
                 emoji = "🏞️", // 🏞️
                 imageUrl = ""
             )
@@ -3346,9 +3670,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for heaviest Cherry",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_heaviest_cherry),
                 yearOfInvention = 2021,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/heaviest-cherry",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_heaviest_cherry),
                 emoji = "🍒", // 🍒
                 imageUrl = ""
             )
@@ -3357,10 +3682,11 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Railway Car",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_railway_car),
                 yearOfInvention = 1800,
                 yearOfInventionEnd = 1809,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Passenger_railroad_car",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_railway_car),
                 emoji = "🚃", // 🚃
                 imageUrl = ""
             )
@@ -3369,9 +3695,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Tram",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_tram),
                 yearOfInvention = 1807,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_trams",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_tram),
                 emoji = "🚊", // 🚊
                 imageUrl = ""
             )
@@ -3380,9 +3707,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First White Cane",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_white_cane),
                 yearOfInvention = 1921,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/White_cane",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_white_cane),
                 emoji = "🦯", // 🦯
                 imageUrl = ""
             )
@@ -3391,9 +3719,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Bubble Tea",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_bubble_tea),
                 yearOfInvention = 1988,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Bubble_tea",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_bubble_tea),
                 emoji = "🧋", // 🧋
                 imageUrl = ""
             )
@@ -3402,9 +3731,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Guinness record for the largest Accordion",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_guinness_record_for_the_largest_accordion),
                 yearOfInvention = 2001,
                 urlWithMoreInformation = "https://www.guinnessworldrecords.com/world-records/largest-accordion",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_guinness_record_for_the_largest_accordion),
                 emoji = "🪗", // 🪗
                 imageUrl = ""
             )
@@ -3413,9 +3743,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Soft Ice Cream",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_soft_ice_cream),
                 yearOfInvention = 1938,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Soft_serve",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_soft_ice_cream),
                 emoji = "🍦", // 🍦
                 imageUrl = ""
             )
@@ -3424,9 +3755,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First commercial camping ground",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_commercial_camping_ground),
                 yearOfInvention = 1894,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Camping",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_commercial_camping_ground),
                 emoji = "🏕️", // 🏕️
                 imageUrl = ""
             )
@@ -3435,9 +3767,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First recorded eruption of Mount Fuji",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_recorded_eruption_of_mount_fuji),
                 yearOfInvention = 781,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Mount_Fuji",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_recorded_eruption_of_mount_fuji),
                 emoji = "🗻", // 🗻
                 imageUrl = ""
             )
@@ -3446,9 +3779,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First calendar alter to celebrate Tsukimi",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_calendar_alter_to_celebrate_tsukimi),
                 yearOfInvention = 1684,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Tsukimi",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_calendar_alter_to_celebrate_tsukimi),
                 emoji = "🎑", // 🎑
                 imageUrl = ""
             )
@@ -3457,9 +3791,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First attested Coffin",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_attested_coffin),
                 yearOfInvention = 1380,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Coffin",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_attested_coffin),
                 emoji = "⚰️", // ⚰️
                 imageUrl = ""
             )
@@ -3468,9 +3803,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First patented cigarette-making machine",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_patented_cigarette_making_machine),
                 yearOfInvention = 1847,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Cigarette",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_patented_cigarette_making_machine),
                 emoji = "🚬", // 🚬
                 imageUrl = ""
             )
@@ -3479,9 +3815,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Japanese postal mark",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_japanese_postal_mark),
                 yearOfInvention = 1887,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Japanese_postal_mark",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_japanese_postal_mark),
                 emoji = "🏣", // 🏣
                 imageUrl = ""
             )
@@ -3490,9 +3827,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First series of “The Hospital”",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_series_of_the_hospital),
                 yearOfInvention = 1971,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/The_Hospital",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_series_of_the_hospital),
                 emoji = "🏥", // 🏥
                 imageUrl = ""
             )
@@ -3501,9 +3839,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First primary school in Nigeria",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_primary_school_in_nigeria),
                 yearOfInvention = 1845,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/School",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_primary_school_in_nigeria),
                 emoji = "🏫", // 🏫
                 imageUrl = ""
             )
@@ -3512,9 +3851,10 @@ object InventedItemsList {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Comet discovered by telescope",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_comet_discovered_by_telescope),
                 yearOfInvention = 1680,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/Great_Comet_of_1680",
+                urlWithMoreInformationUiText = UiText.StringResource(R.string.invention_url_first_comet_discovered_by_telescope),
                 emoji = "☄️", // ☄️
                 imageUrl = ""
             )

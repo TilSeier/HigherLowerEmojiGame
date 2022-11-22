@@ -3,94 +3,94 @@
     <string name="app_name">Higher Lower Emoji Game</string>
 
     <string name="item_name">\"%1$s\"</string>
-    <string name="item_name_emoji">\"%1$s\" emoji</string>
+    <string name="item_name_emoji">\"%1$s\" емоджі</string>
     <string name="formatted_number">"%1$s"</string>
     <string name="number_divider">-</string>
-    <string name="high_score">High Score: %1$d</string>
-    <string name="score">Score: %1$d</string>
+    <string name="high_score">Рекорд: %1$d</string>
+    <string name="score">Рахунок: %1$d</string>
     <string name="vs">vs</string>
 
     <string name="text.is_used">is used</string>
-    <string name="text.was_invented_he">was created</string>
-    <string name="text.was_invented_she">was created</string>
-    <string name="text.was_invented_it">was created</string>
-    <string name="text.was_he">was</string>
-    <string name="text.was_she">was</string>
-    <string name="text.was_it">was</string>
-    <string name="text.was_in">was</string>
-    <string name="text.year">year</string>
-    <string name="text.on_average_monthly">average monthly</string>
-    <string name="text.than_this_item">than \"%1$s\"</string>
+    <string name="text.was_invented_he">був створений</string>
+    <string name="text.was_invented_she">була створена</string>
+    <string name="text.was_invented_it">було створено</string>
+    <string name="text.was_he">був</string>
+    <string name="text.was_she">була</string>
+    <string name="text.was_it">було</string>
+    <string name="text.was_in">%1$s в</string>
+    <string name="text.year">році</string>
+    <string name="text.on_average_monthly">в середньому в місяць</string>
+    <string name="text.than_this_item">ніж \"%1$s\"</string>
     <string name="text.this_item">\"%1$s\"</string>
-    <string name="text.loading">LOADING</string>
-    <string name="text.your_score">Your score: %1$s</string>
+    <string name="text.loading">ЗАГРУЗКА</string>
+    <string name="text.your_score">Рекорд: %1$s</string>
 
-    <string name="text.invention_game_title">What was\ncreated first?</string>
-    <string name="text.emoji_game_title">What emoji is\nused more often?</string>
+    <string name="text.invention_game_title">Що було\nвинайдено ДО, а що ПІСЛЯ?</string>
+    <string name="text.emoji_game_title">Яке Емоджі більш популяре?</string>
 
-    <string name="text.dialog.exit.title">Are you sure?</string>
-    <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>
+    <string name="text.dialog.exit.title">Ви впевненні?</string>
+    <string name="text.dialog.exit.description">Це завершить вашу поточну гру, і ваш рахунок буде втрачено</string>
 
-    <string name="error.try_again_later">Please, try again later</string>
+    <string name="error.try_again_later">Будь-ласка спробуйте пізніше</string>
 
-    <string name="button.more">More</string>
-    <string name="button.less">Less</string>
-    <string name="button.before">Before</string>
-    <string name="button.after">After</string>
-    <string name="button.main_menu">Main Menu</string>
-    <string name="button.play">Play</string>
-    <string name="button.ok">Ok</string>
-    <string name="button.cancel">Cancel</string>
-    <string name="button.restart">RESTART</string>
-    <string name="button.continue">CONTINUE?</string>
-    <string name="button.rate">RATE</string>
-    <string name="button.maybe_later">MAYBE LATER</string>
+    <string name="button.more">Більше</string>
+    <string name="button.less">Менше</string>
+    <string name="button.before">До</string>
+    <string name="button.after">Після</string>
+    <string name="button.main_menu">Головне Меню</string>
+    <string name="button.play">Грати</string>
+    <string name="button.ok">Ок</string>
+    <string name="button.cancel">Скасувати</string>
+    <string name="button.restart">ПОЧАТИ ЗНОВУ</string>
+    <string name="button.continue">ПРОДОВЖИТИ?</string>
+    <string name="button.rate">ОЦІНИТИ</string>
+    <string name="button.maybe_later">МОЖЛИВО ПІЗНІШЕ</string>
 
-    <string name="share.game_message">I found this interesting #HigherLowerEmojiGame. It\'s easy! Just answer what emojis are used more and what emojis are used less.\n\nWhat is your score here? \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
-    <string name="share.score_message">I scored %1$d on #HigherLowerEmojiGame. Can you beat my score? \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
-    <string name="share.copy_message">Copied %1$s emoji!</string>
+    <string name="share.game_message">Чи була придумана машина 🚗 ДО чи ПІСЛЯ літака ✈️? Такі і більш цікаві питання можна знайти у грі #HigherLowerObjectInHistory. \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
+    <string name="share.score_message">Я набрав %1$d очків у грі #HigherLowerObjectInHistory. Зможеш побити мій рекорд? \n\nhttps://play.google.com/store/apps/details?id=com.tilseier.higherloweremojigame</string>
+    <string name="share.copy_message">Скопійовано %1$s емоджі!</string>
 
-    <string name="rate.message">This game is powered\n by 2 passionate developers. We are trying to improve this game and develop more better games. Please, help us by rating our app :)</string>
+    <string name="rate.message">Ця гра створена невеликою креативною командою. Ми збираємося покращувати цю гру та додати більше нових захоплюючих ігор. Дякуємо, що підтримуєте і залишаєтеся з нами! Будь ласка, допоможіть нам, оцінивши нашу гру ❤️</string>
 
-    <string name="menu.difficulty.easy">Easy</string>
-    <string name="menu.difficulty.medium">Medium</string>
-    <string name="menu.difficulty.hard">Hard</string>
+    <string name="menu.difficulty.easy">Легкий</string>
+    <string name="menu.difficulty.medium">Середній</string>
+    <string name="menu.difficulty.hard">Складний</string>
 
     <!-- Inventions -->
-    <string name="invention.first_car">First Car</string>
+    <string name="invention.first_car">Перша Машина</string>
     <string name="invention.url.first_car">https://en.wikipedia.org/wiki/History_of_the_automobile</string>
 
-    <string name="invention.first_watch">First Watch</string>
+    <string name="invention.first_watch">Перший Годинник</string>
     <string name="invention.url.first_watch">https://en.wikipedia.org/wiki/History_of_watches</string>
 
-    <string name="invention.first_phone">First Phone</string>
+    <string name="invention.first_phone">Перший Телефон</string>
     <string name="invention.url.first_phone">https://en.wikipedia.org/wiki/History_of_the_telephone</string>
 
-    <string name="invention.first_video_camera">First Video Camera</string>
+    <string name="invention.first_video_camera">Перша Відео Камера</string>
     <string name="invention.url.first_video_camera">https://en.wikipedia.org/wiki/Video_camera</string>
 
-    <string name="invention.first_light_bulb">First Light Bulb</string>
+    <string name="invention.first_light_bulb">Перша Лампочка</string>
     <string name="invention.url.first_light_bulb">https://en.wikipedia.org/wiki/Edison_light_bulb</string>
 
-    <string name="invention.first_hamburger">First Hamburger</string>
+    <string name="invention.first_hamburger">Перший Гамбургер</string>
     <string name="invention.url.first_hamburger">https://en.wikipedia.org/wiki/Hamburger</string>
 
-    <string name="invention.first_bomb">First Bomb</string>
+    <string name="invention.first_bomb">Перша Бомба</string>
     <string name="invention.url.first_bomb">https://en.wikipedia.org/wiki/Bomb</string>
 
-    <string name="invention.first_compass">First Compass</string>
+    <string name="invention.first_compass">Перший Компас</string>
     <string name="invention.url.first_compass">https://en.wikipedia.org/wiki/Compass</string>
 
-    <string name="invention.first_manual_wheelchair">First Manual Wheelchair</string>
+    <string name="invention.first_manual_wheelchair">Перший інвалідний візок з ручним керуванням</string>
     <string name="invention.url.first_manual_wheelchair">https://en.wikipedia.org/wiki/Wheelchair#Manual_self-propelled_wheelchairs</string>
 
-    <string name="invention.first_motorized_wheelchair">First Motorized Wheelchair</string>
+    <string name="invention.first_motorized_wheelchair">Перший інвалідний візок з мотором</string>
     <string name="invention.url.first_motorized_wheelchair">https://en.wikipedia.org/wiki/Motorized_wheelchair</string>
 
-    <string name="invention.first_flashlight">First Flashlight</string>
+    <string name="invention.first_flashlight">Перший Ліхтарик</string>
     <string name="invention.url.first_flashlight">https://en.wikipedia.org/wiki/Flashlight</string>
 
-    <string name="invention.first_mechanical_alarm_clock">First Mechanical Alarm Clock</string>
+    <string name="invention.first_mechanical_alarm_clock">Перший механічний будильник</string>
     <string name="invention.url.first_mechanical_alarm_clock">https://en.wikipedia.org/wiki/Alarm_clock</string>
 
     <string name="invention.first_stopwatch">First Stopwatch</string>
@@ -519,7 +519,7 @@
     <string name="invention.first_modern_parachute">First Modern Parachute</string>
     <string name="invention.url.first_modern_parachute">https://en.wikipedia.org/wiki/Parachute</string>
 
-    <string name="invention.first_airplane">First Airplane</string>
+    <string name="invention.first_airplane">Перший Літак</string>
     <string name="invention.url.first_airplane">https://en.wikipedia.org/wiki/Airplane</string>
 
     <string name="invention.first_motorboat">First Motorboat</string>
@@ -957,7 +957,7 @@
     <string name="invention.first_bubble_tea">First Bubble Tea</string>
     <string name="invention.url.first_bubble_tea">https://en.wikipedia.org/wiki/Bubble_tea</string>
 
-    <string name="invention.first_guinness_record_for_the_largest_accordion">First Guinness record for the largest Accordion</string>
+    <string name="invention.first_guinness_record_for_the_largest_accordion">Перший рекорд Гіннесса за найбільший акордеон</string>
     <string name="invention.url.first_guinness_record_for_the_largest_accordion">https://www.guinnessworldrecords.com/world-records/largest-accordion</string>
 
     <string name="invention.first_soft_ice_cream">First Soft Ice Cream</string>

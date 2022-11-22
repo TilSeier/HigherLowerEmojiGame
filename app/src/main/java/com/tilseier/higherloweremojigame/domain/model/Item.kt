@@ -1,6 +1,7 @@
 package com.tilseier.higherloweremojigame.domain.model
 
 import androidx.compose.ui.graphics.Color
+import com.tilseier.higherloweremojigame.common.UiText
 
 // TODO remove useless code
 data class Item(
@@ -21,10 +22,12 @@ data class Item(
     )
 
     data class Invention(
-        val nameOfInvention: String,
+        val nameOfInvention: UiText,
+        val subtextOfInvention: UiText? = null,
         val yearOfInvention: Int,
         val yearOfInventionEnd: Int? = null,
-        val urlWithMoreInformation: String,
+        val urlWithMoreInformation: String? = null,
+        val urlWithMoreInformationUiText: UiText? = null,
         val emoji: String? = null, // temporary
         val imageUrl: String? = null, // temporary
     )

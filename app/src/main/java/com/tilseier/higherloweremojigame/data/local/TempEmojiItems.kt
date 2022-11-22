@@ -1,5 +1,7 @@
 package com.tilseier.higherloweremojigame.data.local
 
+import com.tilseier.higherloweremojigame.R
+import com.tilseier.higherloweremojigame.common.UiText
 import com.tilseier.higherloweremojigame.domain.model.Item
 
 object TempEmojiItems {
@@ -8,7 +10,7 @@ object TempEmojiItems {
             id = 0,
             backgroundColor = null,
             invention = Item.Invention(
-                nameOfInvention = "First Watch",
+                nameOfInvention = UiText.StringResource(R.string.invention_first_watch),
                 yearOfInvention = 1505,
                 urlWithMoreInformation = "https://en.wikipedia.org/wiki/History_of_watches",
                 emoji = "\uD83D\uDD52", // 🕒

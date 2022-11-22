@@ -540,7 +540,7 @@ private fun ItemWithEmoji(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 AutoSizeText(
-                    text = stringResource(id = R.string.item_name, itemName),
+                    text = stringResource(id = R.string.item_name_emoji, itemName),
                     modifier = Modifier.padding(horizontal = 16.dp),
                     color = Color.White,
                     maxFontSize = 24.sp,
@@ -683,11 +683,12 @@ private fun ItemWithInvention(
     onCopyToClipboardClick: (sign: String) -> Unit,
 ) {
     val itemSign = item.invention?.emoji
-    val itemName = item.invention?.nameOfInvention ?: ""
+    val itemName = item.invention?.nameOfInvention?.asString() ?: ""
     val itemNumber = item.invention?.yearOfInvention ?: 0
     val itemSecondNumber = item.invention?.yearOfInventionEnd ?: 0
     val itemImageUrl = item.invention?.imageUrl ?: ""
-    val compareItemName = compareItem?.invention?.nameOfInvention ?: ""
+    val itemSubtext = item.invention?.subtextOfInvention?.asString() ?: getInventionSubtextFromName(itemName)
+    val compareItemName = compareItem?.invention?.nameOfInvention?.asString() ?: ""
     val compareItemSign = compareItem?.invention?.emoji ?: ""
     val compareItemBackgroundColor = compareItem?.backgroundColor
         ?: ColorUtil.getItemBackgroundColor(compareItemName.length)
@@ -735,9 +736,9 @@ private fun ItemWithInvention(
                 Spacer(modifier = Modifier.height(8.dp))
                 val showAnswerOptions = !isAnswerVisible && !showAnswerWithAnimation
                 val wasInventedText = if (showAnswerOptions) {
-                    stringResource(id = R.string.text_was_invented)
+                    itemSubtext
                 } else {
-                    stringResource(id = R.string.text_was_invented_in)
+                    stringResource(id = R.string.text_was_in, itemSubtext)
                 }
                 Text(
                     text = wasInventedText,
@@ -784,6 +785,7 @@ private fun ItemWithInvention(
                         } else {
                             null
                         },
+                        description = stringResource(id = R.string.text_year),
                     )
                 }
 
@@ -953,6 +955,19 @@ private fun InventedItemButton(
                 modifier = Modifier.align(Alignment.Center)
             )
         }
+    }
+}
+
+@Composable
+fun getInventionSubtextFromName(name: String): String {
+    return if (name.contains("Перша")) {
+        stringResource(R.string.text_was_she)
+    } else if (name.contains("Перший")) {
+        stringResource(R.string.text_was_he)
+    } else if (name.contains("Перше")) {
+        stringResource(R.string.text_was_it)
+    } else {
+        stringResource(R.string.text_was_it)
     }
 }
 
