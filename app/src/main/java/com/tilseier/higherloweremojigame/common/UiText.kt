@@ -17,14 +17,26 @@ sealed class UiText {
     fun asString(): String {
         return when(this) {
             is DynamicString -> value
-            is StringResource -> stringResource(resId, *args)
+            is StringResource -> {
+                if (args.isEmpty()) {
+                    stringResource(resId)
+                } else {
+                    stringResource(resId, *args)
+                }
+            }
         }
     }
 
     fun asString(context: Context): String {
         return when(this) {
             is DynamicString -> value
-            is StringResource -> context.getString(resId, *args)
+            is StringResource -> {
+                if (args.isEmpty()) {
+                    context.getString(resId)
+                } else {
+                    context.getString(resId, *args)
+                }
+            }
         }
     }
 }

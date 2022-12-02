@@ -1007,6 +1007,8 @@ fun getInventionSubtextFromName(name: String): String {
         stringResource(R.string.text_was_he)
     } else if (name.contains("Перше")) {
         stringResource(R.string.text_was_it)
+    } else if (name.contains("Перші")) {
+        stringResource(R.string.text_was_plural)
     } else {
         stringResource(R.string.text_was_it)
     }
