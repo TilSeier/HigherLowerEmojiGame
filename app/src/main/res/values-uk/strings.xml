@@ -10,7 +10,7 @@
     <string name="score">Рахунок: %1$d</string>
     <string name="vs">vs</string>
 
-    <string name="text.is_used">is used</string>
+    <string name="text.is_used">використовується</string>
     <string name="text.was_invented_he">був створений</string>
     <string name="text.was_invented_she">була створена</string>
     <string name="text.was_invented_it">було створено</string>
