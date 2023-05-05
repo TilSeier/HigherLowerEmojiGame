@@ -273,11 +273,11 @@ fun ContinueButton(viewModel: GameViewModel) {
             tint = Color.White
         )
         Spacer(modifier = Modifier.width(5.dp))
-        Text(
+        AutoSizeText(
             text = stringResource(id = R.string.button_continue),
             modifier = Modifier.weight(1f),
             color = Color.White,
-            fontSize = 24.sp,
+            maxFontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             letterSpacing = 2.sp
