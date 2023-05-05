@@ -33,6 +33,7 @@
     <string name="text.dialog.exit.description">Це завершить вашу поточну гру, і ваш рахунок буде втрачено</string>
 
     <string name="error.try_again_later">Будь-ласка спробуйте пізніше</string>
+    <string name="error.ad_is_not_ready">Схоже реклама ще не готова 🤔</string>
 
     <string name="button.more">Більше</string>
     <string name="button.less">Менше</string>
@@ -59,7 +60,7 @@
 
     <!-- Inventions -->
     <string name="invention.first_car">Перший автомобіль</string>
-    <string name="invention.url.first_car">https://en.wikipedia.org/wiki/History_of_the_automobile</string>
+    <string name="invention.url.first_car">https://uk.wikipedia.org/wiki/Історія_автомобіля</string>
 
     <string name="invention.first_watch">Перший годинник</string>
     <string name="invention.url.first_watch">https://en.wikipedia.org/wiki/History_of_watches</string>
@@ -68,31 +69,31 @@
     <string name="invention.url.first_phone">https://en.wikipedia.org/wiki/History_of_the_telephone</string>
 
     <string name="invention.first_video_camera">Перша відеокамера</string>
-    <string name="invention.url.first_video_camera">https://en.wikipedia.org/wiki/Video_camera</string>
+    <string name="invention.url.first_video_camera">https://uk.wikipedia.org/wiki/Відеокамера</string>
 
     <string name="invention.first_light_bulb">Перша лампочка</string>
     <string name="invention.url.first_light_bulb">https://en.wikipedia.org/wiki/Edison_light_bulb</string>
 
     <string name="invention.first_hamburger">Перший гамбургер</string>
-    <string name="invention.url.first_hamburger">https://en.wikipedia.org/wiki/Hamburger</string>
+    <string name="invention.url.first_hamburger">https://uk.wikipedia.org/wiki/Гамбургер</string>
 
     <string name="invention.first_bomb">Перша бомба</string>
-    <string name="invention.url.first_bomb">https://en.wikipedia.org/wiki/Bomb</string>
+    <string name="invention.url.first_bomb">https://uk.wikipedia.org/wiki/Бомба</string>
 
     <string name="invention.first_compass">Перший компас</string>
-    <string name="invention.url.first_compass">https://en.wikipedia.org/wiki/Compass</string>
+    <string name="invention.url.first_compass">https://uk.wikipedia.org/wiki/Компас</string>
 
     <string name="invention.first_manual_wheelchair">Перший інвалідний візок з ручним керуванням</string>
-    <string name="invention.url.first_manual_wheelchair">https://en.wikipedia.org/wiki/Wheelchair#Manual_self-propelled_wheelchairs</string>
+    <string name="invention.url.first_manual_wheelchair">https://uk.wikipedia.org/wiki/Інвалідний_візок</string>
 
     <string name="invention.first_motorized_wheelchair">Перший інвалідний візок з мотором</string>
     <string name="invention.url.first_motorized_wheelchair">https://en.wikipedia.org/wiki/Motorized_wheelchair</string>
 
     <string name="invention.first_flashlight">Перший ліхтарик</string>
-    <string name="invention.url.first_flashlight">https://en.wikipedia.org/wiki/Flashlight</string>
+    <string name="invention.url.first_flashlight">https://uk.wikipedia.org/wiki/Ручний_ліхтар</string>
 
     <string name="invention.first_mechanical_alarm_clock">Перший механічний будильник</string>
-    <string name="invention.url.first_mechanical_alarm_clock">https://en.wikipedia.org/wiki/Alarm_clock</string>
+    <string name="invention.url.first_mechanical_alarm_clock">https://uk.wikipedia.org/wiki/Будильник</string>
 
     <string name="invention.first_stopwatch">Перший секундомір</string>
     <string name="invention.url.first_stopwatch">https://museum.seiko.co.jp/en/knowledge/story_06/</string>
@@ -101,100 +102,100 @@
     <string name="invention.url.first_mantelpiece_clock">https://en.wikipedia.org/wiki/Mantel_clock</string>
 
     <string name="invention.first_thermometer">Перший термометр</string>
-    <string name="invention.url.first_thermometer">https://en.wikipedia.org/wiki/Thermometer</string>
+    <string name="invention.url.first_thermometer">https://uk.wikipedia.org/wiki/Термометр</string>
 
     <string name="invention.first_rubber_balloon">Перша повітряна кулька</string>
-    <string name="invention.url.first_rubber_balloon">https://en.wikipedia.org/wiki/Balloon</string>
+    <string name="invention.url.first_rubber_balloon">https://uk.wikipedia.org/wiki/Повітряна_куля</string>
 
     <string name="invention.first_joystick">Перший джойстик</string>
-    <string name="invention.url.first_joystick">https://en.wikipedia.org/wiki/Joystick</string>
+    <string name="invention.url.first_joystick">https://uk.wikipedia.org/wiki/Джойстик</string>
 
     <string name="invention.first_teddy_bear">Перший плюшевий ведмедик</string>
-    <string name="invention.url.first_teddy_bear">https://en.wikipedia.org/wiki/Teddy_bear</string>
+    <string name="invention.url.first_teddy_bear">https://uk.wikipedia.org/wiki/Плюшевий_ведмедик</string>
 
     <string name="invention.first_piñata">Перша піньята</string>
-    <string name="invention.url.first_piñata">https://en.wikipedia.org/wiki/Piñata</string>
+    <string name="invention.url.first_piñata">https://uk.wikipedia.org/wiki/Піньята</string>
 
     <string name="invention.first_studio_microphone">Перший мікрофон</string>
     <string name="invention.url.first_studio_microphone">https://digilab.libs.uga.edu/scl/exhibits/show/steel_vintage_mics/mic_early_history</string>
 
     <string name="invention.first_banjo">Перше банджо</string>
-    <string name="invention.url.first_banjo">https://en.wikipedia.org/wiki/Banjo</string>
+    <string name="invention.url.first_banjo">https://uk.wikipedia.org/wiki/Банджо</string>
 
     <string name="invention.first_radio">Перше радіо</string>
-    <string name="invention.url.first_radio">https://en.wikipedia.org/wiki/Invention_of_radio</string>
+    <string name="invention.url.first_radio">https://uk.wikipedia.org/wiki/Історія_виникнення_радіо</string>
 
     <string name="invention.first_mobile_phone">Перший мобільний телефон</string>
-    <string name="invention.url.first_mobile_phone">https://en.wikipedia.org/wiki/Mobile_phone</string>
+    <string name="invention.url.first_mobile_phone">https://uk.wikipedia.org/wiki/Мобільний_телефон</string>
 
     <string name="invention.first_smartphone">Перший смартфон</string>
-    <string name="invention.url.first_smartphone">https://en.wikipedia.org/wiki/Smartphone</string>
+    <string name="invention.url.first_smartphone">https://uk.wikipedia.org/wiki/Смартфон</string>
 
     <string name="invention.first_iphone">Перший iPhone</string>
-    <string name="invention.url.first_iphone">https://en.wikipedia.org/wiki/IPhone</string>
+    <string name="invention.url.first_iphone">https://uk.wikipedia.org/wiki/IPhone</string>
 
     <string name="invention.first_pager">Перший пейджер</string>
-    <string name="invention.url.first_pager">https://en.wikipedia.org/wiki/Pager</string>
+    <string name="invention.url.first_pager">https://uk.wikipedia.org/wiki/Пейджер</string>
 
     <string name="invention.first_fax_machine">Перший факс</string>
-    <string name="invention.url.first_fax_machine">https://en.wikipedia.org/wiki/Fax</string>
+    <string name="invention.url.first_fax_machine">https://uk.wikipedia.org/wiki/Факс</string>
 
     <string name="invention.first_electric_battery">Перша електрична батарея</string>
-    <string name="invention.url.first_electric_battery">https://en.wikipedia.org/wiki/Electric_battery</string>
+    <string name="invention.url.first_electric_battery">https://uk.wikipedia.org/wiki/Батарея_(електрика)</string>
 
     <string name="invention.first_electric_plug">Перша електрична вилка</string>
     <string name="invention.url.first_electric_plug">https://en.wikipedia.org/wiki/History_of_AC_power_plugs_and_sockets</string>
 
     <string name="invention.first_laptop">Перший ноутбук</string>
-    <string name="invention.url.first_laptop">https://en.wikipedia.org/wiki/Laptop</string>
+    <string name="invention.url.first_laptop">https://uk.wikipedia.org/wiki/Ноутбук</string>
 
     <string name="invention.first_desktop_computer">Перший настільний комп\'ютер</string>
     <string name="invention.url.first_desktop_computer">https://en.wikipedia.org/wiki/Desktop_computer</string>
 
     <string name="invention.first_printer">Перший принтер</string>
-    <string name="invention.url.first_printer">https://en.wikipedia.org/wiki/Printer_(computing)</string>
+    <string name="invention.url.first_printer">https://uk.wikipedia.org/wiki/Принтер</string>
 
     <string name="invention.first_qwerty_keyboard">Перша клавіатура QWERTY</string>
-    <string name="invention.url.first_qwerty_keyboard">https://en.wikipedia.org/wiki/QWERTY</string>
+    <string name="invention.url.first_qwerty_keyboard">https://uk.wikipedia.org/wiki/QWERTY</string>
 
     <string name="invention.first_computer_mouse">Перша комп\'ютерна мишка</string>
-    <string name="invention.url.first_computer_mouse">https://en.wikipedia.org/wiki/Computer_mouse</string>
+    <string name="invention.url.first_computer_mouse">https://uk.wikipedia.org/wiki/Комп%27ютерна_миша</string>
 
     <string name="invention.first_trackball">Перший трекбол</string>
-    <string name="invention.url.first_trackball">https://en.wikipedia.org/wiki/Trackball</string>
+    <string name="invention.url.first_trackball">https://uk.wikipedia.org/wiki/Трекбол</string>
 
     <string name="invention.first_computer_disk">Перший комп\'ютерний диск</string>
     <string name="invention.url.first_computer_disk">https://en.wikipedia.org/wiki/Disk_storage</string>
 
     <string name="invention.first_floppy_disk">Перша дискета</string>
-    <string name="invention.url.first_floppy_disk">https://en.wikipedia.org/wiki/Floppy_disk</string>
+    <string name="invention.url.first_floppy_disk">https://uk.wikipedia.org/wiki/Гнучкий_диск</string>
 
     <string name="invention.first_optical_disk">Перший оптичний диск</string>
-    <string name="invention.url.first_optical_disk">https://en.wikipedia.org/wiki/Optical_disc</string>
+    <string name="invention.url.first_optical_disk">https://uk.wikipedia.org/wiki/Оптичний_диск</string>
 
     <string name="invention.first_dvd">Перше DVD</string>
-    <string name="invention.url.first_dvd">https://en.wikipedia.org/wiki/DVD</string>
+    <string name="invention.url.first_dvd">https://uk.wikipedia.org/wiki/DVD</string>
 
     <string name="invention.first_movie_camera">Перша кінокамера</string>
-    <string name="invention.url.first_movie_camera">https://en.wikipedia.org/wiki/Movie_camera</string>
+    <string name="invention.url.first_movie_camera">https://uk.wikipedia.org/wiki/Кінокамера</string>
 
     <string name="invention.first_movie_projector">Перший кінопроектор</string>
-    <string name="invention.url.first_movie_projector">https://en.wikipedia.org/wiki/Movie_projector</string>
+    <string name="invention.url.first_movie_projector">https://uk.wikipedia.org/wiki/Кінопроєктор</string>
 
     <string name="invention.first_television">Перший телевізор</string>
-    <string name="invention.url.first_television">https://en.wikipedia.org/wiki/Television</string>
+    <string name="invention.url.first_television">https://uk.wikipedia.org/wiki/Телебачення</string>
 
     <string name="invention.first_photographic_camera">Перша фотокамера</string>
     <string name="invention.url.first_photographic_camera">https://www.nfi.edu/when-was-the-camera-invented/</string>
 
     <string name="invention.first_videocassette">Перша відеокасета</string>
-    <string name="invention.url.first_videocassette">https://en.wikipedia.org/wiki/Videotape</string>
+    <string name="invention.url.first_videocassette">https://uk.wikipedia.org/wiki/Відеокасета</string>
 
     <string name="invention.first_one_dollar_bill">Перша однодоларова банкнота</string>
-    <string name="invention.url.first_one_dollar_bill">First one-https://en.wikipedia.org/wiki/United_States_one-dollar_bill</string>
+    <string name="invention.url.first_one_dollar_bill">https://uk.wikipedia.org/wiki/Один_долар_США_(банкнота)</string>
 
     <string name="invention.first_100_euro_note">Перша купюра в 100 євро</string>
-    <string name="invention.url.first_100_euro_note">https://en.wikipedia.org/wiki/100_euro_note</string>
+    <string name="invention.url.first_100_euro_note">https://uk.wikipedia.org/wiki/100_євро</string>
 
     <string name="invention.first_1000_yen_note">Перша купюра в 1000 єн</string>
     <string name="invention.url.first_1000_yen_note">https://en.wikipedia.org/wiki/1000_yen_note</string>
@@ -203,22 +204,22 @@
     <string name="invention.url.first_twenty_pound_note">https://en.wikipedia.org/wiki/Bank_of_England_%C2%A320_note</string>
 
     <string name="invention.first_credit_card">Перша кредитна картка</string>
-    <string name="invention.url.first_credit_card">https://en.wikipedia.org/wiki/Credit_card</string>
+    <string name="invention.url.first_credit_card">https://uk.wikipedia.org/wiki/Кредитна_картка</string>
 
     <string name="invention.first_e_mail">Перша електронна пошта</string>
-    <string name="invention.url.first_e_mail">First https://en.wikipedia.org/wiki/Email</string>
+    <string name="invention.url.first_e_mail">https://uk.wikipedia.org/wiki/Електронна_пошта</string>
 
     <string name="invention.first_postbox">Перша поштова скринька</string>
-    <string name="invention.url.first_postbox">https://en.wikipedia.org/wiki/Post_box</string>
+    <string name="invention.url.first_postbox">https://uk.wikipedia.org/wiki/Поштова_скринька</string>
 
     <string name="invention.first_ballot_box">Перша виборча скринька</string>
-    <string name="invention.url.first_ballot_box">https://en.wikipedia.org/wiki/Ballot_box</string>
+    <string name="invention.url.first_ballot_box">https://uk.wikipedia.org/wiki/Виборча_урна</string>
 
     <string name="invention.first_pushpin">Перша канцелярська кнопка</string>
-    <string name="invention.url.first_pushpin">https://en.wikipedia.org/wiki/Drawing_pin</string>
+    <string name="invention.url.first_pushpin">https://uk.wikipedia.org/wiki/Канцелярська_кнопка</string>
 
     <string name="invention.first_bar_chart">Перша стовпчаста діаграма</string>
-    <string name="invention.url.first_bar_chart">https://en.wikipedia.org/wiki/Bar_chart</string>
+    <string name="invention.url.first_bar_chart">https://uk.wikipedia.org/wiki/Стовпчикова_діаграма</string>
 
     <string name="invention.first_clipboard">Перша папка-планшет</string>
     <string name="invention.url.first_clipboard">https://en.wikipedia.org/wiki/Clipboard</string>
@@ -233,16 +234,16 @@
     <string name="invention.url.first_pen_nib">https://uk.wikipedia.org/wiki/Перо_(письмове_приладдя)</string>
 
     <string name="invention.first_fountain_pen">Перша авторучка</string>
-    <string name="invention.url.first_fountain_pen">https://en.wikipedia.org/wiki/Fountain_pen</string>
+    <string name="invention.url.first_fountain_pen">https://uk.wikipedia.org/wiki/Перова_ручка</string>
 
     <string name="invention.first_modern_pencil">Перший сучасний олівець</string>
     <string name="invention.url.first_modern_pencil">https://blogs.bl.uk/untoldlives/2019/05/the-history-of-the-pencil.html</string>
 
     <string name="invention.first_notebook">Перший зошит</string>
-    <string name="invention.url.first_notebook">https://en.wikipedia.org/wiki/Notebook</string>
+    <string name="invention.url.first_notebook">https://uk.wikipedia.org/wiki/Блокнот</string>
 
     <string name="invention.first_paperclip">Перша скріпка</string>
-    <string name="invention.url.first_paperclip">https://en.wikipedia.org/wiki/Paper_clip</string>
+    <string name="invention.url.first_paperclip">https://uk.wikipedia.org/wiki/Скріпка</string>
 
     <string name="invention.first_file_cabinet">Перша картотека</string>
     <string name="invention.url.first_file_cabinet">https://en.wikipedia.org/wiki/Filing_cabinet</string>
@@ -254,28 +255,28 @@
     <string name="invention.url.first_wrench">https://patentyogi.com/this-day-in-patent-history/first-wrench-patented-day-day-patent-history/</string>
 
     <string name="invention.first_screwdriver">Перша викрутка</string>
-    <string name="invention.url.first_screwdriver">https://en.wikipedia.org/wiki/Screwdriver</string>
+    <string name="invention.url.first_screwdriver">https://uk.wikipedia.org/wiki/Викрутка</string>
 
     <string name="invention.first_hyperlink">Перше гіперпосилання</string>
-    <string name="invention.url.first_hyperlink">https://en.wikipedia.org/wiki/Hyperlink</string>
+    <string name="invention.url.first_hyperlink">https://uk.wikipedia.org/wiki/Гіперпосилання</string>
 
     <string name="invention.first_test_tube">Перша пробірка</string>
     <string name="invention.url.first_test_tube">https://daily.jstor.org/the-invention-of-the-test-tube/</string>
 
     <string name="invention.first_petri_dish">Перша чашка Петрі</string>
-    <string name="invention.url.first_petri_dish">https://en.wikipedia.org/wiki/Petri_dish</string>
+    <string name="invention.url.first_petri_dish">https://uk.wikipedia.org/wiki/Чашка_Петрі</string>
 
     <string name="invention.first_dna_investigation">Перше дослідження ДНК</string>
-    <string name="invention.url.first_dna_investigation">https://en.wikipedia.org/wiki/DNA</string>
+    <string name="invention.url.first_dna_investigation">https://uk.wikipedia.org/wiki/Дезоксирибонуклеїнова_кислота</string>
 
     <string name="invention.first_microscope">Перший мікроскоп</string>
-    <string name="invention.url.first_microscope">https://en.wikipedia.org/wiki/Microscope</string>
+    <string name="invention.url.first_microscope">https://uk.wikipedia.org/wiki/Мікроскоп</string>
 
     <string name="invention.first_telescope">Перший телескоп</string>
-    <string name="invention.url.first_telescope">https://en.wikipedia.org/wiki/Telescope</string>
+    <string name="invention.url.first_telescope">https://uk.wikipedia.org/wiki/Телескоп</string>
 
     <string name="invention.first_satellite_dish">Перша супутникова антена</string>
-    <string name="invention.url.first_satellite_dish">https://en.wikipedia.org/wiki/Satellite_dish</string>
+    <string name="invention.url.first_satellite_dish">https://uk.wikipedia.org/wiki/Супутникова_антена</string>
 
     <string name="invention.first_syringe">Перший шприц</string>
     <string name="invention.url.first_syringe">https://www.nms.ac.uk/explore-our-collections/stories/science-and-technology/syringes/</string>
@@ -284,55 +285,55 @@
     <string name="invention.url.first_adhesive_bandage">https://www.band-aid.com/our-brand/brand-history</string>
 
     <string name="invention.first_crutch">Перша милиця</string>
-    <string name="invention.url.first_crutch">https://en.wikipedia.org/wiki/Crutch</string>
+    <string name="invention.url.first_crutch">https://uk.wikipedia.org/wiki/Милиця</string>
 
     <string name="invention.first_stethoscope">Перший стетоскоп</string>
-    <string name="invention.url.first_stethoscope">https://en.wikipedia.org/wiki/Stethoscope</string>
+    <string name="invention.url.first_stethoscope">https://uk.wikipedia.org/wiki/Стетоскоп</string>
 
     <string name="invention.first_flush_toilet">Перший унітаз</string>
-    <string name="invention.url.first_flush_toilet">https://en.wikipedia.org/wiki/Flush_toilet</string>
+    <string name="invention.url.first_flush_toilet">https://uk.wikipedia.org/wiki/Унітаз</string>
 
     <string name="invention.first_plunger">Перший вантуз</string>
-    <string name="invention.url.first_plunger">https://en.wikipedia.org/wiki/Plunger</string>
+    <string name="invention.url.first_plunger">https://uk.wikipedia.org/wiki/Вантуз</string>
 
     <string name="invention.first_shower">Перший душ</string>
-    <string name="invention.url.first_shower">https://en.wikipedia.org/wiki/Shower</string>
+    <string name="invention.url.first_shower">https://uk.wikipedia.org/wiki/Душ</string>
 
     <string name="invention.first_bathtub">Перша ванна</string>
-    <string name="invention.url.first_bathtub">https://en.wikipedia.org/wiki/Bathtub</string>
+    <string name="invention.url.first_bathtub">https://uk.wikipedia.org/wiki/Ванна</string>
 
     <string name="invention.first_mouse_trap">Перша мишоловка</string>
-    <string name="invention.url.first_mouse_trap">https://en.wikipedia.org/wiki/Mousetrap</string>
+    <string name="invention.url.first_mouse_trap">https://uk.wikipedia.org/wiki/Мишоловка_(пристрій)</string>
 
     <string name="invention.first_razor">Перша бритва</string>
-    <string name="invention.url.first_razor">https://en.wikipedia.org/wiki/Razor</string>
+    <string name="invention.url.first_razor">https://uk.wikipedia.org/wiki/Бритва</string>
 
     <string name="invention.first_safety_pin">Перша шпилька</string>
-    <string name="invention.url.first_safety_pin">https://en.wikipedia.org/wiki/Safety_pin</string>
+    <string name="invention.url.first_safety_pin">https://uk.wikipedia.org/wiki/Англійська_шпилька</string>
 
     <string name="invention.first_toilet_paper">Перший туалетний папір</string>
-    <string name="invention.url.first_toilet_paper">https://en.wikipedia.org/wiki/Toilet_paper</string>
+    <string name="invention.url.first_toilet_paper">https://uk.wikipedia.org/wiki/Туалетний_папір</string>
 
     <string name="invention.first_fire_extinguisher">Перший вогнегасник</string>
-    <string name="invention.url.first_fire_extinguisher">https://en.wikipedia.org/wiki/Fire_extinguisher</string>
+    <string name="invention.url.first_fire_extinguisher">https://uk.wikipedia.org/wiki/Вогнегасник</string>
 
     <string name="invention.first_shopping_cart">Перший магазинний візок</string>
     <string name="invention.url.first_shopping_cart">https://en.wikipedia.org/wiki/Shopping_cart</string>
 
     <string name="invention.first_identification_card">Перша ідентифікаційна картка</string>
-    <string name="invention.url.first_identification_card">https://en.wikipedia.org/wiki/Identity_document</string>
+    <string name="invention.url.first_identification_card">https://uk.wikipedia.org/wiki/Посвідчувальні_документи_про_особу</string>
 
     <string name="invention.first_croissant">Перший круасан</string>
-    <string name="invention.url.first_croissant">https://en.wikipedia.org/wiki/Croissant</string>
+    <string name="invention.url.first_croissant">https://uk.wikipedia.org/wiki/Круасан</string>
 
     <string name="invention.first_baguette">Перший багет</string>
-    <string name="invention.url.first_baguette">https://en.wikipedia.org/wiki/Baguette</string>
+    <string name="invention.url.first_baguette">https://uk.wikipedia.org/wiki/Французький_багет</string>
 
     <string name="invention.first_bagel">Перший бублик</string>
-    <string name="invention.url.first_bagel">https://en.wikipedia.org/wiki/Bagel</string>
+    <string name="invention.url.first_bagel">https://uk.wikipedia.org/wiki/Бейгл</string>
 
     <string name="invention.first_french_fries">Перша картопля фрі</string>
-    <string name="invention.url.first_french_fries">https://en.wikipedia.org/wiki/French_Fries</string>
+    <string name="invention.url.first_french_fries">https://uk.wikipedia.org/wiki/Картопля_фрі</string>
 
     <string name="invention.first_pepperoni_pizza">Перша піца пепероні</string>
     <string name="invention.url.first_pepperoni_pizza">https://www.pizzerialocale.com/pepperoni-a-short-history/</string>
@@ -341,7 +342,7 @@
     <string name="invention.url.first_taco">https://www.twistedtaco.com/the-history-of-the-taco</string>
 
     <string name="invention.first_kebab">Перший кебаб</string>
-    <string name="invention.url.first_kebab">https://en.wikipedia.org/wiki/Kebab</string>
+    <string name="invention.url.first_kebab">https://uk.wikipedia.org/wiki/Кебаб</string>
 
     <string name="invention.first_sushi">Перші суші</string>
     <string name="invention.url.first_sushi">https://en.wikipedia.org/wiki/History_of_sushi</string>
@@ -359,28 +360,28 @@
     <string name="invention.url.first_takeout_box">https://www.nytimes.com/2012/01/15/magazine/the-chinese-takeout-container-is-uniquely-american.html</string>
 
     <string name="invention.first_doughnut">Перший пончик</string>
-    <string name="invention.url.first_doughnut">https://en.wikipedia.org/wiki/Doughnut</string>
+    <string name="invention.url.first_doughnut">https://uk.wikipedia.org/wiki/Пончик</string>
 
     <string name="invention.first_cupcake">Перший кекс</string>
-    <string name="invention.url.first_cupcake">https://en.wikipedia.org/wiki/Cupcake</string>
+    <string name="invention.url.first_cupcake">https://uk.wikipedia.org/wiki/Капкейк</string>
 
     <string name="invention.first_chocolate_bar">Перша плитка шоколаду</string>
     <string name="invention.url.first_chocolate_bar">https://en.wikipedia.org/wiki/Chocolate_bar</string>
 
     <string name="invention.first_lollipop">Перший льодяник</string>
-    <string name="invention.url.first_lollipop">https://en.wikipedia.org/wiki/Lollipop</string>
+    <string name="invention.url.first_lollipop">https://uk.wikipedia.org/wiki/Льодяник</string>
 
     <string name="invention.first_baby_bottle">Перша дитяча пляшечка</string>
-    <string name="invention.url.first_baby_bottle">https://en.wikipedia.org/wiki/Baby_bottle</string>
+    <string name="invention.url.first_baby_bottle">https://uk.wikipedia.org/wiki/Дитяча_пляшка</string>
 
     <string name="invention.first_modern_horse_race">Перші сучасні кінні перегони</string>
-    <string name="invention.url.first_modern_horse_race">https://en.wikipedia.org/wiki/Horse_racing</string>
+    <string name="invention.url.first_modern_horse_race">https://uk.wikipedia.org/wiki/Кінні_перегони</string>
 
     <string name="invention.first_modern_snowboarding">Перший сучасний сноуборд</string>
-    <string name="invention.url.first_modern_snowboarding">https://en.wikipedia.org/wiki/Snowboarding</string>
+    <string name="invention.url.first_modern_snowboarding">https://uk.wikipedia.org/wiki/Сноубординг</string>
 
     <string name="invention.first_modern_golf">Перший сучасний гольф</string>
-    <string name="invention.url.first_modern_golf">https://en.wikipedia.org/wiki/Golf</string>
+    <string name="invention.url.first_modern_golf">https://uk.wikipedia.org/wiki/Гольф</string>
 
     <string name="invention.first_bouncy_ball">Перший стрибучий м\'яч</string>
     <string name="invention.url.first_bouncy_ball">https://www.benjobags.com/the-mighty-bouncy-ball/</string>
@@ -392,37 +393,37 @@
     <string name="invention.url.first_violin">https://en.wikipedia.org/wiki/History_of_the_violin</string>
 
     <string name="invention.first_saxophone">Перший саксофон</string>
-    <string name="invention.url.first_saxophone">https://en.wikipedia.org/wiki/Saxophone</string>
+    <string name="invention.url.first_saxophone">https://uk.wikipedia.org/wiki/Саксофон</string>
 
     <string name="invention.first_headphones">Перші навушники</string>
-    <string name="invention.url.first_headphones">https://en.wikipedia.org/wiki/Headphones</string>
+    <string name="invention.url.first_headphones">https://uk.wikipedia.org/wiki/Навушники</string>
 
     <string name="invention.first_microphone">Перший мікрофон</string>
-    <string name="invention.url.first_microphone">https://en.wikipedia.org/wiki/Microphone</string>
+    <string name="invention.url.first_microphone">https://uk.wikipedia.org/wiki/Мікрофон</string>
 
     <string name="invention.first_disco_ball">Перша диско-куля</string>
     <string name="invention.url.first_disco_ball">https://en.wikipedia.org/wiki/Disco_ball</string>
 
     <string name="invention.first_puzzle_piece">Перша частинка пазлу</string>
-    <string name="invention.url.first_puzzle_piece">https://en.wikipedia.org/wiki/Jigsaw_puzzle</string>
+    <string name="invention.url.first_puzzle_piece">https://uk.wikipedia.org/wiki/Пазл</string>
 
     <string name="invention.first_slot_machine">Перший ігровий автомат</string>
-    <string name="invention.url.first_slot_machine">https://en.wikipedia.org/wiki/Slot_machine</string>
+    <string name="invention.url.first_slot_machine">https://uk.wikipedia.org/wiki/Слот-машина</string>
 
     <string name="invention.first_pool_8_ball">Перша гра \"Більярд-8\"</string>
     <string name="invention.url.first_pool_8_ball">https://en.wikipedia.org/wiki/Eight-ball</string>
 
     <string name="invention.first_curling_stone">Перший камінь для керлінгу</string>
-    <string name="invention.url.first_curling_stone">https://en.wikipedia.org/wiki/Curling</string>
+    <string name="invention.url.first_curling_stone">https://uk.wikipedia.org/wiki/Керлінг</string>
 
     <string name="invention.first_sled">Перші санки</string>
-    <string name="invention.url.first_sled">https://en.wikipedia.org/wiki/Sled</string>
+    <string name="invention.url.first_sled">https://uk.wikipedia.org/wiki/Сани</string>
 
     <string name="invention.first_frisbee_disc">Перший диск фризбі</string>
-    <string name="invention.url.first_frisbee_disc">https://en.wikipedia.org/wiki/Frisbee</string>
+    <string name="invention.url.first_frisbee_disc">https://uk.wikipedia.org/wiki/Летючий_диск</string>
 
     <string name="invention.first_train">Перший потяг</string>
-    <string name="invention.url.first_train">https://en.wikipedia.org/wiki/Train</string>
+    <string name="invention.url.first_train">https://uk.wikipedia.org/wiki/Поїзд</string>
 
     <string name="invention.first_xbox_controller">Перший контролер Xbox</string>
     <string name="invention.url.first_xbox_controller">https://en.wikipedia.org/wiki/Xbox_controller</string>
@@ -431,7 +432,7 @@
     <string name="invention.url.first_synthesizer">https://artsandculture.google.com/story/NAWhuXju46u1pg</string>
 
     <string name="invention.first_electric_guitar">Перша електрогітара</string>
-    <string name="invention.url.first_electric_guitar">https://en.wikipedia.org/wiki/Electric_guitar</string>
+    <string name="invention.url.first_electric_guitar">https://uk.wikipedia.org/wiki/Електрогітара</string>
 
     <string name="invention.first_modern_figure_skates">Перші сучасні фігурні ковзани</string>
     <string name="invention.url.first_modern_figure_skates">https://www.wonderopolis.org/wonder/when-were-ice-skates-invented</string>
@@ -445,50 +446,50 @@
     <string name="invention.first_badminton_game">Перша гра в бадмінтон</string>
     <string name="invention.url.first_badminton_game">https://www.britannica.com/sports/badminton</string>
 
-    <string name="invention.first_ping_pong">Перший пінг-понг</string>
-    <string name="invention.url.first_ping_pong">https://en.wikipedia.org/wiki/Table_tennis</string>
+    <string name="invention.first_ping_pong">Перший настільний теніс</string>
+    <string name="invention.url.first_ping_pong">https://uk.wikipedia.org/wiki/Настільний_теніс</string>
 
     <string name="invention.first_named_the_game_lacrosse">Перша назва гри \"Лакрос\"</string>
-    <string name="invention.url.first_named_the_game_lacrosse">First named the game “https://worldlacrosse.sport/about-world-lacrosse/origin-history/</string>
+    <string name="invention.url.first_named_the_game_lacrosse">https://worldlacrosse.sport/about-world-lacrosse/origin-history/</string>
 
     <string name="invention.first_ten_pin_bowling">Перший боулінг з десятьма кеглями</string>
-    <string name="invention.url.first_ten_pin_bowling">https://en.wikipedia.org/wiki/Ten-pin_bowling</string>
+    <string name="invention.url.first_ten_pin_bowling">https://uk.wikipedia.org/wiki/Боулінг</string>
 
     <string name="invention.first_tennis_rules">Правила першого тенісу</string>
-    <string name="invention.url.first_tennis_rules">https://en.wikipedia.org/wiki/History_of_tennis</string>
+    <string name="invention.url.first_tennis_rules">https://uk.wikipedia.org/wiki/Історія_тенісу</string>
 
     <string name="invention.first_rugby_football">Перший регбі-футбол</string>
     <string name="invention.url.first_rugby_football">https://hanazono-rugby-hos.com/museum-en/origins/</string>
 
     <string name="invention.first_american_football_match">Перший матч з американського футболу</string>
-    <string name="invention.url.first_american_football_match">https://en.wikipedia.org/wiki/American_football</string>
+    <string name="invention.url.first_american_football_match">https://uk.wikipedia.org/wiki/Американський_футбол</string>
 
     <string name="invention.first_volleyball">Перший волейбол</string>
-    <string name="invention.url.first_volleyball">https://en.wikipedia.org/wiki/Volleyball</string>
+    <string name="invention.url.first_volleyball">https://uk.wikipedia.org/wiki/Волейбол</string>
 
     <string name="invention.first_basketball">Перший баскетбол</string>
-    <string name="invention.url.first_basketball">https://en.wikipedia.org/wiki/Basketball</string>
+    <string name="invention.url.first_basketball">https://uk.wikipedia.org/wiki/Баскетбол</string>
 
     <string name="invention.first_softball">Перший софтбол</string>
-    <string name="invention.url.first_softball">https://en.wikipedia.org/wiki/Softball</string>
+    <string name="invention.url.first_softball">https://uk.wikipedia.org/wiki/Софтбол</string>
 
     <string name="invention.first_reference_to_baseball">Перша згадка про бейсбол</string>
-    <string name="invention.url.first_reference_to_baseball">https://en.wikipedia.org/wiki/Baseball</string>
+    <string name="invention.url.first_reference_to_baseball">https://uk.wikipedia.org/wiki/Бейсбол</string>
 
     <string name="invention.first_modern_32_panel_soccer_ball">Перший сучасний 32-панельний м\'яч</string>
-    <string name="invention.url.first_modern_32_panel_soccer_ball">https://en.wikipedia.org/wiki/Ball_(association_football)</string>
+    <string name="invention.url.first_modern_32_panel_soccer_ball">https://uk.wikipedia.org/wiki/Футбольний_м%27яч</string>
 
     <string name="invention.first_roller_skates">Перші роликові ковзани</string>
-    <string name="invention.url.first_roller_skates">https://en.wikipedia.org/wiki/Roller_skates</string>
+    <string name="invention.url.first_roller_skates">https://uk.wikipedia.org/wiki/Роликові_ковзани</string>
 
     <string name="invention.first_skateboard">Перший скейтборд</string>
-    <string name="invention.url.first_skateboard">https://en.wikipedia.org/wiki/Skateboard</string>
+    <string name="invention.url.first_skateboard">https://uk.wikipedia.org/wiki/Скейтборд</string>
 
     <string name="invention.first_circus_tent">Перший цирк-шапіто</string>
     <string name="invention.url.first_circus_tent">https://en.wikipedia.org/wiki/Circus</string>
 
     <string name="invention.first_bicycle">Перший велосипед</string>
-    <string name="invention.url.first_bicycle">https://en.wikipedia.org/wiki/Bicycle</string>
+    <string name="invention.url.first_bicycle">https://uk.wikipedia.org/wiki/Велосипед</string>
 
     <string name="invention.first_keikogi">Перше кімоно</string>
     <string name="invention.url.first_keikogi">https://dragonspiritaylesbury.co.uk/education/the-history-of-the-keikogi/</string>
@@ -500,10 +501,10 @@
     <string name="invention.url.first_mention_a_flying_saucer">https://en.wikipedia.org/wiki/Flying_saucer</string>
 
     <string name="invention.first_space_shuttle">Перший космічний човник</string>
-    <string name="invention.url.first_space_shuttle">https://en.wikipedia.org/wiki/Space_Shuttle</string>
+    <string name="invention.url.first_space_shuttle">https://uk.wikipedia.org/wiki/Спейс_Шаттл</string>
 
     <string name="invention.first_satellite">Перший супутник</string>
-    <string name="invention.url.first_satellite">https://en.wikipedia.org/wiki/Satellite</string>
+    <string name="invention.url.first_satellite">https://uk.wikipedia.org/wiki/Штучний_супутник</string>
 
     <string name="invention.first_aerial_tramway">Перша канатна дорога</string>
     <string name="invention.url.first_aerial_tramway">https://en.wikipedia.org/wiki/Aerial_tramway</string>
@@ -515,166 +516,166 @@
     <string name="invention.url.first_suspension_railway">https://en.wikipedia.org/wiki/Suspension_railway</string>
 
     <string name="invention.first_mentioned_word_helicopter">Перше згадуване слово \"Гелікоптер\"</string>
-    <string name="invention.url.first_mentioned_word_helicopter">https://en.wikipedia.org/wiki/Helicopter</string>
+    <string name="invention.url.first_mentioned_word_helicopter">https://uk.wikipedia.org/wiki/Вертоліт</string>
 
     <string name="invention.first_modern_parachute">Перший сучасний парашут</string>
-    <string name="invention.url.first_modern_parachute">https://en.wikipedia.org/wiki/Parachute</string>
+    <string name="invention.url.first_modern_parachute">https://uk.wikipedia.org/wiki/Парашут</string>
 
     <string name="invention.first_airplane">Перший літак</string>
-    <string name="invention.url.first_airplane">https://en.wikipedia.org/wiki/Airplane</string>
+    <string name="invention.url.first_airplane">https://uk.wikipedia.org/wiki/Літак</string>
 
     <string name="invention.first_motorboat">Перший моторний човен</string>
-    <string name="invention.url.first_motorboat">https://en.wikipedia.org/wiki/Motorboat</string>
+    <string name="invention.url.first_motorboat">https://uk.wikipedia.org/wiki/Моторний_човен</string>
 
     <string name="invention.first_ferry">Перший пором</string>
-    <string name="invention.url.first_ferry">https://en.wikipedia.org/wiki/Ferry</string>
+    <string name="invention.url.first_ferry">https://uk.wikipedia.org/wiki/Пором</string>
 
     <string name="invention.first_passenger_ship">Перше пасажирське судно</string>
     <string name="invention.url.first_passenger_ship">https://en.wikipedia.org/wiki/Prinzessin_Victoria_Luise</string>
 
     <string name="invention.first_life_preserver">Перший рятувальний жилет</string>
-    <string name="invention.url.first_life_preserver">https://en.wikipedia.org/wiki/Personal_flotation_device</string>
+    <string name="invention.url.first_life_preserver">https://uk.wikipedia.org/wiki/Рятувальний_жилет</string>
 
     <string name="invention.first_admiralty_pattern_anchor">Перший якір</string>
     <string name="invention.url.first_admiralty_pattern_anchor">https://en.wikipedia.org/wiki/History_of_the_anchor</string>
 
     <string name="invention.first_system_of_traffic_signals">Перша система світлофорів</string>
-    <string name="invention.url.first_system_of_traffic_signals">https://en.wikipedia.org/wiki/Traffic_light</string>
+    <string name="invention.url.first_system_of_traffic_signals">https://uk.wikipedia.org/wiki/Світлофор</string>
 
     <string name="invention.first_electric_traffic_light">Перший електричний світлофор</string>
-    <string name="invention.url.first_electric_traffic_light">https://en.wikipedia.org/wiki/Traffic_light</string>
+    <string name="invention.url.first_electric_traffic_light">https://uk.wikipedia.org/wiki/Світлофор</string>
 
     <string name="invention.first_police_car_light">Перша мигалка на автомобіль</string>
-    <string name="invention.url.first_police_car_light">https://en.wikipedia.org/wiki/Emergency_vehicle_lighting</string>
+    <string name="invention.url.first_police_car_light">https://uk.wikipedia.org/wiki/Проблисковий_маячок</string>
 
     <string name="invention.first_tire">Перша шина</string>
-    <string name="invention.url.first_tire">https://en.wikipedia.org/wiki/Tire</string>
+    <string name="invention.url.first_tire">https://uk.wikipedia.org/wiki/Шина_транспортного_засобу</string>
 
     <string name="invention.first_gasoline_pump">Перша бензоколонка</string>
-    <string name="invention.url.first_gasoline_pump">https://en.wikipedia.org/wiki/Gasoline_pump</string>
+    <string name="invention.url.first_gasoline_pump">https://uk.wikipedia.org/wiki/Пальнороздавальна_колонка</string>
 
     <string name="invention.first_iron_rails">Перша залізна колія</string>
-    <string name="invention.url.first_iron_rails">https://en.wikipedia.org/wiki/Railway_track</string>
+    <string name="invention.url.first_iron_rails">https://uk.wikipedia.org/wiki/Залізнична_колія</string>
 
     <string name="invention.first_motorway">Перша автомагістраль</string>
-    <string name="invention.url.first_motorway">https://en.wikipedia.org/wiki/Controlled-access_highway</string>
+    <string name="invention.url.first_motorway">https://uk.wikipedia.org/wiki/Автомагістраль</string>
 
     <string name="invention.first_bus_stop">Перша автобусна зупинка</string>
     <string name="invention.url.first_bus_stop">https://www.shelter-solutions.co.uk/who-invented-the-bus-stop/</string>
 
     <string name="invention.first_kickn_go">Перший самокат</string>
-    <string name="invention.url.first_kickn_go">https://en.wikipedia.org/wiki/Kick_scooter</string>
+    <string name="invention.url.first_kickn_go">https://uk.wikipedia.org/wiki/Самокат</string>
 
     <string name="invention.first_pedal_bicycle">Перший педальний велосипед</string>
     <string name="invention.url.first_pedal_bicycle">https://en.wikipedia.org/wiki/History_of_the_bicycle</string>
 
     <string name="invention.first_auto_rickshaw">Перший тук-тук</string>
-    <string name="invention.url.first_auto_rickshaw">https://en.wikipedia.org/wiki/Auto_rickshaw</string>
+    <string name="invention.url.first_auto_rickshaw">https://uk.wikipedia.org/wiki/Авторикша</string>
 
     <string name="invention.first_motor_scooter">Перший скутер</string>
-    <string name="invention.url.first_motor_scooter">https://en.wikipedia.org/wiki/Scooter_(motorcycle)</string>
+    <string name="invention.url.first_motor_scooter">https://uk.wikipedia.org/wiki/Скутер</string>
 
     <string name="invention.first_motorcycle">Перший мотоцикл</string>
-    <string name="invention.url.first_motorcycle">https://en.wikipedia.org/wiki/Motorcycle</string>
+    <string name="invention.url.first_motorcycle">https://uk.wikipedia.org/wiki/Мотоцикл</string>
 
     <string name="invention.first_formula_one">Перша Формула-1</string>
-    <string name="invention.url.first_formula_one">https://en.wikipedia.org/wiki/Formula_One</string>
+    <string name="invention.url.first_formula_one">https://uk.wikipedia.org/wiki/Формула-1</string>
 
     <string name="invention.first_gasoline_powered_tractor">Перший бензиновий трактор</string>
-    <string name="invention.url.first_gasoline_powered_tractor">https://en.wikipedia.org/wiki/Tractor</string>
+    <string name="invention.url.first_gasoline_powered_tractor">https://uk.wikipedia.org/wiki/Трактор</string>
 
     <string name="invention.first_truck">Перша вантажівка</string>
-    <string name="invention.url.first_truck">https://en.wikipedia.org/wiki/Truck</string>
+    <string name="invention.url.first_truck">https://uk.wikipedia.org/wiki/Вантажний_автомобіль</string>
 
     <string name="invention.first_pickup_truck">Перший пікап</string>
-    <string name="invention.url.first_pickup_truck">https://en.wikipedia.org/wiki/Pickup_truck</string>
+    <string name="invention.url.first_pickup_truck">https://uk.wikipedia.org/wiki/Пікап</string>
 
     <string name="invention.first_suv_in_the_modern_style">Перший позашляховик в стилі модерн</string>
-    <string name="invention.url.first_suv_in_the_modern_style">https://en.wikipedia.org/wiki/Sport_utility_vehicle</string>
+    <string name="invention.url.first_suv_in_the_modern_style">https://uk.wikipedia.org/wiki/SUV</string>
 
     <string name="invention.first_modern_taxicab">Перше сучасне таксі</string>
-    <string name="invention.url.first_modern_taxicab">https://en.wikipedia.org/wiki/Taxi</string>
+    <string name="invention.url.first_modern_taxicab">https://uk.wikipedia.org/wiki/Таксі</string>
 
     <string name="invention.first_police_car">Перший поліцейський автомобіль</string>
-    <string name="invention.url.first_police_car">https://en.wikipedia.org/wiki/Police_car</string>
+    <string name="invention.url.first_police_car">https://uk.wikipedia.org/wiki/Поліцейський_автомобіль</string>
 
     <string name="invention.first_motorised_fire_engines">Перший пожежний автомобіль з мотором</string>
-    <string name="invention.url.first_motorised_fire_engines">https://en.wikipedia.org/wiki/Fire_engine</string>
+    <string name="invention.url.first_motorised_fire_engines">https://uk.wikipedia.org/wiki/Пожежний_автомобіль</string>
 
     <string name="invention.first_gas_powered_ambulance">Перший автомобіль швидкої допомоги на газу</string>
-    <string name="invention.url.first_gas_powered_ambulance">https://en.wikipedia.org/wiki/History_of_the_ambulance</string>
+    <string name="invention.url.first_gas_powered_ambulance">https://uk.wikipedia.org/wiki/Історія_автомобілів_швидкої_допомоги</string>
 
     <string name="invention.first_minibus">Перший мікроавтобус</string>
-    <string name="invention.url.first_minibus">https://en.wikipedia.org/wiki/Minibus</string>
+    <string name="invention.url.first_minibus">https://uk.wikipedia.org/wiki/Мікроавтобус</string>
 
     <string name="invention.first_trolleybus">Перший тролейбус</string>
-    <string name="invention.url.first_trolleybus">https://en.wikipedia.org/wiki/Trolleybus</string>
+    <string name="invention.url.first_trolleybus">https://uk.wikipedia.org/wiki/Тролейбус</string>
 
     <string name="invention.first_mass_produced_bus_model">Перша серійна модель автобуса</string>
-    <string name="invention.url.first_mass_produced_bus_model">https://en.wikipedia.org/wiki/Bus</string>
+    <string name="invention.url.first_mass_produced_bus_model">https://uk.wikipedia.org/wiki/Автобус</string>
 
     <string name="invention.first_electric_tram_line">Перша лінія електричного трамваю</string>
-    <string name="invention.url.first_electric_tram_line">https://en.wikipedia.org/wiki/Tram</string>
+    <string name="invention.url.first_electric_tram_line">https://uk.wikipedia.org/wiki/Трамвай</string>
 
     <string name="invention.first_monorail_prototype">Перший прототип монорейкової дороги</string>
-    <string name="invention.url.first_monorail_prototype">https://en.wikipedia.org/wiki/Monorail</string>
+    <string name="invention.url.first_monorail_prototype">https://uk.wikipedia.org/wiki/Монорейкова_дорога</string>
 
     <string name="invention.first_lrt_introduced_term">Перший введений термін \"Легкорейковий транспорт\"</string>
-    <string name="invention.url.first_lrt_introduced_term">https://en.wikipedia.org/wiki/Light_rail</string>
+    <string name="invention.url.first_lrt_introduced_term">https://uk.wikipedia.org/wiki/Легкорейковий_транспорт</string>
 
     <string name="invention.first_metro">Перше метро</string>
-    <string name="invention.url.first_metro">https://en.wikipedia.org/wiki/Rapid_transit</string>
+    <string name="invention.url.first_metro">https://uk.wikipedia.org/wiki/Метрополітен</string>
 
     <string name="invention.first_bullet_train">Перша швидкісна залізниця</string>
-    <string name="invention.url.first_bullet_train">https://en.wikipedia.org/wiki/High-speed_rail</string>
+    <string name="invention.url.first_bullet_train">https://uk.wikipedia.org/wiki/Швидкісна_залізниця</string>
 
     <string name="invention.first_high_speed_train">Перший швидкісний потяг</string>
     <string name="invention.url.first_high_speed_train">https://en.wikipedia.org/wiki/InterCity_125</string>
 
     <string name="invention.first_railway_steam_locomotive">Перший залізничний локомотив</string>
-    <string name="invention.url.first_railway_steam_locomotive">https://en.wikipedia.org/wiki/Locomotive</string>
+    <string name="invention.url.first_railway_steam_locomotive">https://uk.wikipedia.org/wiki/Локомотив</string>
 
     <string name="invention.first_modern_roller_coaster">Перші сучасні американські гірки</string>
-    <string name="invention.url.first_modern_roller_coaster">https://en.wikipedia.org/wiki/Roller_coaster</string>
+    <string name="invention.url.first_modern_roller_coaster">https://uk.wikipedia.org/wiki/Американські_гірки</string>
 
     <string name="invention.first_ferris_wheel">Перше колесо огляду</string>
-    <string name="invention.url.first_ferris_wheel">https://en.wikipedia.org/wiki/Ferris_wheel</string>
+    <string name="invention.url.first_ferris_wheel">https://uk.wikipedia.org/wiki/Оглядове_колесо</string>
 
     <string name="invention.first_merry_go_round">Перша карусель</string>
-    <string name="invention.url.first_merry_go_round">https://en.wikipedia.org/wiki/Carousel</string>
+    <string name="invention.url.first_merry_go_round">https://uk.wikipedia.org/wiki/Карусель</string>
 
     <string name="invention.statue_of_liberty">Статуя Свободи</string>
-    <string name="invention.url.statue_of_liberty">https://en.wikipedia.org/wiki/Statue_of_Liberty</string>
+    <string name="invention.url.statue_of_liberty">https://uk.wikipedia.org/wiki/Статуя_Свободи</string>
 
     <string name="invention.tokyo_tower">Токійська вежа</string>
-    <string name="invention.url.tokyo_tower">https://en.wikipedia.org/wiki/Tokyo_Tower</string>
+    <string name="invention.url.tokyo_tower">https://uk.wikipedia.org/wiki/Токійська_вежа</string>
 
     <string name="invention.first_love_hotel">Перший готель кохання</string>
-    <string name="invention.url.first_love_hotel">https://en.wikipedia.org/wiki/Love_hotel</string>
+    <string name="invention.url.first_love_hotel">https://uk.wikipedia.org/wiki/Готель_кохання</string>
 
     <string name="invention.first_hotel">Перший готель</string>
-    <string name="invention.url.first_hotel">https://en.wikipedia.org/wiki/Hotel</string>
+    <string name="invention.url.first_hotel">https://uk.wikipedia.org/wiki/Готель</string>
 
     <string name="invention.first_modern_japanese_castle">Перший сучасний японський замок</string>
-    <string name="invention.url.first_modern_japanese_castle">https://en.wikipedia.org/wiki/Japanese_castle</string>
+    <string name="invention.url.first_modern_japanese_castle">https://uk.wikipedia.org/wiki/Японський_замок</string>
 
     <string name="invention.first_24_hour_store">Перший цілодобовий магазин</string>
-    <string name="invention.url.first_24_hour_store">First 24-https://en.wikipedia.org/wiki/Convenience_store</string>
+    <string name="invention.url.first_24_hour_store">https://uk.wikipedia.org/wiki/Магазин_біля_дому</string>
 
     <string name="invention.first_glasses">Перші окуляри</string>
-    <string name="invention.url.first_glasses">https://en.wikipedia.org/wiki/Glasses</string>
+    <string name="invention.url.first_glasses">https://uk.wikipedia.org/wiki/Окуляри_для_корекції_вад_зору</string>
 
     <string name="invention.first_robot">Перший робот</string>
-    <string name="invention.url.first_robot">https://en.wikipedia.org/wiki/Robot</string>
+    <string name="invention.url.first_robot">https://uk.wikipedia.org/wiki/Робот</string>
 
     <string name="invention.first_movie_with_robots">Перший фільм з роботами</string>
     <string name="invention.url.first_movie_with_robots">https://history-computer.com/the-10-best-movies-about-robots/</string>
 
     <string name="invention.first_selfie">Перше селфі</string>
-    <string name="invention.url.first_selfie">https://en.wikipedia.org/wiki/Selfie</string>
+    <string name="invention.url.first_selfie">https://uk.wikipedia.org/wiki/Селфі</string>
 
     <string name="invention.first_known_use_of_the_word_selfie">Перше використання слова \"Selfie\"</string>
-    <string name="invention.url.first_known_use_of_the_word_selfie">https://en.wikipedia.org/wiki/Selfie</string>
+    <string name="invention.url.first_known_use_of_the_word_selfie">https://uk.wikipedia.org/wiki/Селфі</string>
 
     <string name="invention.first_uv_gel_system">Перша УФ-лампа для манікюру</string>
     <string name="invention.url.first_uv_gel_system">https://beautytrainingstudio.co.uk/history-of-nails</string>
@@ -683,25 +684,25 @@
     <string name="invention.url.first_robotic_arm">https://en.wikipedia.org/wiki/Mechanical_arm</string>
 
     <string name="invention.first_recorded_word_zombie">Перше записане слово \"Зомбі\"</string>
-    <string name="invention.url.first_recorded_word_zombie">https://en.wikipedia.org/wiki/Zombie</string>
+    <string name="invention.url.first_recorded_word_zombie">https://uk.wikipedia.org/wiki/Зомбі</string>
 
     <string name="invention.first_bikini">Перше бікіні</string>
-    <string name="invention.url.first_bikini">https://en.wikipedia.org/wiki/Bikini</string>
+    <string name="invention.url.first_bikini">https://uk.wikipedia.org/wiki/Бікіні</string>
 
     <string name="invention.first_commercial_lipstick">Перша комерційна помада</string>
-    <string name="invention.url.first_commercial_lipstick">https://en.wikipedia.org/wiki/Lipstick</string>
+    <string name="invention.url.first_commercial_lipstick">https://uk.wikipedia.org/wiki/Губна_помада</string>
 
     <string name="invention.first_pointe_shoe">Перші пуанти</string>
-    <string name="invention.url.first_pointe_shoe">https://en.wikipedia.org/wiki/Pointe_shoe</string>
+    <string name="invention.url.first_pointe_shoe">https://uk.wikipedia.org/wiki/Пуанти</string>
 
     <string name="invention.first_alien_film">Перший фільм про прибульців</string>
-    <string name="invention.url.first_alien_film">https://en.wikipedia.org/wiki/Alien_(film)</string>
+    <string name="invention.url.first_alien_film">https://uk.wikipedia.org/wiki/Чужий_(фільм)</string>
 
     <string name="invention.first_alien_video_game">Перша відеогра про прибульців</string>
     <string name="invention.url.first_alien_video_game">https://en.wikipedia.org/wiki/List_of_Alien,_Predator,_and_Alien_vs._Predator_games</string>
 
     <string name="invention.first_electric_loudspeaker">Перший електричний гучномовець</string>
-    <string name="invention.url.first_electric_loudspeaker">https://en.wikipedia.org/wiki/Loudspeaker</string>
+    <string name="invention.url.first_electric_loudspeaker">https://uk.wikipedia.org/wiki/Гучномовець</string>
 
     <string name="invention.first_transistorized_megaphone">Перший транзисторний мегафон</string>
     <string name="invention.url.first_transistorized_megaphone">https://en.wikipedia.org/wiki/Megaphone</string>
@@ -740,40 +741,40 @@
     <string name="invention.url.first_coconut_festival">https://en.wikipedia.org/wiki/Coconut_Festival</string>
 
     <string name="invention.first_antivirus_program">Перша антивірусна програма</string>
-    <string name="invention.url.first_antivirus_program">https://en.wikipedia.org/wiki/Antivirus_software</string>
+    <string name="invention.url.first_antivirus_program">https://uk.wikipedia.org/wiki/Антивірусна_програма</string>
 
     <string name="invention.first_known_computer_virus">Перший відомий комп\'ютерний вірус</string>
-    <string name="invention.url.first_known_computer_virus">https://en.wikipedia.org/wiki/Antivirus_software</string>
+    <string name="invention.url.first_known_computer_virus">https://uk.wikipedia.org/wiki/Антивірусна_програма</string>
 
     <string name="invention.first_coronavirus">Перший коронавірус</string>
-    <string name="invention.url.first_coronavirus">https://en.wikipedia.org/wiki/Coronavirus</string>
+    <string name="invention.url.first_coronavirus">https://uk.wikipedia.org/wiki/Orthocoronavirinae</string>
 
     <string name="invention.first_movie_about_spider_man">Перший фільм про Людину-павука</string>
-    <string name="invention.url.first_movie_about_spider_man">https://en.wikipedia.org/wiki/Spider-Man_(2002_film)</string>
+    <string name="invention.url.first_movie_about_spider_man">https://uk.wikipedia.org/wiki/Людина-павук_(фільм,_2002)</string>
 
     <string name="invention.first_internet">Перший Інтернет</string>
-    <string name="invention.url.first_internet">https://en.wikipedia.org/wiki/Internet</string>
+    <string name="invention.url.first_internet">https://uk.wikipedia.org/wiki/Інтернет</string>
 
     <string name="invention.first_chess_tournament">Перший шаховий турнір</string>
-    <string name="invention.url.first_chess_tournament">https://en.wikipedia.org/wiki/Chess_tournament</string>
+    <string name="invention.url.first_chess_tournament">https://uk.wikipedia.org/wiki/Шаховий_турнір</string>
 
     <string name="invention.first_oktoberfest">Перший Oktoberfest</string>
-    <string name="invention.url.first_oktoberfest">https://en.wikipedia.org/wiki/Oktoberfest</string>
+    <string name="invention.url.first_oktoberfest">https://uk.wikipedia.org/wiki/Октоберфест</string>
 
     <string name="invention.first_refrigeration_machine">Перша холодильна машина</string>
     <string name="invention.url.first_refrigeration_machine">https://en.wikipedia.org/wiki/Icemaker</string>
 
     <string name="invention.first_single_use_ice_cube_bag">Перший одноразовий мішечок для кубиків льоду</string>
-    <string name="invention.url.first_single_use_ice_cube_bag">https://en.wikipedia.org/wiki/Ice_cube</string>
+    <string name="invention.url.first_single_use_ice_cube_bag">https://uk.wikipedia.org/wiki/Кубики_льоду</string>
 
     <string name="invention.first_juicebox">Перша упаковка для соку</string>
     <string name="invention.url.first_juicebox">https://en.wikipedia.org/wiki/Juicebox_(container</string>
 
     <string name="invention.first_bank_robbery">Перше пограбування банку</string>
-    <string name="invention.url.first_bank_robbery">https://en.wikipedia.org/wiki/Bank_robbery</string>
+    <string name="invention.url.first_bank_robbery">https://uk.wikipedia.org/wiki/Пограбування_банку</string>
 
     <string name="invention.first_published_issue_of_new_york_daily_times">Перший опублікований випуск New-York Daily Times</string>
-    <string name="invention.url.first_published_issue_of_new_york_daily_times">https://en.wikipedia.org/wiki/The_New_York_Times</string>
+    <string name="invention.url.first_published_issue_of_new_york_daily_times">https://uk.wikipedia.org/wiki/Нью-Йорк_таймс</string>
 
     <string name="invention.first_barber_college">Перший перукарський коледж</string>
     <string name="invention.url.first_barber_college">https://www.main-street-barbershop.com/blog/articles/History-of-an-Icon-The-Barbershop</string>
@@ -785,16 +786,16 @@
     <string name="invention.url.first_ghosts_n_goblins_video_game">https://en.wikipedia.org/wiki/Ghosts_%27n_Goblins_(video_game)</string>
 
     <string name="invention.first_fencing_as_a_part_of_olympic_games">Перше фехтування як частина Олімпійських ігор</string>
-    <string name="invention.url.first_fencing_as_a_part_of_olympic_games">https://en.wikipedia.org/wiki/Fencing</string>
+    <string name="invention.url.first_fencing_as_a_part_of_olympic_games">https://uk.wikipedia.org/wiki/Фехтування</string>
 
     <string name="invention.first_weightlifting_as_a_part_of_olympic_games">Перша важка атлетика в рамках Олімпійських ігор</string>
-    <string name="invention.url.first_weightlifting_as_a_part_of_olympic_games">https://en.wikipedia.org/wiki/Olympic_weightlifting</string>
+    <string name="invention.url.first_weightlifting_as_a_part_of_olympic_games">https://uk.wikipedia.org/wiki/Важка_атлетика</string>
 
     <string name="invention.first_male_world_championship_in_weightlifting">Перший чемпіонат світу з важкої атлетики серед чоловіків</string>
-    <string name="invention.url.first_male_world_championship_in_weightlifting">https://en.wikipedia.org/wiki/Olympic_weightlifting</string>
+    <string name="invention.url.first_male_world_championship_in_weightlifting">https://uk.wikipedia.org/wiki/Важка_атлетика</string>
 
     <string name="invention.first_blue_jeans">Перші сині джинси</string>
-    <string name="invention.url.first_blue_jeans">https://en.wikipedia.org/wiki/Jeans</string>
+    <string name="invention.url.first_blue_jeans">https://uk.wikipedia.org/wiki/Джинси</string>
 
     <string name="invention.first_ninja_anime">Перше аніме про ніндзя</string>
     <string name="invention.url.first_ninja_anime">https://en.wikipedia.org/wiki/Ninja_Scroll</string>
@@ -803,22 +804,22 @@
     <string name="invention.url.first_water_polo_was_played">https://collegiatewaterpolo.org/fans/gameinfo/history/</string>
 
     <string name="invention.first_ever_official_handball_match">Перший офіційний  матч з гандболу</string>
-    <string name="invention.url.first_ever_official_handball_match">https://en.wikipedia.org/wiki/Handball</string>
+    <string name="invention.url.first_ever_official_handball_match">https://uk.wikipedia.org/wiki/Гандбол</string>
 
     <string name="invention.first_migdal_synagogue_was_discovered">Перша відкрита синагога Магдали</string>
     <string name="invention.url.first_migdal_synagogue_was_discovered">https://en.wikipedia.org/wiki/Migdal_Synagogue</string>
 
     <string name="invention.first_mosque_in_north_america">Перша мечеть у Північній Америці</string>
-    <string name="invention.url.first_mosque_in_north_america">https://en.wikipedia.org/wiki/Mosque</string>
+    <string name="invention.url.first_mosque_in_north_america">https://uk.wikipedia.org/wiki/Мечеть</string>
 
     <string name="invention.first_identified_christian_church">Вперше визнана християнська церква</string>
-    <string name="invention.url.first_identified_christian_church">https://en.wikipedia.org/wiki/Church_(building)</string>
+    <string name="invention.url.first_identified_christian_church">https://uk.wikipedia.org/wiki/Церква_(будівля)</string>
 
     <string name="invention.first_observed_the_rings_of_saturn">Вперше побачені кільця Сатурна</string>
-    <string name="invention.url.first_observed_the_rings_of_saturn">https://en.wikipedia.org/wiki/Saturn</string>
+    <string name="invention.url.first_observed_the_rings_of_saturn">https://uk.wikipedia.org/wiki/Сатурн_(планета)</string>
 
     <string name="invention.first_attempt_to_describe_the_shape_of_the_milky_way">Перша спроба описати форму Чумацького Шляху</string>
-    <string name="invention.url.first_attempt_to_describe_the_shape_of_the_milky_way">https://en.wikipedia.org/wiki/Milky_Way</string>
+    <string name="invention.url.first_attempt_to_describe_the_shape_of_the_milky_way">https://uk.wikipedia.org/wiki/Чумацький_Шлях</string>
 
     <string name="invention.first_guinness_record_for_the_heaviest_onion">Перший рекорд Гіннесса за найважчу цибулину</string>
     <string name="invention.url.first_guinness_record_for_the_heaviest_onion">https://www.guinnessworldrecords.com/world-records/heaviest-onion</string>
@@ -848,7 +849,7 @@
     <string name="invention.url.first_guinness_record_for_largest_waffle">https://www.guinnessworldrecords.com/world-records/largest-waffle</string>
 
     <string name="invention.first_commercial_bacon_processing_plant">Перший завод з виготовлення бекону</string>
-    <string name="invention.url.first_commercial_bacon_processing_plant">https://en.wikipedia.org/wiki/Bacon</string>
+    <string name="invention.url.first_commercial_bacon_processing_plant">https://uk.wikipedia.org/wiki/Бекон</string>
 
     <string name="invention.first_guinness_record_for_the_most_expensive_french_fries">Перший рекорд Гіннесса за найдорожчу картоплю фрі</string>
     <string name="invention.url.first_guinness_record_for_the_most_expensive_french_fries">https://www.guinnessworldrecords.com/world-records/655477-most-expensive-french-fries-chips</string>
@@ -866,19 +867,19 @@
     <string name="invention.url.first_umbrella_manufacturing">https://beachbrella.com/the-history-of-beach-umbrellas/</string>
 
     <string name="invention.first_silent_fireworks">Перший тихий феєрверк</string>
-    <string name="invention.url.first_silent_fireworks">https://en.wikipedia.org/wiki/Fireworks</string>
+    <string name="invention.url.first_silent_fireworks">https://uk.wikipedia.org/wiki/Феєрверк</string>
 
     <string name="invention.first_recorded_railway_station">Перша зареєстрована залізнична станція</string>
-    <string name="invention.url.first_recorded_railway_station">https://en.wikipedia.org/wiki/Train_station</string>
+    <string name="invention.url.first_recorded_railway_station">https://uk.wikipedia.org/wiki/Залізнична_станція</string>
 
     <string name="invention.first_japanese_map_of_provincial_surveys">Перша японська карта провінційних досліджень</string>
     <string name="invention.url.first_japanese_map_of_provincial_surveys">https://en.wikipedia.org/wiki/Japanese_maps</string>
 
     <string name="invention.first_record_of_displaying_the_doll">Перший запис про показ ляльки</string>
-    <string name="invention.url.first_record_of_displaying_the_doll">https://en.wikipedia.org/wiki/Hinamatsuri</string>
+    <string name="invention.url.first_record_of_displaying_the_doll">https://uk.wikipedia.org/wiki/Хіна-мацурі</string>
 
     <string name="invention.first_hinamatsuri_legally_became_the_holiday">Вперше Хіна-мацурі юридично стало святом</string>
-    <string name="invention.url.first_hinamatsuri_legally_became_the_holiday">https://en.wikipedia.org/wiki/Hinamatsuri</string>
+    <string name="invention.url.first_hinamatsuri_legally_became_the_holiday">https://uk.wikipedia.org/wiki/Хіна-мацурі</string>
 
     <string name="invention.first_time_koinobori_have_been_flying_on_childrens_day">Вперше койноборі літало на День захисту дітей</string>
     <string name="invention.url.first_time_koinobori_have_been_flying_on_childrens_day">https://en.wikipedia.org/wiki/Koinobori</string>
@@ -887,76 +888,76 @@
     <string name="invention.url.first_digital_equivalent_of_red_envelope">https://www.imd.org/research-knowledge/articles/the-uneasy-truce-between-alibaba-and-tencent-is-over/</string>
 
     <string name="invention.first_standards_relating_to_diving_masks">Перші стандарти, щодо масок для дайвінгу</string>
-    <string name="invention.url.first_standards_relating_to_diving_masks">https://en.wikipedia.org/wiki/Diving_mask</string>
+    <string name="invention.url.first_standards_relating_to_diving_masks">https://uk.wikipedia.org/wiki/Маска_(підводне_плавання)</string>
 
     <string name="invention.first_yo_yo_manufacturing_company">Перша компанія з виробництва йо-йо</string>
-    <string name="invention.url.first_yo_yo_manufacturing_company">https://en.wikipedia.org/wiki/Yo-yo</string>
+    <string name="invention.url.first_yo_yo_manufacturing_company">https://uk.wikipedia.org/wiki/Йо-йо</string>
 
     <string name="invention.first_woodcut_print_of_a_kite">Перший ілюстрація повітряного змія</string>
-    <string name="invention.url.first_woodcut_print_of_a_kite">https://en.wikipedia.org/wiki/Kite</string>
+    <string name="invention.url.first_woodcut_print_of_a_kite">https://uk.wikipedia.org/wiki/Повітряний_змій</string>
 
     <string name="invention.first_device_for_recording_sound">Перший пристрій для запису звуку</string>
-    <string name="invention.url.first_device_for_recording_sound">https://en.wikipedia.org/wiki/Sound_recording_and_reproduction</string>
+    <string name="invention.url.first_device_for_recording_sound">https://uk.wikipedia.org/wiki/Звукові_технології</string>
 
     <string name="invention.first_developed_a_form_of_musical_notation">Вперше розроблена форма нотного запису</string>
-    <string name="invention.url.first_developed_a_form_of_musical_notation">https://en.wikipedia.org/wiki/Musical_notation</string>
+    <string name="invention.url.first_developed_a_form_of_musical_notation">https://uk.wikipedia.org/wiki/Музична_нотація</string>
 
     <string name="invention.first_series_of_spongebob_squarepants">Перша серія Губки Боба Квадратні Штани</string>
-    <string name="invention.url.first_series_of_spongebob_squarepants">https://en.wikipedia.org/wiki/SpongeBob_SquarePants</string>
+    <string name="invention.url.first_series_of_spongebob_squarepants">https://uk.wikipedia.org/wiki/Губка_Боб_Квадратні_Штани</string>
 
     <string name="invention.first_known_american_cookbook">Перша відома американська кулінарна книга</string>
-    <string name="invention.url.first_known_american_cookbook">https://en.wikipedia.org/wiki/Cookbook</string>
+    <string name="invention.url.first_known_american_cookbook">https://uk.wikipedia.org/wiki/Кулінарна_книга</string>
 
     <string name="invention.first_ever_international_cricket_game">Перша міжнародна гра в крикет</string>
     <string name="invention.url.first_ever_international_cricket_game">https://en.wikipedia.org/wiki/History_of_cricket</string>
 
     <string name="invention.first_cookbooks_based_on_renaissance_ideals">Перші кулінарні книги, засновані на ідеалах Відродження</string>
-    <string name="invention.url.first_cookbooks_based_on_renaissance_ideals">https://en.wikipedia.org/wiki/Cookbook</string>
+    <string name="invention.url.first_cookbooks_based_on_renaissance_ideals">https://uk.wikipedia.org/wiki/Кулінарна_книга</string>
 
     <string name="invention.first_silk_top_hat">Перший шовковий циліндр</string>
-    <string name="invention.url.first_silk_top_hat">https://en.wikipedia.org/wiki/Top_hat</string>
+    <string name="invention.url.first_silk_top_hat">https://uk.wikipedia.org/wiki/Циліндр_(головний_убір)</string>
 
     <string name="invention.first_evil_clown_comics">Перші комікси про злого клоуна</string>
     <string name="invention.url.first_evil_clown_comics">https://en.wikipedia.org/wiki/Frenchy_the_Clown</string>
 
     <string name="invention.first_silk_factory">Перша шовкова фабрика</string>
-    <string name="invention.url.first_silk_factory">https://en.wikipedia.org/wiki/Factory</string>
+    <string name="invention.url.first_silk_factory">https://uk.wikipedia.org/wiki/Фабрика</string>
 
     <string name="invention.first_recorded_use_of_the_term_industrial_revolution">Перше зафіксоване використання терміну \"Промислова революція\"</string>
-    <string name="invention.url.first_recorded_use_of_the_term_industrial_revolution">https://en.wikipedia.org/wiki/Industrial_Revolution</string>
+    <string name="invention.url.first_recorded_use_of_the_term_industrial_revolution">https://uk.wikipedia.org/wiki/Промислова_революція</string>
 
     <string name="invention.first_high_visibility_clothing">Перший одяг підвищеної видимості</string>
     <string name="invention.url.first_high_visibility_clothing">https://www.hbcw.co.uk/news/history-of-high-visibility-workwear</string>
 
     <string name="invention.first_sale_of_mens_classic_briefs">Перший продаж класичних чоловічих трусів</string>
-    <string name="invention.url.first_sale_of_mens_classic_briefs">https://en.wikipedia.org/wiki/Briefs</string>
+    <string name="invention.url.first_sale_of_mens_classic_briefs">https://uk.wikipedia.org/wiki/Брифи</string>
 
     <string name="invention.first_arrest_because_of_one_piece_swimsuit">Перший арешт через суцільний купальник</string>
-    <string name="invention.url.first_arrest_because_of_one_piece_swimsuit">First arrest because of One-https://en.wikipedia.org/wiki/One-piece_swimsuit</string>
+    <string name="invention.url.first_arrest_because_of_one_piece_swimsuit">https://en.wikipedia.org/wiki/One-piece_swimsuit</string>
 
     <string name="invention.first_havaianas">Перші в\'єтнамки</string>
     <string name="invention.url.first_havaianas">https://en.wikipedia.org/wiki/Havaianas</string>
 
     <string name="invention.first_shoes_designed_for_running">Перше взуття, призначене для бігу</string>
-    <string name="invention.url.first_shoes_designed_for_running">https://en.wikipedia.org/wiki/Sneakers</string>
+    <string name="invention.url.first_shoes_designed_for_running">https://uk.wikipedia.org/wiki/Снікери</string>
 
     <string name="invention.first_national_park">Перший національний парк</string>
-    <string name="invention.url.first_national_park">https://en.wikipedia.org/wiki/National_park</string>
+    <string name="invention.url.first_national_park">https://uk.wikipedia.org/wiki/Національний_парк</string>
 
     <string name="invention.first_guinness_record_for_heaviest_cherry">Перший рекорд Гіннесса за найважчу вишню</string>
     <string name="invention.url.first_guinness_record_for_heaviest_cherry">https://www.guinnessworldrecords.com/world-records/heaviest-cherry</string>
 
     <string name="invention.first_railway_car">Перший залізничний вагон</string>
-    <string name="invention.url.first_railway_car">https://en.wikipedia.org/wiki/Passenger_railroad_car</string>
+    <string name="invention.url.first_railway_car">https://uk.wikipedia.org/wiki/Пасажирський_вагон</string>
 
     <string name="invention.first_tram">Перший трамвай</string>
-    <string name="invention.url.first_tram">https://en.wikipedia.org/wiki/History_of_trams</string>
+    <string name="invention.url.first_tram">https://uk.wikipedia.org/wiki/Історія_трамваю</string>
 
     <string name="invention.first_white_cane">Перша біла тростина для людей з інвалідністю</string>
     <string name="invention.url.first_white_cane">https://en.wikipedia.org/wiki/White_cane</string>
 
     <string name="invention.first_bubble_tea">Перший бульбашковий чай</string>
-    <string name="invention.url.first_bubble_tea">https://en.wikipedia.org/wiki/Bubble_tea</string>
+    <string name="invention.url.first_bubble_tea">https://uk.wikipedia.org/wiki/Бульбашковий_чай</string>
 
     <string name="invention.first_guinness_record_for_the_largest_accordion">Перший рекорд Гіннесса за найбільший акордеон</string>
     <string name="invention.url.first_guinness_record_for_the_largest_accordion">https://www.guinnessworldrecords.com/world-records/largest-accordion</string>
@@ -965,19 +966,19 @@
     <string name="invention.url.first_soft_ice_cream">https://en.wikipedia.org/wiki/Soft_serve</string>
 
     <string name="invention.first_commercial_camping_ground">Перший комерційний кемпінг</string>
-    <string name="invention.url.first_commercial_camping_ground">https://en.wikipedia.org/wiki/Camping</string>
+    <string name="invention.url.first_commercial_camping_ground">https://uk.wikipedia.org/wiki/Туристичний_похід</string>
 
     <string name="invention.first_recorded_eruption_of_mount_fuji">Перше зареєстроване виверження вулкана Фудзі</string>
-    <string name="invention.url.first_recorded_eruption_of_mount_fuji">https://en.wikipedia.org/wiki/Mount_Fuji</string>
+    <string name="invention.url.first_recorded_eruption_of_mount_fuji">https://uk.wikipedia.org/wiki/Фудзі_(гора)</string>
 
     <string name="invention.first_calendar_alter_to_celebrate_tsukimi">Перша зміна календаря на святкування Цукімі</string>
-    <string name="invention.url.first_calendar_alter_to_celebrate_tsukimi">https://en.wikipedia.org/wiki/Tsukimi</string>
+    <string name="invention.url.first_calendar_alter_to_celebrate_tsukimi">https://uk.wikipedia.org/wiki/Цукімі</string>
 
     <string name="invention.first_attested_coffin">Перша труна</string>
-    <string name="invention.url.first_attested_coffin">https://en.wikipedia.org/wiki/Coffin</string>
+    <string name="invention.url.first_attested_coffin">https://uk.wikipedia.org/wiki/Труна</string>
 
     <string name="invention.first_patented_cigarette_making_machine">Перша запатентована машина для виготовлення сигарет</string>
-    <string name="invention.url.first_patented_cigarette_making_machine">https://en.wikipedia.org/wiki/Cigarette</string>
+    <string name="invention.url.first_patented_cigarette_making_machine">https://uk.wikipedia.org/wiki/Сигарета</string>
 
     <string name="invention.first_japanese_postal_mark">Перша японська поштова марка</string>
     <string name="invention.url.first_japanese_postal_mark">https://en.wikipedia.org/wiki/Japanese_postal_mark</string>
@@ -986,7 +987,7 @@
     <string name="invention.url.first_series_of_the_hospital">https://en.wikipedia.org/wiki/The_Hospital</string>
 
     <string name="invention.first_primary_school_in_nigeria">Перша початкова школа в Нігерії</string>
-    <string name="invention.url.first_primary_school_in_nigeria">https://en.wikipedia.org/wiki/School</string>
+    <string name="invention.url.first_primary_school_in_nigeria">https://uk.wikipedia.org/wiki/Школа</string>
 
     <string name="invention.first_comet_discovered_by_telescope">Перша комета, відкрита за допомогою телескопа</string>
     <string name="invention.url.first_comet_discovered_by_telescope">https://en.wikipedia.org/wiki/Great_Comet_of_1680</string>

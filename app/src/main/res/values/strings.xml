@@ -33,6 +33,7 @@
     <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>
 
     <string name="error.try_again_later">Please, try again later</string>
+    <string name="error.ad_is_not_ready">Seems like AD is not ready yet 🤔</string>
 
     <string name="button.more">More</string>
     <string name="button.less">Less</string>
@@ -206,7 +207,7 @@
     <string name="invention.url.first_credit_card">https://en.wikipedia.org/wiki/Credit_card</string>
 
     <string name="invention.first_e_mail">First E-Mail</string>
-    <string name="invention.url.first_e_mail">First https://en.wikipedia.org/wiki/Email</string>
+    <string name="invention.url.first_e_mail">https://en.wikipedia.org/wiki/Email</string>
 
     <string name="invention.first_postbox">First Postbox</string>
     <string name="invention.url.first_postbox">https://en.wikipedia.org/wiki/Post_box</string>
@@ -449,7 +450,7 @@
     <string name="invention.url.first_ping_pong">https://en.wikipedia.org/wiki/Table_tennis</string>
 
     <string name="invention.first_named_the_game_lacrosse">First named the game “Lacrosse”</string>
-    <string name="invention.url.first_named_the_game_lacrosse">First named the game “https://worldlacrosse.sport/about-world-lacrosse/origin-history/</string>
+    <string name="invention.url.first_named_the_game_lacrosse">https://worldlacrosse.sport/about-world-lacrosse/origin-history/</string>
 
     <string name="invention.first_ten_pin_bowling">First Ten Pin Bowling</string>
     <string name="invention.url.first_ten_pin_bowling">https://en.wikipedia.org/wiki/Ten-pin_bowling</string>
@@ -515,7 +516,7 @@
     <string name="invention.url.first_suspension_railway">https://en.wikipedia.org/wiki/Suspension_railway</string>
 
     <string name="invention.first_mentioned_word_helicopter">First mentioned word \'Helicopter\'</string>
-    <string name="invention.url.first_mentioned_word_helicopter">First mentioned word \'https://en.wikipedia.org/wiki/Helicopter</string>
+    <string name="invention.url.first_mentioned_word_helicopter">https://en.wikipedia.org/wiki/Helicopter</string>
 
     <string name="invention.first_modern_parachute">First Modern Parachute</string>
     <string name="invention.url.first_modern_parachute">https://en.wikipedia.org/wiki/Parachute</string>
@@ -563,7 +564,7 @@
     <string name="invention.url.first_bus_stop">https://www.shelter-solutions.co.uk/who-invented-the-bus-stop/</string>
 
     <string name="invention.first_kickn_go">First Kick \'n Go</string>
-    <string name="invention.url.first_kickn_go">First Kick \'https://en.wikipedia.org/wiki/Kick_scooter</string>
+    <string name="invention.url.first_kickn_go">https://en.wikipedia.org/wiki/Kick_scooter</string>
 
     <string name="invention.first_pedal_bicycle">First Pedal Bicycle</string>
     <string name="invention.url.first_pedal_bicycle">https://en.wikipedia.org/wiki/History_of_the_bicycle</string>
@@ -659,7 +660,7 @@
     <string name="invention.url.first_modern_japanese_castle">https://en.wikipedia.org/wiki/Japanese_castle</string>
 
     <string name="invention.first_24_hour_store">First 24-Hour Store</string>
-    <string name="invention.url.first_24_hour_store">First 24-https://en.wikipedia.org/wiki/Convenience_store</string>
+    <string name="invention.url.first_24_hour_store">https://en.wikipedia.org/wiki/Convenience_store</string>
 
     <string name="invention.first_glasses">First Glasses</string>
     <string name="invention.url.first_glasses">https://en.wikipedia.org/wiki/Glasses</string>
@@ -683,7 +684,7 @@
     <string name="invention.url.first_robotic_arm">https://en.wikipedia.org/wiki/Mechanical_arm</string>
 
     <string name="invention.first_recorded_word_zombie">First recorded word \'Zombie\'</string>
-    <string name="invention.url.first_recorded_word_zombie">First recorded word \'https://en.wikipedia.org/wiki/Zombie</string>
+    <string name="invention.url.first_recorded_word_zombie">https://en.wikipedia.org/wiki/Zombie</string>
 
     <string name="invention.first_bikini">First Bikini</string>
     <string name="invention.url.first_bikini">https://en.wikipedia.org/wiki/Bikini</string>
