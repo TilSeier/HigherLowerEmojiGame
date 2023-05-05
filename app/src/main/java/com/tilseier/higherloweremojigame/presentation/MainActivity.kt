@@ -1,6 +1,7 @@
 package com.tilseier.higherloweremojigame.presentation
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -14,6 +15,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Constants
 import com.tilseier.higherloweremojigame.data.local.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.repository.ItemRepositoryImpl
@@ -135,6 +137,7 @@ class MainActivity : ComponentActivity() {
 
             override fun onAdFailedToShowFullScreenContent(adError: AdError) {
                 // Called when ad fails to show.
+                rewardedAd = null
 
                 loadRewardedVideoAdIfNeeded()
             }
@@ -161,7 +164,7 @@ class MainActivity : ComponentActivity() {
             }
         } else {
             // The rewarded ad wasn't ready yet
-            loadRewardedVideoAdIfNeeded()
+            Toast.makeText(this, getString(R.string.error_ad_is_not_ready), Toast.LENGTH_SHORT).show()
         }
     }
 

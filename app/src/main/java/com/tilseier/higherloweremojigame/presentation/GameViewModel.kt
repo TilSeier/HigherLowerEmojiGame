@@ -14,7 +14,11 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.MoveAnimation
 import com.tilseier.higherloweremojigame.presentation.screen.game.SHOW_ANSWER_DURATION
 import com.tilseier.higherloweremojigame.util.AppPreferences
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class GameViewModel constructor(
@@ -185,9 +189,7 @@ class GameViewModel constructor(
                 }
             }
             is GameEvent.OnGameOverScreenOpen -> {
-                viewModelScope.launch {
-                    _eventFlow.emit(UiEvent.LoadRewardedVideo)
-                }
+                // nothing to do here
             }
             is GameEvent.OnContinueButtonClick -> {
                 viewModelScope.launch {
