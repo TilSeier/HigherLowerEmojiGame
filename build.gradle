@@ -3,8 +3,8 @@ buildscript {
         compose_version = '1.2.0'
         nav_version = '2.5.3'
         snapper_version = '0.2.0'
-        coil_version = '1.4.0'
-        preference_version = '1.2.0'
+        coil_version = '2.4.0'
+        preference_version = '1.2.1'
         coroutines_version = '1.6.0'
 
         accompanist_version = '0.27.0'

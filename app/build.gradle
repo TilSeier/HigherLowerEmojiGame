@@ -85,7 +85,7 @@ dependencies {
     implementation "io.coil-kt:coil-compose:$coil_version"
 
     // Preferences
-    implementation "androidx.preference:preference:$preference_version"
+    implementation "androidx.preference:preference-ktx:$preference_version"
 
     // Ads
     implementation 'com.google.android.gms:play-services-ads:22.6.0'
