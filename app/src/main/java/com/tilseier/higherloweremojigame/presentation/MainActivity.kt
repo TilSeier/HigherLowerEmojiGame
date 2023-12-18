@@ -12,7 +12,11 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.google.android.gms.ads.*
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.tilseier.higherloweremojigame.R
@@ -21,26 +25,33 @@ import com.tilseier.higherloweremojigame.data.local.ItemsLocalDataSource
 import com.tilseier.higherloweremojigame.data.repository.ItemRepositoryImpl
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
 import com.tilseier.higherloweremojigame.extantions.viewModelFactory
+import com.tilseier.higherloweremojigame.presentation.monetization.MonetizationEvent
 import com.tilseier.higherloweremojigame.presentation.navigation.NavGraph
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
 import com.tilseier.higherloweremojigame.ui.theme.StatusBar
+import com.tilseier.higherloweremojigame.util.GoogleMobileAdsConsentManager
 import com.tilseier.higherloweremojigame.util.TrackingUtil
+import java.util.concurrent.atomic.AtomicBoolean
 
 class MainActivity : ComponentActivity() {
-
-    private var rewardedAd: RewardedAd? = null
-    private var hasVideoAdReward = false
-
     private val viewModel: GameViewModel by viewModels {
         viewModelFactory { GameViewModel(GetItemsUseCase(ItemRepositoryImpl(ItemsLocalDataSource()))) }
     }
+
+    // Ads
+    private var isMobileAdsInitializeCalled = AtomicBoolean(false)
+    private var rewardedAd: RewardedAd? = null
+    private var hasVideoAdReward = false
+
+    // User Consent
+    private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
 
     @OptIn(ExperimentalMaterialNavigationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        initRewardedVideo()
+        gatherConsentAndInitializeAds()
 
         setContent {
             HigherLowerEmojiGameTheme {
@@ -89,7 +100,38 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun initRewardedVideo() {
+    // User Consent
+    private fun gatherConsentAndInitializeAds() {
+        googleMobileAdsConsentManager = GoogleMobileAdsConsentManager(this)
+        googleMobileAdsConsentManager.gatherConsent { consentError ->
+            // if consentError != null then consent not obtained in current session.
+
+            if (googleMobileAdsConsentManager.canRequestAds) {
+                initializeAdsSdkAndLoadAds()
+                viewModel.onEvent(MonetizationEvent.Ads.ObtainedConsent)
+            }
+
+            viewModel.onEvent(
+                MonetizationEvent.Ads.ConsentFormStatusUpdated(
+                    canRequestAds = googleMobileAdsConsentManager.canRequestAds,
+                    isPrivacyOptionsRequired = googleMobileAdsConsentManager.isPrivacyOptionsRequired,
+                    consentError = consentError,
+                )
+            )
+        }
+
+        // load ads using consent obtained in the previous session.
+        if (googleMobileAdsConsentManager.canRequestAds) {
+            initializeAdsSdkAndLoadAds()
+        }
+    }
+
+    // Monetization Video
+    private fun initializeAdsSdkAndLoadAds() {
+        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+            return
+        }
+
         MobileAds.initialize(this) {
             // If you're using mediation, wait until the completion handler is called
             // before loading ads, as this will ensure that all mediation adapters are initialized.

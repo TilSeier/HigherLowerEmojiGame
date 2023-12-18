@@ -20,6 +20,8 @@ object TrackingUtil {
     private const val EVENT_NAME_COPY_EMOJI = "Copy Emoji"
     private const val EVENT_NAME_MORE_INFO = "More Info"
     private const val EVENT_NAME_BUTTON_CLICK = "Button Click"
+    private const val EVENT_NAME_CONSENT_FORM_ERROR = "Consent Form Error"
+    private const val EVENT_NAME_CONSENT_OBTAINED = "Consent Obtained"
 
     private const val ATTR_DIFFICULTY = "Difficulty"
     private const val ATTR_INTERACTION = "Interaction"
@@ -30,6 +32,7 @@ object TrackingUtil {
     private const val ATTR_TITLE = "Title"
     private const val ATTR_MESSAGE = "Message"
     private const val ATTR_GAME_NAME = "GameName"
+    private const val ATTR_CODE = "Code"
 
     private lateinit var firebaseAnalytics: FirebaseAnalytics
 
@@ -194,6 +197,23 @@ object TrackingUtil {
         TrackingEvent.newBuilder()
             .withEventName(EVENT_NAME_AD_ERROR)
             .withAttribute(ATTR_MESSAGE, message)
+            .build()
+            .fire()
+    }
+
+    // Consent Form
+    fun trackObtainedConsent() {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_CONSENT_OBTAINED)
+            .build()
+            .fire()
+    }
+
+    fun trackConsentFormError(message: String, code: String) {
+        TrackingEvent.newBuilder()
+            .withEventName(EVENT_NAME_CONSENT_FORM_ERROR)
+            .withAttribute(ATTR_MESSAGE, message)
+            .withAttribute(ATTR_CODE, code)
             .build()
             .fire()
     }

@@ -9,10 +9,12 @@ import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.EmojiItems
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetItemsUseCase
+import com.tilseier.higherloweremojigame.presentation.monetization.MonetizationEvent
 import com.tilseier.higherloweremojigame.presentation.screen.game.GameState
 import com.tilseier.higherloweremojigame.presentation.screen.game.MoveAnimation
 import com.tilseier.higherloweremojigame.presentation.screen.game.SHOW_ANSWER_DURATION
 import com.tilseier.higherloweremojigame.util.AppPreferences
+import com.tilseier.higherloweremojigame.util.TrackingUtil
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -194,6 +196,23 @@ class GameViewModel constructor(
             is GameEvent.OnContinueButtonClick -> {
                 viewModelScope.launch {
                     _eventFlow.emit(UiEvent.ShowRewardedVideo)
+                }
+            }
+        }
+    }
+
+    fun onEvent(event: MonetizationEvent.Ads) {
+        when (event) {
+            is MonetizationEvent.Ads.Initialized -> {}
+            is MonetizationEvent.Ads.ObtainedConsent -> {
+                TrackingUtil.trackObtainedConsent()
+            }
+            is MonetizationEvent.Ads.ConsentFormStatusUpdated -> {
+                if (event.consentError != null) {
+                    TrackingUtil.trackConsentFormError(
+                        message = event.consentError.message ?: "NULL",
+                        code = event.consentError.errorCode.toString(),
+                    )
                 }
             }
         }
