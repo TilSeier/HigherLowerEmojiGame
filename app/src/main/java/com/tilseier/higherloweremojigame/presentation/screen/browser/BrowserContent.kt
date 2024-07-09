@@ -87,7 +87,7 @@ fun BrowserContent(
         val webClient = remember {
             object : AccompanistWebViewClient() {
                 override fun onPageStarted(
-                    view: WebView?,
+                    view: WebView,
                     startedUrl: String?,
                     favicon: Bitmap?
                 ) {
