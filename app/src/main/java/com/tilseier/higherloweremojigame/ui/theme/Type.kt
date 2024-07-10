@@ -1,5 +1,6 @@
 package com.tilseier.higherloweremojigame.ui.theme
 
+import android.os.Build
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -8,12 +9,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.tilseier.higherloweremojigame.R
 
-val iOS14EmojiFont = FontFamily(
-    Font(R.font.ios14_emoji, FontWeight.Normal),
-    Font(R.font.ios14_emoji, FontWeight.SemiBold),
-    Font(R.font.ios14_emoji, FontWeight.Bold),
-    Font(R.font.ios14_emoji, FontWeight.Black)
-)
+val iOS14EmojiFont = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+    FontFamily(
+        Font(R.font.ios14_emoji, FontWeight.Normal),
+        Font(R.font.ios14_emoji, FontWeight.SemiBold),
+        Font(R.font.ios14_emoji, FontWeight.Bold),
+        Font(R.font.ios14_emoji, FontWeight.Black)
+    )
+} else {
+    FontFamily.Default
+}
 
 // Set of Material typography styles to start with
 val Typography = Typography(
