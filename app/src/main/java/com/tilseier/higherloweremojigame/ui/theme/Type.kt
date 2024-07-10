@@ -9,7 +9,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.tilseier.higherloweremojigame.R
 
-val iOS14EmojiFont = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+// Unfortunately, this font cause IllegalStateException: Could not load font
+// on devices that have Android version less then 7.0
+val iOS14EmojiFont = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
     FontFamily(
         Font(R.font.ios14_emoji, FontWeight.Normal),
         Font(R.font.ios14_emoji, FontWeight.SemiBold),
