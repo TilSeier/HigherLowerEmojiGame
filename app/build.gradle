@@ -97,7 +97,11 @@ dependencies {
 
     // Ads
     implementation 'com.google.android.gms:play-services-ads:23.2.0'
+
+    // Facebook Ads
     implementation 'com.google.ads.mediation:facebook:6.17.0.0'
+    // to fix this issue: https://stackoverflow.com/questions/73854116/missing-class-com-facebook-infer-annotation-nullsafemode-referenced-from-com
+    implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
 
     // Consent Form
     implementation 'com.google.android.ump:user-messaging-platform:2.2.0'
