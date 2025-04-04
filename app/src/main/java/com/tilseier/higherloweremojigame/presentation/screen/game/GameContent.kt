@@ -126,7 +126,14 @@ fun GameContent(
     val game: Game = state.game
 
     val onBackClick: () -> Unit = {
-        navController.navigate(route = Screen.ExitDialog.route)
+        if (score > 0) {
+            navController.navigate(route = Screen.ExitDialog.route)
+        } else {
+            navController.popBackStack(
+                route = Screen.GamesMenu.route,
+                inclusive = false
+            )
+        }
     }
     val lazyListState: LazyListState = rememberLazyListState()
 
