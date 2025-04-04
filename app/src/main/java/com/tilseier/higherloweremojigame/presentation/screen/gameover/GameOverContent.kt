@@ -57,6 +57,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.domain.model.EmojiFact
+import com.tilseier.higherloweremojigame.extantions.spNotScalable
 import com.tilseier.higherloweremojigame.presentation.GameEvent
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.components.AutoSizeText
@@ -162,7 +163,7 @@ fun GameOverStatusBar(
         Spacer(modifier = Modifier.width(4.dp))
         Text(
             text = stringResource(id = R.string.button_main_menu),
-            fontSize = 16.sp,
+            fontSize = 16.spNotScalable,
             color = Color.White
         )
     }

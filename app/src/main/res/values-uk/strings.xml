@@ -25,9 +25,12 @@
     <string name="text.this_item">\"%1$s\"</string>
     <string name="text.loading">ЗАГРУЗКА</string>
     <string name="text.your_score">Рекорд: %1$s</string>
+    <string name="text.game_rules">Правила гри:</string>
 
-    <string name="text.invention_game_title">Що було\nвинайдено ДО, а що ПІСЛЯ?</string>
-    <string name="text.emoji_game_title">Яке Емоджі більш популярне?</string>
+    <string name="text.invention_game_title">Історична Вікторина</string>
+    <string name="text.invention_game_description">Вгадай, чи був наступний об\'єкт винайдений Раніше чи Пізніше за попередній.</string>
+    <string name="text.emoji_game_title">Емодзі Вікторина</string>
+    <string name="text.emoji_game_description">Вгадай, чи використовується наступний емодзі Більше чи Менше, ніж попередній.</string>
 
     <string name="text.dialog.exit.title">Ви впевненні?</string>
     <string name="text.dialog.exit.description">Це завершить вашу поточну гру, і ваш рахунок буде втрачено</string>
@@ -37,8 +40,8 @@
 
     <string name="button.more">Більше</string>
     <string name="button.less">Менше</string>
-    <string name="button.before">До</string>
-    <string name="button.after">Після</string>
+    <string name="button.before">Раніше</string>
+    <string name="button.after">Пізніше</string>
     <string name="button.main_menu">Головне Меню</string>
     <string name="button.play">Грати</string>
     <string name="button.ok">Ок</string>

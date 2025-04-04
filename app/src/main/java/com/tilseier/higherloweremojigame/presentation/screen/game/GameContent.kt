@@ -2,24 +2,60 @@ package com.tilseier.higherloweremojigame.presentation.screen.game
 
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
-import androidx.compose.animation.*
-import androidx.compose.animation.core.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterExitState
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.ExperimentalTransitionApi
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.animateInt
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.updateTransition
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Divider
+import androidx.compose.material.Icon
+import androidx.compose.material.OutlinedButton
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Done
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -46,6 +82,7 @@ import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.domain.model.Item
 import com.tilseier.higherloweremojigame.extantions.formatNumberToString
+import com.tilseier.higherloweremojigame.extantions.spNotScalable
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.WindowInfo
 import com.tilseier.higherloweremojigame.presentation.common.rememberWindowInfo
@@ -55,7 +92,15 @@ import com.tilseier.higherloweremojigame.presentation.screen.game.components.Bac
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.BackgroundWithTextSign
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.EmojiPin
 import com.tilseier.higherloweremojigame.presentation.screen.game.components.LazyColumnOrRow
-import com.tilseier.higherloweremojigame.ui.theme.*
+import com.tilseier.higherloweremojigame.ui.theme.DarkHover
+import com.tilseier.higherloweremojigame.ui.theme.Gray
+import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
+import com.tilseier.higherloweremojigame.ui.theme.ItemNumber
+import com.tilseier.higherloweremojigame.ui.theme.PinShape
+import com.tilseier.higherloweremojigame.ui.theme.RightAnswer
+import com.tilseier.higherloweremojigame.ui.theme.Typography
+import com.tilseier.higherloweremojigame.ui.theme.WrongAnswer
+import com.tilseier.higherloweremojigame.ui.theme.iOS14EmojiFont
 import com.tilseier.higherloweremojigame.util.ColorUtil
 import com.tilseier.higherloweremojigame.util.Intents
 import com.tilseier.higherloweremojigame.util.TrackingUtil
@@ -420,20 +465,20 @@ fun StatusBar(
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = stringResource(id = R.string.button_main_menu),
-                    fontSize = 16.sp,
+                    fontSize = 16.spNotScalable,
                     color = Color.White
                 )
             }
         }
         Text(
             text = stringResource(id = R.string.high_score, higherScore),
-            fontSize = 16.sp,
+            fontSize = 16.spNotScalable,
             color = Color.White
         )
         Spacer(modifier = Modifier.width(15.dp))
         Text(
             text = stringResource(id = R.string.score, score),
-            fontSize = 16.sp,
+            fontSize = 16.spNotScalable,
             color = Color.White
         )
     }
@@ -991,9 +1036,12 @@ private fun InventedItemButton(
             contentAlignment = Alignment.Center
         ) {
             Text(
+                modifier = Modifier.align(Alignment.Center),
                 text = text,
-                fontSize = 18.sp,
-                modifier = Modifier.align(Alignment.Center)
+                style = Typography.h3.copy(
+                    fontSize = 18.spNotScalable,
+                    letterSpacing = 0.5.spNotScalable,
+                ),
             )
         }
     }

@@ -3,13 +3,30 @@ package com.tilseier.higherloweremojigame.presentation.screen.games_menu
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -31,6 +48,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.common.Game
+import com.tilseier.higherloweremojigame.extantions.dpScalable
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
 import com.tilseier.higherloweremojigame.presentation.common.RoundButton
 import com.tilseier.higherloweremojigame.presentation.components.dialog.RateDialog
@@ -58,7 +76,7 @@ fun GamesMenuContent(
     val emojiGame = menuGames.firstOrNull { it.game == Game.EMOJI_GAME }
 
     LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
@@ -66,19 +84,19 @@ fun GamesMenuContent(
             GamesMenuHeader()
         }
         item {
-            Box(modifier = Modifier
-                .padding(horizontal = 24.dp)
-                .width(dimensionResource(id = R.dimen.max_content_width))) {
-                Row(
+            Box(
+                modifier = Modifier
+                    .padding(horizontal = 24.dp)
+                    .width(dimensionResource(id = R.dimen.max_content_width))
+            ) {
+                Column(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(18.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalArrangement = Arrangement.spacedBy(48.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     inventionGame?.let {
                         GameCard(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(260.dp),
+                            modifier = Modifier.fillMaxWidth(),
                             menuGame = it,
                             onClick = {
                                 viewModel.newGame(Game.INVENTION_GAME, Difficulty.EASY)
@@ -94,9 +112,7 @@ fun GamesMenuContent(
                     }
                     emojiGame?.let {
                         GameCard(
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(260.dp),
+                            modifier = Modifier.fillMaxWidth(),
                             menuGame = it,
                             onClick = {
                                 navController.navigate(
@@ -139,19 +155,37 @@ fun GameCard(
             contentAlignment = Alignment.BottomEnd
         ) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                Spacer(modifier = Modifier.height(85.dp))
+                Spacer(modifier = Modifier.height(95.dpScalable))
 
                 Text(
-                    modifier = Modifier.padding(horizontal = 12.dp),
+                    modifier = Modifier.padding(horizontal = 16.dp),
                     text = menuGame.title.asString(),
                     color = Color.White,
                     style = Typography.h2.copy(
-                        fontSize = 18.sp,
+                        fontSize = 26.sp,
                         letterSpacing = 2.sp
-                    ),
+                    )
                 )
 
-                Spacer(modifier = Modifier.weight(1f))
+                Spacer(modifier = Modifier.height(24.dp))
+
+                Text(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    text = stringResource(id = R.string.text_game_rules),
+                    color = Color.White.copy(alpha = 0.8f),
+                    style = Typography.h2.copy(fontSize = 20.sp),
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Text(
+                    modifier = Modifier.padding(start = 16.dp, end = 24.dp),
+                    text = menuGame.description.asString(),
+                    color = Color.White,
+                    style = Typography.body1.copy(fontSize = 18.sp),
+                )
+
+                Spacer(modifier = Modifier.height(36.dp))
 
                 RoundButton(
                     modifier = Modifier.padding(start = 12.dp, bottom = 15.dp),
@@ -190,8 +224,8 @@ fun GameCard(
             painter = painterResource(id = menuGame.icon),
             contentDescription = null,
             modifier = Modifier
-                .padding(start = 8.dp)
-                .size(90.dp)
+                .padding(start = 8.dpScalable)
+                .size(100.dpScalable)
         )
     }
 }

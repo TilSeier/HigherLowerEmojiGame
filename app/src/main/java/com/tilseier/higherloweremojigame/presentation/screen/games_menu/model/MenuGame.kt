@@ -7,6 +7,7 @@ import com.tilseier.higherloweremojigame.common.UiText
 
 data class MenuGame(
     val title: UiText,
+    val description: UiText,
     val game: Game,
     val score: Int,
     val sign: String,

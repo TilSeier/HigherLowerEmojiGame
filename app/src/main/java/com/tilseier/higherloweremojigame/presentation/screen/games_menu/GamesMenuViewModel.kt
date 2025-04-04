@@ -8,8 +8,12 @@ import com.tilseier.higherloweremojigame.common.Difficulty
 import com.tilseier.higherloweremojigame.common.Game
 import com.tilseier.higherloweremojigame.common.UiText
 import com.tilseier.higherloweremojigame.presentation.screen.games_menu.model.MenuGame
-import com.tilseier.higherloweremojigame.presentation.screen.menu.model.MenuDifficulty
-import com.tilseier.higherloweremojigame.ui.theme.*
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyEasy
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyEasyBorder
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyEasyButton
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyMedium
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyMediumBorder
+import com.tilseier.higherloweremojigame.ui.theme.MenuDifficultyMediumButton
 import com.tilseier.higherloweremojigame.util.AppPreferences
 
 class GamesMenuViewModel : ViewModel() {
@@ -19,6 +23,7 @@ class GamesMenuViewModel : ViewModel() {
         menuGames.value = listOf(
             MenuGame(
                 title = UiText.StringResource(resId = R.string.text_invention_game_title),
+                description = UiText.StringResource(resId = R.string.text_invention_game_description),
                 game = Game.INVENTION_GAME,
                 score = AppPreferences.preferences()?.higherScore(Game.INVENTION_GAME, Difficulty.EASY)
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,
@@ -30,6 +35,7 @@ class GamesMenuViewModel : ViewModel() {
             ),
             MenuGame(
                 title = UiText.StringResource(resId = R.string.text_emoji_game_title),
+                description = UiText.StringResource(resId = R.string.text_emoji_game_description),
                 game = Game.EMOJI_GAME,
                 score = AppPreferences.preferences()?.higherScore(Game.EMOJI_GAME, Difficulty.EASY)
                     ?: AppPreferences.DEFAULT_HIGHER_SCORE,

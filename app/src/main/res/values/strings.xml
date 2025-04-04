@@ -25,9 +25,12 @@
     <string name="text.this_item">\"%1$s\"</string>
     <string name="text.loading">LOADING</string>
     <string name="text.your_score">Your score: %1$s</string>
+    <string name="text.game_rules">Game rules:</string>
 
-    <string name="text.invention_game_title">What was\ncreated first?</string>
-    <string name="text.emoji_game_title">What emoji is\nused more often?</string>
+    <string name="text.invention_game_title">History Trivia</string>
+    <string name="text.invention_game_description">Guess if the next object was invented Earlier or Later than the previous object.</string>
+    <string name="text.emoji_game_title">Emoji Trivia</string>
+    <string name="text.emoji_game_description">Guess if the next emoji is used More or Less than the previous emoji.</string>
 
     <string name="text.dialog.exit.title">Are you sure?</string>
     <string name="text.dialog.exit.description">This will end your current game and your score will be lost</string>
@@ -37,8 +40,8 @@
 
     <string name="button.more">More</string>
     <string name="button.less">Less</string>
-    <string name="button.before">Before</string>
-    <string name="button.after">After</string>
+    <string name="button.before">Earlier</string>
+    <string name="button.after">Later</string>
     <string name="button.main_menu">Main Menu</string>
     <string name="button.play">Play</string>
     <string name="button.ok">Ok</string>
