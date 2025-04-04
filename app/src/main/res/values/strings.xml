@@ -26,6 +26,7 @@
     <string name="text.loading">LOADING</string>
     <string name="text.your_score">Your score: %1$s</string>
     <string name="text.game_rules">Game rules:</string>
+    <string name="text.version">Version: %1$s</string>
 
     <string name="text.invention_game_title">History Trivia</string>
     <string name="text.invention_game_description">Guess if the next object was invented Earlier or Later than the previous object.</string>

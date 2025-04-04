@@ -26,6 +26,7 @@
     <string name="text.loading">ЗАГРУЗКА</string>
     <string name="text.your_score">Рекорд: %1$s</string>
     <string name="text.game_rules">Правила гри:</string>
+    <string name="text.version">Версія: %1$s</string>
 
     <string name="text.invention_game_title">Історична Вікторина</string>
     <string name="text.invention_game_description">Вгадай, чи був наступний об\'єкт винайдений Раніше чи Пізніше за попередній.</string>

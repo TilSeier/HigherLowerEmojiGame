@@ -10,9 +10,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,14 +22,17 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.tilseier.higherloweremojigame.BuildConfig
 import com.tilseier.higherloweremojigame.R
 import com.tilseier.higherloweremojigame.presentation.navigation.Screen
 import com.tilseier.higherloweremojigame.ui.theme.HigherLowerEmojiGameTheme
@@ -62,7 +67,8 @@ fun SplashContent(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(SplashScreenBackground)
+            .background(SplashScreenBackground),
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
             modifier = Modifier
@@ -90,6 +96,14 @@ fun SplashContent(navController: NavHostController) {
                 color = Color.White
             )
         }
+        Spacer(modifier = Modifier.height(24.dp))
+        Text(
+            modifier = Modifier.alpha(0.6f),
+            text = stringResource(id = R.string.text_version, BuildConfig.VERSION_NAME),
+            fontSize = 12.sp,
+            color = Color.White
+        )
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }
 
