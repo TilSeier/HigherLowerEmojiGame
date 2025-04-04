@@ -2,7 +2,7 @@ package com.tilseier.higherloweremojigame.presentation.screen.gameover
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -12,6 +12,7 @@ import com.tilseier.higherloweremojigame.data.repository.FactsRepositoryImpl
 import com.tilseier.higherloweremojigame.domain.use_case.get_items.GetFactsUseCase
 import com.tilseier.higherloweremojigame.extantions.viewModelFactory
 import com.tilseier.higherloweremojigame.presentation.GameViewModel
+import com.tilseier.higherloweremojigame.ui.theme.Background
 
 @Composable
 fun GameOverScreen(navController: NavHostController, viewModel: GameViewModel) {
@@ -19,6 +20,7 @@ fun GameOverScreen(navController: NavHostController, viewModel: GameViewModel) {
         GameOverViewModel(GetFactsUseCase(FactsRepositoryImpl(FactsLocalDataSource())))
     })
     Scaffold(
+        containerColor = Background,
         content = { paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)) {
                 GameOverContent(

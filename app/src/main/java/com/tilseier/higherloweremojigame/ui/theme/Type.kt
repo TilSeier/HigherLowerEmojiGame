@@ -1,7 +1,7 @@
 package com.tilseier.higherloweremojigame.ui.theme
 
 import android.os.Build
-import androidx.compose.material.Typography
+import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -24,22 +24,22 @@ val iOS14EmojiFont = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    h1 = TextStyle(
+    titleLarge = TextStyle( // h1
         fontWeight = FontWeight.Black,
         fontSize = 30.sp
     ),
 
-    h2 = TextStyle(
+    titleMedium = TextStyle( // h2
         fontWeight = FontWeight.Bold,
         fontSize = 21.sp
     ),
 
-    h3 = TextStyle(
+    titleSmall = TextStyle( // h3
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp
     ),
 
-    body1 = TextStyle(
+    bodyLarge = TextStyle( // body1
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp

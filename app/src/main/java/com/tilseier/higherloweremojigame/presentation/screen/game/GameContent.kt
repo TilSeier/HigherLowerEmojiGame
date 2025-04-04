@@ -41,14 +41,14 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Divider
-import androidx.compose.material.Icon
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Divider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -396,7 +396,7 @@ fun VsBox(
                 modifier = Modifier
                     .align(Alignment.Center)
                     .padding(bottom = 2.dp),
-                style = Typography.h3.copy(fontSize = 18.sp),
+                style = Typography.titleSmall.copy(fontSize = 18.sp),
                 textAlign = TextAlign.Center,
                 color = Color.Black
             )
@@ -1007,10 +1007,10 @@ private fun ItemButton(
         modifier = modifier,
         shape = shape,
         border = BorderStroke((1.2).dp, Color.White),
-        elevation = ButtonDefaults.elevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp, pressedElevation = 2.dp),
         contentPadding = PaddingValues(vertical = 6.dp, horizontal = 8.dp),
         colors = ButtonDefaults.outlinedButtonColors(
-            backgroundColor = Color.Transparent,
+            containerColor = Color.Transparent,
             contentColor = ItemNumber
         )
     ) {
@@ -1038,7 +1038,7 @@ private fun InventedItemButton(
             Text(
                 modifier = Modifier.align(Alignment.Center),
                 text = text,
-                style = Typography.h3.copy(
+                style = Typography.titleSmall.copy(
                     fontSize = 18.spNotScalable,
                     letterSpacing = 0.5.spNotScalable,
                 ),

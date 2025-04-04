@@ -17,10 +17,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
@@ -161,7 +161,7 @@ fun GameCard(
                     modifier = Modifier.padding(horizontal = 16.dp),
                     text = menuGame.title.asString(),
                     color = Color.White,
-                    style = Typography.h2.copy(
+                    style = Typography.titleMedium.copy(
                         fontSize = 26.sp,
                         letterSpacing = 2.sp
                     )
@@ -173,7 +173,7 @@ fun GameCard(
                     modifier = Modifier.padding(horizontal = 16.dp),
                     text = stringResource(id = R.string.text_game_rules),
                     color = Color.White.copy(alpha = 0.8f),
-                    style = Typography.h2.copy(fontSize = 20.sp),
+                    style = Typography.titleMedium.copy(fontSize = 20.sp),
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -182,7 +182,7 @@ fun GameCard(
                     modifier = Modifier.padding(start = 16.dp, end = 24.dp),
                     text = menuGame.description.asString(),
                     color = Color.White,
-                    style = Typography.body1.copy(fontSize = 18.sp),
+                    style = Typography.bodyLarge.copy(fontSize = 18.sp),
                 )
 
                 Spacer(modifier = Modifier.height(36.dp))
@@ -190,7 +190,7 @@ fun GameCard(
                 RoundButton(
                     modifier = Modifier.padding(start = 12.dp, bottom = 15.dp),
                     onClick = { onClick(menuGame) },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = menuGame.buttonColor),
+                    colors = ButtonDefaults.buttonColors(containerColor = menuGame.buttonColor),
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {

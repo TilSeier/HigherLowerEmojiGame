@@ -3,15 +3,30 @@ package com.tilseier.higherloweremojigame.presentation.screen.menu
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -168,7 +183,7 @@ fun MenuDifficultyItem(
             ) {
                 RoundButton(
                     onClick = { onClick(menuDifficulty) },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = menuDifficulty.buttonColor)
+                    colors = ButtonDefaults.buttonColors(containerColor = menuDifficulty.buttonColor)
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
@@ -192,12 +207,12 @@ fun MenuDifficultyItem(
                 Text(
                     text = menuDifficulty.title.asString(),
                     color = Color.White,
-                    style = Typography.h3.copy(fontSize = 26.sp)
+                    style = Typography.titleSmall.copy(fontSize = 26.sp)
                 )
                 Text(
                     text = stringResource(id = R.string.text_your_score, menuDifficulty.score.toString()),
                     color = Color.White,
-                    style = Typography.body1.copy(fontSize = 14.sp)
+                    style = Typography.bodyLarge.copy(fontSize = 14.sp)
                 )
             }
         }

@@ -1,6 +1,5 @@
 package com.tilseier.higherloweremojigame.ui.theme
 
-import androidx.compose.material.Colors
 import androidx.compose.ui.graphics.Color
 
 val Purple200 = Color(0xFFBB86FC)
